@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dalong&apos;s personal blog</title>
+    <description>Record the bits and pieces of the technology big bang.</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 24 Jul 2023 10:49:48 +0800</pubDate>
+    <lastBuildDate>Mon, 24 Jul 2023 10:49:48 +0800</lastBuildDate>
+    <generator>Jekyll v3.9.3</generator>
+    
+      <item>
+        <title>China MLPS</title>
+        <description>&lt;p&gt;MLPS 2.0: China’s enhanced data security multi-level protection scheme and related enforcement updates。&lt;/p&gt;
+
+&lt;h1 id=&quot;网络安全知识体系&quot;&gt;网络安全知识体系&lt;/h1&gt;
+
+&lt;p&gt;[TOC]&lt;/p&gt;
+
+&lt;h2 id=&quot;资源&quot;&gt;资源&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.zgyq.gov.cn/zwzxrdzt/xfzl/202208/t20220819_76128304.html&quot;&gt;中华人民共和国网络安全法（全文）&lt;/a&gt;
+&lt;a href=&quot;http://www.zgyq.gov.cn/zwzxrdzt/xfzl/202303/t20230307_78388851.html&quot;&gt;中华人民共和国个人信息保护法&lt;/a&gt;
+&lt;a href=&quot;http://www.zgyq.gov.cn/zwzxrdzt/xfzl/202208/t20220819_76128281.html&quot;&gt;中华人民共和国数据安全法（全文）&lt;/a&gt;
+&lt;a href=&quot;https://zhuanlan.zhihu.com/p/536960693&quot;&gt;网络安全等级保护 MLSP Multiple-level Protection Scheme&lt;/a&gt;
+&lt;a href=&quot;https://www.protiviti.com/hk-en/whitepaper/chinas-cybersecurity-law-multiple-level-protection-scheme&quot;&gt;MLPS 英文解读&lt;/a&gt;
+&lt;a href=&quot;https://baike.baidu.com/item/信息安全等级保护/2149325&quot;&gt;信息安全等级保护&lt;/a&gt;
+&lt;a href=&quot;https://www.youtube.com/watch?v=RhSiP85cFgs&quot;&gt;网络安全法 Yutube 视频&lt;/a&gt;
+&lt;a href=&quot;https://www.youtube.com/playlist?list=PLZxxGu3cF3-6SUIZFQNDxD9AgVNAczCce&quot;&gt;网络安全等级保护 Youtube 视频系列课程&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://ibm-learning.udemy.com/course/iso-27001-2013/&quot;&gt;ISO 27001&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://ibm-learning.udemy.com/course/isosae-21434-automotive-cybersecurity-standards/&quot;&gt;ISO 21434 Automotive Cybersecurity Standards&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;课程介绍--企业级网络安全与等保-20&quot;&gt;课程介绍 -企业级网络安全与等保 2.0&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLZxxGu3cF3-6SUIZFQNDxD9AgVNAczCce&quot;&gt;网络安全等级保护 Youtube 视频系列课程&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;课程大纲:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;网络安全概述&lt;/li&gt;
+  &lt;li&gt;网络安全大事件&lt;/li&gt;
+  &lt;li&gt;网络安全厂商&lt;/li&gt;
+  &lt;li&gt;网络安全产品&lt;/li&gt;
+  &lt;li&gt;网络安全法律法规&lt;/li&gt;
+  &lt;li&gt;等级保护政策规范解读&lt;/li&gt;
+  &lt;li&gt;等保解决方案&lt;/li&gt;
+  &lt;li&gt;等保实战案例&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;网络安全岗位&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;安全专家/研究员&lt;/li&gt;
+  &lt;li&gt;安全运维/安全工程师&lt;/li&gt;
+  &lt;li&gt;安全厂商工程师&lt;/li&gt;
+  &lt;li&gt;系统集成安全工程师&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;网络安全厂商&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;网络兼容安全厂商
+    &lt;ul&gt;
+      &lt;li&gt;思科&lt;/li&gt;
+      &lt;li&gt;华为&lt;/li&gt;
+      &lt;li&gt;华三&lt;/li&gt;
+      &lt;li&gt;锐捷&lt;/li&gt;
+      &lt;li&gt;迈普&lt;/li&gt;
+      &lt;li&gt;迪普&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;传统网络安全厂商
+    &lt;ul&gt;
+      &lt;li&gt;奇安信&lt;/li&gt;
+      &lt;li&gt;深信服&lt;/li&gt;
+      &lt;li&gt;启明星辰&lt;/li&gt;
+      &lt;li&gt;天融信&lt;/li&gt;
+      &lt;li&gt;绿盟&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;细分领域安全厂商
+    &lt;ul&gt;
+      &lt;li&gt;堡垒机: 齐治&lt;/li&gt;
+      &lt;li&gt;终端安全: 北信源&lt;/li&gt;
+      &lt;li&gt;云安全: 亚信安全&lt;/li&gt;
+      &lt;li&gt;移动安全: 梆梆安全&lt;/li&gt;
+      &lt;li&gt;其他&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;互联网安全厂商
+    &lt;ul&gt;
+      &lt;li&gt;360&lt;/li&gt;
+      &lt;li&gt;腾讯&lt;/li&gt;
+      &lt;li&gt;阿里&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;网络安全部门&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;公安部
+    &lt;ul&gt;
+      &lt;li&gt;网络安全保卫局 (网安)&lt;/li&gt;
+      &lt;li&gt;技侦/刑侦/经侦&lt;/li&gt;
+      &lt;li&gt;下属单位
+        &lt;ul&gt;
+          &lt;li&gt;公安部一所/三所&lt;/li&gt;
+          &lt;li&gt;中电 30 所&lt;/li&gt;
+          &lt;li&gt;信息安全评测/认证中心
+            &lt;ul&gt;
+              &lt;li&gt;国家信息安全漏洞库 (CNNVD)&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;网信办
+    &lt;ul&gt;
+      &lt;li&gt;CNCERT 国家互联网应急中心&lt;/li&gt;
+      &lt;li&gt;CNNIC 中国互联网络信息中心&lt;/li&gt;
+      &lt;li&gt;国家计算机网络与信息安全管理中心&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;工信部
+    &lt;ul&gt;
+      &lt;li&gt;网络安全管理局&lt;/li&gt;
+      &lt;li&gt;通管局/无委会&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;国安
+    &lt;ul&gt;
+      &lt;li&gt;南京 841 研究所&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;军队
+    &lt;ul&gt;
+      &lt;li&gt;56 所 无锡江南所&lt;/li&gt;
+      &lt;li&gt;30 所 卫士通&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;机要和保密局
+    &lt;ul&gt;
+      &lt;li&gt;国家保密局, 保密科技评测中心&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;什么是等保&quot;&gt;什么是等保&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-05-02-132120.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;全称:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;网络安全等级保护&lt;/li&gt;
+  &lt;li&gt;MLPS&lt;/li&gt;
+  &lt;li&gt;指对国家重要信息,法人和其他组织及公民的转悠信息以及公开信息和存储, 传输, 处理这些信息的信息系统分等级实施安全保护, 对信息系统中使用的信息安全产品实行按等级管理, 对信息系统重发生的安全事件分等级响应和处置.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;为什么:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;国家信息形势严峻&lt;/li&gt;
+  &lt;li&gt;维护国家安全需求&lt;/li&gt;
+  &lt;li&gt;建立国家信息安全的基本制度&lt;/li&gt;
+  &lt;li&gt;开展信息安全基本方法&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;目的:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;明确信息安全重点&lt;/li&gt;
+  &lt;li&gt;优化信息安全资源配置&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;执法部门 - 公安部门&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;警察法规定: 监督, 管理计算信息系统的安全保护工作&lt;/li&gt;
+  &lt;li&gt;公安部门的网络安全保卫局会进行监督, 管理, 不符合要求的需要整改, 罚款等措施.&lt;/li&gt;
+  &lt;li&gt;网络安全保卫局 11 局, 省网络总队, 市支队&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;相关部门和职责&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;公安牵头, 领导, 对全国这项工作开展监督指导&lt;/li&gt;
+  &lt;li&gt;保密局: 负责有关保密工作的监督, 检查, 指导, 并设计国家秘密信息系统的分析保护工作 (只针对国家秘密的信息系统)&lt;/li&gt;
+  &lt;li&gt;密码局: 负责有关密码工作的监督, 检查, 指导&lt;/li&gt;
+  &lt;li&gt;工业和信息化部: 负责各个部门之间的协调&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;等保发展历史&quot;&gt;等保发展历史&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;04 年出台了等级保护规范标准&lt;/li&gt;
+  &lt;li&gt;05 年开展了等级保护调查工作&lt;/li&gt;
+  &lt;li&gt;06 年开展了等级保护试点工作&lt;/li&gt;
+  &lt;li&gt;07 年部署开展定级工作&lt;/li&gt;
+  &lt;li&gt;08 年出正式标准&lt;/li&gt;
+  &lt;li&gt;19 年 2.0 出来了 , 8 则, 看文件包&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;等保级别标准&quot;&gt;等保级别标准&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-05-03-002203.jpg&quot; alt=&quot;&quot; /&gt;
+参考: &lt;GB17859-1999 计算机信息系统=&quot;&quot; 安全保护等级划分准则=&quot;&quot;&gt;&lt;/GB17859-1999&gt;&lt;/p&gt;
+
+&lt;p&gt;信息系统按照&lt;strong&gt;重要性&lt;/strong&gt;和受破坏的&lt;strong&gt;危害性&lt;/strong&gt;进行分级 (1-5 级, 数字越大级别越高)&lt;/p&gt;
+
+&lt;p&gt;第一级: 自主安全保护级&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;信息系统受到破坏后, 对公民, 法人和其他组织权益造成损害, 但不损害 社会秩序和公共利益 和 国家安全
+第二级: 审计安全保护级&lt;/li&gt;
+  &lt;li&gt;信息系统受到破坏后, 对公民, 法人和其他组织权益造成&lt;strong&gt;严重&lt;/strong&gt;损害, &lt;strong&gt;或者&lt;/strong&gt;对社会秩序和公共利益造成损害, 但不损害国家安全.
+&lt;strong&gt;第三极&lt;/strong&gt;: 强制安全保护级&lt;/li&gt;
+  &lt;li&gt;信息系统受到破坏后, 对社会秩序和公共利益造成&lt;strong&gt;严重&lt;/strong&gt;损害, &lt;strong&gt;或者&lt;/strong&gt;损害国家安全.
+第四级: 结构化保护级&lt;/li&gt;
+  &lt;li&gt;信息系统受到破坏后, 对社会秩序和公共利益造成&lt;strong&gt;特别严重&lt;/strong&gt;损害, &lt;strong&gt;或者严重&lt;/strong&gt;损害国家安全.
+第五级: 访问验证保护级&lt;/li&gt;
+  &lt;li&gt;信息系统受到破坏后, &lt;strong&gt;特别严重&lt;/strong&gt;损害国家安全.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;目的:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;对信息系统安全防护体系能力的分析和确认&lt;/li&gt;
+  &lt;li&gt;帮助运营单位发现存在的安全隐患,&lt;/li&gt;
+  &lt;li&gt;帮助运营单位认识不足, 及时改进, 有效提升其信息安全防护水平&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;说明:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;第一级和第五级基本上接触到的时候比较少
+    &lt;ol&gt;
+      &lt;li&gt;第一级可做可不做&lt;/li&gt;
+      &lt;li&gt;第五级是国家机密, 一般间谍才会碰到&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;第四级也很少碰到, 危害等级也很高了&lt;/li&gt;
+  &lt;li&gt;日常见到的基本都是第三极 (98%)
+    &lt;ol&gt;
+      &lt;li&gt;一般企事业单位&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;二级以前一般常见于区县级政府单位, 现在也基本上是做三级了.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;实际落地定级参考
+&lt;img src=&quot;http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-05-03-011941.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;等级保护项目过程&quot;&gt;等级保护项目过程&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-05-03-005546.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;一般来说过程分为 5 个步骤&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;系统定级
+    &lt;ol&gt;
+      &lt;li&gt;企业带着材料去公安局进行定级, 备案&lt;/li&gt;
+      &lt;li&gt;公安给出定级要求, 企业要回去按照要求进行等级相关安全整改工作的规划和实施&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;规划设计
+    &lt;ol&gt;
+      &lt;li&gt;企业要找专业咨询公司进行规划设计, 咨询公司给出建议和规划设计&lt;/li&gt;
+      &lt;li&gt;企业需要采购设备, 比如网络设备, 防火墙设备等 (硬件厂商可能会把规划服务免费卖给企业)&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;建设实施
+    &lt;ol&gt;
+      &lt;li&gt;一般由设备厂商/集成商进行实施&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;等级测评
+    &lt;ol&gt;
+      &lt;li&gt;每个地区/省份都有专业的测评机构, 比如四川有 5 家&lt;/li&gt;
+      &lt;li&gt;企业要额外花钱请测评人员来测评&lt;/li&gt;
+      &lt;li&gt;评测通过后要再到公安备案&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;运维管理
+    &lt;ol&gt;
+      &lt;li&gt;公安进行定期监控, 检查, 持续改进&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;系统废止&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;定级流程:
+&lt;img src=&quot;http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-05-03-011629.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;2.0 的流程&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;定级&lt;/li&gt;
+  &lt;li&gt;备案&lt;/li&gt;
+  &lt;li&gt;系统建设,整改&lt;/li&gt;
+  &lt;li&gt;开展等级评测&lt;/li&gt;
+  &lt;li&gt;信息安全监管部门定期开展监督检查&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;等保基本要求&quot;&gt;等保基本要求&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-05-03-013751.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-05-03-014528.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;基本要求
+    &lt;ul&gt;
+      &lt;li&gt;技术基本要求
+        &lt;ul&gt;
+          &lt;li&gt;物理安全&lt;/li&gt;
+          &lt;li&gt;网络安全&lt;/li&gt;
+          &lt;li&gt;主机系统安全&lt;/li&gt;
+          &lt;li&gt;应用安全&lt;/li&gt;
+          &lt;li&gt;数据安全&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;管理基本要求
+        &lt;ul&gt;
+          &lt;li&gt;安全管理机构&lt;/li&gt;
+          &lt;li&gt;安全管理制度&lt;/li&gt;
+          &lt;li&gt;人员安全管理&lt;/li&gt;
+          &lt;li&gt;系统建设管理&lt;/li&gt;
+          &lt;li&gt;系统运维管理&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-05-03-020213.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;比如:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;三级等保需要的指标是 73 类, 288 项&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;网络安全风险&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;img src=&quot;http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-05-03-020430.jpg&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;2.0 标准内容变化
+&lt;img src=&quot;http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-05-03-132116.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;等保安全产品解析&quot;&gt;等保安全产品解析&lt;/h2&gt;
+&lt;p&gt;等保二级和三级需要的安全产品&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;img src=&quot;http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-05-03-020539.jpg&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;等保涉及到的硬件 安全产品要求&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;img src=&quot;http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-05-03-064930.jpg&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;等保涉及到的服务/咨询产品&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;img src=&quot;http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-05-03-065210.jpg&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;往往都是买设备送服务&lt;/li&gt;
+  &lt;li&gt;最主要的服务
+    &lt;ul&gt;
+      &lt;li&gt;差距分析&lt;/li&gt;
+      &lt;li&gt;等保合规审计&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;等保管理要求和建设整改-三级为例子&quot;&gt;等保管理要求和建设整改 (三级为例子)&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-05-03-065636.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;安全管理制度&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;总体方针, 策略, 规范&lt;/li&gt;
+  &lt;li&gt;管理制度&lt;/li&gt;
+  &lt;li&gt;操作规程&lt;/li&gt;
+  &lt;li&gt;整改要点
+    &lt;ul&gt;
+      &lt;li&gt;形成信息安全管理制度体系, 统一发布, 定期修订等.
+&lt;img src=&quot;http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-05-03-070011.jpg&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;安全管理机构&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;从管理层到执行层到业务层的管理结构,&lt;/li&gt;
+  &lt;li&gt;整改要点
+    &lt;ul&gt;
+      &lt;li&gt;信息安全领导小组于职能部门, 专职安全员, 定期全面安全检查, 定期协调会议, 外部沟通与合作等
+&lt;img src=&quot;http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-05-03-070442.jpg&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;人员安全管理&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;内部和外部人员的安全管理&lt;/li&gt;
+  &lt;li&gt;整改要点
+    &lt;ul&gt;
+      &lt;li&gt;安全保密协议, 关键岗位人员管理, 针对不同岗位的培训计划, 外部人员访问管理
+&lt;img src=&quot;http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-05-03-070602.jpg&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;系统建设管理&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;分别从定级, 设计建设实施, 验收交付, 评测等方面考虑, 关注各项安全管理活动
+&lt;img src=&quot;http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-05-03-070714.jpg&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;系统运维管理&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;涉及日常管理, 变更管理, 制度化管理, 安全事件处置, 应急预案管理和安管中心
+&lt;img src=&quot;http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-05-03-070813.jpg&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;等保20-标准解读&quot;&gt;等保2.0 标准解读&lt;/h2&gt;
+
+&lt;p&gt;1.0 和 2.0 的对比&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;2.0 在技术部分的基础上做了蹄奥正, 做了一些合并和删减
+&lt;img src=&quot;http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-05-03-132637.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-05-03-132906.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-05-03-132957.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-05-03-134028.jpg&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;关键信息基础设施认定标准&quot;&gt;关键信息基础设施认定标准&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;关键信息系统和基础设施不能低于 三级
+    &lt;ul&gt;
+      &lt;li&gt;网站类
+        &lt;ul&gt;
+          &lt;li&gt;比如 lecake.com&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;平台类
+        &lt;ul&gt;
+          &lt;li&gt;比如阿里云&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;生产业务类
+        &lt;ul&gt;
+          &lt;li&gt;比如交警 12123.com
+&lt;img src=&quot;http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-05-04-042919.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-05-04-043228.jpg&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Sat, 22 Jul 2023 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/</link>
+        <guid isPermaLink="true">http://localhost:4000/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/</guid>
+        
+        
+        <category>MLPS</category>
+        
+        <category>PIPL</category>
+        
+      </item>
+    
+      <item>
+        <title>Metaverse research</title>
+        <description>&lt;p&gt;“元宇宙（Metaverse）是一个虚拟时空间的集合，由一系列的增强现实（AR）、虚拟现实（VR）和互联网（Internet）所组成。表示“超越宇宙”的概念：一个平行于现实世界运行的虚拟空间。从元宇宙的起源来理解，有迹可考的元宇宙的起源，大家比较公认的是1992年，科幻作家尼尔·斯蒂芬森在其小说《雪崩》里，最早使用了这个词。&lt;/p&gt;
+
+&lt;h1 id=&quot;元宇宙&quot;&gt;元宇宙&lt;/h1&gt;
+&lt;p&gt;[TOC]&lt;/p&gt;
+
+&lt;h2 id=&quot;元宇宙相关公司&quot;&gt;元宇宙相关公司&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;meta&lt;/li&gt;
+  &lt;li&gt;Every realm 元宇宙地产开发团队
+    &lt;ul&gt;
+      &lt;li&gt;推出了一个地产元宇宙项目 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;The Row&lt;/code&gt; , 是和纽约地产Alexander 团队合作的.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;主流--vr-设备&quot;&gt;主流  VR 设备&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Oculus Quest 2
+    &lt;ul&gt;
+      &lt;li&gt;Meta 推出的&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Pico Neo 3&lt;/li&gt;
+  &lt;li&gt;HTC VR&lt;/li&gt;
+  &lt;li&gt;Hololens
+    &lt;ul&gt;
+      &lt;li&gt;微软的&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Vision Pro
+    &lt;ul&gt;
+      &lt;li&gt;苹果的&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;元宇宙相关技术&quot;&gt;元宇宙相关技术&lt;/h2&gt;
+
+&lt;h3 id=&quot;可实现数字孪生的-3d-技术&quot;&gt;可实现数字孪生的 3D 技术&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Unity / Unreal
+    &lt;ul&gt;
+      &lt;li&gt;游戏引擎&lt;/li&gt;
+      &lt;li&gt;逼真度高, 效果佳&lt;/li&gt;
+      &lt;li&gt;资源消耗高&lt;/li&gt;
+      &lt;li&gt;也可以通过 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;像素流&lt;/code&gt; 技术, 编译出 web assembly 版本的项目在 web 端使用
+        &lt;ul&gt;
+          &lt;li&gt;技术复杂&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;webGL
+    &lt;ul&gt;
+      &lt;li&gt;web 3D 引擎&lt;/li&gt;
+      &lt;li&gt;逼真度低&lt;/li&gt;
+      &lt;li&gt;资源消耗低&lt;/li&gt;
+      &lt;li&gt;方便实现, 方便共享&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Blender
+    &lt;ul&gt;
+      &lt;li&gt;免费的 3D 模型创作工具&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;MAYA
+    &lt;ul&gt;
+      &lt;li&gt;3D MAX&lt;/li&gt;
+      &lt;li&gt;出了 VR 版本&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;A-Frame
+    &lt;ul&gt;
+      &lt;li&gt;用于构建 VR 的 Web 框架&lt;/li&gt;
+      &lt;li&gt;是基于 three.js 的组件框架&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;OpenVR
+    &lt;ul&gt;
+      &lt;li&gt;元域智辰的模拟体验应用 好像用的就是这个&lt;/li&gt;
+      &lt;li&gt;图表和游戏的 StreamVR 是密切相关的&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;VRTK
+    &lt;ul&gt;
+      &lt;li&gt;创建 VR 程序的工具包&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;文本生成-3d-模型技术-text-to-3d&quot;&gt;文本生成 3D 模型技术 (text-to-3D)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://research.nvidia.com/labs/dir/magic3d/&quot;&gt;英伟达的 Magic 3D&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dreamfusion3d.github.io&quot;&gt;谷歌的 DreamFusion&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://nv-tlabs.github.io/GET3D/&quot;&gt;英伟达的 Get 3D&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://opus.ai&quot;&gt;OPUS&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://unity.com/ai&quot;&gt;UNITY AI&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;数字孪生的创建流程&quot;&gt;数字孪生的创建流程&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;数字孪生建模流程
+    &lt;ul&gt;
+      &lt;li&gt;产品原型&lt;/li&gt;
+      &lt;li&gt;场景建模&lt;/li&gt;
+      &lt;li&gt;界面设计&lt;/li&gt;
+      &lt;li&gt;数据融合&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;元宇宙开发流程&quot;&gt;元宇宙开发流程&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;空间原画设计&lt;/li&gt;
+  &lt;li&gt;建模&lt;/li&gt;
+  &lt;li&gt;材质&lt;/li&gt;
+  &lt;li&gt;动画&lt;/li&gt;
+  &lt;li&gt;界面设计&lt;/li&gt;
+  &lt;li&gt;前端页面设计&lt;/li&gt;
+  &lt;li&gt;3D引擎开发&lt;/li&gt;
+  &lt;li&gt;服务器开发&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Fri, 21 Jul 2023 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/%E5%AD%A6%E4%B9%A0%E5%85%83%E5%AE%87%E5%AE%99/</link>
+        <guid isPermaLink="true">http://localhost:4000/%E5%AD%A6%E4%B9%A0%E5%85%83%E5%AE%87%E5%AE%99/</guid>
+        
+        
+        <category>Metaverse</category>
+        
+        <category>VR</category>
+        
+      </item>
+    
+      <item>
+        <title>Powerful things you can do with the Markdown editor</title>
+        <description>&lt;p&gt;There are lots of powerful things you can do with the Markdown editor. If you’ve gotten pretty comfortable with writing in Markdown, then you may enjoy some more advanced tips about the types of things you can do with Markdown!&lt;/p&gt;
+
+&lt;p&gt;As with the last post about the editor, you’ll want to be actually editing this post as you read it so that you can see all the Markdown code we’re using.&lt;/p&gt;
+
+&lt;h2 id=&quot;special-formatting&quot;&gt;Special formatting&lt;/h2&gt;
+
+&lt;p&gt;As well as bold and italics, you can also use some other special formatting in Markdown when the need arises, for example:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;del&gt;strike through&lt;/del&gt;&lt;/li&gt;
+  &lt;li&gt;==highlight==&lt;/li&gt;
+  &lt;li&gt;*escaped characters*&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;writing-code-blocks&quot;&gt;Writing code blocks&lt;/h2&gt;
+
+&lt;p&gt;There are two types of code elements which can be inserted in Markdown, the first is inline, and the other is block. Inline code is formatted by wrapping any word or words in back-ticks, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;like this&lt;/code&gt;. Larger snippets of code can be displayed across multiple lines using triple back ticks:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;.my-link {
+    text-decoration: underline;
+}
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;html&quot;&gt;HTML&lt;/h4&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ml-1 mr-1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;target=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;_blank&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;i&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fab fa-twitter&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;css&quot;&gt;CSS&lt;/h4&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nc&quot;&gt;.highlight&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.c&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#999988&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;font-style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;italic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.highlight&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.err&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#a61717&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#e3d2d2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;js&quot;&gt;JS&lt;/h4&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;// alertbar later&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scroll&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scrollTop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;280&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;.alertbar&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fadeIn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;.alertbar&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fadeOut&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;python&quot;&gt;Python&lt;/h4&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;ruby&quot;&gt;Ruby&lt;/h4&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;redcarpet&apos;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;markdown&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Redcarpet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Hello World!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;markdown&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;to_html&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;c&quot;&gt;C&lt;/h4&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/8.jpg&quot; alt=&quot;walking&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;reference-lists&quot;&gt;Reference lists&lt;/h2&gt;
+
+&lt;p&gt;The quick brown jumped over the lazy.&lt;/p&gt;
+
+&lt;p&gt;Another way to insert links in markdown is using reference lists. You might want to use this style of linking to cite reference material in a Wikipedia-style. All of the links are listed at the end of the document, so you can maintain full separation between content and its source or reference.&lt;/p&gt;
+
+&lt;h2 id=&quot;full-html&quot;&gt;Full HTML&lt;/h2&gt;
+
+&lt;p&gt;Perhaps the best part of Markdown is that you’re never limited to just Markdown. You can write HTML directly in the Markdown editor and it will just work as HTML usually does. No limits! Here’s a standard YouTube embed code as an example:&lt;/p&gt;
+
+&lt;p&gt;&lt;iframe style=&quot;width:100%;&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/Cniqsc9QfDo?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 12 Jun 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/powerful-things-markdown-editor/</link>
+        <guid isPermaLink="true">http://localhost:4000/powerful-things-markdown-editor/</guid>
+        
+        
+        <category>Jekyll</category>
+        
+        <category>tutorial</category>
+        
+      </item>
+    
+      <item>
+        <title>The first mass-produced book to deviate from a rectilinear format</title>
+        <description>&lt;p&gt;The first mass-produced book to deviate from a rectilinear format, at least in the United States, is thought to be this 1863 edition of Red Riding Hood, cut into the shape of the protagonist herself with the troublesome wolf curled at her feet. Produced by the Boston-based publisher Louis Prang, this is the first in their “Doll Series”, a set of five “die-cut” books, known also as shape books — the other titles being Robinson Crusoe, Goody Two-Shoes (also written by Red Riding Hood author Lydia Very), Cinderella, and King Winter.&lt;/p&gt;
+
+&lt;p&gt;An 1868 Prang catalogue would later claim that such “books in the shape of a regular paper Doll… originated with us”.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;It would seem the claim could also extend to die cut books in general, as we can’t find anything sooner, but do let us know in the comments if you have further light to shed on this! Such books are, of course, still popular in children’s publishing today, though the die cutting is not now limited to mere outlines, as evidenced in a beautiful 2014 version of the same Little Red Riding Hood story.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The die cut has also been employed in the non-juvenile sphere as well, a recent example being Jonathan Safran Foer’s ambitious Tree of Codes.&lt;/p&gt;
+
+&lt;p&gt;As for this particular rendition of Charles Perrault’s classic tale, the text and design is by Lydia Very (1823-1901), sister of Transcendentalist poet Jones Very. The gruesome ending of the original - which sees Little Red Riding Hood being gobbled up as well as her grandmother - is avoided here, the gore giving way to the less bloody aims of the morality tale, and the lesson that one should not disobey one’s mother.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 12 Jun 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/first-mass-produced/</link>
+        <guid isPermaLink="true">http://localhost:4000/first-mass-produced/</guid>
+        
+        
+        <category>Jekyll</category>
+        
+        <category>tutorial</category>
+        
+      </item>
+    
+      <item>
+        <title>Education must also train one for quick, resolute and effective thinking.</title>
+        <description>&lt;p&gt;There are lots of powerful things you can do with the Markdown editor&lt;/p&gt;
+
+&lt;p&gt;If you’ve gotten pretty comfortable with writing in Markdown, then you may enjoy some more advanced tips about the types of things you can do with Markdown!&lt;/p&gt;
+
+&lt;p&gt;As with the last post about the editor, you’ll want to be actually editing this post as you read it so that you can see all the Markdown code we’re using.&lt;/p&gt;
+
+&lt;h2 id=&quot;special-formatting&quot;&gt;Special formatting&lt;/h2&gt;
+
+&lt;p&gt;As well as bold and italics, you can also use some other special formatting in Markdown when the need arises, for example:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;del&gt;strike through&lt;/del&gt;&lt;/li&gt;
+  &lt;li&gt;==highlight==&lt;/li&gt;
+  &lt;li&gt;*escaped characters*&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;writing-code-blocks&quot;&gt;Writing code blocks&lt;/h2&gt;
+
+&lt;p&gt;There are two types of code elements which can be inserted in Markdown, the first is inline, and the other is block. Inline code is formatted by wrapping any word or words in back-ticks, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;like this&lt;/code&gt;. Larger snippets of code can be displayed across multiple lines using triple back ticks:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;.my-link {
+    text-decoration: underline;
+}
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If you want to get really fancy, you can even add syntax highlighting using Rouge.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/8.jpg&quot; alt=&quot;walking&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;reference-lists&quot;&gt;Reference lists&lt;/h2&gt;
+
+&lt;p&gt;The quick brown jumped over the lazy.&lt;/p&gt;
+
+&lt;p&gt;Another way to insert links in markdown is using reference lists. You might want to use this style of linking to cite reference material in a Wikipedia-style. All of the links are listed at the end of the document, so you can maintain full separation between content and its source or reference.&lt;/p&gt;
+
+&lt;h2 id=&quot;full-html&quot;&gt;Full HTML&lt;/h2&gt;
+
+&lt;p&gt;Perhaps the best part of Markdown is that you’re never limited to just Markdown. You can write HTML directly in the Markdown editor and it will just work as HTML usually does. No limits! Here’s a standard YouTube embed code as an example:&lt;/p&gt;
+
+&lt;p&gt;&lt;iframe style=&quot;width:100%;&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/Cniqsc9QfDo?rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 12 Jun 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/education/</link>
+        <guid isPermaLink="true">http://localhost:4000/education/</guid>
+        
+        
+        <category>Jekyll</category>
+        
+        <category>tutorial</category>
+        
+      </item>
+    
+      <item>
+        <title>Accumulated experience of social living</title>
+        <description>&lt;p&gt;The die cut has also been employed in the non-juvenile sphere as well, a recent example being Jonathan Safran Foer’s ambitious Tree of Codes.&lt;/p&gt;
+
+&lt;p&gt;As for this particular rendition of Charles Perrault’s classic tale, the text and design is by Lydia Very (1823-1901), sister of Transcendentalist poet Jones Very. The gruesome ending of the original - which sees Little Red Riding Hood being gobbled up as well as her grandmother - is avoided here, the gore giving way to the less bloody aims of the morality tale, and the lesson that one should not disobey one’s mother.&lt;/p&gt;
+
+&lt;p&gt;The first mass-produced book to deviate from a rectilinear format, at least in the United States, is thought to be this 1863 edition of Red Riding Hood, cut into the shape of the protagonist herself with the troublesome wolf curled at her feet. Produced by the Boston-based publisher Louis Prang, this is the first in their “Doll Series”, a set of five “die-cut” books, known also as shape books — the other titles being Robinson Crusoe, Goody Two-Shoes (also written by Red Riding Hood author Lydia Very), Cinderella, and King Winter.&lt;/p&gt;
+
+&lt;p&gt;An 1868 Prang catalogue would later claim that such “books in the shape of a regular paper Doll… originated with us”.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;It would seem the claim could also extend to die cut books in general, as we can’t find anything sooner, but do let us know in the comments if you have further light to shed on this! Such books are, of course, still popular in children’s publishing today, though the die cutting is not now limited to mere outlines, as evidenced in a beautiful 2014 version of the same Little Red Riding Hood story.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Tue, 12 Jun 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/acumulated-experience/</link>
+        <guid isPermaLink="true">http://localhost:4000/acumulated-experience/</guid>
+        
+        
+        <category>Jekyll</category>
+        
+        <category>tutorial</category>
+        
+      </item>
+    
+      <item>
+        <title>About Bundler</title>
+        <description>&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install bundler&lt;/code&gt; installs the bundler gem through RubyGems. You only need to install it once - not every time you create a new Jekyll project. Here are some additional details:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundler&lt;/code&gt; is a gem that manages other Ruby gems. It makes sure your gems and gem versions are compatible, and that you have all necessary dependencies each gem requires.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile.lock&lt;/code&gt; files inform &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Bundler&lt;/code&gt; about the gem requirements in your site. If your site doesn’t have these Gemfiles, you can omit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec&lt;/code&gt; and just &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;run jekyll serve&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;When you run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll serve&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Bundler&lt;/code&gt; uses the gems and versions as specified in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile.lock&lt;/code&gt; to ensure your Jekyll site builds with no compatibility or dependency conflicts.&lt;/p&gt;
+
+&lt;p&gt;For more information about how to use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Bundler&lt;/code&gt; in your Jekyll project, this tutorial should provide answers to the most common questions and explain how to get up and running quickly.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 12 May 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/about-bundler/</link>
+        <guid isPermaLink="true">http://localhost:4000/about-bundler/</guid>
+        
+        
+        <category>Jekyll</category>
+        
+      </item>
+    
+      <item>
+        <title>We all wait for summer</title>
+        <description>&lt;p&gt;As I engage in the so-called “bull sessions” around and about the school, I too often find that most college men have a misconception of the purpose of education. Most of the “brethren” think that education should equip them with the proper instruments of exploitation so that they can forever trample over the masses. Still others think that education should furnish them with noble ends rather than means to an end.&lt;/p&gt;
+
+&lt;p&gt;It seems to me that education has a two-fold function to perform in the life of man and in society: the one is utility and the other is culture. Education must enable a man to become more efficient, to achieve with increasing facility the ligitimate goals of his life.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 12 Jan 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/we-all-wait-for-summer/</link>
+        <guid isPermaLink="true">http://localhost:4000/we-all-wait-for-summer/</guid>
+        
+        
+        <category>Jekyll</category>
+        
+        <category>tutorial</category>
+        
+      </item>
+    
+      <item>
+        <title>Tree of Codes</title>
+        <description>&lt;p&gt;The first mass-produced book to deviate from a rectilinear format, at least in the United States, is thought to be this 1863 edition of Red Riding Hood, cut into the shape of the protagonist herself with the troublesome wolf curled at her feet. Produced by the Boston-based publisher Louis Prang, this is the first in their “Doll Series”, a set of five “die-cut” books, known also as shape books — the other titles being Robinson Crusoe, Goody Two-Shoes (also written by Red Riding Hood author Lydia Very), Cinderella, and King Winter.&lt;/p&gt;
+
+&lt;p&gt;As for this particular rendition of Charles Perrault’s classic tale, the text and design is by Lydia Very (1823-1901), sister of Transcendentalist poet Jones Very. The gruesome ending of the original — which sees Little Red Riding Hood being gobbled up as well as her grandmother — is avoided here, the gore giving way to the less bloody aims of the morality tale, and the lesson that one should not disobey one’s mother.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;It would seem the claim could also extend to die cut books in general, as we can’t find anything sooner, but do let us know in the comments if you have further light to shed on this! Such books are, of course, still popular in children’s publishing today, though the die cutting is not now limited to mere outlines, as evidenced in a beautiful 2014 version of the same Little Red Riding Hood story.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;An 1868 Prang catalogue would later claim that such “books in the shape of a regular paper Doll… originated with us”.&lt;/p&gt;
+
+&lt;p&gt;The die cut has also been employed in the non-juvenile sphere as well, a recent example being Jonathan Safran Foer’s ambitious Tree of Codes.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 12 Jan 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/tree-of-codes/</link>
+        <guid isPermaLink="true">http://localhost:4000/tree-of-codes/</guid>
+        
+        
+        <category>Jekyll</category>
+        
+        <category>tutorial</category>
+        
+      </item>
+    
+      <item>
+        <title>Red Riding Hood</title>
+        <description>&lt;p&gt;The first mass-produced book to deviate from a rectilinear format, at least in the United States, is thought to be this 1863 edition of Red Riding Hood, cut into the shape of the protagonist herself with the troublesome wolf curled at her feet. Produced by the Boston-based publisher Louis Prang, this is the first in their “Doll Series”, a set of five “die-cut” books, known also as shape books — the other titles being Robinson Crusoe, Goody Two-Shoes (also written by Red Riding Hood author Lydia Very), Cinderella, and King Winter.&lt;/p&gt;
+
+&lt;p&gt;An 1868 Prang catalogue would later claim that such “books in the shape of a regular paper Doll… originated with us”.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;It would seem the claim could also extend to die cut books in general, as we can’t find anything sooner, but do let us know in the comments if you have further light to shed on this! Such books are, of course, still popular in children’s publishing today, though the die cutting is not now limited to mere outlines, as evidenced in a beautiful 2014 version of the same Little Red Riding Hood story.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The die cut has also been employed in the non-juvenile sphere as well, a recent example being Jonathan Safran Foer’s ambitious Tree of Codes.&lt;/p&gt;
+
+&lt;p&gt;As for this particular rendition of Charles Perrault’s classic tale, the text and design is by Lydia Very (1823-1901), sister of Transcendentalist poet Jones Very. The gruesome ending of the original — which sees Little Red Riding Hood being gobbled up as well as her grandmother — is avoided here, the gore giving way to the less bloody aims of the morality tale, and the lesson that one should not disobey one’s mother.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 12 Jan 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/red-riding/</link>
+        <guid isPermaLink="true">http://localhost:4000/red-riding/</guid>
+        
+        
+        <category>Jekyll</category>
+        
+        <category>tutorial</category>
+        
+      </item>
+    
+  </channel>
+</rss>
