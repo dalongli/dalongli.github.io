@@ -7,8 +7,8 @@ var documents = [{
     }, {
     "id": 1,
     "url": "http://localhost:4000/about",
-    "title": "Mediumish Template for Jekyll",
-    "body": "This website is built with Jekyll and Mediumish template for Jekyll. It's for demonstration purposes, no real content can be found. Mediumish template for Jekyll is compatible with Github pages, in fact even this demo is created with Github Pages and hosted with Github.  Documentation: Please, read the docs here. Questions or bug reports?: Head over to our Github repository! Buy me a coffeeThank you for your support! Your donation helps me to maintain and improve Mediumish . Buy me a coffee Documentation"
+    "title": "About the author",
+    "body": "Dalong has many years experience in enterprise/digital applications architecture and operating skills based on Cloud. He helps enterprises leverage advanced technologies for digital transformation and innovation to achieve strategic goals. His key areas of industry expertise are Retail, Automotive, Energy, Pharmaceutical and Health Care. His major project experiences are: - Lead Watson for Oncology SaaS Product localization program in China with AI treatment plan integration in more than 100 hospitals - Lead Digital innovations with AI, robotic, Auto Driving, Sustainability and carbon neutral solutions on cloud - Lead development of large-scale e-commerce websites, mobile applications and WeChat ecosystems, managing more than 100 IT team members with Agile/ Scrum methodology and tools - Retail industry customer experience improvement, CRM &amp; Loyalty Program product design and development - Client engagement, application architecture design and migration on Hybrid/Public Cloud.  Documentation: Contact the author dalong_co@hotmail. com. Questions or bug reports?: Head over to our Github repository! Buy me a coffeeThank you for your support! Your donation helps me to maintain and improve Dalong. work . "
     }, {
     "id": 2,
     "url": "http://localhost:4000/categories",
