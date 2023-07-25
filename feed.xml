@@ -5,8 +5,8 @@
     <description>Record the bits and pieces of the technology big bang.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 25 Jul 2023 17:09:26 +0800</pubDate>
-    <lastBuildDate>Tue, 25 Jul 2023 17:09:26 +0800</lastBuildDate>
+    <pubDate>Tue, 25 Jul 2023 17:21:50 +0800</pubDate>
+    <lastBuildDate>Tue, 25 Jul 2023 17:21:50 +0800</lastBuildDate>
     <generator>Jekyll v3.9.3</generator>
     
       <item>
@@ -3742,6 +3742,8 @@ Service requests and their fulfillment should be &lt;strong&gt;standardized&lt;/
         
         
         <category>ITIL</category>
+        
+        <category>IT</category>
         
       </item>
     
@@ -11527,6 +11529,2383 @@ if __name__ == &quot;__main__&quot;:
         <category>Python</category>
         
         <category>LLM</category>
+        
+      </item>
+    
+      <item>
+        <title>Use ChatGPT in Python</title>
+        <description>&lt;p&gt;TOGAF® 基本上是一套清晰的组织发展规则和实践，旨在帮助组织。它指导企业如何在单一战略中创建、解释、分析和利用不同的要素。该框架还使用了明确定义的术语。这样可以简化部门之间的沟通，并大大减少浪费错误的可能性。就让我带领你揭开他的面纱。&lt;/p&gt;
+
+&lt;h1 id=&quot;togaf&quot;&gt;TOGAF&lt;/h1&gt;
+&lt;p&gt;[TOC]&lt;/p&gt;
+
+&lt;h2 id=&quot;资源&quot;&gt;资源&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://pubs.opengroup.org/architecture/togaf9-doc/arch/&quot;&gt;TOGIF 9.2标准&lt;/a&gt;
+&lt;a href=&quot;https://publications.opengroup.org/togaf-library?_ga=2.13000052.237257023.1685593249-50990242.1685593249&quot;&gt;Togaf library&lt;/a&gt;
+&lt;a href=&quot;https://publications.opengroup.org/more-categories/templates/i093&quot;&gt;sample deliverables&lt;/a&gt;
+&lt;a href=&quot;https://www.opengrooup.org&quot;&gt;TOGAF 官网&lt;/a&gt;
+&lt;a href=&quot;https://pubs.opengroup.org/architecture/togaf92-doc/arch/&quot;&gt;在线的 Togaf 9.2 标准文档&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;题库&quot;&gt;题库&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.techbolo.com/questions/index.php/942419/lang-en&quot;&gt;1&lt;/a&gt;
+&lt;a href=&quot;https://www.webagesolutions.com/wp-content/uploads/2020/09/TOGAF-Part-1-Practice-Test.pdf&quot;&gt;2&lt;/a&gt;
+&lt;a href=&quot;https://www.udemy.com/course/5-practice-exams-92-foundation-part-1-og0-091/&quot;&gt;5 套练习题, 需要 16 美元, 已购买&lt;/a&gt;
+&lt;a href=&quot;https://download.csdn.net/download/guanggonglangzi/10970291&quot;&gt;CSDN 上的一些题, 要付费&lt;/a&gt;
+&lt;a href=&quot;https://www.examtopics.com/exams/the-open-group/og0-091/view/&quot;&gt;在线的 part1 307 道题&lt;/a&gt;
+&lt;a href=&quot;https://www.examtopics.com/exams/the-open-group/og0-092/&quot;&gt;在线的 part2 80 道题&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;考试入口&quot;&gt;考试入口&lt;/h2&gt;
+&lt;p&gt;https://www.opengroup.org/certifications/take-exam
+https://home.pearsonvue.com/theopengroup
+&lt;a href=&quot;https://www.opengroup.org/certifications/online-proctored-exams&quot;&gt;在线考试介绍&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;重要的英文单词&quot;&gt;重要的英文单词&lt;/h2&gt;
+&lt;p&gt;acronym - 首字母缩写&lt;/p&gt;
+
+&lt;h2 id=&quot;学习技巧&quot;&gt;学习技巧&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;跟着视频学一章, 然后回头去手册对应章节讲的内容.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;架构概念&quot;&gt;架构概念&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;一个企业架构的架构框架&lt;/li&gt;
+  &lt;li&gt;框架: 方法工具和定义&lt;/li&gt;
+  &lt;li&gt;ADM Architecture Development Method (ADM)&lt;/li&gt;
+  &lt;li&gt;架构的ISO/IEC/IEEE 42010: 2011定义
+    &lt;ul&gt;
+      &lt;li&gt;ISO/IEC/IEEE 42010: 2011
+“The fundamental concepts or properties of a system in its environment embodied in its elements, relationships, and in the principles of its design and evolution.”&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;架构的 TOGAF 定义
+    &lt;ul&gt;
+      &lt;li&gt;“The structure of components, their inter-relationships, and the principles and guidelines governing their design and evolution over time.”&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;架构的 大白话 解释
+    &lt;ul&gt;
+      &lt;li&gt;一个系统的多个部分和他们的关系, 以及他们的治理原则, 设计和进化&lt;/li&gt;
+      &lt;li&gt;TOGAF 是一个架构框架&lt;/li&gt;
+      &lt;li&gt;我们通过架构框架来指导我们进行架构工作&lt;/li&gt;
+      &lt;li&gt;工作中要用 togaf , 还需要购买 togaf 的 license&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;togag-认证-与-考试&quot;&gt;TOGAG 认证 与 考试&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;有两个级别的考试&lt;/li&gt;
+  &lt;li&gt;Level 1 and Level 2 Or Part 1 and Part 2
+    &lt;ul&gt;
+      &lt;li&gt;level 1 过了可以拿到 TOGAF Foundation 认证&lt;/li&gt;
+      &lt;li&gt;level 1 和 level 2 都过了, 才能拿到完整的 TOGAF 认证&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;TOGAF Part 1
+  ● A test of core knowledge of the standard
+      标准的核心概念
+  ● A multiple-choice test, only 1 correct answer 
+      多选题, 一个正确答案
+  ● 40 questions over 60 minutes 
+      40 道题 60分钟的考试
+  ● Need 55% to pass, or 22 correct out of 40
+      答对 22 道题算过
+  ● Each correct answer is worth 1 point
+      每个题算一分
+    &lt;ul&gt;
+      &lt;li&gt;中英文都有&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;TOGAF Part 2
+  ● A test of how you apply the TOGAF Standard
+      考灵活运用
+  ● A scenario based test, scored using gradient scoring
+      基于场景的测试
+  ● Open book exam
+      开卷考试, 可以访问考试提供的标准信息
+  ● 8 questions over 90 minutes
+      90 分钟, 8 个问题
+  ● Need 60% to pass
+  ● Must have passed Part 1 to take Part 2
+      考过了 part1 才能考 part2&lt;/li&gt;
+  &lt;li&gt;可以两个考试合并到一个, 一起考, 费用如下
+    &lt;ul&gt;
+      &lt;li&gt;part1 or part2 - 考试费用 US$360 per test&lt;/li&gt;
+      &lt;li&gt;part1 + part2 一起考 - 考试费用 US$550 for the combined test&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;考试语言 中英文&lt;/li&gt;
+  &lt;li&gt;考试版本, 还是以 9.2 为考试基础, togaf 10 还没有考试&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;togaf-92-的标准&quot;&gt;togaf 9.2 的标准&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;标准分成 6 个部分
+    &lt;ol&gt;
+      &lt;li&gt;Introduction
+        &lt;ul&gt;
+          &lt;li&gt;介绍核心概念和定义&lt;/li&gt;
+          &lt;li&gt;学习的时候要对照中英文手册, 确保概念理解&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;ADM
+        &lt;ul&gt;
+          &lt;li&gt;架构开发方法&lt;/li&gt;
+          &lt;li&gt;是 togaf 的核心&lt;/li&gt;
+          &lt;li&gt;架构师做架构的流程和迭代方式&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Guidelines and techniques
+        &lt;ul&gt;
+          &lt;li&gt;指导方针和技术&lt;/li&gt;
+          &lt;li&gt;应用架构的标准一些材料, 把这些材料为我们自己的场景进行定制化&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Architect content framework
+        &lt;ul&gt;
+          &lt;li&gt;结构化的原始模型, 为最终的架构交付物作为原型和基础&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Enterprise Continuum
+        &lt;ul&gt;
+          &lt;li&gt;企业连续性&lt;/li&gt;
+          &lt;li&gt;是一个目录编辑模型&lt;/li&gt;
+          &lt;li&gt;当我们把架构设计放到 架构的 repository中, 进行分类管理和版本管理?&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Architecture Capability Framework
+        &lt;ul&gt;
+          &lt;li&gt;架构能力框架&lt;/li&gt;
+          &lt;li&gt;为了定义一个企业架构, 我们需要告诉大家这个架构的能力&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;togaf library
+    &lt;ul&gt;
+      &lt;li&gt;是一个图书馆, 或者叫做材料库&lt;/li&gt;
+      &lt;li&gt;当我们做架构项目, 可以在 library 中找到一些文档材料&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;生成版本的版本号
+    &lt;ul&gt;
+      &lt;li&gt;0.1 表示 draft 的第一个版本&lt;/li&gt;
+      &lt;li&gt;1.0 表示已经被 同意和签字了的版本&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;part-1-togaf-介绍---核心和基础概念&quot;&gt;Part 1 togaf 介绍 - 核心和基础概念&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://pubs.opengroup.org/architecture/togaf9-doc/arch/&quot;&gt;官网的togaf 9.2 标准&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;7 个核心概念
+  ● The definition of enterprise
+  ● The architecture domains, or BDAT
+  ● The architecture development method, or ADM
+  ● Deliverables, artifacts and building blocks
+  ● The enterprise continuum
+  ● The architecture repository
+  ● And, defining architecture capability&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;企业的定义&quot;&gt;企业的定义&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;“Highest level of description for an organization”
+    &lt;ul&gt;
+      &lt;li&gt;可能是一个 组织, 或者是多个组织的组合
+        &lt;ul&gt;
+          &lt;li&gt;比如麦当劳和他们的生态伙伴,也可以理解为一个大的企业&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;架构师的工作范围
+    &lt;ul&gt;
+      &lt;li&gt;可能是企业的某个部分的架构设计, 也可能是负责企业和生态的所有架构&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;四个架构域-bdat&quot;&gt;四个架构域 BDAT&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;企业架构可以分四层
+    &lt;ul&gt;
+      &lt;li&gt;Business, Data, Application, Technology&lt;/li&gt;
+      &lt;li&gt;Business Domain 是一层, 主要是业务架构&lt;/li&gt;
+      &lt;li&gt;DAT 是剩下的一大层, 是技术架构&lt;/li&gt;
+      &lt;li&gt;技术架构再分层 Data, Applicaiton, Technology&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Business Domain
+    &lt;ul&gt;
+      &lt;li&gt;由企业执行层来决定的业务单元&lt;/li&gt;
+      &lt;li&gt;定义现在和未来的 business capability&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Data Domain
+    &lt;ul&gt;
+      &lt;li&gt;数据域处理逻辑/物理数据资产&lt;/li&gt;
+      &lt;li&gt;处理现在和未来企业数据的主要类型和资源的交互与结构&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Application Domain
+    &lt;ul&gt;
+      &lt;li&gt;处理每个应用的开发和部署的方式&lt;/li&gt;
+      &lt;li&gt;每个应用和核心业务流程的关系&lt;/li&gt;
+      &lt;li&gt;处理现在和未来一组应用提供的业务功能的交互与结构的能力&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Technology Domain
+    &lt;ul&gt;
+      &lt;li&gt;技术域包括了计算, 网络, 中间件, 第三方应用等&lt;/li&gt;
+      &lt;li&gt;是业务的支撑系统&lt;/li&gt;
+      &lt;li&gt;处理现在和未来技术服务与技术内容的交互与结构&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;adm-架构开发方法&quot;&gt;ADM 架构开发方法&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;是 togaf 的核心&lt;/li&gt;
+  &lt;li&gt;adm 是定义企业架构的流程&lt;/li&gt;
+  &lt;li&gt;可以被测试, 可以重复使用&lt;/li&gt;
+  &lt;li&gt;分成几个阶段
+    &lt;ul&gt;
+      &lt;li&gt;Preliminary Phase
+        &lt;ul&gt;
+          &lt;li&gt;发布基本的 principles, setup 架构能力, 对任务进行指导, 让决策更容易&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;ADM cycle
+        &lt;ul&gt;
+          &lt;li&gt;是一个循环, 包括了 8 个阶段, 从 A 到 H&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;A:
+        &lt;ul&gt;
+          &lt;li&gt;Vision&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;B, C, D:
+        &lt;ul&gt;
+          &lt;li&gt;定义架构&lt;/li&gt;
+          &lt;li&gt;定义 BDAT 四个域&lt;/li&gt;
+          &lt;li&gt;需要管理层 Sign off&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;E, F:
+        &lt;ul&gt;
+          &lt;li&gt;定义工作计划&lt;/li&gt;
+          &lt;li&gt;定义实现架构的流程&lt;/li&gt;
+          &lt;li&gt;一系列的 transition architectures&lt;/li&gt;
+          &lt;li&gt;帮助我们从目前的阶段到未来要达到的阶段&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;G:
+        &lt;ul&gt;
+          &lt;li&gt;实施&lt;/li&gt;
+          &lt;li&gt;和开发团队一起实现这个架构&lt;/li&gt;
+          &lt;li&gt;发布架构合同 ?&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;H:
+        &lt;ul&gt;
+          &lt;li&gt;变化管理&lt;/li&gt;
+          &lt;li&gt;架构实现之后的变化管理&lt;/li&gt;
+          &lt;li&gt;变化需要再走一遍这个 ADM cycle&lt;/li&gt;
+          &lt;li&gt;变化包括新的业务需求,&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Requriement Management Phase
+    &lt;ul&gt;
+      &lt;li&gt;是上面的多个阶段中心的一个阶段&lt;/li&gt;
+      &lt;li&gt;对需求进行管理的流程&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;一共 10 个 phases
+    &lt;ul&gt;
+      &lt;li&gt;有 Preliminary Phase 和 A-H 的 cycle, 中间还有一个 requirement management phase&lt;/li&gt;
+      &lt;li&gt;每个阶段都有自己对应的 Objective, Inpute, Steps, Outputs (目标, 输入, 步骤, 输出)
+        &lt;ul&gt;
+          &lt;li&gt;输入来自 repository 中的现有资产, 或者自己创建新的资产, 需要和stakeholders 进行合作
+&lt;img src=&quot;http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-06-02-141047.jpg&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;phases 可以被暂停, 可以返回和修改一个过去的phase&lt;/li&gt;
+      &lt;li&gt;Iteration 是 cycle 中的某些流程可以进行循环的迭代
+&lt;img src=&quot;http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-06-02-145228.jpg&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;ADM 可以按照我们的需要就行定制和调整&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;part-2-adm&quot;&gt;Part 2 ADM&lt;/h2&gt;
+
+&lt;h3 id=&quot;preliminary-phase-预备阶段&quot;&gt;Preliminary Phase 预备阶段&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;描述打造架构能力所需的准备工作和启 动工作，包括客制化 TOGAF 框架和定 义架构原则。&lt;/li&gt;
+  &lt;li&gt;定义组织&lt;strong&gt;期望&lt;/strong&gt;的架构能力的级别, 包含了架构的 principles&lt;/li&gt;
+  &lt;li&gt;Where, what, why, who, and how we do architecture&lt;/li&gt;
+  &lt;li&gt;包括 收集和发布 架构能力&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Business imperative (业务的势在必行) 会在 预备阶段, scoping 企业架构工作的时候, 驱动 需求和性能 metrics&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Objectives
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Determine the Architecture &lt;strong&gt;Capability&lt;/strong&gt; desired by the organization:&lt;/td&gt;
+              &lt;td&gt;组织期待的决定的架构能力&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Review the organizational context for conducting Enterprise Architecture&lt;/li&gt;
+          &lt;li&gt;Identify and scope the elements of the enterprise organizations affected by the Architecture Capability&lt;/li&gt;
+          &lt;li&gt;Identify the established frameworks, methods, and processes that intersect with the Architecture Capability&lt;/li&gt;
+          &lt;li&gt;Establish Capability Maturity target&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Establish the Architecture Capability:&lt;/td&gt;
+              &lt;td&gt;发布架构能力&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Define and establish the Organizational Model for Enterprise Architecture&lt;/li&gt;
+          &lt;li&gt;Define and establish the detailed process and resources for Architecture Governance&lt;/li&gt;
+          &lt;li&gt;Select and implement tools that support the Architecture Capability&lt;/li&gt;
+          &lt;li&gt;Define the Architecture &lt;strong&gt;Principles&lt;/strong&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Preliminary phase 的输入
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;The TOGAF Library&lt;/td&gt;
+              &lt;td&gt;togaf 官方的图书馆&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Other architecture frameworks&lt;/td&gt;
+              &lt;td&gt;其他架构框架, 比如 PMP, ITIL&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Board strategies and board business plans, business strategy, IT strategy,business principles, business goals, and business drivers&lt;/td&gt;
+              &lt;td&gt;公司的战略, 原则, 商业目标, 驱动力等&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Major frameworks operating in the business (e.g. SCRUM)&lt;/td&gt;
+              &lt;td&gt;业务的运营框架, 比如敏捷 scrume&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Governance and legal frameworks, including Architecture Governance strategy&lt;/td&gt;
+              &lt;td&gt;公司的治理和法律框架, 比如架构治理&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Architecture capability&lt;/td&gt;
+              &lt;td&gt;架构能力&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Partnership and contract agreements&lt;/td&gt;
+              &lt;td&gt;合作伙伴关系和合同&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Existing documents relating to architecture capability&lt;/td&gt;
+              &lt;td&gt;关于架构能力的现有文档&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Organizational Model for Enterprise Architecture&lt;/td&gt;
+              &lt;td&gt;企业架构的组织模型&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Existing Architecture Framework&lt;/td&gt;
+              &lt;td&gt;现有的架构框架&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Preliminary Phase 的步骤 (不是 part 1 的考试范围, 是 part2 的考试范围)
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Scope the enterprise organizations impacted&lt;/td&gt;
+              &lt;td&gt;划定架构对企业组织的影响&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Confirm governance and support frameworks&lt;/td&gt;
+              &lt;td&gt;确认治理和支持的框架&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Define and establish architecture team&lt;/td&gt;
+              &lt;td&gt;定义和建立架构团队&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Identify and establish architecture principles&lt;/td&gt;
+              &lt;td&gt;定义和建立架构原则&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Tailor TOGAF and other frameworks&lt;/td&gt;
+              &lt;td&gt;量身定制 Togaf 和其他框架&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Implement architecture tools&lt;/td&gt;
+              &lt;td&gt;使用架构工具&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Outputs from Preliminary Phase
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Organizational Model for Enterprise Architecture&lt;/td&gt;
+              &lt;td&gt;组织模型&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Tailored Architecture Framework&lt;/td&gt;
+              &lt;td&gt;量身定制的 架构框架&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Initial Architecture Repository&lt;/td&gt;
+              &lt;td&gt;架构 repository&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Business principles, business goals, and business drivers&lt;/td&gt;
+              &lt;td&gt;业务目标, 原则, 驱动因素&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Request for Architecture Work (optional)&lt;/td&gt;
+              &lt;td&gt;架构需求&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Architecture Governance Framework&lt;/td&gt;
+              &lt;td&gt;架构治理框架&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Artifacts Produced
+    &lt;ol&gt;
+      &lt;li&gt;Principles catalog&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;a---vision-架构愿景&quot;&gt;A - Vision 架构愿景&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;“A succinct description of the Target Architecture that describes its business value and the changes to the enterprise that will result from its successful deployment. It serves as an aspirational vision and a boundary for detailed architecture development.”&lt;/li&gt;
+  &lt;li&gt;描述架构搭建的初始阶段;包括定义架构开发举措的范围信息、识别利益攸关者、确立架构愿景、和获得可启动开发架构的许可。&lt;/li&gt;
+  &lt;li&gt;Vision 中的输入大部分是 preliminary phase 的输出&lt;/li&gt;
+  &lt;li&gt;考试经常会被考到: 下面哪个阶段有 xxx activity 发生. 答案是 phase A, phase B, …&lt;/li&gt;
+  &lt;li&gt;phase A 的目的:
+    &lt;ul&gt;
+      &lt;li&gt;开发一个 high-level 的, 可以交付的, aspirational(有抱负的), 业务价值的 愿景&lt;/li&gt;
+      &lt;li&gt;获取架构 SOW 的 approval&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Inputs to Phase A
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Architecture reference materials&lt;/td&gt;
+              &lt;td&gt;架构参考材料&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Request for Architecture Work&lt;/td&gt;
+              &lt;td&gt;架构需求&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Business principles, business goals, and business drivers&lt;/td&gt;
+              &lt;td&gt;业务目标, 原则, 驱动因素&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Organizational Model for Enterprise Architecture&lt;/td&gt;
+              &lt;td&gt;企业架构的组织模型&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Tailored Architecture Framework&lt;/td&gt;
+              &lt;td&gt;量身定制的架构框架&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Populated Architecture Repository&lt;/td&gt;
+              &lt;td&gt;放架构文档的 repository&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Steps to Phase A  (不是 part 1 的考试范围, 是 part2 的考试范围)
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Establish architecture project&lt;/td&gt;
+              &lt;td&gt;架构项目立项&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Identify stakeholders, concerns and business requirements&lt;/td&gt;
+              &lt;td&gt;识别 Stakeholders, 业务需求 和 担忧的地方&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Confirm business goals, drivers and constraints&lt;/td&gt;
+              &lt;td&gt;确定业务目标, 驱动力和限制&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Evaluate capabilities (updated for TOGAF 9.2)&lt;/td&gt;
+              &lt;td&gt;验证能力&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Assess readiness for transformation&lt;/td&gt;
+              &lt;td&gt;评估转型的准备程度 有的公司比较容易接受新的变化, 有的比较难, 如果太难, 就多分几步&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Define scope&lt;/td&gt;
+              &lt;td&gt;定义范围&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Confirm architecture principles, including business principles&lt;/td&gt;
+              &lt;td&gt;确认架构原则, 包括业务原则&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Develop architecture vision&lt;/td&gt;
+              &lt;td&gt;开发架构 vision , 比如&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Define the target architecture value and KPIs&lt;/td&gt;
+              &lt;td&gt;定义目标架构价值和 KPIs&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Identify transformation risks and mitigation activities&lt;/td&gt;
+              &lt;td&gt;定义转型风险和 降低风险的活动&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Develop Statement of Architecture Work, secure approval&lt;/td&gt;
+              &lt;td&gt;开发 架构 SOW, 获得批准&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Outputs from Phase A
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Approved Statement of Architecture Work&lt;/td&gt;
+              &lt;td&gt;批准的 架构 SOW&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Refined statements of business principles, goals and drivers&lt;/td&gt;
+              &lt;td&gt;优化过的 业务原则, 目标和驱动力&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Architecture principles&lt;/td&gt;
+              &lt;td&gt;架构原则&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Capability assessment&lt;/td&gt;
+              &lt;td&gt;能力评估&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Tailored architecture framework&lt;/td&gt;
+              &lt;td&gt;定制的架构框架&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Architecture vision&lt;/td&gt;
+              &lt;td&gt;架构 vision&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Draft architecture definition document (version 0.1 of all baseline and target BDAT documents)&lt;/td&gt;
+              &lt;td&gt;起草架构定义文档&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Communications plan&lt;/td&gt;
+              &lt;td&gt;沟通计划&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Additional content in the Architecture Repository&lt;/td&gt;
+              &lt;td&gt;额外的内容放在 架构 repository 中&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Artifacts Produced
+  ● Matrices: Stakeholder map matrix | 干系人地图
+  ● Diagrams: Business model diagram, Business capability map, Value stream map, Value chain diagram, Solution concept diagram | 业务模型图, 业务能力图, 价值流图, 价值链图, 方案概念图&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;b---业务架构&quot;&gt;B - 业务架构&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;A - Vison 定义了 high-level 的 愿景, 那么B 及时定义如何达到这个愿景&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;Business Architecture 是用来定义 未来要达到的业务架构
+    &lt;ul&gt;
+      &lt;li&gt;要先了解目前的业务架构&lt;/li&gt;
+      &lt;li&gt;再设计未来的目标业务架构&lt;/li&gt;
+      &lt;li&gt;定义 一个 填补 gap 的 架构 roadmap, 和相应的 work items&lt;/li&gt;
+      &lt;li&gt;需要基于A 中定义的 vision&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Preliminary 和 A 的输出作为 B 的输入&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Inputs to Phase B
+    &lt;ol&gt;
+      &lt;li&gt;External reference materials&lt;/li&gt;
+      &lt;li&gt;Request for Architecture Work (optional) (Preliminary Phase)&lt;/li&gt;
+      &lt;li&gt;Business principles, goals, and drivers (Phase A)&lt;/li&gt;
+      &lt;li&gt;Capability assessment (Phase A)&lt;/li&gt;
+      &lt;li&gt;Communications plan (Phase A)&lt;/li&gt;
+      &lt;li&gt;Organization Model for Enterprise Architecture (Prelim Phase)&lt;/li&gt;
+      &lt;li&gt;Tailored Architecture Framework (Prelim Phase)&lt;/li&gt;
+      &lt;li&gt;Approved Statement of Architecture Work (Phase A)&lt;/li&gt;
+      &lt;li&gt;Architecture principles (Phase A)&lt;/li&gt;
+      &lt;li&gt;Enterprise continuum&lt;/li&gt;
+      &lt;li&gt;Architecture Repository&lt;/li&gt;
+      &lt;li&gt;Architecture vision (Phase A)&lt;/li&gt;
+      &lt;li&gt;Draft architecture definition document (version 0.1 of all baseline and target BDAT documents) (Phase A)&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Steps for Phase B (不是 part 1 的考试范围, 是 part2 的考试范围)
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Select reference models, viewpoints, and tools&lt;/td&gt;
+              &lt;td&gt;参考的模型, 观点和工具&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Develop baseline business architecture description&lt;/td&gt;
+              &lt;td&gt;对当前的/现有的 业务架构进行描述&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Develop target business architecture description&lt;/td&gt;
+              &lt;td&gt;对未来的业务架构进行描述&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Perform gap analysis&lt;/td&gt;
+              &lt;td&gt;gap 分析&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Define candidate roadmap components&lt;/td&gt;
+              &lt;td&gt;定义 roadmap 和其中的候选步骤&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Resolve impacts across the architecture landscape&lt;/td&gt;
+              &lt;td&gt;实现 gap 过程中的一些影响&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Conduct formal stakeholder review&lt;/td&gt;
+              &lt;td&gt;让 stakeholder review 并认可&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Finalize business architecture&lt;/td&gt;
+              &lt;td&gt;敲定 业务架构&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Create architecture definition document&lt;/td&gt;
+              &lt;td&gt;创建架构定义文档&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Outputs from Phase B
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Refined Phase A deliverables&lt;/td&gt;
+              &lt;td&gt;对 A 中的交付物进行修正&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Draft architecture definition document&lt;/td&gt;
+              &lt;td&gt;起草的架构定义文档&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td&gt;a. Baseline business architecture, v1.0 (detailed)&lt;/td&gt;
+              &lt;td&gt;当前业务架构&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td&gt;b. Target business architecture, v1.0 (detailed)&lt;/td&gt;
+              &lt;td&gt;未来目标的业务架构&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Draft architecture requirements specification – gap analysis&lt;/td&gt;
+              &lt;td&gt;起草的架构需求文档&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Business architecture components of an architecture roadmap&lt;/td&gt;
+              &lt;td&gt;实现业务架构的 roadmap 和 内容&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Artifacts Produced
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Catalogs: Value Stream catalog, Business Capabilities catalog, Value Stream Stages catalog, Organization/actor catalog, Driver/goal/objective catalog, role catalog, business service/function catalog, location catalog, process/event/control/product catalog, contract/measure catalog&lt;/td&gt;
+              &lt;td&gt;一堆目录&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Matrices: Value Stream/Capability matrix, Strategy/Capability matrix, Capability/Organization matrix, Business interaction matrix, actor/role matrix&lt;/td&gt;
+              &lt;td&gt;一堆二维表格/矩阵&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Diagrams: Business Model diagram, Business Capability Map, Value Stream Map, Organization Map, Business footprint diagram, business service/information diagram, function decomposition diagram, product lifecycle diagram, goal/objective/service diagram, business use-case diagram, organization decomposition diagram, process flow diagram,&lt;/td&gt;
+              &lt;td&gt;一堆图形&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;c---信息系统架构&quot;&gt;C - 信息系统架构&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Information System Arcuitecture 包含了 Data 和 Application, 是 BDAT 中的 &lt;strong&gt;data 和 application&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Data
+    &lt;ul&gt;
+      &lt;li&gt;目的:
+        &lt;ul&gt;
+          &lt;li&gt;开发想要的数据架构&lt;/li&gt;
+          &lt;li&gt;识别要填补进 gap 的 和数据架构相关的 roadmap items&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;数据架构的输入包含了 preliminary 阶段, Vison 阶段, 业务架构阶段的输出&lt;/li&gt;
+      &lt;li&gt;Inputs to Phase C, Data Architecture
+        &lt;ol&gt;
+          &lt;li&gt;External reference materials&lt;/li&gt;
+          &lt;li&gt;Request for Architecture Work (optional) (Preliminary Phase)&lt;/li&gt;
+          &lt;li&gt;Capability assessment (Phase A)&lt;/li&gt;
+          &lt;li&gt;Communications plan (Phase A)&lt;/li&gt;
+          &lt;li&gt;Organization Model for Enterprise Architecture (Prelim Phase)&lt;/li&gt;
+          &lt;li&gt;Tailored Architecture Framework (Prelim Phase)&lt;/li&gt;
+          &lt;li&gt;Data principles (TOGAF Specification Chapter 20)&lt;/li&gt;
+          &lt;li&gt;Approved Statement of Architecture Work (Phase A)&lt;/li&gt;
+          &lt;li&gt;Architecture vision (Phase A)&lt;/li&gt;
+          &lt;li&gt;Architecture Repository&lt;/li&gt;
+          &lt;li&gt;Draft architecture documents and draft requirements (Phase B)&lt;/li&gt;
+          &lt;li&gt;Business related architecture roadmap (Phase B)&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Steps for Phase C, Data Architecture (不是 part 1 的考试范围, 是 part2 的考试范围)
+        &lt;ol&gt;
+          &lt;li&gt;Select reference models, viewpoints, and tools&lt;/li&gt;
+          &lt;li&gt;
+            &lt;table&gt;
+              &lt;tbody&gt;
+                &lt;tr&gt;
+                  &lt;td&gt;Develop baseline data architecture description&lt;/td&gt;
+                  &lt;td&gt;开发数据架构的当前的基准描述&lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/tbody&gt;
+            &lt;/table&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;table&gt;
+              &lt;tbody&gt;
+                &lt;tr&gt;
+                  &lt;td&gt;Develop target data architecture description&lt;/td&gt;
+                  &lt;td&gt;开发未来目标的数据架构描述&lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/tbody&gt;
+            &lt;/table&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;table&gt;
+              &lt;tbody&gt;
+                &lt;tr&gt;
+                  &lt;td&gt;Perform gap analysis&lt;/td&gt;
+                  &lt;td&gt;分析 gap&lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/tbody&gt;
+            &lt;/table&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;table&gt;
+              &lt;tbody&gt;
+                &lt;tr&gt;
+                  &lt;td&gt;Define candidate roadmap components&lt;/td&gt;
+                  &lt;td&gt;定义 gap 中要填补的 items&lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/tbody&gt;
+            &lt;/table&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;table&gt;
+              &lt;tbody&gt;
+                &lt;tr&gt;
+                  &lt;td&gt;Resolve impacts across the architecture landscape&lt;/td&gt;
+                  &lt;td&gt;找到相关的 impact (比如影响了应用, 流程, 部门, 人等)和对应方案&lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/tbody&gt;
+            &lt;/table&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;table&gt;
+              &lt;tbody&gt;
+                &lt;tr&gt;
+                  &lt;td&gt;Conduct formal stakeholder review&lt;/td&gt;
+                  &lt;td&gt;让 stakeholder review 数据架构&lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/tbody&gt;
+            &lt;/table&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;table&gt;
+              &lt;tbody&gt;
+                &lt;tr&gt;
+                  &lt;td&gt;Finalize data architecture&lt;/td&gt;
+                  &lt;td&gt;把数据架构定下来&lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/tbody&gt;
+            &lt;/table&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;table&gt;
+              &lt;tbody&gt;
+                &lt;tr&gt;
+                  &lt;td&gt;Create architecture definition document&lt;/td&gt;
+                  &lt;td&gt;创建数据架构定义文档&lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/tbody&gt;
+            &lt;/table&gt;
+          &lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Outputs from Phase C, Data Architecture
+        &lt;ol&gt;
+          &lt;li&gt;Refined Phase A deliverables&lt;/li&gt;
+          &lt;li&gt;Draft architecture definition document
+  a. Baseline data architecture, v1.0
+  b. Target data architecture, v1.0&lt;/li&gt;
+          &lt;li&gt;Draft architecture requirements specification – gap analysis&lt;/li&gt;
+          &lt;li&gt;Data architecture components of an architecture roadmap&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Artifacts Produced
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;table&gt;
+              &lt;tbody&gt;
+                &lt;tr&gt;
+                  &lt;td&gt;Catalogs: Data entity/data component catalog&lt;/td&gt;
+                  &lt;td&gt;数据实体和数据内容的目录&lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/tbody&gt;
+            &lt;/table&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;table&gt;
+              &lt;tbody&gt;
+                &lt;tr&gt;
+                  &lt;td&gt;Matrices: Data entity/business function matrix, Application/Data matrix&lt;/td&gt;
+                  &lt;td&gt;数据实体和业务功能的二维表格&lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/tbody&gt;
+            &lt;/table&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;table&gt;
+              &lt;tbody&gt;
+                &lt;tr&gt;
+                  &lt;td&gt;Diagrams: Conceptual data diagram, logical data diagram, data dissemination diagram, data security diagram, data migration diagram, data lifecycle diagram&lt;/td&gt;
+                  &lt;td&gt;数据概念图, 逻辑数据图, 数据散播图, 数据安全图, 数据迁移图, 数据生命周期图&lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/tbody&gt;
+            &lt;/table&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;应用
+    &lt;ul&gt;
+      &lt;li&gt;目的:
+        &lt;ul&gt;
+          &lt;li&gt;开发想要的数据架构&lt;/li&gt;
+          &lt;li&gt;识别要填补进 gap 的 和应用架构相关的 roadmap items&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Inputs to Phase C, Application Architecture
+        &lt;ol&gt;
+          &lt;li&gt;External reference materials&lt;/li&gt;
+          &lt;li&gt;Request for Architecture Work (optional) (Preliminary Phase)&lt;/li&gt;
+          &lt;li&gt;Capability assessment (Phase A)&lt;/li&gt;
+          &lt;li&gt;Communications plan (Phase A)&lt;/li&gt;
+          &lt;li&gt;Organization Model for Enterprise Architecture (Prelim Phase)&lt;/li&gt;
+          &lt;li&gt;Tailored Architecture Framework (Prelim Phase)&lt;/li&gt;
+          &lt;li&gt;Application principles (TOGAF Specification Chapter 20)&lt;/li&gt;
+          &lt;li&gt;Approved Statement of Architecture Work (Phase A)&lt;/li&gt;
+          &lt;li&gt;Architecture vision (Phase A)&lt;/li&gt;
+          &lt;li&gt;Architecture Repository&lt;/li&gt;
+          &lt;li&gt;Draft architecture documents and draft requirements (Phase B)&lt;/li&gt;
+          &lt;li&gt;Business and data related architecture roadmap (Phase B)&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Steps for Phase C, Application Architecture (不是 part 1 的考试范围, 是 part2 的考试范围)
+        &lt;ol&gt;
+          &lt;li&gt;Select reference models, viewpoints, and tools&lt;/li&gt;
+          &lt;li&gt;Develop baseline application architecture description&lt;/li&gt;
+          &lt;li&gt;Develop target application architecture description&lt;/li&gt;
+          &lt;li&gt;Perform gap analysis&lt;/li&gt;
+          &lt;li&gt;Define candidate roadmap components&lt;/li&gt;
+          &lt;li&gt;Resolve impacts across the architecture landscape&lt;/li&gt;
+          &lt;li&gt;Conduct formal stakeholder review&lt;/li&gt;
+          &lt;li&gt;Finalize application architecture&lt;/li&gt;
+          &lt;li&gt;Create architecture definition document&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Outputs from Phase C, Application Architecture
+        &lt;ol&gt;
+          &lt;li&gt;Refined Phase A deliverables&lt;/li&gt;
+          &lt;li&gt;Draft architecture definition document
+  a. Baseline application architecture, v1.0
+  b. Target application architecture, v1.0&lt;/li&gt;
+          &lt;li&gt;Draft architecture requirements specification – gap analysis&lt;/li&gt;
+          &lt;li&gt;Application architecture components of an architecture roadmap&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Artifacts Produced
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;table&gt;
+              &lt;tbody&gt;
+                &lt;tr&gt;
+                  &lt;td&gt;Catalogs: Application portfolio catalog, interface catalog&lt;/td&gt;
+                  &lt;td&gt;应用组合目录, 接口目录&lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/tbody&gt;
+            &lt;/table&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;table&gt;
+              &lt;tbody&gt;
+                &lt;tr&gt;
+                  &lt;td&gt;Matrices: Application/organization matrix, role/application matrix, application function matrix, application interaction matrix&lt;/td&gt;
+                  &lt;td&gt;应用/组织 , 角色/应用, 应用/功能, 应用/交互的二维表&lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/tbody&gt;
+            &lt;/table&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;table&gt;
+              &lt;tbody&gt;
+                &lt;tr&gt;
+                  &lt;td&gt;Diagrams: Application Communication diagram, Application and User Location diagram, Application Use-Case diagram, Enterprise Manageability diagram, Process/Application Realization diagram, Software Engineering diagram, Application Migration diagram, Software Distribution diagram&lt;/td&gt;
+                  &lt;td&gt;应用通信图, 应用和用户位置图, 应用用例图, 企业管理图, 流程和应用关系图, 软件工程图, 应用迁移图, 软件分发图&lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/tbody&gt;
+            &lt;/table&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;d---technology-architecture-技术架构&quot;&gt;D - Technology Architecture 技术架构&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;目的:
+    &lt;ul&gt;
+      &lt;li&gt;开发想要的技术架构&lt;/li&gt;
+      &lt;li&gt;识别要填补进 gap 的 和技术架构相关的 roadmap items&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;知道了应用和数据需要什么架构, 就需要推演出所需要的技术用什么
+    &lt;ul&gt;
+      &lt;li&gt;我的理解包括了移动端, 微信端, 前端,后端, 数据库, 云, 微服务, 容器化, 虚拟化, AI, IOT, 网络, 安全, 硬件, 操作系统, devops 等等&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Inputs to Phase D
+    &lt;ol&gt;
+      &lt;li&gt;External reference materials&lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Product information on candidate products&lt;/td&gt;
+              &lt;td&gt;备选产品的产品信息&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Request for Architecture Work (optional) (Prelim Phase)&lt;/li&gt;
+      &lt;li&gt;Capability assessment (Phase A)&lt;/li&gt;
+      &lt;li&gt;Communications plan (Phase A)&lt;/li&gt;
+      &lt;li&gt;Organization Model for Enterprise Architecture (Prelim Phase)&lt;/li&gt;
+      &lt;li&gt;Tailored Architecture Framework (Prelim Phase)&lt;/li&gt;
+      &lt;li&gt;Technology principles (TOGAF Specification Chapter 20)&lt;/li&gt;
+      &lt;li&gt;Approved Statement of Architecture Work (Phase A)&lt;/li&gt;
+      &lt;li&gt;Architecture vision (Phase A)&lt;/li&gt;
+      &lt;li&gt;Architecture Repository&lt;/li&gt;
+      &lt;li&gt;Draft architecture documents and draft requirements (Phase B and C)&lt;/li&gt;
+      &lt;li&gt;Business, data and application components of an architecture roadmap (Phase B and C)&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Steps for Phase D (不是 part 1 的考试范围, 是 part2 的考试范围)
+    &lt;ol&gt;
+      &lt;li&gt;Select reference models, viewpoints, and tools&lt;/li&gt;
+      &lt;li&gt;Develop baseline technology architecture description&lt;/li&gt;
+      &lt;li&gt;Develop target technology architecture description&lt;/li&gt;
+      &lt;li&gt;Perform gap analysis&lt;/li&gt;
+      &lt;li&gt;Define candidate roadmap components&lt;/li&gt;
+      &lt;li&gt;Resolve impacts across the architecture landscape&lt;/li&gt;
+      &lt;li&gt;Conduct formal stakeholder review&lt;/li&gt;
+      &lt;li&gt;Finalize technology architecture&lt;/li&gt;
+      &lt;li&gt;Create architecture definition document&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Outputs from Phase D
+    &lt;ol&gt;
+      &lt;li&gt;Refined Phase A deliverables&lt;/li&gt;
+      &lt;li&gt;Draft architecture definition document
+  a. Baseline technology architecture, v1.0
+  b. Target technology architecture, v1.0&lt;/li&gt;
+      &lt;li&gt;Draft architecture requirements specification – gap analysis&lt;/li&gt;
+      &lt;li&gt;Technology architecture components of an architecture roadmap&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Artifacts Produced
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Catalogs: Technology Standards catalog, Technology Portfolio catalog Matrices: Application/Technology matrix&lt;/td&gt;
+              &lt;td&gt;技术标准, 技术组合分类二维表, 应用/技术二维表&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Diagrams: Environments and Locations diagram, Platform Decomposition diagram, Processing diagram, Networked Computing/Hardware diagram, Communications Engineering diagram&lt;/td&gt;
+              &lt;td&gt;环境和位置图, 平台分解图, 流程图, 网络计算/硬件图, 通信工程图&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;e---opportunity-and-solution-机会与方案&quot;&gt;E - Opportunity and Solution 机会与方案&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;E 和 F 是 8 个 phase 的中间2个, 是承上启下的作用&lt;/li&gt;
+  &lt;li&gt;要把前面 ABCD 中要输出的文档都最终定下来&lt;/li&gt;
+  &lt;li&gt;要把最终的架构设计完成掉&lt;/li&gt;
+  &lt;li&gt;要把后面的实施计划定义出来&lt;/li&gt;
+  &lt;li&gt;后面就要开始真正的架构项目迁移和实施了&lt;/li&gt;
+  &lt;li&gt;用新兴技术来找新的机会&lt;/li&gt;
+  &lt;li&gt;目的:
+    &lt;ul&gt;
+      &lt;li&gt;generate the initial architecture roadmap
+        &lt;ul&gt;
+          &lt;li&gt;B, C, D 是用来找 candidate roadmap items 的.&lt;/li&gt;
+          &lt;li&gt;E 是要把  BCD 这些 candidate 弄到一款, 最终做出来这个 架构 roadmap&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;identify if transition architecture are required
+        &lt;ul&gt;
+          &lt;li&gt;如果从现有架构到未来 roadmap 有很大的gap, 那么可能还需要有 transition architecture (中间阶段的架构)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;define solution building blocks ( SBBs )
+        &lt;ul&gt;
+          &lt;li&gt;SBB - 描述在不同的架构图之间&lt;strong&gt;可以被重用的技术方案&lt;/strong&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Inputs to Phase E
+    &lt;ol&gt;
+      &lt;li&gt;External reference materials&lt;/li&gt;
+      &lt;li&gt;Product information&lt;/li&gt;
+      &lt;li&gt;Request for Architecture Work (optional) (Prelim Phase)&lt;/li&gt;
+      &lt;li&gt;Capability assessment (Phase A)&lt;/li&gt;
+      &lt;li&gt;Communications plan (Phase A)&lt;/li&gt;
+      &lt;li&gt;Planning methodologies&lt;/li&gt;
+      &lt;li&gt;Organization Model for Enterprise Architecture (Prelim Phase)&lt;/li&gt;
+      &lt;li&gt;Tailored Architecture Framework (Prelim Phase)&lt;/li&gt;
+      &lt;li&gt;Approved Statement of Architecture Work (Phase A)&lt;/li&gt;
+      &lt;li&gt;Architecture vision (Phase A)&lt;/li&gt;
+      &lt;li&gt;Architecture Repository&lt;/li&gt;
+      &lt;li&gt;Draft architecture documents and draft requirements (BDAT)&lt;/li&gt;
+      &lt;li&gt;Change requests for existing business programs and projects&lt;/li&gt;
+      &lt;li&gt;Candidate architecture roadmap components&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Steps for Phase E (不是 part 1 的考试范围, 是 part2 的考试范围)
+    &lt;ol&gt;
+      &lt;li&gt;Determine key corporate change attributes&lt;/li&gt;
+      &lt;li&gt;Determine business constraints&lt;/li&gt;
+      &lt;li&gt;Review and consolidate gap analysis from Phases B to D&lt;/li&gt;
+      &lt;li&gt;Review consolidated requirements across business functions&lt;/li&gt;
+      &lt;li&gt;Consolidate and reconcile interoperability requirements&lt;/li&gt;
+      &lt;li&gt;Refine and validate dependencies&lt;/li&gt;
+      &lt;li&gt;Confirm readiness and risk for business transformation&lt;/li&gt;
+      &lt;li&gt;Formulate implementation and migration strategy&lt;/li&gt;
+      &lt;li&gt;Identify and group major work packages&lt;/li&gt;
+      &lt;li&gt;Identify transition architectures&lt;/li&gt;
+      &lt;li&gt;Create the architecture roadmap &amp;amp; implementation and migration plan&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Outputs from Phase E
+    &lt;ol&gt;
+      &lt;li&gt;Refined Phase A deliverables&lt;/li&gt;
+      &lt;li&gt;Draft architecture definition document – incl. baseline and target, v1.0&lt;/li&gt;
+      &lt;li&gt;Draft architecture requirements specification – incl. gap analysis&lt;/li&gt;
+      &lt;li&gt;Capability assessments&lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Architecture roadmap, version 0.1&lt;/td&gt;
+              &lt;td&gt;架构线路图&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Implementation and migration plan, version 0.1&lt;/td&gt;
+              &lt;td&gt;实施和迁移计划&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Artifacts Produced
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Diagrams: Product context diagram, benefits diagram&lt;/td&gt;
+              &lt;td&gt;产品上下文图, 利益图&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;f---migration-planning&quot;&gt;F - Migration Planning&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;这个阶段, 要把架构设计的工作彻底完成掉
+    &lt;ul&gt;
+      &lt;li&gt;会有一堆的 finalized 文档&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;要把之前的架构包转交给实施团队
+    &lt;ul&gt;
+      &lt;li&gt;会有实施计划&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;要总结之前完成的架构工作, 以此提高之后的架构工作&lt;/li&gt;
+  &lt;li&gt;目的:
+    &lt;ul&gt;
+      &lt;li&gt;finalize the architecture roadmap and migration plan&lt;/li&gt;
+      &lt;li&gt;ensure migration plan is aligned with enterprise approach to change&lt;/li&gt;
+      &lt;li&gt;ensure business value and cost of work packages is understood
+        &lt;ul&gt;
+          &lt;li&gt;work package 就是具体的甘特图中的每个工作项, 把业务价值放到 work package 中就是迁移计划要做的事情&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Inputs to Phase F
+    &lt;ol&gt;
+      &lt;li&gt;External reference materials&lt;/li&gt;
+      &lt;li&gt;Request for Architecture Work (optional) (Prelim Phase)&lt;/li&gt;
+      &lt;li&gt;Capability assessment (Phase A)&lt;/li&gt;
+      &lt;li&gt;Communications plan (Phase A)&lt;/li&gt;
+      &lt;li&gt;Organization Model for Enterprise Architecture (Prelim Phase)&lt;/li&gt;
+      &lt;li&gt;Governance Models and Frameworks&lt;/li&gt;
+      &lt;li&gt;Tailored Architecture Framework (Prelim Phase)&lt;/li&gt;
+      &lt;li&gt;Approved Statement of Architecture Work (Phase A)&lt;/li&gt;
+      &lt;li&gt;Architecture vision (Phase A)&lt;/li&gt;
+      &lt;li&gt;Architecture Repository&lt;/li&gt;
+      &lt;li&gt;Draft architecture documents and draft requirements (BDAT)&lt;/li&gt;
+      &lt;li&gt;Change requests for existing business programs and projects&lt;/li&gt;
+      &lt;li&gt;Architecture roadmap, version 0.1 (Phase E)&lt;/li&gt;
+      &lt;li&gt;Capability Assessment&lt;/li&gt;
+      &lt;li&gt;Implementation and migration plan , version 0.1 (Phase E)&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Steps for Phase F (不是 part 1 的考试范围, 是 part2 的考试范围)
+    &lt;ol&gt;
+      &lt;li&gt;Confirm management framework interactions&lt;/li&gt;
+      &lt;li&gt;Assign a business value to each work package&lt;/li&gt;
+      &lt;li&gt;Estimate resource requirements, project timings, etc&lt;/li&gt;
+      &lt;li&gt;Prioritize the migration projects&lt;/li&gt;
+      &lt;li&gt;Confirm architecture roadmap and update architecture definition document&lt;/li&gt;
+      &lt;li&gt;Generate implementation and migration plan&lt;/li&gt;
+      &lt;li&gt;Complete the architecture development cycle, lessons learned&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Outputs from Phase F
+    &lt;ol&gt;
+      &lt;li&gt;Implementation and Migration Plan, version 1.0&lt;/li&gt;
+      &lt;li&gt;Finalized architecture definition document&lt;/li&gt;
+      &lt;li&gt;Finalized architecture requirements&lt;/li&gt;
+      &lt;li&gt;Finalized architecture roadmap&lt;/li&gt;
+      &lt;li&gt;Reusable Architecture Building Blocks (ABBs)&lt;/li&gt;
+      &lt;li&gt;Requests for Architecture Work for next ADM cycle (if any)&lt;/li&gt;
+      &lt;li&gt;Implementation of governance model&lt;/li&gt;
+      &lt;li&gt;Change requests for architecture capability from lessons learned&lt;/li&gt;
+      &lt;li&gt;输出一个架构合同 Architecture Contract ?
+        &lt;ol&gt;
+          &lt;li&gt;It’s a contract between the implementation team and the architecture team that the architecture work that has been defined will be implemented as defined, and that the architecture governance process will be followed for any changes.&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Artifacts Produced
+    &lt;ul&gt;
+      &lt;li&gt;None
+        &lt;ul&gt;
+          &lt;li&gt;之前的文档都写好了, 这个 phase 不产出任何图表&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;g---implementation-governance--实施和治理&quot;&gt;G - Implementation Governance  实施和治理&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;目的:
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;ensure conformance&lt;/td&gt;
+              &lt;td&gt;确保实施和架构设计保持一致&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;ul&gt;
+          &lt;li&gt;架构师并不是实施者, 实施部分架构师的职责是帮助实施者有效的按照架构设计进行实施, 并保持一致&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;perform architecture governance
+        &lt;ul&gt;
+          &lt;li&gt;实施过程中如果出现一些变化, 比如开发人员觉得有更合适,更节约成本的方案可以代替原来的架构方案, 那么必须要和架构师一起沟通, 并且通过 architecture governance 来进行处理 change request&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Inputs to Phase G
+    &lt;ol&gt;
+      &lt;li&gt;External reference materials&lt;/li&gt;
+      &lt;li&gt;Request for Architecture Work (optional) (Prelim Phase)&lt;/li&gt;
+      &lt;li&gt;Capability assessment (Phase A)&lt;/li&gt;
+      &lt;li&gt;Organization Model for Enterprise Architecture (Prelim Phase)&lt;/li&gt;
+      &lt;li&gt;Tailored Architecture Framework (Prelim Phase)&lt;/li&gt;
+      &lt;li&gt;Approved Statement of Architecture Work (Phase A)&lt;/li&gt;
+      &lt;li&gt;Architecture vision (Phase A)&lt;/li&gt;
+      &lt;li&gt;Architecture Repository&lt;/li&gt;
+      &lt;li&gt;Architecture definition documents and requirements (BDAT)&lt;/li&gt;
+      &lt;li&gt;Architecture roadmap, version 1.0 (Phase F)&lt;/li&gt;
+      &lt;li&gt;Implementation governance model&lt;/li&gt;
+      &lt;li&gt;Architecture contract&lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Request for architecture work for next ADM cycle (Phase F)&lt;/td&gt;
+              &lt;td&gt;有些工作这次不能实施, 可以下次来做?&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Implementation and migration plan , version 1.0 (Phase F)&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Steps for Phase G (不是 part 1 的考试范围, 是 part2 的考试范围)
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Confirm Scope and Priorities for Deployment&lt;/td&gt;
+              &lt;td&gt;确认部署的范围和优先级&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Identify Deployment Resources and Skills&lt;/td&gt;
+              &lt;td&gt;识别开发资源和技能&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Guide Development of Solutions Deployment&lt;/td&gt;
+              &lt;td&gt;指导方案部署的开发过程&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Perform Enterprise Architecture Compliance Reviews&lt;/td&gt;
+              &lt;td&gt;执行企业架构合规的 reivew&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Implement Business and IT Operations&lt;/td&gt;
+              &lt;td&gt;实现业务和 IT运营&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Perform Post-Implementation Review and Close the Implementation&lt;/td&gt;
+              &lt;td&gt;执行实施后的 review 并关闭实施&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Outputs from Phase G
+    &lt;ol&gt;
+      &lt;li&gt;Architecture contract  | 架构合同
+  “…joint agreements between &lt;strong&gt;development partners and sponsors&lt;/strong&gt; on the deliverables, quality, and fitness-for-purpose of an architecture”
+  &lt;strong&gt;Read Chapter 43 of the TOGAF 9.2 specification&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Compliance assessments&lt;/td&gt;
+              &lt;td&gt;合规评估&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Change requests&lt;/td&gt;
+              &lt;td&gt;需求变更&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Architecture-compliant solutions deployed&lt;/td&gt;
+              &lt;td&gt;符合规定的架构的方案部署完成&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Artifacts Produced
+    &lt;ul&gt;
+      &lt;li&gt;None&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;h---architecture-change-management&quot;&gt;H - Architecture Change Management&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;架构变化管理, 就像一个一直定在那里的阶段, 我们完成了所有的架构设计, 完成了所有的实施工作之后, 就是在这里等待变化的发生&lt;/li&gt;
+  &lt;li&gt;当积累一些变化之后, 我们就要考虑是否要开启新的一轮 ADM cycle 了
+    &lt;ul&gt;
+      &lt;li&gt;大的变化, 需要改变架构逻辑的变化也许需要新的 cycle&lt;/li&gt;
+      &lt;li&gt;小的变化, 也许不需要启动 cycle ,而是在现有架构中就可以容纳&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;目的:
+    &lt;ul&gt;
+      &lt;li&gt;maintain architecture lifecycle&lt;/li&gt;
+      &lt;li&gt;execute architecture governance&lt;/li&gt;
+      &lt;li&gt;maintain architecture capability&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Inputs to Phase H
+    &lt;ol&gt;
+      &lt;li&gt;External reference materials&lt;/li&gt;
+      &lt;li&gt;Request for Architecture Work (optional) (Prelim Phase)&lt;/li&gt;
+      &lt;li&gt;Organization Model for Enterprise Architecture (Prelim Phase)&lt;/li&gt;
+      &lt;li&gt;Tailored Architecture Framework (Prelim Phase)&lt;/li&gt;
+      &lt;li&gt;Statement of Architecture Work (Phase A)&lt;/li&gt;
+      &lt;li&gt;Architecture vision (Phase A)&lt;/li&gt;
+      &lt;li&gt;Architecture Repository&lt;/li&gt;
+      &lt;li&gt;Architecture definition documents and requirements (BDAT)&lt;/li&gt;
+      &lt;li&gt;Architecture roadmap (Phase F)&lt;/li&gt;
+      &lt;li&gt;Change requests – technology changes, business changes, lessons learned&lt;/li&gt;
+      &lt;li&gt;Implementation governance model&lt;/li&gt;
+      &lt;li&gt;Architecture contract (Phase G)&lt;/li&gt;
+      &lt;li&gt;Compliance assessments (Phase G)&lt;/li&gt;
+      &lt;li&gt;Implementation and migration plan , version 1.0 (Phase F)&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Steps for Phase H (不是 part 1 的考试范围, 是 part2 的考试范围)
+    &lt;ol&gt;
+      &lt;li&gt;Establish Value Realization Process&lt;/li&gt;
+      &lt;li&gt;Deploy Monitoring Tools&lt;/li&gt;
+      &lt;li&gt;Manage Risks&lt;/li&gt;
+      &lt;li&gt;Provide Analysis for Architecture Change Management&lt;/li&gt;
+      &lt;li&gt;Develop Change Requirements to Meet Performance Targets&lt;/li&gt;
+      &lt;li&gt;Manage Governance Process&lt;/li&gt;
+      &lt;li&gt;Activate the Process to Implement Change&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Outputs from Phase H
+    &lt;ol&gt;
+      &lt;li&gt;Architecture updates (maintenance)&lt;/li&gt;
+      &lt;li&gt;Change to architecture framework and principles (maintenance)&lt;/li&gt;
+      &lt;li&gt;New Request for Architecture Work (for major changes)&lt;/li&gt;
+      &lt;li&gt;Statement of architecture work (updated if necessary)&lt;/li&gt;
+      &lt;li&gt;Architecture contract (updated if necessary)&lt;/li&gt;
+      &lt;li&gt;Compliance assessments (updated if necessary)&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Artifacts Produced
+    &lt;ul&gt;
+      &lt;li&gt;None&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;requirement-management--需求管理&quot;&gt;Requirement Management  需求管理&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;RM 位于 ADM 图的中心,  RM 在ADM 图中和 A -&amp;gt; H 的每个阶段都有互动&lt;/li&gt;
+  &lt;li&gt;技术上来说, 他是一个 phase, 但是是一个静态的阶段&lt;/li&gt;
+  &lt;li&gt;RM 管理需求的流程
+    &lt;ul&gt;
+      &lt;li&gt;收集, 确认, 排序, 过滤, …&lt;/li&gt;
+      &lt;li&gt;来个新的 业务需求, 就要回到 B 阶段, 然后再推出 C, D&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;RM 是管理 repository 的流程&lt;/li&gt;
+  &lt;li&gt;在 ADM 的各个阶段都要持续的处理需求
+    &lt;ul&gt;
+      &lt;li&gt;Being able to handle change at any time is crucial for the ADM to succeed.&lt;/li&gt;
+      &lt;li&gt;在 ADM cycle 中处理需求要有节奏, 比如按敏捷的理念, 需求要有一个 backlog 来处理, 开发前期制定需求. 或者尽量在 ADM 的 ABCD 阶段收集需求, EF 阶段按需求制定方案和计划,  G 实施阶段按需求进行实施
+        &lt;ul&gt;
+          &lt;li&gt;所以  EFG 阶段的新需求尽量累积到下一个 ADM cycle 再去做&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;Requirements Management is the process that manages the repository&lt;/li&gt;
+  &lt;li&gt;目标:
+    &lt;ul&gt;
+      &lt;li&gt;ensure the process is sustained through all phases&lt;/li&gt;
+      &lt;li&gt;manage change while the ADM cycle is in progress&lt;/li&gt;
+      &lt;li&gt;provide the requirements to each ADM phase&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;part-3-adm-guideline-and-techniques&quot;&gt;Part 3 ADM Guideline and techniques&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;要执行 ADM 的 cycle , 需要一些 指南和工具如下:&lt;/li&gt;
+  &lt;li&gt;ADM Guidelines and Techniques
+● Using the TOGAF ADM in the context of a specific Architectural Style 
+● Architecture Principles
+● Stakeholder Management
+● Architecture Patterns
+● Business Scenarios
+● Gap Analysis
+● Migration Planning Techniques
+● Interoperability Requirements
+● Business Transformation Readiness Assessment
+● Risk Management
+● Capability-Based Planning&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;adm-and-architectural-styles-92-新加的&quot;&gt;ADM and architectural styles (9.2 新加的)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;架构开发管理和架构风格&lt;/li&gt;
+  &lt;li&gt;应用架构有不同的风格&lt;/li&gt;
+  &lt;li&gt;Togaf 不需要我们改变我们的风格&lt;/li&gt;
+  &lt;li&gt;但是可能我们需要改变那我们的文档的内容&lt;/li&gt;
+  &lt;li&gt;采用不同的 views, models, tools 来创建文档, 图, 表格等&lt;/li&gt;
+  &lt;li&gt;togaf 在使用一个 Service Oriented Architecture 的 style&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;architecture-principles&quot;&gt;Architecture principles&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;An enduring set of general rules and guidelines about architecture&lt;/li&gt;
+  &lt;li&gt;是架构的一般规则和指南&lt;/li&gt;
+  &lt;li&gt;不会经常变化&lt;/li&gt;
+  &lt;li&gt;Defined during the Preliminary Phase&lt;/li&gt;
+  &lt;li&gt;在需要做决策的时候可以用到&lt;/li&gt;
+  &lt;li&gt;例子:
+    &lt;ul&gt;
+      &lt;li&gt;Data Architecture Principle
+        &lt;ul&gt;
+          &lt;li&gt;Data Trustee
+            &lt;ul&gt;
+              &lt;li&gt;“Each data element has a trustee accountable for data quality.”&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Five Elements of a Good Principle
+● Understandability | 容易理解
+● Robustness | 不要有漏洞
+● Completeness | 涵盖各种情况
+● Consistency | 一致性, 不要有前后矛盾
+● Stability | 稳固&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;stakeholder-management-干系人管理&quot;&gt;Stakeholder Management 干系人管理&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;stakeholder 的定义
+    &lt;ul&gt;
+      &lt;li&gt;“An individual, team, organization, or class thereof, having an interest in a system.”&lt;/li&gt;
+      &lt;li&gt;对一个系统感兴趣的个人, 团队, 组织或者他们其中的一种形式&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;As an architect, being able to win support for your plans is a skill.&lt;/li&gt;
+  &lt;li&gt;Knowing who the most powerful stakeholders are…&lt;/li&gt;
+  &lt;li&gt;Makes things easier for approval and budgets.&lt;/li&gt;
+  &lt;li&gt;Can establish a communication plan to keep them informed&lt;/li&gt;
+  &lt;li&gt;Identify problems and conflicts early in order to avoid them.
+    &lt;ul&gt;
+      &lt;li&gt;避免 stakeholder 之间的问题和冲突.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;通过下图, 了解哪些 stakeholder 和对他们的定位 
+&lt;img src=&quot;http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-06-05-051824.jpg&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;architecture-patterns-架构模式&quot;&gt;Architecture Patterns 架构模式&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;和设计模式有点像&lt;/li&gt;
+  &lt;li&gt;“an idea that has been useful in one practical context and will probably be useful in others” - M. Fowler&lt;/li&gt;
+  &lt;li&gt;togaf 的 building block 说的是 : what you use&lt;/li&gt;
+  &lt;li&gt;架构模式是: when, why, how you use&lt;/li&gt;
+  &lt;li&gt;一旦我们创建了一些 building blocks, 我们就要去为他们定义 patterns&lt;/li&gt;
+  &lt;li&gt;例子:
+    &lt;ul&gt;
+      &lt;li&gt;设计模式中有代理模式, 监听模式等, 是不是也可以用于架构模式?&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;business-scenarios-业务场景&quot;&gt;Business Scenarios 业务场景&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;业务场景的定义
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;ol&gt;
+          &lt;li&gt;A business process, application, or set of applications&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;ol&gt;
+          &lt;li&gt;The business and technology environment&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;ol&gt;
+          &lt;li&gt;The people and software systems (“actors”) involved&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;ol&gt;
+          &lt;li&gt;The desired outcome&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Anyone should be able to understand a business problem and solution by reading the business scenario.&lt;/li&gt;
+  &lt;li&gt;一个精心设计的商业案例。
+    &lt;ul&gt;
+      &lt;li&gt;A neatly laid out business case.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;gap-analysis&quot;&gt;Gap Analysis&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Key step in the BDAT Phases and Migration Planning (Phases B-E)&lt;/li&gt;
+  &lt;li&gt;分析 Baseline architecture 和 Target architecture 之间的 gap&lt;/li&gt;
+  &lt;li&gt;Gaps are anything added, changed or intentionally omitted
+    &lt;ul&gt;
+      &lt;li&gt;Gaps 是任何新增, 修改, 故意删除掉的, 意外删掉的内容&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;目的是要让大家清晰的知道为什么增加或者删除了一些内容
+    &lt;ul&gt;
+      &lt;li&gt;It should be clear and easy to explain why things were added or removed&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;migration-planning&quot;&gt;Migration Planning&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;togaf 提供了一些迁移计划需要用到的工具
+    &lt;ul&gt;
+      &lt;li&gt;Migration Planning, Phase F
+        &lt;ul&gt;
+          &lt;li&gt;Implementation Factor Assessment &amp;amp; Deduction Matrix
+实施因素评估和扣减矩阵&lt;/li&gt;
+          &lt;li&gt;Consolidated Gaps, Solutions, &amp;amp; Dependencies Matrix
+综合的差距、解决方案和依赖性矩阵&lt;/li&gt;
+          &lt;li&gt;Architecture Definition Increments Table
+架构定义增量表&lt;/li&gt;
+          &lt;li&gt;Transition Architecture State Evolution Table
+过渡结构状态演变表&lt;/li&gt;
+          &lt;li&gt;Business Value Assessment Technique
+商业价值评估技术&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;interoperability-协同工作的能力&quot;&gt;Interoperability 协同工作的能力&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;“the ability to share information and services”&lt;/li&gt;
+  &lt;li&gt;Business Interoperability: how business teams work together&lt;/li&gt;
+  &lt;li&gt;Information Interoperability: how data is shared&lt;/li&gt;
+  &lt;li&gt;Technical Interoperability: how technical services connect to one another&lt;/li&gt;
+  &lt;li&gt;Each of the architecture definition phases has elements of interoperability.&lt;/li&gt;
+  &lt;li&gt;Architects think about how what they do interacts with the “outside world” during the process&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;business-transformation-readiness-assessment-btra&quot;&gt;Business Transformation Readiness Assessment (BTRA)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;“evaluating and quantifying an organization’s readiness to undergo change”
+    &lt;ul&gt;
+      &lt;li&gt;评估和定量分析一个企业是否准备好了迎接变化&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;No point creating architecture if it’ll be ignored.
+    &lt;ul&gt;
+      &lt;li&gt;如果大家不想接受变化, 就没必要做架构&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Understanding how to get your organization to change is a key to success.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;推荐的 BTRA 的活动
+    &lt;ul&gt;
+      &lt;li&gt;Determine the readiness factors that will impact the organization&lt;/li&gt;
+      &lt;li&gt;Present the readiness factors using maturity models&lt;/li&gt;
+      &lt;li&gt;Assess the readiness factors, including determination of readiness factor ratings&lt;/li&gt;
+      &lt;li&gt;Assess the risks for each readiness factor and identify improvement actions to mitigate the risk&lt;/li&gt;
+      &lt;li&gt;Work these actions into Phase E and F Implementation and Migration Plan&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Example Factors
+    &lt;ul&gt;
+      &lt;li&gt;Vision&lt;/li&gt;
+      &lt;li&gt;Desire, Willingness, Resolve&lt;/li&gt;
+      &lt;li&gt;Need
+        &lt;ul&gt;
+          &lt;li&gt;How strong is the business need for enterprise architecture?&lt;/li&gt;
+          &lt;li&gt;Does every part of the business recognize this as being required?&lt;/li&gt;
+          &lt;li&gt;How committed is the senior leadership to this?&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Business Case&lt;/li&gt;
+      &lt;li&gt;Funding&lt;/li&gt;
+      &lt;li&gt;Leadership, Sponsor, Champion&lt;/li&gt;
+      &lt;li&gt;Governance&lt;/li&gt;
+      &lt;li&gt;Accountability&lt;/li&gt;
+      &lt;li&gt;IT Capacity to Execute&lt;/li&gt;
+      &lt;li&gt;Enterprise Capacity to Execute&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;risk-management&quot;&gt;Risk Management&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;What are the risks of migrating to the target architecture?&lt;/li&gt;
+  &lt;li&gt;Identify them, and track them&lt;/li&gt;
+  &lt;li&gt;TOGAF has the concept of Initial Level of Risk and Residual Level of Risk
+    &lt;ul&gt;
+      &lt;li&gt;Initial Level of Risk is the risk that exists if you do nothing to mitigate them&lt;/li&gt;
+      &lt;li&gt;Residual Level of Risk is the risk that remains after you have mitigated them&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;例子: Example: Client acceptance risk
+    &lt;ul&gt;
+      &lt;li&gt;How do you measure it?&lt;/li&gt;
+      &lt;li&gt;How do you mitigate it?&lt;/li&gt;
+      &lt;li&gt;And what would the cost to the business be if it comes true?&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;capability-based-planning-基于能力的规划&quot;&gt;Capability-Based Planning 基于能力的规划&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;是一个规划, 一个跨部门的, 需要多部门通力协作的规划&lt;/li&gt;
+  &lt;li&gt;“a business planning technique that focuses on business outcomes”
+    &lt;ul&gt;
+      &lt;li&gt;一种专注于商业成果的商业规划技术&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Capabilities are business-driven and ideally business-led.
+    &lt;ul&gt;
+      &lt;li&gt;能力是由业务驱动的，最好是由业务主导的。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Designed to combat the fact that organizations are split along functions
+    &lt;ul&gt;
+      &lt;li&gt;旨在消除组织按职能分裂的事实&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Many business functions work together to deliver one capability&lt;/li&gt;
+  &lt;li&gt;例子: Example: 创建一个完美的产品
+    &lt;ul&gt;
+      &lt;li&gt;会涉及到多个部门, 产品设计, 软件开发, 工厂制造, 零售/销售&lt;/li&gt;
+      &lt;li&gt;公司计划的是生产一个 “完美产品”, 而不是 “最佳销售团队”&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;part-4-architecture-content-framework&quot;&gt;Part 4 Architecture Content Framework&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;在架构设计过程中, 会产生一些输出/交付物, 我们不需要重新发明轮子, 而是可以利用 Architect content framework 帮助我们生产出架构来&lt;/li&gt;
+  &lt;li&gt;Architect content framework
+    &lt;ul&gt;
+      &lt;li&gt;提供结构化的原始模型, 为最终的架构交付物作为原型和基础&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Artifacts 工件
+    &lt;ul&gt;
+      &lt;li&gt;工件是在架构工作期间生成的, 用于描述架构的某一个方面的, 工作成果 (work product)&lt;/li&gt;
+      &lt;li&gt;ADM 的 8 个阶段中, 每个阶段都定义了一系列的 artifacts 工件
+        &lt;ul&gt;
+          &lt;li&gt;&lt;strong&gt;记住每个阶段和对应的工件对考试很重要&lt;/strong&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;工件可以被分成三类
+        &lt;ul&gt;
+          &lt;li&gt;Lists&lt;/li&gt;
+          &lt;li&gt;Matrices (母体/子宫)&lt;/li&gt;
+          &lt;li&gt;Diagrams&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Deliverables
+    &lt;ul&gt;
+      &lt;li&gt;“contractually specified and in turn formally reviewed, agreed, and signed off by the stakeholders”
+        &lt;ul&gt;
+          &lt;li&gt;“合同规定，并由利益相关者正式审查、同意和签署”&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;说白了就是合同规定的架构交付内容&lt;/li&gt;
+      &lt;li&gt;不是一个图, 而是完整的文档&lt;/li&gt;
+      &lt;li&gt;需要被 stakeholders 进行 review, agree and signed off&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Building Blocks
+    &lt;ul&gt;
+      &lt;li&gt;架构中可以被创造和重用的部分&lt;/li&gt;
+      &lt;li&gt;分为两种
+        &lt;ul&gt;
+          &lt;li&gt;Architecture building blocks (ABBs)&lt;/li&gt;
+          &lt;li&gt;Solution building blocks (SBBs)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;ABBs
+        &lt;ul&gt;
+          &lt;li&gt;描述在不同的架构图之间&lt;strong&gt;可以被重用的业务流程&lt;/strong&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;SBBs
+        &lt;ul&gt;
+          &lt;li&gt;描述在不同的架构图之间&lt;strong&gt;可以被重用的技术方案&lt;/strong&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;案例:
+        &lt;ul&gt;
+          &lt;li&gt;查询消费者的 profile&lt;/li&gt;
+          &lt;li&gt;因为组织内多个部门都有这个需求, 所以把 customer profile lookup 做成一个 ABB, 可以在不同业务部门的需求和 架构 dragram 中进行拷贝&lt;/li&gt;
+          &lt;li&gt;背后的逻辑是, 需要一个 CRM 的用户搜索模块, 是技术实现的方式, 做成一个 SBB&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;part-5-enterprise-continuum-and-tools&quot;&gt;Part 5 Enterprise Continuum and Tools&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;企业连续体&lt;/li&gt;
+  &lt;li&gt;” a way of classifying architectural work products according to their specificity - from extremely generic to extremely specific”&lt;/li&gt;
+  &lt;li&gt;一种对架构 repository 中的项目进行分类的方法&lt;/li&gt;
+  &lt;li&gt;分为极常规架构, 极特殊架构, 或者中间的架构, 大体分为如下从左到右的架构
+&lt;img src=&quot;http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-06-02-045902.jpg&quot; alt=&quot;&quot; /&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Foundation Architectures
+        &lt;ul&gt;
+          &lt;li&gt;最基础的架构, 所有公司都通用的基础架构&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Common System Architectures
+        &lt;ul&gt;
+          &lt;li&gt;普通系统架构, 一般公司都可以通用&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Industry Architectures
+        &lt;ul&gt;
+          &lt;li&gt;针对于某个行业的架构, 多个同行业的公司可以通用&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Organization-specific architectures
+        &lt;ul&gt;
+          &lt;li&gt;针对于某个企业定制的专门的架构
+&lt;img src=&quot;http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-06-02-052846.jpg&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;黄色为 Abbs&lt;/li&gt;
+      &lt;li&gt;绿色为 Sbbs&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;architecture-repository&quot;&gt;Architecture Repository&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;放置架构文档的 storage 存储/repository&lt;/li&gt;
+  &lt;li&gt;可以是一个 file sercer, 或者 git, Jira, Confluence, wiki 等, 具体形式考试不考&lt;/li&gt;
+  &lt;li&gt;有统一的命名规则和目录&lt;/li&gt;
+  &lt;li&gt;大家都可以访问, 进行文档写作&lt;/li&gt;
+  &lt;li&gt;The Architecture Repository contains…
+    &lt;ul&gt;
+      &lt;li&gt;● Architecture Metamodel
+        &lt;ul&gt;
+          &lt;li&gt;为企业定制的架构模型&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;● Architecture Capability
+        &lt;ul&gt;
+          &lt;li&gt;架构治理规则&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;● Architecture Landscape
+        &lt;ul&gt;
+          &lt;li&gt;已经部署了的架构资产, 系统和流程&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;● Standards Information Base (SIB)
+        &lt;ul&gt;
+          &lt;li&gt;做架构的时候需要用的一些信息数据, 比如 隐私信息标准 (GDPR, HIPPA&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;● Reference Library
+        &lt;ul&gt;
+          &lt;li&gt;引用库的材料&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;● Governance Log
+        &lt;ul&gt;
+          &lt;li&gt;记录了架构治理的活动日志, 比如记录了谁做了架构的创建, 调整, 谁进行了审批和 review , 相关的会议记录等&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;● Architecture Requirements Repository (*new in 9.2)
+        &lt;ul&gt;
+          &lt;li&gt;需求文档的 repository, 相当于 backlog&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;● Solutions Landscape (*new in 9.2)
+        &lt;ul&gt;
+          &lt;li&gt;一些被审批过, 签过字的解决方案的文档内容, 可以用来支持架构设计&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;part-6-architecture-capability-framework&quot;&gt;Part 6 Architecture Capability Framework&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;企业的架构能力根据企业中是否有架构师人员, 是否有相应的培训, 是否有治理方法, 是否已经发布了架构框架等综合因素构成&lt;/li&gt;
+  &lt;li&gt;通过 ADM 的 Preliminary Phase 和 cycle (A-&amp;gt; H)可以提升架构能力
+    &lt;ul&gt;
+      &lt;li&gt;A-F 和组织内部的 leaders 定义架构, 制定计划&lt;/li&gt;
+      &lt;li&gt;G 签订架构合同, 大家都约定遵守这个架构, 实施团队按照架构进行实施, 架构师在实施阶段监控实施团队的工作, 确保实施的内容按照架构设计执行.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;需要有资金来支持架构能力的提升,  花钱买人, 买知识, 搭建治理模型等等
+    &lt;ul&gt;
+      &lt;li&gt;就像管理一个项目一样对架构能力进行提升, 要有 ,SOW, budget, 时间节点, 里程碑, 和定期的报告&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;治理 和 repository 和 架构能力有直接的关系&lt;/li&gt;
+  &lt;li&gt;治理在上面&lt;/li&gt;
+  &lt;li&gt;任何流程在中间&lt;/li&gt;
+  &lt;li&gt;repository 在下面&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;其他-重要度-togaf-概念&quot;&gt;其他 重要度 TOGAF 概念&lt;/h2&gt;
+
+&lt;h3 id=&quot;architecture-governance&quot;&gt;Architecture Governance&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;A system of controls over architecture&lt;/li&gt;
+  &lt;li&gt;A system to ensure compliance with architecture&lt;/li&gt;
+  &lt;li&gt;Effective management of those systems&lt;/li&gt;
+  &lt;li&gt;Accountability to the business for that&lt;/li&gt;
+  &lt;li&gt;Governance is layered within most organizations
+    &lt;ul&gt;
+      &lt;li&gt;Corporate governance&lt;/li&gt;
+      &lt;li&gt;Technology governance&lt;/li&gt;
+      &lt;li&gt;IT governance&lt;/li&gt;
+      &lt;li&gt;Architecture governance&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Principles of Good Governance
+● Discipline
+● Transparency 
+● Independence 
+● Accountability 
+● Responsibility 
+● Fairness&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;architecture-board&quot;&gt;Architecture Board&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;一个跨组织的 委员会, 帮我们进行架构治理工作, 需要能够代表所有的 key stakeholders&lt;/li&gt;
+  &lt;li&gt;需要是一些 来组不同部门的 senior members , 每月开一次会, 做一些架构决策, key principles 等&lt;/li&gt;
+  &lt;li&gt;Representative of all the key stakeholders in the architecture&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;architecture-contracts&quot;&gt;Architecture Contracts&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;“joint agreements between development partners and sponsors on the deliverables, quality, and fitness-for-purpose of an architecture”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;architecture-compliance&quot;&gt;Architecture Compliance&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;包含了
+    &lt;ul&gt;
+      &lt;li&gt;Irrelevant&lt;/li&gt;
+      &lt;li&gt;Consistent&lt;/li&gt;
+      &lt;li&gt;Compliant&lt;/li&gt;
+      &lt;li&gt;Conformant&lt;/li&gt;
+      &lt;li&gt;Fullyconformant ● Non-conformant&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Compliance Reviews&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 05 Apr 2023 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/Prepare-for-TOGAF-Certification/</link>
+        <guid isPermaLink="true">http://localhost:4000/Prepare-for-TOGAF-Certification/</guid>
+        
+        
+        <category>Togaf</category>
+        
+        <category>Architecture</category>
         
       </item>
     
@@ -28432,1935 +30811,6 @@ Fan out 和标准consumer 的对比&lt;/li&gt;
         <category>AWS</category>
         
         <category>Architecture</category>
-        
-      </item>
-    
-      <item>
-        <title>Python in Container Part Two</title>
-        <description>&lt;p&gt;在本教程中，您将学习如何创建描述简单 Python 容器的 Dockerfile 文件。 使用容器创建 Web 服务器、数据库构建、运行和验证 Django、Flask 并通用 Python 应用实现程序的功能. 最后还会学习调试在容器中运行的应用程序。&lt;/p&gt;
-
-&lt;h1 id=&quot;python-in-container&quot;&gt;Python in Container&lt;/h1&gt;
-
-&lt;p&gt;[TOC]&lt;/p&gt;
-
-&lt;h2 id=&quot;build-container-image&quot;&gt;Build Container Image&lt;/h2&gt;
-
-&lt;p&gt;继续 Python in Container 01 的笔记&lt;/p&gt;
-
-&lt;h3 id=&quot;dockerizing-pytest-and-pdb---例子&quot;&gt;Dockerizing PyTest and Pdb - 例子&lt;/h3&gt;
-
-&lt;p&gt;Python 的测试分为几种&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Static Tests - Pylint , etc,
-    &lt;ul&gt;
-      &lt;li&gt;提供静态测试，&lt;/li&gt;
-      &lt;li&gt;就是看看代码，分析代码，但不运行代码,&lt;/li&gt;
-      &lt;li&gt;IDE 就可以进行静态代码的检查&lt;/li&gt;
-      &lt;li&gt;和容器无关&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Unit Tests - PyTest, Unittest, etc, 提供单元测试
-    &lt;ul&gt;
-      &lt;li&gt;非常适合用容器进行单元测试&lt;/li&gt;
-      &lt;li&gt;生产环境应该是越干净，越小越好&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Black Box Tests,
-    &lt;ul&gt;
-      &lt;li&gt;模拟用户行为，&lt;/li&gt;
-      &lt;li&gt;创建内容，查看功能，&lt;/li&gt;
-      &lt;li&gt;比如 selenimum&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;使用-pytest-进行单元测试&quot;&gt;使用 PyTest 进行单元测试&lt;/h4&gt;
-
-&lt;p&gt;下载 multistage 的示例代码&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;git clone https://github.com/pythonincontainers/multistage
-&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;multistage
-docker build -t factors_flask:cython-multi -f Dockerfile.cython-multi .
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;下载测试用例的代码&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ..
-git clone https://github.com/pythonincontainers/simpletests
-&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;simpletests
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;创建测试镜像 并 生成容器&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# 用上面的镜像作为基础镜像&lt;/span&gt;
-docker build -t factors_flask:tester -f Dockerfile.tester --build-arg &lt;span class=&quot;nv&quot;&gt;BaseImage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;factors_flask:cython-multi .
-
-&lt;span class=&quot;c&quot;&gt;# 创建容器，创建过程中就自动执行了测试脚本，并输出结果，并在当前目录下生成 html 版本的报告&lt;/span&gt;
-docker run -it --rm -v &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PWD&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;:/data factors_flask:tester
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;浏览器打开目录中的静态 HTML 文件查看结果&lt;/p&gt;
-
-&lt;h4 id=&quot;使用-pdb-对-python-进行-debug&quot;&gt;使用 PDB 对 python 进行 debug&lt;/h4&gt;
-
-&lt;p&gt;https://docs.python.org/3/library/pdb.html&lt;/p&gt;
-
-&lt;p&gt;pdb 的使用方法是 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;python -m pdb xxx.py&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# 创建基于 pdb 的镜像&lt;/span&gt;
-docker build -t factors_flask:debug -f Dockerfile.debug --build-arg &lt;span class=&quot;nv&quot;&gt;BaseImage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;factors_flask:cython-multi .
-&lt;span class=&quot;c&quot;&gt;# 创建基于 pdb 的容器，并进入酵母模式&lt;/span&gt;
-docker run -it --rm -p 5000:5000 factors_flask:debug
-&lt;span class=&quot;c&quot;&gt;# 进入 Python 的 debug 模式&lt;/span&gt;
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;django-的容器化---开发&quot;&gt;Django 的容器化 - 开发&lt;/h3&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;git clone https://github.com/pythonincontainers/djangoimage
-&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;djangoimage
-&lt;span class=&quot;c&quot;&gt;# 查看 Dockerfile.mydjango&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# ARG BaseImage=python&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# ARG ImageTag=3.7.3&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# FROM $BaseImage:$ImageTag&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# ENV PYTHONUNBUFFERED 1&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# ARG DjangoVersion=2.2.1&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# RUN pip install Django==$DjangoVersion&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# WORKDIR /code&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;base_image
-docker build -t mydjango:2.2-3.7.3 -f Dockerfile.mydjango .
-&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ..
-&lt;span class=&quot;c&quot;&gt;# 测试一下镜像是否可以正常创建容器&lt;/span&gt;
-docker run -it --rm mydjango:2.2-3.7.3 django-admin --version
-&lt;span class=&quot;c&quot;&gt;# 输出 django 版本 2.2.1&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# 给 镜像起个别名&lt;/span&gt;
-docker tag mydjango:2.2-3.7.3 django
-
-&lt;span class=&quot;c&quot;&gt;#创建容器并启动 django 项目, 会在本地目录创建一个 myproject 的目录&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 就算容器运行后 --rm 删掉了， 但是本机的目录和文件还在&lt;/span&gt;
-docker run -it --rm -v &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PWD&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;:/code django django-admin startproject myproject
-&lt;span class=&quot;c&quot;&gt;# 再次创建容器，并设置端口映射，进入交互模式&lt;/span&gt;
-docker run -it --rm -v &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PWD&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;:/code -p 8000:8000 django bash
-&lt;span class=&quot;c&quot;&gt;# 进入容器&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;myproject/
-&lt;span class=&quot;c&quot;&gt;# 启动项目&lt;/span&gt;
-python manage.py startapp myapp
-&lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;通过 Powershell 定义一个佳作 dj 的 function&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# 下面这个命令是通过 powershell 定义 一个 function, 方便后面的命令执行，但是 mac 不知道怎么定义&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Function dj {docker run -it --rm -p 8000:8000 -v ${PWD}:/code django $args}&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 进行数据迁移&lt;/span&gt;
-docker run -it --rm -p 8000:8000 -v &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PWD&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;:/code django python manage.py migrate
-docker run -it --rm -p 8000:8000 -v &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PWD&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;:/code django python manage.py runserver 0:8000
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;访问 http://localhost:8000 可以看到 django 界面&lt;/p&gt;
-
-&lt;p&gt;修改view.py 增加&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;django.shortcuts&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;render&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# Create your views here.&lt;/span&gt;
-
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;django.http&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HttpResponse&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HttpResponse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hello, world.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;修改 urls.py&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;django.contrib&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;admin&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;django.urls&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;
-
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;myapp&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;views&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;urlpatterns&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;admin/&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;admin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;urls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;views&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;index&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; 
-&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;重启服务器，访问 http://localhost:8000  可以看到 hello, world&lt;/p&gt;
-
-&lt;h3 id=&quot;django-的容器化---生产&quot;&gt;Django 的容器化 - 生产&lt;/h3&gt;
-
-&lt;p&gt;Django 应用需要支持&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;支持技术包括应用服务器，数据库，缓存，Proxy 服务器&lt;/li&gt;
-  &lt;li&gt;运行时环境架构&lt;/li&gt;
-  &lt;li&gt;应用生命周期&lt;/li&gt;
-  &lt;li&gt;更新和升级&lt;/li&gt;
-  &lt;li&gt;缩放&lt;/li&gt;
-  &lt;li&gt;服务质量&lt;/li&gt;
-  &lt;li&gt;安全&lt;/li&gt;
-  &lt;li&gt;高可用&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Django 应用的准备流程&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;django-admin startproject django-polls   创建项目&lt;/li&gt;
-  &lt;li&gt;python manage.py startapp polls   创建项目的应用&lt;/li&gt;
-  &lt;li&gt;Create the source code  写代码&lt;/li&gt;
-  &lt;li&gt;python manage.py makemigrations polls   数据库初始化&lt;/li&gt;
-  &lt;li&gt;python manage.py migrate   数据库迁移（创建）&lt;/li&gt;
-  &lt;li&gt;python manage.py createsuperuser  创建超级用户&lt;/li&gt;
-  &lt;li&gt;python manage.py loaddata …   读取json数据到数据库中&lt;/li&gt;
-  &lt;li&gt;python manage.py collectstatic   统计所有的状态，并放到一个目录下&lt;/li&gt;
-  &lt;li&gt;python manage.py runserver …  启动 web 服务&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;python-容器的架构设计&quot;&gt;Python 容器的架构设计&lt;/h4&gt;
-
-&lt;p&gt;开发架构&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/008i3skNgy1gpzggm440zj30ig0betaq.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;测试架构&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/008i3skNgy1gpzghc6irkj30jo0biwhx.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;生产架构&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/008i3skNgy1gpzgrfaq5wj30kl0e83zg.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;示例代码---投票-demo1&quot;&gt;示例代码 - 投票 demo1&lt;/h4&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;git clone https://github.com/pythonincontainers/django-polls
-cd django-polls
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;查看几个文件&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Dockerfile.demo1   Dockerfile 文件&lt;/li&gt;
-  &lt;li&gt;Mysite/settings.py  配置文件&lt;/li&gt;
-  &lt;li&gt;Initial_data.json  初始化的数据&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-dockerfile&quot;&gt;ARG BaseImage
-FROM $BaseImage
-ENV PYTHONUNBUFFERED 1
-WORKDIR /code
-COPY . .
-EXPOSE 8000
-RUN python manage.py makemigrations polls &amp;amp;&amp;amp; \
-    python manage.py migrate &amp;amp;&amp;amp; \
-    python manage.py loaddata initial_data.json &amp;amp;&amp;amp; \
-    python manage.py collectstatic
-ENTRYPOINT [&quot;python&quot;, &quot;manage.py&quot;]
-CMD [&quot;runserver&quot;, &quot;0:8000&quot;]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;创建镜像 demo1 , 并运行容器&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;docker build -t django-polls:demo1 -f Dockerfile.demo1 --build-arg &lt;span class=&quot;nv&quot;&gt;BaseImage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;django .
-docker run -d --name polls-demo -p 8000:8000 django-polls:demo1
-
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;访问 http://localhost:8000/polls/ 查看投票&lt;/p&gt;
-
-&lt;h4 id=&quot;创建管理员用户&quot;&gt;创建管理员用户&lt;/h4&gt;
-
-&lt;p&gt;三种方法&lt;/p&gt;
-
-&lt;h5 id=&quot;手动创建管理员用户准备进行-demo2&quot;&gt;手动创建管理员用户，准备进行 demo2&lt;/h5&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;docker &lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; -it polls-demo python manage.py createsuperuser
-&lt;span class=&quot;c&quot;&gt;# 输入 admin , admin@example.com, admin, admin&lt;/span&gt;
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;访问 http://localhost:8000/admin/ 登录后台&lt;/p&gt;
-
-&lt;h5 id=&quot;自动创建---导出床架好的数据放在初始化数据中&quot;&gt;自动创建 - 导出床架好的数据放在初始化数据中&lt;/h5&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;docker &lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; -it polls-demo python manage.py dumpdata auth.user --indent 4
-&lt;span class=&quot;c&quot;&gt;# 将以下为输出追加保存到 initial_data.json 文件中&lt;/span&gt;
-docker rm -f polls-demo
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;model&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;auth.user&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;pk&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;fields&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;password&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;pbkdf2_sha256$150000$nQfMOKShamoF$8ox6PWBZSlaxDDxzHOD0zhe4XcEYVEqARglRWuhUkCg=&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;last_login&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;2021-04-28T14:32:47.694Z&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;is_superuser&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;username&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;admin&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;first_name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;last_name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;email&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;admin@example.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;is_staff&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;is_active&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;date_joined&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;2021-04-28T14:31:38.717Z&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;groups&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;user_permissions&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;重新 build 镜像并 run&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;docker build -t django-polls:demo1 -f Dockerfile.demo1 --build-arg &lt;span class=&quot;nv&quot;&gt;BaseImage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;django .
-docker run -d --name polls-demo -p 8000:8000 django-polls:demo1
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;访问 http://localhost:8000/admin/ 登录后台 , 不需要手动创建超级用户&lt;/p&gt;
-
-&lt;h5 id=&quot;自动创建---在-dockerfile-中将需要创建的数据用-python-命令执行&quot;&gt;自动创建 - 在 Dockerfile 中将需要创建的数据用 python 命令执行&lt;/h5&gt;
-
-&lt;p&gt;看Dockerfile.demo2, 多了一行&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-dockerfile&quot;&gt;RUN echo &quot;from django.contrib.auth.models import User; User.objects.create_superuser(&apos;admin&apos;, &apos;admin@example.com&apos;, &apos;admin&apos;)&quot; | python manage.py shell
-# 以上命令就是把 echo 出来的内容作为参数，让 python manage.py shell 来执行
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;删掉刚才加到 initial_data.json 中数据，用 Dockerfile.demo2 建立镜像并运行容器&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# 删掉容器&lt;/span&gt;
-docker rm -f polls-demo
-
-docker build -t django-polls:demo2 -f Dockerfile.demo2 --build-arg &lt;span class=&quot;nv&quot;&gt;BaseImage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;django .
-docker run -it --rm -p 8000:8000 django-polls:demo2
-
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;访问 http://localhost:8000/admin/ 登录后台 , 不需要手动创建超级用户， 已经在 build 和 run 的阶段就做好了&lt;/p&gt;
-
-&lt;h5 id=&quot;对创建的容器进行单元测试&quot;&gt;对创建的容器进行单元测试&lt;/h5&gt;
-
-&lt;p&gt;因为示例代码中有polls/tests.py ，用于进行单元测试&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;docker run -it --rm django-polls:demo2 &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 输出为&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Creating test database for alias &apos;default&apos;...&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# System check identified no issues (0 silenced).&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#........&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#----------------------------------------------------------------------&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Ran 8 tests in 0.090s&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# OK&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Destroying test database for alias &apos;default&apos;...&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;运行-django-和-flask-的-应用服务器&quot;&gt;运行 Django 和 Flask 的 应用服务器&lt;/h3&gt;
-
-&lt;p&gt;Python 应用服务包括&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Gunicorn (Green Unicorn)  绿色独角兽&lt;/li&gt;
-  &lt;li&gt;uWSGI   全称 Python Web Server Gateway Interface&lt;/li&gt;
-  &lt;li&gt;Mod_wsgi   为 apache 定制&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;前两个可以和任何 web proxy server 工作，最后一个是用来和 apache 工作的&lt;/p&gt;
-
-&lt;p&gt;Django app 前端的进化&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Django development server&lt;/li&gt;
-  &lt;li&gt;application server&lt;/li&gt;
-  &lt;li&gt;proxy server (比如 Nigix) + application server&lt;/li&gt;
-  &lt;li&gt;AWS Load Balancer + Application Server&lt;/li&gt;
-  &lt;li&gt;CDN Server + Applicaiton server&lt;/li&gt;
-  &lt;li&gt;Kubernetes Ingress + Application server&lt;/li&gt;
-  &lt;li&gt;Istio Service Mesh + Application Server&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;gunicorn-的使用&quot;&gt;Gunicorn 的使用&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.oschina.net/p/gunicorn?hmsr=aladdin1e1&quot;&gt;简单介绍&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/008i3skNgy1gq0csoh91uj30me0aeacv.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;先创建-base-image&quot;&gt;先创建 base image&lt;/h5&gt;
-
-&lt;p&gt;查看 base_image/Dockerfile.mygunicorn&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;基于 python 安装好 django 和 gunicorn 的镜像&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-dockerfile&quot;&gt;ARG BaseImage=python
-ARG ImageTag=3.7.3
-FROM $BaseImage:$ImageTag
-ENV PYTHONUNBUFFERED 1
-ARG DjangoVersion=2.2.1
-ARG GunicornVersion=19.9.0
-RUN pip install Django==$DjangoVersion gunicorn==$GunicornVersion
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;创建 base image&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;base_image
-docker build -t gunicorn -f Dockerfile.mygunicorn .
-&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ..
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;查看 Dockerfile.gunicorn&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-dockerfile&quot;&gt;ARG BaseImage
-FROM $BaseImage
-ENV PYTHONUNBUFFERED 1
-WORKDIR /code
-COPY . .
-EXPOSE 8000
-RUN python manage.py makemigrations polls &amp;amp;&amp;amp; \
-    python manage.py migrate &amp;amp;&amp;amp; \
-    python manage.py loaddata initial_data.json &amp;amp;&amp;amp; \
-    python manage.py collectstatic &amp;amp;&amp;amp; \
-    echo &quot;from django.contrib.auth.models import User; User.objects.create_superuser(&apos;admin&apos;, &apos;admin@example.com&apos;, &apos;admin&apos;)&quot; | python manage.py shell
-CMD [&quot;gunicorn&quot;, &quot;-c&quot;, &quot;gunicorn.ini&quot;, &quot;mysite.wsgi&quot;]  # 主要区别
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gunicorn -c gunicorn.ini mysite.wsgi&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;查看 gunicorn.ini&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;bind = &quot;0.0.0.0:8000&quot;
-workers = 2
-worker_connections = 1000
-timeout = 30
-user = None
-group = None
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;创建 django 的 gunicorn 镜像, 并启动 容器&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;docker build -t django-polls:gunicorn -f Dockerfile.gunicorn --build-arg &lt;span class=&quot;nv&quot;&gt;BaseImage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;gunicorn .
-docker run -it --rm -p 8000:8000 django-polls:gunicorn
-
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;访问 http://localhost:8000/polls/&lt;/p&gt;
-
-&lt;h4 id=&quot;uwsgi&quot;&gt;uWSGI&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://itpcb.com/a/191916&quot;&gt;介绍&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/008i3skNgy1gq0dm7odh9j30rs0na7eh.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;查看 base_image/Dockerfile.myuwsgi&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;基于 python 安装好 django 和 uwsgi 的镜像&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-dockerfile&quot;&gt;ARG BaseImage=python
-ARG ImageTag=3.7.3
-FROM $BaseImage:$ImageTag
-ENV PYTHONUNBUFFERED 1
-ARG DjangoVersion=2.2.1
-ARG uWSGIVersion=2.0.18
-RUN pip install Django==$DjangoVersion uwsgi==$uWSGIVersion  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;base_image
-docker build -t uwsgi -f Dockerfile.myuwsgi .
-&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ..
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;查看 Dockerfile.uwsgi&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-dockerfile&quot;&gt;ARG BaseImage
-FROM $BaseImage
-ENV PYTHONUNBUFFERED 1
-WORKDIR /code
-COPY . .
-EXPOSE 8000
-RUN python manage.py makemigrations polls &amp;amp;&amp;amp; \
-    python manage.py migrate &amp;amp;&amp;amp; \
-    python manage.py loaddata initial_data.json &amp;amp;&amp;amp; \
-    python manage.py collectstatic &amp;amp;&amp;amp; \
-    echo &quot;from django.contrib.auth.models import User; User.objects.create_superuser(&apos;admin&apos;, &apos;admin@example.com&apos;, &apos;admin&apos;)&quot; | python manage.py shell
-CMD [&quot;uwsgi&quot;, &quot;uwsgi-http.ini&quot;]  # 区别在这里，启动命令的变化
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;查看 uwsgi-http.ini&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;[uwsgi]
-chdir = /code
-module = mysite.wsgi:application
-master = True
-pidfile = /tmp/project-master.pid
-vacuum = True
-harakiri = 20
-max-requests = 5000
-http-socket = 0.0.0.0:8000
-processes = 2
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;创建 django 的 uwsgi 镜像, 并启动 容器&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;docker build -t django-polls:uwsgi -f Dockerfile.uwsgi --build-arg &lt;span class=&quot;nv&quot;&gt;BaseImage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;uwsgi .
-docker run -it --rm -p 8000:8000 django-polls:uwsgi
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;生产级别的数据库---postgresql&quot;&gt;生产级别的数据库 - PostgreSQL&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;目的是创建两个独立的容器， 一个是 数据库，另一个是链接数据库的 django&lt;/li&gt;
-  &lt;li&gt;数据会独立于数据库存在于一个持久的存储上&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;介绍&quot;&gt;介绍&lt;/h4&gt;
-
-&lt;p&gt;Python 对数据库的支持能力&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Python Database API - PEP 249&lt;/li&gt;
-  &lt;li&gt;SQLAlchemy&lt;/li&gt;
-  &lt;li&gt;Object-relational Mappers (ORM): PeeWee, PonyORM, SQLObject, Tortois ORM, Storm&lt;/li&gt;
-  &lt;li&gt;Native DB Engine Drivers: Mysql, ProsgreSQL, MongoDB, CouchDB, Cassandra&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Django 的数据库驱动&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;SQLite3&lt;/li&gt;
-  &lt;li&gt;PostgreSQL&lt;/li&gt;
-  &lt;li&gt;Mysql and variants(MariaDB, etc,)&lt;/li&gt;
-  &lt;li&gt;Oracle Database Server&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;数据库的设置主要在 settings.py 中&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://docs.djangoproject.com/en/3.2/ref/settings/#databases&quot;&gt;文档&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;下面是 对应的设置例子&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;ENGINE 需要提前设置好&lt;/li&gt;
-  &lt;li&gt;USER 需要提前就存在&lt;/li&gt;
-  &lt;li&gt;也可以通过环境变量来替换 hardcode 的配置信息&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;# SQLite3
-DATABASES = {
-    &apos;default&apos;: {
-        &apos;ENGINE&apos;: &apos;django.db.backends.sqlite3&apos;,
-        &apos;NAME&apos;: os.path.join(BASE_DIR,&apos;db.sqlite3&apos;),
-    }
-}
-# PostgreSQL
-DATABASES = {
-    &apos;default&apos;: {
-        &apos;ENGINE&apos;: &apos;django.db.backends.postgresql&apos;,  # 可以换成 mysql, sqlite2, oracle
-        &apos;NAME&apos;: &apos;pollsdb&apos;,
-        &apos;USER&apos;: &apos;pollsuser&apos;,
-        &apos;PASSWORD&apos;: &apos;pollspass&apos;,
-        &apos;HOST&apos;: &apos;db&apos;,
-        &apos;PORT&apos;: &apos;5432&apos;,
-    }
-}
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;创建数据库所需的网络-和-posgresql-容器&quot;&gt;创建数据库所需的网络 和 posgresql 容器&lt;/h4&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;docker network create polls_net
-&lt;span class=&quot;c&quot;&gt;#docker run -d --name db --network polls_net -e POSTGRES_PASSWORD=myprecious postgres&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#docker exec -it db psql -U postgres&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# docker run -it --rm --network polls_net postgres psql -h db -U postgres&lt;/span&gt;
-
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;手动创建的话参考下面的 postgresql 命令&lt;/p&gt;
-
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;USER&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pollsuser&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;pollspass&apos;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;CReATEDB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;Create&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DATABASE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;POLLSDB&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WITH&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;OWNER&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pollsuser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;du&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;创建数据库容器&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;-v 可以将数据独立于存储&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;
-docker rm -f db
-&lt;span class=&quot;c&quot;&gt;# docker run -d --name db --network polls_net -e POSTGRES_DB=pollsdb -e POSTGRES_USER=pollsuser -e POSTGRES_PASSWORD=pollspass postgres&lt;/span&gt;
-docker run -d --name db --network polls_net -v polls_vol:/var/lib/postgresql/data -e &lt;span class=&quot;nv&quot;&gt;POSTGRES_DB&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pollsdb -e &lt;span class=&quot;nv&quot;&gt;POSTGRES_USER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pollsuser -e &lt;span class=&quot;nv&quot;&gt;POSTGRES_PASSWORD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pollspass postgres
-
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;创建需要连接-postgre-的django应用镜像和容器&quot;&gt;创建需要连接 postgre 的Django应用镜像和容器&lt;/h4&gt;
-
-&lt;p&gt;查看 Dockerfile.postgres&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-dockerfile&quot;&gt;ARG BaseImage
-FROM $BaseImage
-ENV PYTHONUNBUFFERED 1
-WORKDIR /code
-COPY . .
-EXPOSE 8000
-RUN pip install psycopg2  # 是 postgresql 的 客户端
-RUN python manage.py makemigrations polls &amp;amp;&amp;amp; python manage.py collectstatic
-ARG DjangoSettings=mysite.settings_postgres
-ENV DJANGO_SETTINGS_MODULE=$DjangoSettings
-CMD [&quot;gunicorn&quot;, &quot;-c&quot;, &quot;gunicorn.ini&quot;, &quot;mysite.wsgi&quot;]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;查看 mysite3/settings_postgres.py&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;DATABASES&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;&apos;default&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&apos;ENGINE&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;django.db.backends.postgresql&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&apos;NAME&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;pollsdb&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&apos;USER&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;pollsuser&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&apos;PASSWORD&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;pollspass&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&apos;HOST&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;db&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&apos;PORT&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;5432&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;创建镜像, 并启动容器，初始化数据并创建管理员用户&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;docker images gunicorn
-docker build -t django-polls:postgres -f Dockerfile.postgres --build-arg &lt;span class=&quot;nv&quot;&gt;BaseImage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;gunicorn .
-&lt;span class=&quot;c&quot;&gt;# 初始化数据库&lt;/span&gt;
-docker run -it --rm --network polls_net django-polls:postgres python manage.py migrate
-&lt;span class=&quot;c&quot;&gt;# 读取数据&lt;/span&gt;
-docker run -it --rm --network polls_net django-polls:postgres python manage.py loaddata initial_data.json
-&lt;span class=&quot;c&quot;&gt;# 创建管理员 # 这里用 admin, admin@example.com, admin, admin&lt;/span&gt;
-docker run -it --rm --network polls_net django-polls:postgres python manage.py createsuperuser
-
-&lt;span class=&quot;c&quot;&gt;# 启动web 服务&lt;/span&gt;
-docker run -it --rm --network polls_net -p 8000:8000 django-polls:postgres 
-
-&lt;span class=&quot;c&quot;&gt;# 停止服务&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 对容器进行单元测试&lt;/span&gt;
-docker run -it --rm --network polls_net -p 8000:8000 django-polls:postgres python manage.py &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;创建-pgadmin-用来管理数据&quot;&gt;创建 PGAdmin 用来管理数据&lt;/h4&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;#docker rm -f db&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#docker run -d --name db --network polls_net -v polls_vol:/var/lib/postgresql/data -e POSTGRES_DB=pollsdb -e POSTGRES_USER=pollsuser -e POSTGRES_PASSWORD=pollspass postgres&lt;/span&gt;
-docker run -d --name pgadmin --network polls_net -p 8080:80 -e &lt;span class=&quot;nv&quot;&gt;PGADMIN_DEFAULT_EMAIL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;admin@example.com -e &lt;span class=&quot;nv&quot;&gt;PGADMIN_DEFAULT_PASSWORD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;admin dpage/pgadmin4
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;访问 http://localhost:8080/&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;登录用户名密码 admin@example.com  admin&lt;/li&gt;
-  &lt;li&gt;创建 数据库连接 db , db , pollsuser, pollspass&lt;/li&gt;
-  &lt;li&gt;查看数据， 查看用户和权限&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;删除数据库容器的步骤&quot;&gt;删除数据库容器的步骤&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;数据库容器删除了， 但是数据会保存在存储上，重建容器后，应用可以照常访问数据库的数据&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;数据库容器需要通过 kill 来删除， 确保数据可以有效的保存到存储中&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;docker &lt;span class=&quot;nb&quot;&gt;kill&lt;/span&gt; -s SIGTERM db
-docker rm db
-docker rm -f db
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;生产级别的数据库---mariadb&quot;&gt;生产级别的数据库 - MariaDB&lt;/h3&gt;
-
-&lt;p&gt;和 上一章的 postgresql 比较， 除了 setting.py 之外，其他 django 代码不需要做任何变化&lt;/p&gt;
-
-&lt;p&gt;MariaDB image 的&lt;a href=&quot;https://hub.docker.com/_/mariadb&quot;&gt;说明&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;创建一个持久的存储,&lt;/p&gt;
-
-&lt;h4 id=&quot;快速创建一个-mariadb-容器&quot;&gt;快速创建一个 MariaDB 容器&lt;/h4&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;docker &lt;span class=&quot;nb&quot;&gt;kill&lt;/span&gt; -s SIGTERM db
-docker rm -f db
-docker volume create maria_vol
-docker run -d --name db --network polls_net -e &lt;span class=&quot;nv&quot;&gt;MYSQL_DATABASE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pollsdb -e &lt;span class=&quot;nv&quot;&gt;MYSQL_USER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pollsuser -e &lt;span class=&quot;nv&quot;&gt;MYSQL_PASSWORD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pollspass -e &lt;span class=&quot;nv&quot;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;myprecious -v maria_vol:/var/lib/mysql mariadb
-&lt;span class=&quot;c&quot;&gt;# 默认的超级用户名是 root&lt;/span&gt;
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;查看 Dockerfile.mariadb&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-dockerfile&quot;&gt;ARG BaseImage
-FROM $BaseImage
-ENV PYTHONUNBUFFERED 1
-WORKDIR /code
-COPY . .
-EXPOSE 8000
-RUN pip install mysqlclient  # 区别
-RUN python manage.py makemigrations polls &amp;amp;&amp;amp; python manage.py collectstatic
-ARG DjangoSettings=mysite.settings_mariadb  # 区别
-ENV DJANGO_SETTINGS_MODULE=$DjangoSettings
-CMD [&quot;gunicorn&quot;, &quot;-c&quot;, &quot;gunicorn.ini&quot;, &quot;mysite.wsgi&quot;]
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;查看 mysite/settings_mariadb&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;DATABASES&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;&apos;default&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&apos;ENGINE&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;django.db.backends.mysql&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  
-        &lt;span class=&quot;s&quot;&gt;&apos;NAME&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;pollsdb&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&apos;USER&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;pollsuser&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&apos;PASSWORD&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;pollspass&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&apos;HOST&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;db&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&apos;PORT&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;3306&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;创建链接-mariadb-的-django-镜像和容器&quot;&gt;创建链接 Mariadb 的 django 镜像和容器&lt;/h4&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;docker build -t django-polls:mariadb -f Dockerfile.mariadb --build-arg &lt;span class=&quot;nv&quot;&gt;BaseImage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;gunicorn .
-docker run -it --rm --network polls_net django-polls:mariadb python manage.py migrate
-docker run -it --rm --network polls_net django-polls:mariadb python manage.py loaddata initial_data.json
-docker run -it --rm --network polls_net django-polls:mariadb python manage.py createsuperuser
-&lt;span class=&quot;c&quot;&gt;# admin@example.com, admin, admin&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# 启动 web 服务&lt;/span&gt;
-docker run -it --rm --network polls_net -p 8000:8000 django-polls:mariadb
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;访问 http://localhost:8000/polls/&lt;/p&gt;
-
-&lt;h4 id=&quot;使用-dj-database-url-来为-django-建立一个适应多个数据库的方案&quot;&gt;使用 dj-database-url 来为 Django 建立一个适应多个数据库的方案&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://pypi.org/project/dj-database-url/&quot;&gt;查看官方文档&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Support currently exists for
-    &lt;ul&gt;
-      &lt;li&gt;PostgreSQL,&lt;/li&gt;
-      &lt;li&gt;PostGIS,&lt;/li&gt;
-      &lt;li&gt;MySQL,&lt;/li&gt;
-      &lt;li&gt;MySQL (GIS),&lt;/li&gt;
-      &lt;li&gt;Oracle,&lt;/li&gt;
-      &lt;li&gt;Oracle (GIS), and&lt;/li&gt;
-      &lt;li&gt;SQLite.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;用了 dj-database-url 只要修改 settings.py 就可以了&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;查看 mysite/settings_universal.py&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;dj_database_url&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;DATABASES&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;&apos;default&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dj_database_url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;sqlite:////code/db.sqlite3&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;查看 Dockerfile.db-universal&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-dockerfile&quot;&gt;ARG BaseImage
-FROM $BaseImage
-ENV PYTHONUNBUFFERED 1
-WORKDIR /code
-COPY . .
-EXPOSE 8000
-# 下面一行是区别， 安装了所有可能使用的数据库的 python 客户端扩展，和 dj-database-url
-RUN pip install psycopg2==2.8.2 mysqlclient==1.4.2 cx-Oracle==7.1.3 dj-database-url==0.5.0
-RUN python manage.py makemigrations polls &amp;amp;&amp;amp; python manage.py collectstatic
-ARG DjangoSettings=mysite.settings_universal  #区别在上面
-ENV DJANGO_SETTINGS_MODULE=$DjangoSettings
-CMD [&quot;gunicorn&quot;, &quot;-c&quot;, &quot;gunicorn.ini&quot;, &quot;mysite.wsgi&quot;]
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Database_URL&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/008i3skNgy1gq0ryd2jsqj30nt0dk0ua.jpg&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;创建能链接各种数据库的 django 镜像 和 容器&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;docker build -t django-polls:db-universal -f Dockerfile.db-universal --build-arg &lt;span class=&quot;nv&quot;&gt;BaseImage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;gunicorn .
-&lt;span class=&quot;c&quot;&gt;# 假设我们用 mariadb&lt;/span&gt;
-docker run -it --rm --network polls_net -p 8000:8000 -e &lt;span class=&quot;s2&quot;&gt;&quot;DATABASE_URL=mysql://pollsuser:pollspass@db/pollsdb&quot;&lt;/span&gt; django-polls:db-universal
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;访问 http://localhost:8000/polls/&lt;/p&gt;
-
-&lt;h3 id=&quot;生产级别的-web-proxy-server&quot;&gt;生产级别的 web proxy server&lt;/h3&gt;
-
-&lt;p&gt;proxy server rationale 理由&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;强大和精密(sophisticated)的 web server&lt;/li&gt;
-  &lt;li&gt;支持 https&lt;/li&gt;
-  &lt;li&gt;提供负载均衡&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;本章要设计的架构 - 三个独立的容器， db, app, proxy server&lt;/p&gt;
-
-&lt;p&gt;本章要做的事情&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;建立数据库容器&lt;/li&gt;
-  &lt;li&gt;建立应用&lt;/li&gt;
-  &lt;li&gt;建立基于 nginx 的 proxy server&lt;/li&gt;
-  &lt;li&gt;负载均衡练习&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;先建立postgresql数据库容器&quot;&gt;先建立postgresql数据库容器&lt;/h4&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;docker &lt;span class=&quot;nb&quot;&gt;kill&lt;/span&gt; -s SIGTERM db
-docker rm -f db
-docker run -d --name db --network polls_net -e &lt;span class=&quot;nv&quot;&gt;POSTGRES_PASSWORD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;myprecious -v polls_vol:/var/lib/postgresql/data postgres
-docker logs db
-&lt;span class=&quot;c&quot;&gt;# 看到 database system is ready to accept connections 就 OK 了&lt;/span&gt;
-
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;建立-应用的-镜像和容器&quot;&gt;建立 应用的 镜像和容器&lt;/h4&gt;
-
-&lt;p&gt;查看 Dockerfile.uwsgi4nginx&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;这次用了 uwsgi 替换了 gunicorn （去链接 nginx） 作为 base image&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-dockerfile&quot;&gt;ARG BaseImage
-FROM $BaseImage
-ENV PYTHONUNBUFFERED 1
-WORKDIR /code
-COPY . .
-EXPOSE 8000
-RUN pip install psycopg2==2.8.2 mysqlclient==1.4.2 cx-Oracle==7.1.3 dj-database-url==0.5.0
-RUN python manage.py makemigrations polls  # 区别， 并没有ython manage.py collectstatic
-ARG DjangoSettings=mysite.settings_universal
-ENV DJANGO_SETTINGS_MODULE=$DjangoSettings
-CMD [&quot;uwsgi&quot;, &quot;uwsgi-nginx.ini&quot;]  # 区别 用了 uwsgi 替换了 gunicorn 去链接 nginx
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;查看 uwsgi-nginx.ini&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;[uwsgi]
-chdir = /code
-module = mysite.wsgi:application
-master = True
-pidfile = /tmp/project-master.pid
-vacuum = True
-harakiri = 20
-max-requests = 5000
-socket = 0.0.0.0:8000
-processes = 2
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;创建 django 镜像，初始化数据， 创建超级用户&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# uwsgi 是一个自建的 base image&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;build_image
-docker build -t uwsgi -f Dockerfile.myuwsgi .
-&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ..
-docker build -t django-polls:uwsgi4nginx -f Dockerfile.uwsgi4nginx --build-arg &lt;span class=&quot;nv&quot;&gt;BaseImage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;uwsgi .
-docker run -it --rm --network polls_net -e &lt;span class=&quot;s2&quot;&gt;&quot;DATABASE_URL=postgres://pollsuser:pollspass@db/pollsdb&quot;&lt;/span&gt; django-polls:uwsgi4nginx python manage.py migrate
-docker run -it --rm --network polls_net -e &lt;span class=&quot;s2&quot;&gt;&quot;DATABASE_URL=postgres://pollsuser:pollspass@db/pollsdb&quot;&lt;/span&gt; django-polls:uwsgi4nginx python manage.py loaddata initial_data.json
-docker run -it --rm --network polls_net -e &lt;span class=&quot;s2&quot;&gt;&quot;DATABASE_URL=postgres://pollsuser:pollspass@db/pollsdb&quot;&lt;/span&gt; django-polls:uwsgi4nginx python manage.py createsuperuser
-
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;创建 app1 容器&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;docker run -d -e &lt;span class=&quot;s2&quot;&gt;&quot;DATABASE_URL=postgres://pollsuser:pollspass@db/pollsdb&quot;&lt;/span&gt; --network polls_net --name app1 django-polls:uwsgi4nginx
-docker logs app1
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;建立-nginx-镜像和容器&quot;&gt;建立 Nginx 镜像和容器&lt;/h4&gt;
-
-&lt;p&gt;查看 Dockerfile.nginx&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;这里用了multi-stage build&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-dockerfile&quot;&gt;FROM django as dev
-WORKDIR /code
-COPY . .
-RUN pip install dj-database-url==0.5.0
-ARG DjangoSettings=mysite.settings_universal
-ENV DJANGO_SETTINGS_MODULE=$DjangoSettings
-RUN python manage.py collectstatic
-
-FROM nginx:1.17.0
-WORKDIR /code
-COPY --from=dev /code/static /code/static
-COPY mysite_nginx.conf /etc/nginx/conf.d/
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;查看 mysite_nginx.conf&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# mysite_nginx.conf&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;upstream&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;django&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;app1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;listen&lt;/span&gt;      &lt;span class=&quot;mi&quot;&gt;8000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;server_name&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# special &quot;catch all&quot; Server Name, please substitute with something appropriate&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;charset&lt;/span&gt;     &lt;span class=&quot;n&quot;&gt;utf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;client_max_body_size&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;75&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# adjust to taste&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;media&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;media&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# if Media Files are to be served&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;static&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# if Static Files are to be served&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c&quot;&gt;# Finally, send all non-media requests to the Django server.&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;uwsgi_pass&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;django&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;include&lt;/span&gt;     &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;etc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nginx&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uwsgi_params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;创建 nginx 镜像, 运行容器&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;docker build -t mynginx -f Dockerfile.nginx .
-docker run -it --rm --network polls_net -p 8000:8000 mynginx
-&lt;span class=&quot;c&quot;&gt;# 或者&lt;/span&gt;
-docker run -d --network polls_net -p 8000:8000 mynginx
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;建立-带-ssl-的-nginx-镜像和容器&quot;&gt;建立 带 SSL 的 Nginx 镜像和容器&lt;/h4&gt;
-
-&lt;p&gt;需要用多阶段的 build&lt;/p&gt;
-
-&lt;p&gt;先 build django, 然后 build ubuntu 做 SSL证书, 最后 build nginx&lt;/p&gt;
-
-&lt;p&gt;查看 Dockerfile.nginx-ssl&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-dockerfile&quot;&gt;FROM django as dev
-WORKDIR /code
-COPY . .
-RUN pip install dj-database-url==0.5.0
-ARG DjangoSettings=mysite.settings_universal
-ENV DJANGO_SETTINGS_MODULE=$DjangoSettings
-RUN python manage.py collectstatic
-
-FROM ubuntu:18.04 as ssl
-RUN apt-get update &amp;amp;&amp;amp; apt-get install -y openssl
-WORKDIR /ssl
-RUN openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 \
-    -keyout django-polls.key.pem -out django-polls.crt.pem \
-    -subj &quot;/CN=django-polls.example.com&quot;
-
-FROM nginx:1.17.0
-WORKDIR /code
-COPY --from=dev /code/static /code/static
-COPY --from=ssl /ssl/django-polls.key.pem /ssl/django-polls.crt.pem /code/
-COPY mysite_nginx_ssl.conf /etc/nginx/conf.d/
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;查看 mysite_nginx_ssl.conf&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# mysite_nginx_ssl.conf&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;upstream&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;django&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;app1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;listen&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;443&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ssl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;ssl_certificate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;django&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;polls&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;crt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;ssl_certificate_key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;django&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;polls&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;server_name&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;django&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;polls&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;example&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;charset&lt;/span&gt;     &lt;span class=&quot;n&quot;&gt;utf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;client_max_body_size&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;75&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# adjust to taste&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;media&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;media&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# if Media Files are to be served&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;static&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# if Static Files are to be served&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c&quot;&gt;# Finally, send all non-media requests to the Django server.&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;uwsgi_pass&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;django&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;include&lt;/span&gt;     &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;etc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nginx&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uwsgi_params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;建立 ngins ssl 的镜像和容器&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;docker build -t mynginx:ssl -f Dockerfile.nginx-ssl .
-docker run -it --rm --network polls_net -p 443:443 mynginx:ssl
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;访问https  https://localhost/polls/&lt;/p&gt;
-
-&lt;h4 id=&quot;用-nginx-做负载均衡&quot;&gt;用 Nginx 做负载均衡&lt;/h4&gt;
-
-&lt;p&gt;先建立第二个 应用容器&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;docker run -d -e &lt;span class=&quot;s2&quot;&gt;&quot;DATABASE_URL=postgres://pollsuser:pollspass@db/pollsdb&quot;&lt;/span&gt; --network polls_net --name app2 django-polls:uwsgi4nginx
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;然后设置 mysite_nginx_ssl.conf ,添加 app2&lt;/p&gt;
-
-&lt;p&gt;修改部分如下&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;upstream&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;django&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;app1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;app2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;重新 build nginx image , 并启动 nginx 容器&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;docker build -t mynginx:lb -f Dockerfile.nginx-ssl .
-docker run -d --name proxy --network polls_net -p 443:443 mynginx:lb
-docker logs app1
-docker logs app2
-docker system prune
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;打开 https://localhost/polls/  进行操作和刷新， 然后查看两个容器的日志， 会发现该有些访问走 app1, 有些走 app2&lt;/p&gt;
-
-&lt;h3 id=&quot;自动化的需求&quot;&gt;自动化的需求&lt;/h3&gt;
-
-&lt;p&gt;把之前做过的内容进行自动化，让其他程序员可以快速部署和我们一样的环境&lt;/p&gt;
-
-&lt;p&gt;组件的依赖关系&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/008i3skNgy1gq3u6zx5fsj30s607u74u.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;需要建立的镜像和容器&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/008i3skNgy1gq3uld57dyj30ie0iiacg.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;所需要执行的命令列表&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;如果把所有这些放到 shell 脚本也可以执行，但是并不是很友好的方法&lt;/li&gt;
-  &lt;li&gt;另一种方法是放到 k8s 中进行&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;#git clone https://github.com/pythonincontainers/base_image&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#cd base_image&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#docker build -t django -f Dockerfile.mydjango .&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#docker build -t uwsgi -f Dockerfile.myuwsgi .&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;#建立 base images, django 和 uwsgi&lt;/span&gt;
-git clone https://github.com/pythonincontainers/djangoimage
-&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;djangoimage
-&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;base_image
-docker build -t django -f Dockerfile.mydjango .
-&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ../..
-git clone https://github.com/pythonincontainers/django-polls
-&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;django-polls
-&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;base_image
-docker build -t uwsgi -f Dockerfile.myuwsgi .
-&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ..
-&lt;span class=&quot;c&quot;&gt;#git clone https://github.com/pythonincontainers/django-polls&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# 建立代码镜像&lt;/span&gt;
-docker build -t django-polls:uwsgi4nginx -f Dockerfile.uwsgi4nginx --build-arg &lt;span class=&quot;nv&quot;&gt;BaseImage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;uwsgi .
-
-&lt;span class=&quot;c&quot;&gt;# 建立存储和网络&lt;/span&gt;
-docker network create polls_net
-docker volume rm polls_vol
-docker volume create polls_vol
-
-&lt;span class=&quot;c&quot;&gt;# 建立数据库容器&lt;/span&gt;
-docker &lt;span class=&quot;nb&quot;&gt;kill &lt;/span&gt;db app1 app2 proxy
-docker rm -f db app1 app2 proxy
-docker run -d --network polls_net -e &lt;span class=&quot;s2&quot;&gt;&quot;POSTGRES_USER=pollsuser&quot;&lt;/span&gt; -e &lt;span class=&quot;s2&quot;&gt;&quot;POSTGRES_PASSWORD=pollspass&quot;&lt;/span&gt; -e &lt;span class=&quot;s2&quot;&gt;&quot;POSTGRES_DB=pollsdb&quot;&lt;/span&gt; --name db -v polls_vol:/var/lib/postgresql/data postgres
-docker logs db
-
-docker run -it --rm --network polls_net -e &lt;span class=&quot;s2&quot;&gt;&quot;DATABASE_URL=postgres://pollsuser:pollspass@db/pollsdb&quot;&lt;/span&gt; django-polls:uwsgi4nginx python manage.py migrate
-docker run -it --rm --network polls_net -e &lt;span class=&quot;s2&quot;&gt;&quot;DATABASE_URL=postgres://pollsuser:pollspass@db/pollsdb&quot;&lt;/span&gt; django-polls:uwsgi4nginx python manage.py loaddata initial_data.json
-docker run -it --rm --network polls_net -e &lt;span class=&quot;s2&quot;&gt;&quot;DATABASE_URL=postgres://pollsuser:pollspass@db/pollsdb&quot;&lt;/span&gt; django-polls:uwsgi4nginx python manage.py createsuperuser
-docker run -d --name pgadmin --network polls_net -p 8080:80 -e &lt;span class=&quot;nv&quot;&gt;PGADMIN_DEFAULT_EMAIL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;admin@example.com -e &lt;span class=&quot;nv&quot;&gt;PGADMIN_DEFAULT_PASSWORD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;admin dpage/pgadmin4
-
-
-
-
-&lt;span class=&quot;c&quot;&gt;# 创建 app1 , app2 的容器&lt;/span&gt;
-docker run -d -e &lt;span class=&quot;s2&quot;&gt;&quot;DATABASE_URL=postgres://pollsuser:pollspass@db/pollsdb&quot;&lt;/span&gt; --network polls_net --name app1 django-polls:uwsgi4nginx
-docker run -d -e &lt;span class=&quot;s2&quot;&gt;&quot;DATABASE_URL=postgres://pollsuser:pollspass@db/pollsdb&quot;&lt;/span&gt; --network polls_net --name app2 django-polls:uwsgi4nginx
-
-&lt;span class=&quot;c&quot;&gt;# 创建 Nginx proxy 的镜像&lt;/span&gt;
-docker build -t mynginx:ssl -f Dockerfile.nginx-ssl .
-&lt;span class=&quot;c&quot;&gt;# 建立 proxy 容器&lt;/span&gt;
-docker run -d --name proxy --network polls_net -p 443:443 -v &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PWD&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;/mysite_nginx_ssl_lb.conf:/etc/nginx/conf.d/mysite_nginx_ssl.conf mynginx:ssl
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;访问前端页面 https://localhost/polls/&lt;/p&gt;
-
-&lt;p&gt;访问管理后台 https://localhost/admin/ root admin&lt;/p&gt;
-
-&lt;p&gt;访问数据库管理界面 http://localhost:8080/&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;登录用户名密码 admin@example.com  admin&lt;/li&gt;
-  &lt;li&gt;创建 数据库连接 db , db , pollsuser, pollspass&lt;/li&gt;
-  &lt;li&gt;查看数据， 查看用户和权限&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;shipping-container-容器的运输&quot;&gt;Shipping Container 容器的运输&lt;/h2&gt;
-
-&lt;h3 id=&quot;shipping-image--镜像运输&quot;&gt;Shipping Image  镜像运输&lt;/h3&gt;
-
-&lt;p&gt;Python 应用运输的方法&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker export&lt;/code&gt; 将容器导入到 tar 文件&lt;/li&gt;
-  &lt;li&gt;用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker save&lt;/code&gt; 将镜像保存到tar 文件&lt;/li&gt;
-  &lt;li&gt;用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker load&lt;/code&gt; 将tar 文件导入到 镜像中&lt;/li&gt;
-  &lt;li&gt;通 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker push&lt;/code&gt; 将本地镜像上传到  Docker Hub 上，为镜像进行注册&lt;/li&gt;
-  &lt;li&gt;用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker pull&lt;/code&gt; 将镜像拉到本地 镜像库&lt;/li&gt;
-  &lt;li&gt;其他公有云的镜像仓库， Azure, AWS, Google,&lt;/li&gt;
-  &lt;li&gt;可以建立本地镜像仓库， 自己电脑上， 或者公司界别的镜像库&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;利用-docker-export-和-docker-import-在-vm-中建立镜像和容器&quot;&gt;利用 docker export 和 docker import 在 vm 中建立镜像和容器&lt;/h4&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;git clone https://github.com/pythonincontainers/flask-hello
-&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;flask-hello
-docker build -t flask-hello:alpine -f Dockerfile-alpine .
-docker images flask-hello
-
-&lt;span class=&quot;c&quot;&gt;# 创建一个 stop 的容器&lt;/span&gt;
-docker create --name flask-hello flask-hello:alpine  
-&lt;span class=&quot;c&quot;&gt;# 从容器导出一个 tar 包&lt;/span&gt;
-docker &lt;span class=&quot;nb&quot;&gt;export&lt;/span&gt; -o flask-hello.tar flask-hello
-docker rm flask-hello
-
-&lt;span class=&quot;c&quot;&gt;# 在 virtual box 上创建一个 叫 local 的 虚拟机&lt;/span&gt;
-docker-machine create &lt;span class=&quot;nb&quot;&gt;local
-&lt;/span&gt;docker-machine ls
-docker-machine scp flask-hello.tar &lt;span class=&quot;nb&quot;&gt;local&lt;/span&gt;:/tmp
-docker-machine ssh &lt;span class=&quot;nb&quot;&gt;local&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# 进入虚机后&lt;/span&gt;
-docker images
-docker import --change &lt;span class=&quot;s2&quot;&gt;&quot;WORKDIR /myproject&quot;&lt;/span&gt; --change &lt;span class=&quot;s2&quot;&gt;&quot;CMD python flask-hello.py&quot;&lt;/span&gt; /tmp/flask-hello.tar flask-hello:alpine   
-
-docker images
-&lt;span class=&quot;c&quot;&gt;# 已经有新的 image 了&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 运行 local 上的容器&lt;/span&gt;
-docker run -it --rm -p 5000:5000 flask-hello:alpine
-
-&lt;span class=&quot;c&quot;&gt;# 查看 虚机 local 的地址&lt;/span&gt;
-docker-machine ip &lt;span class=&quot;nb&quot;&gt;local&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 输出 192.168.99.104&lt;/span&gt;
-
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;访问 http://192.168.99.104:5000&lt;/p&gt;
-
-&lt;h4 id=&quot;练习-docker-save--docker-load&quot;&gt;练习 docker save , docker load&lt;/h4&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# 在 vm 中删除镜像，并删除.tar 文件&lt;/span&gt;
-docker rmi flask-hello:alpine
-rm /tmp/flask-hello.tar
-&lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 回到主机&lt;/span&gt;
-docker images 
-&lt;span class=&quot;c&quot;&gt;# REPOSITORY   TAG       IMAGE ID       CREATED       SIZE&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# postgres     latest    26c8bcd8b719   3 weeks ago   314MB&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# 将三个镜像打包到一个images.tar 文件中&lt;/span&gt;
-docker save -o images.tar postgres django-polls:uwsgi4nginx mynginx:ssl
-docker-machine scp images.tar &lt;span class=&quot;nb&quot;&gt;local&lt;/span&gt;:/tmp
-docker-machine ssh &lt;span class=&quot;nb&quot;&gt;local&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 进入 虚机&lt;/span&gt;
-docker images   &lt;span class=&quot;c&quot;&gt;# 空&lt;/span&gt;
-docker load -i /tmp/images.tar
-docker images &lt;span class=&quot;c&quot;&gt;# 有三个镜像了&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# 清理战场&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;exit
-&lt;/span&gt;rm -f &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.tar
-docker-machine rm &lt;span class=&quot;nb&quot;&gt;local&lt;/span&gt;
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;image-registries-and-repositories&quot;&gt;Image Registries and Repositories&lt;/h3&gt;
-
-&lt;h4 id=&quot;一些概念&quot;&gt;一些概念&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Repository：镜像仓库，用于存储具体的docker镜像，起到的是仓库存储作用，比如Tomcat下面有很多个版本的镜像，它们共同组成了Tomcat的Repository，我们通过tag来区分镜像版本&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Registry：注册服务器，管理镜像仓库，起到的是服务器的作用，比如官方的是Docker Hub，它是开源的，我们一般通过docker pull默认是拉取官方镜像仓库的镜像，当然我们也可以自己部署一个，拉取我们私有仓库镜像只需加上私有仓库IP+端口命令格式&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Registry上有很多的Repository，Redis、Tomcat、MySQL等等Repository组成了Registry。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker pull &amp;lt;registry&amp;gt;:port/&amp;lt;repository&amp;gt;:&amp;lt;tag&amp;gt;&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;docker.io/pythonincontainers/simple-flask:v1.1
-gcr.io/google-containers/python:3.5.1-slim
-gitlab.com/pythonincontainers/section4/lesson1/example1:latest
-registry.mycompany.com/project-zeta/serviceA:0.9.1
-localhost:5001/django-polls:nginx-lb
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;h5 id=&quot;imange-name&quot;&gt;Imange name&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Offiial images - short names:
-    &lt;ul&gt;
-      &lt;li&gt;Python Post nginx&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Official image - short name + tags
-    &lt;ul&gt;
-      &lt;li&gt;Python:3.7-slim python:2.7.16-alpine3.9&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Docker hub images - full name + tags:
-    &lt;ul&gt;
-      &lt;li&gt;Pythonincontainers/flask-hello:1.0&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&quot;image-repository--就是仓库里我们自己创建的镜像的名字&quot;&gt;Image Repository , 就是仓库里我们自己创建的镜像的名字&lt;/h5&gt;
-
-&lt;p&gt;下面，django-pools 就是 repository 的名字&lt;/p&gt;
-
-&lt;p&gt;所有镜像的名字都是一样的， 不用管 tag 的名字&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Django-pools:uwsgi4nginx&lt;/li&gt;
-  &lt;li&gt;Django-pools:db-universal&lt;/li&gt;
-  &lt;li&gt;Django-pools:mariadb&lt;/li&gt;
-  &lt;li&gt;Django-pools:postgres&lt;/li&gt;
-  &lt;li&gt;Django-pools:uwsgi&lt;/li&gt;
-  &lt;li&gt;Django-pools:gunicorn&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&quot;image-registry&quot;&gt;Image Registry&lt;/h5&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;存储 image repositories 的地方 ， 比如 Docker Hub&lt;/li&gt;
-  &lt;li&gt;用来管理和发布镜像&lt;/li&gt;
-  &lt;li&gt;push image 到 registry&lt;/li&gt;
-  &lt;li&gt;从 registry pull 镜像&lt;/li&gt;
-  &lt;li&gt;云registry 和 本地 registry&lt;/li&gt;
-  &lt;li&gt;分为公有 registry 和私有 registry&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;查找和使用 image 时的逻辑流程&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;分析image 的名字，分解出 registry, repository 和 tag&lt;/li&gt;
-  &lt;li&gt;检查 Docker 的 本地 image catch 是否有这个image, 如果有，跳到第四步&lt;/li&gt;
-  &lt;li&gt;从 registry 下载镜像到本地的 image cache&lt;/li&gt;
-  &lt;li&gt;使用本地镜像中的 image&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;review-of-key-cloud-registries-公有云提供的镜像仓库&quot;&gt;Review of Key Cloud Registries 公有云提供的镜像仓库&lt;/h3&gt;
-
-&lt;p&gt;任何人或者组织都可以分享他们的 registries&lt;/p&gt;
-
-&lt;p&gt;一些知名的 Cloud Image Registries&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;docker hub&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://quay.io&quot;&gt;Quay.io&lt;/a&gt; 由 RedHat 维护， 是付费的镜像仓库&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://gitlab.com/gitlib&quot;&gt;Gitlab container registry &lt;/a&gt; 和 docker hub 很像， 知名的免费 镜像仓库， 可以集成 CICD pipeline&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cloud.google.com/container-registry/&quot;&gt;Google Container Registry&lt;/a&gt; (GCR)&lt;/li&gt;
-  &lt;li&gt;Amazon Elastic Container Registry （ECR） &lt;a href=&quot;https://docs.amazonaws.cn/aws/latest/userguide/ecr.html&quot;&gt;文档&lt;/a&gt; &lt;a href=&quot;https://aws.amazon.com/ecr/&quot;&gt;国际版&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Azure Container Registry&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;review-of-local-registry-技术-了解本地镜像仓库技术&quot;&gt;Review of Local Registry 技术 了解本地镜像仓库技术&lt;/h3&gt;
-
-&lt;p&gt;有一些 image registry 软件可以在本地环境进行安装，用于管理镜像仓库&lt;/p&gt;
-
-&lt;h4 id=&quot;本地镜像仓库的优势&quot;&gt;本地镜像仓库的优势&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;简单快速的分享镜像&lt;/li&gt;
-  &lt;li&gt;自主的访问控制&lt;/li&gt;
-  &lt;li&gt;高安全性&lt;/li&gt;
-  &lt;li&gt;灵活的存储后台配置&lt;/li&gt;
-  &lt;li&gt;灵活的整合能力，尤其是和企业内部的一些软件或者流程&lt;/li&gt;
-  &lt;li&gt;有仓库缓存选项&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;docker-local-registry&quot;&gt;Docker Local Registry&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;开源的 Docker Registry&lt;/li&gt;
-  &lt;li&gt;商业版本 Docker 新任的 Registry&lt;/li&gt;
-  &lt;li&gt;可以通过容器镜像提供&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;可以在 github 中找到&lt;/p&gt;
-
-&lt;p&gt;https://github.com/distribution/distribution&lt;/p&gt;
-
-&lt;p&gt;运行一个 Docker Local Registry&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;git clone https://github.com/pythonincontainers/local-registry
-&lt;span class=&quot;nb&quot;&gt;cd local&lt;/span&gt;-registry/
-docker run -d -p 5001:5000 --restart always --name registry-local registry:2
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;还需要一个 Docker Registry 的 UI&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;一个个人开发的 Docker Registry UI, https://joxit.dev/docker-registry-ui/&lt;/li&gt;
-  &lt;li&gt;可以通过刚刚下载的Dockerfile.registry-gui 来生成镜像&lt;/li&gt;
-  &lt;li&gt;Dockerfile 会使用通过刚刚下载的 registry-gui.yml&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;docker build -t myregistry:gui -f Dockerfile.registry-gui .   &lt;span class=&quot;c&quot;&gt;# 创建一个 gui 镜像&lt;/span&gt;
-docker rm -f registry-local  &lt;span class=&quot;c&quot;&gt;# 删掉原来的&lt;/span&gt;
-docker run -d --name registry-local --restart always -p 5551:5551 myregistry:gui &lt;span class=&quot;c&quot;&gt;# 创建一个本地镜像仓库的容器&lt;/span&gt;
-docker logs registry-local
-&lt;span class=&quot;c&quot;&gt;# docker tag factors_flask:cython-multi localhost:5551/factors_flask:multi&lt;/span&gt;
-docker tag flask-hello:alpine localhost:5551/flask-hello:myversion  &lt;span class=&quot;c&quot;&gt;# 为我们本地缓存中的随便一个镜像打个标签&lt;/span&gt;
-docker push localhost:5551/flask-hello:myversion  &lt;span class=&quot;c&quot;&gt;# 将这个镜像 push 到 本地镜像仓库中&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 创建一个 本地镜像管理界面的容器&lt;/span&gt;
-docker run -d --name registry-ui -p 8880:80 -e &lt;span class=&quot;nv&quot;&gt;URL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;http://localhost:5551 -e &lt;span class=&quot;nv&quot;&gt;DELETE_IMAGES&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;true &lt;/span&gt;joxit/docker-registry-ui:static  
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;访问 http://localhost:8880&lt;/p&gt;
-
-&lt;p&gt;就可以看到刚才 push 的镜像了&lt;/p&gt;
-
-&lt;p&gt;在 VM 中创建一个 Docker 镜像的本地仓库&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;docker build -t myregistry:cache -f Dockerfile.hub-mirror .
-docker run -d --name registry-cache -p 5552:5552 --restart always myregistry:cache
-docker logs registry-cache
-docker-machine create --driver hyperv --engine-registry-mirror http://192.168.31.51:5552 --engine-insecure-registry http:192.168.31.51:5551 docker1
-&lt;span class=&quot;c&quot;&gt;# 这里报错了， 说: Error with pre-create check: &quot;Powershell was not found in the path&quot;&lt;/span&gt;
-docker-machine env docker1
-
-&lt;span class=&quot;c&quot;&gt;# 清理掉没用的镜像和容器&lt;/span&gt;
-
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;其他的本地镜像软件&lt;/p&gt;
-
-&lt;p&gt;Goharbor.io&lt;/p&gt;
-
-&lt;p&gt;jforg.com/artifactory/&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 26 Jul 2021 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/Python-in-Container-02/</link>
-        <guid isPermaLink="true">http://localhost:4000/Python-in-Container-02/</guid>
-        
-        
-        <category>Python</category>
-        
-        <category>Docker</category>
         
       </item>
     

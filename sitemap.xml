@@ -81,6 +81,10 @@
 <lastmod>2023-03-21T00:00:00+08:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/Prepare-for-TOGAF-Certification/</loc>
+<lastmod>2023-04-05T00:00:00+08:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/ChatGPT-and-OpenAI-Python-API-Bootcamp/</loc>
 <lastmod>2023-05-09T00:00:00+08:00</lastmod>
 </url>
@@ -184,6 +188,9 @@
 <loc>http://localhost:4000/category/metaverse/</loc>
 </url>
 <url>
+<loc>http://localhost:4000/category/togaf/</loc>
+</url>
+<url>
 <loc>http://localhost:4000/category/chatgpt/</loc>
 </url>
 <url>
@@ -200,6 +207,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/category/itil/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/category/it/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/category/jekyll/</loc>
@@ -221,5 +231,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page4/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page5/</loc>
 </url>
 </urlset>

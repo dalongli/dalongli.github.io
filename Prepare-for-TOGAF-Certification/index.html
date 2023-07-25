@@ -1,0 +1,2936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" href="/assets/images/logo.png">
+
+<title>Use ChatGPT in Python | Dalong's personal blog</title>
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Use ChatGPT in Python | Dalong’s personal blog</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Use ChatGPT in Python" />
+<meta name="author" content="Dalong" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="TOGAF® 基本上是一套清晰的组织发展规则和实践，旨在帮助组织。它指导企业如何在单一战略中创建、解释、分析和利用不同的要素。该框架还使用了明确定义的术语。这样可以简化部门之间的沟通，并大大减少浪费错误的可能性。就让我带领你揭开他的面纱。" />
+<meta property="og:description" content="TOGAF® 基本上是一套清晰的组织发展规则和实践，旨在帮助组织。它指导企业如何在单一战略中创建、解释、分析和利用不同的要素。该框架还使用了明确定义的术语。这样可以简化部门之间的沟通，并大大减少浪费错误的可能性。就让我带领你揭开他的面纱。" />
+<link rel="canonical" href="http://localhost:4000/Prepare-for-TOGAF-Certification/" />
+<meta property="og:url" content="http://localhost:4000/Prepare-for-TOGAF-Certification/" />
+<meta property="og:site_name" content="Dalong’s personal blog" />
+<meta property="og:image" content="http://localhost:4000/assets/images/togaf.jpeg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-04-05T00:00:00+08:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"Use ChatGPT in Python","dateModified":"2023-04-05T00:00:00+08:00","datePublished":"2023-04-05T00:00:00+08:00","description":"TOGAF® 基本上是一套清晰的组织发展规则和实践，旨在帮助组织。它指导企业如何在单一战略中创建、解释、分析和利用不同的要素。该框架还使用了明确定义的术语。这样可以简化部门之间的沟通，并大大减少浪费错误的可能性。就让我带领你揭开他的面纱。","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"},"name":"Dalong"},"image":"http://localhost:4000/assets/images/togaf.jpeg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/Prepare-for-TOGAF-Certification/"},"url":"http://localhost:4000/Prepare-for-TOGAF-Certification/","author":{"@type":"Person","name":"Dalong"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+<link href="/assets/css/screen.css" rel="stylesheet">
+
+<link href="/assets/css/main.css" rel="stylesheet">
+
+<script src="/assets/js/jquery.min.js"></script>
+
+</head>
+
+
+
+
+<body class="layout-post">
+	<!-- defer loading of font and font awesome -->
+	<noscript id="deferred-styles">
+		<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+    </noscript>
+
+
+<!-- Begin Menu Navigation
+================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+
+    <div class="container pr-0">
+
+    <!-- Begin Logo -->
+    <a class="navbar-brand" href="/">
+    <img src="/assets/images/logo.png" alt="Dalong's personal blog">
+    </a>
+    <!-- End Logo -->
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+
+        <!-- Begin Menu -->
+
+            <ul class="navbar-nav ml-auto">
+
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/index.html">Blog</a>
+                </li>
+
+                <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+                </li>
+
+<!-- 以后再加上相关链接
+
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://bootstrapstarter.com/bootstrap-templates/template-mediumish-bootstrap-jekyll/"> Docs</a>
+                </li>
+
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://www.wowthemes.net/themes/mediumish-wordpress/"><i class="fab fa-wordpress-simple"></i> WP Version</a>
+                </li>
+
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://www.wowthemes.net/themes/mediumish-ghost/"><i class="fab fa-snapchat-ghost"></i> Ghost Version</a>
+                </li>
+-->
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://github.com/dalongli"><i class="fab fa-github"></i> Fork on Github</a>
+                </li>
+
+                <script src="/assets/js/lunr.js"></script>
+
+
+<style>
+    .lunrsearchresult .title {color: #d9230f;}
+    .lunrsearchresult .url {color: silver;}
+    .lunrsearchresult a {display: block; color: #777;}
+    .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
+    .lunrsearchresult a:hover .title {text-decoration: underline;}
+</style>
+
+
+<form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+    <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Type and enter..."/>
+</form>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/assets/js/lunrsearchengine.js"></script>
+
+            </ul>
+
+        <!-- End Menu -->
+
+    </div>
+
+    </div>
+</nav>
+<!-- End Navigation
+================================================== -->
+
+<div class="site-content">
+
+<div class="container">
+
+<!-- Site Title
+================================================== -->
+<div class="mainheading">
+    <h1 class="sitetitle">Dalong's personal blog</h1>
+    <p class="lead">
+        Record the bits and pieces of the technology big bang.
+    </p>
+</div>
+
+<!-- Content
+================================================== -->
+<div class="main-content">
+    <!-- Begin Article
+================================================== -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Share -->
+        <div class="col-md-2 pl-0">
+            <div class="share sticky-top sticky-top-offset">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=Use ChatGPT in Python&url=http://localhost:4000/Prepare-for-TOGAF-Certification/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=http://localhost:4000/Prepare-for-TOGAF-Certification/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/Prepare-for-TOGAF-Certification/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+    
+    <div class="sep">
+    </div>
+    <ul>
+        <li>
+        <a class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>
+
+        </div>
+
+        <!-- Post -->
+        
+
+        <div class="col-md-9 flex-first flex-md-unordered">
+            <div class="mainheading">
+
+                <!-- Author Box -->
+                
+                <div class="row post-top-meta">
+                    <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0">
+                        
+                        <img class="author-thumb" src="/assets/images/avatar_dl.png" alt="Dalong">
+                        
+                    </div>
+                    <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
+                        <a target="_blank" class="link-dark" href="https://dalongli.github.io/about">Dalong</a><a target="_blank" href="https://dalongli.github.io." class="btn follow">Follow</a>
+                        <span class="author-description">A profesional technical consultant and blogger.</span>
+                    </div>
+                </div>
+                
+
+                <!-- Post Title -->
+                <h1 class="posttitle">Use ChatGPT in Python</h1>
+
+            </div>
+
+            <!-- Adsense if enabled from _config.yml (change your pub id and slot) -->
+            
+            <!-- End Adsense -->
+
+            <!-- Post Featured Image -->
+            
+
+            
+            <img class="featured-image img-fluid" src="/assets/images/togaf.jpeg" alt="Use ChatGPT in Python">
+            
+
+            
+            <!-- End Featured Image -->
+
+            <!-- Post Content -->
+            <div class="article-post">
+                <!-- Toc if any -->
+                
+                    
+                    <div class="toc mt-4 mb-4 lead">
+                        <h3 class="font-weight-bold">Summary</h3>
+                        <ul>
+  <li><a href="#togaf">TOGAF</a>
+    <ul>
+      <li><a href="#资源">资源</a></li>
+      <li><a href="#题库">题库</a></li>
+      <li><a href="#考试入口">考试入口</a></li>
+      <li><a href="#重要的英文单词">重要的英文单词</a></li>
+      <li><a href="#学习技巧">学习技巧</a></li>
+      <li><a href="#架构概念">架构概念</a></li>
+      <li><a href="#togag-认证-与-考试">TOGAG 认证 与 考试</a></li>
+      <li><a href="#togaf-92-的标准">togaf 9.2 的标准</a></li>
+      <li><a href="#part-1-togaf-介绍---核心和基础概念">Part 1 togaf 介绍 - 核心和基础概念</a>
+        <ul>
+          <li><a href="#企业的定义">企业的定义</a></li>
+          <li><a href="#四个架构域-bdat">四个架构域 BDAT</a></li>
+          <li><a href="#adm-架构开发方法">ADM 架构开发方法</a></li>
+        </ul>
+      </li>
+      <li><a href="#part-2-adm">Part 2 ADM</a>
+        <ul>
+          <li><a href="#preliminary-phase-预备阶段">Preliminary Phase 预备阶段</a></li>
+          <li><a href="#a---vision-架构愿景">A - Vision 架构愿景</a></li>
+          <li><a href="#b---业务架构">B - 业务架构</a></li>
+          <li><a href="#c---信息系统架构">C - 信息系统架构</a></li>
+          <li><a href="#d---technology-architecture-技术架构">D - Technology Architecture 技术架构</a></li>
+          <li><a href="#e---opportunity-and-solution-机会与方案">E - Opportunity and Solution 机会与方案</a></li>
+          <li><a href="#f---migration-planning">F - Migration Planning</a></li>
+          <li><a href="#g---implementation-governance--实施和治理">G - Implementation Governance  实施和治理</a></li>
+          <li><a href="#h---architecture-change-management">H - Architecture Change Management</a></li>
+          <li><a href="#requirement-management--需求管理">Requirement Management  需求管理</a></li>
+        </ul>
+      </li>
+      <li><a href="#part-3-adm-guideline-and-techniques">Part 3 ADM Guideline and techniques</a>
+        <ul>
+          <li><a href="#adm-and-architectural-styles-92-新加的">ADM and architectural styles (9.2 新加的)</a></li>
+          <li><a href="#architecture-principles">Architecture principles</a></li>
+          <li><a href="#stakeholder-management-干系人管理">Stakeholder Management 干系人管理</a></li>
+          <li><a href="#architecture-patterns-架构模式">Architecture Patterns 架构模式</a></li>
+          <li><a href="#business-scenarios-业务场景">Business Scenarios 业务场景</a></li>
+          <li><a href="#gap-analysis">Gap Analysis</a></li>
+          <li><a href="#migration-planning">Migration Planning</a></li>
+          <li><a href="#interoperability-协同工作的能力">Interoperability 协同工作的能力</a></li>
+          <li><a href="#business-transformation-readiness-assessment-btra">Business Transformation Readiness Assessment (BTRA)</a></li>
+          <li><a href="#risk-management">Risk Management</a></li>
+          <li><a href="#capability-based-planning-基于能力的规划">Capability-Based Planning 基于能力的规划</a></li>
+        </ul>
+      </li>
+      <li><a href="#part-4-architecture-content-framework">Part 4 Architecture Content Framework</a></li>
+      <li><a href="#part-5-enterprise-continuum-and-tools">Part 5 Enterprise Continuum and Tools</a>
+        <ul>
+          <li><a href="#architecture-repository">Architecture Repository</a></li>
+        </ul>
+      </li>
+      <li><a href="#part-6-architecture-capability-framework">Part 6 Architecture Capability Framework</a></li>
+      <li><a href="#其他-重要度-togaf-概念">其他 重要度 TOGAF 概念</a>
+        <ul>
+          <li><a href="#architecture-governance">Architecture Governance</a></li>
+          <li><a href="#architecture-board">Architecture Board</a></li>
+          <li><a href="#architecture-contracts">Architecture Contracts</a></li>
+          <li><a href="#architecture-compliance">Architecture Compliance</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+                    </div>
+                
+                <!-- End Toc -->
+                <p>TOGAF® 基本上是一套清晰的组织发展规则和实践，旨在帮助组织。它指导企业如何在单一战略中创建、解释、分析和利用不同的要素。该框架还使用了明确定义的术语。这样可以简化部门之间的沟通，并大大减少浪费错误的可能性。就让我带领你揭开他的面纱。</p>
+
+<h1 id="togaf">TOGAF</h1>
+<p>[TOC]</p>
+
+<h2 id="资源">资源</h2>
+<p><a href="https://pubs.opengroup.org/architecture/togaf9-doc/arch/">TOGIF 9.2标准</a>
+<a href="https://publications.opengroup.org/togaf-library?_ga=2.13000052.237257023.1685593249-50990242.1685593249">Togaf library</a>
+<a href="https://publications.opengroup.org/more-categories/templates/i093">sample deliverables</a>
+<a href="https://www.opengrooup.org">TOGAF 官网</a>
+<a href="https://pubs.opengroup.org/architecture/togaf92-doc/arch/">在线的 Togaf 9.2 标准文档</a></p>
+
+<h2 id="题库">题库</h2>
+<p><a href="http://www.techbolo.com/questions/index.php/942419/lang-en">1</a>
+<a href="https://www.webagesolutions.com/wp-content/uploads/2020/09/TOGAF-Part-1-Practice-Test.pdf">2</a>
+<a href="https://www.udemy.com/course/5-practice-exams-92-foundation-part-1-og0-091/">5 套练习题, 需要 16 美元, 已购买</a>
+<a href="https://download.csdn.net/download/guanggonglangzi/10970291">CSDN 上的一些题, 要付费</a>
+<a href="https://www.examtopics.com/exams/the-open-group/og0-091/view/">在线的 part1 307 道题</a>
+<a href="https://www.examtopics.com/exams/the-open-group/og0-092/">在线的 part2 80 道题</a></p>
+
+<h2 id="考试入口">考试入口</h2>
+<p>https://www.opengroup.org/certifications/take-exam
+https://home.pearsonvue.com/theopengroup
+<a href="https://www.opengroup.org/certifications/online-proctored-exams">在线考试介绍</a></p>
+
+<h2 id="重要的英文单词">重要的英文单词</h2>
+<p>acronym - 首字母缩写</p>
+
+<h2 id="学习技巧">学习技巧</h2>
+<ul>
+  <li>跟着视频学一章, 然后回头去手册对应章节讲的内容.</li>
+</ul>
+
+<h2 id="架构概念">架构概念</h2>
+<ul>
+  <li>一个企业架构的架构框架</li>
+  <li>框架: 方法工具和定义</li>
+  <li>ADM Architecture Development Method (ADM)</li>
+  <li>架构的ISO/IEC/IEEE 42010: 2011定义
+    <ul>
+      <li>ISO/IEC/IEEE 42010: 2011
+“The fundamental concepts or properties of a system in its environment embodied in its elements, relationships, and in the principles of its design and evolution.”</li>
+    </ul>
+  </li>
+  <li>架构的 TOGAF 定义
+    <ul>
+      <li>“The structure of components, their inter-relationships, and the principles and guidelines governing their design and evolution over time.”</li>
+    </ul>
+  </li>
+  <li>架构的 大白话 解释
+    <ul>
+      <li>一个系统的多个部分和他们的关系, 以及他们的治理原则, 设计和进化</li>
+      <li>TOGAF 是一个架构框架</li>
+      <li>我们通过架构框架来指导我们进行架构工作</li>
+      <li>工作中要用 togaf , 还需要购买 togaf 的 license</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="togag-认证-与-考试">TOGAG 认证 与 考试</h2>
+<ul>
+  <li>有两个级别的考试</li>
+  <li>Level 1 and Level 2 Or Part 1 and Part 2
+    <ul>
+      <li>level 1 过了可以拿到 TOGAF Foundation 认证</li>
+      <li>level 1 和 level 2 都过了, 才能拿到完整的 TOGAF 认证</li>
+    </ul>
+  </li>
+  <li>TOGAF Part 1
+  ● A test of core knowledge of the standard
+      标准的核心概念
+  ● A multiple-choice test, only 1 correct answer 
+      多选题, 一个正确答案
+  ● 40 questions over 60 minutes 
+      40 道题 60分钟的考试
+  ● Need 55% to pass, or 22 correct out of 40
+      答对 22 道题算过
+  ● Each correct answer is worth 1 point
+      每个题算一分
+    <ul>
+      <li>中英文都有</li>
+    </ul>
+  </li>
+  <li>TOGAF Part 2
+  ● A test of how you apply the TOGAF Standard
+      考灵活运用
+  ● A scenario based test, scored using gradient scoring
+      基于场景的测试
+  ● Open book exam
+      开卷考试, 可以访问考试提供的标准信息
+  ● 8 questions over 90 minutes
+      90 分钟, 8 个问题
+  ● Need 60% to pass
+  ● Must have passed Part 1 to take Part 2
+      考过了 part1 才能考 part2</li>
+  <li>可以两个考试合并到一个, 一起考, 费用如下
+    <ul>
+      <li>part1 or part2 - 考试费用 US$360 per test</li>
+      <li>part1 + part2 一起考 - 考试费用 US$550 for the combined test</li>
+    </ul>
+  </li>
+  <li>考试语言 中英文</li>
+  <li>考试版本, 还是以 9.2 为考试基础, togaf 10 还没有考试</li>
+</ul>
+
+<h2 id="togaf-92-的标准">togaf 9.2 的标准</h2>
+<ul>
+  <li>标准分成 6 个部分
+    <ol>
+      <li>Introduction
+        <ul>
+          <li>介绍核心概念和定义</li>
+          <li>学习的时候要对照中英文手册, 确保概念理解</li>
+        </ul>
+      </li>
+      <li>ADM
+        <ul>
+          <li>架构开发方法</li>
+          <li>是 togaf 的核心</li>
+          <li>架构师做架构的流程和迭代方式</li>
+        </ul>
+      </li>
+      <li>Guidelines and techniques
+        <ul>
+          <li>指导方针和技术</li>
+          <li>应用架构的标准一些材料, 把这些材料为我们自己的场景进行定制化</li>
+        </ul>
+      </li>
+      <li>Architect content framework
+        <ul>
+          <li>结构化的原始模型, 为最终的架构交付物作为原型和基础</li>
+        </ul>
+      </li>
+      <li>Enterprise Continuum
+        <ul>
+          <li>企业连续性</li>
+          <li>是一个目录编辑模型</li>
+          <li>当我们把架构设计放到 架构的 repository中, 进行分类管理和版本管理?</li>
+        </ul>
+      </li>
+      <li>Architecture Capability Framework
+        <ul>
+          <li>架构能力框架</li>
+          <li>为了定义一个企业架构, 我们需要告诉大家这个架构的能力</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>togaf library
+    <ul>
+      <li>是一个图书馆, 或者叫做材料库</li>
+      <li>当我们做架构项目, 可以在 library 中找到一些文档材料</li>
+    </ul>
+  </li>
+  <li>生成版本的版本号
+    <ul>
+      <li>0.1 表示 draft 的第一个版本</li>
+      <li>1.0 表示已经被 同意和签字了的版本</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="part-1-togaf-介绍---核心和基础概念">Part 1 togaf 介绍 - 核心和基础概念</h2>
+<ul>
+  <li>
+    <p><a href="https://pubs.opengroup.org/architecture/togaf9-doc/arch/">官网的togaf 9.2 标准</a></p>
+  </li>
+  <li>
+    <p>7 个核心概念
+  ● The definition of enterprise
+  ● The architecture domains, or BDAT
+  ● The architecture development method, or ADM
+  ● Deliverables, artifacts and building blocks
+  ● The enterprise continuum
+  ● The architecture repository
+  ● And, defining architecture capability</p>
+  </li>
+</ul>
+
+<h3 id="企业的定义">企业的定义</h3>
+<ul>
+  <li>“Highest level of description for an organization”
+    <ul>
+      <li>可能是一个 组织, 或者是多个组织的组合
+        <ul>
+          <li>比如麦当劳和他们的生态伙伴,也可以理解为一个大的企业</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>架构师的工作范围
+    <ul>
+      <li>可能是企业的某个部分的架构设计, 也可能是负责企业和生态的所有架构</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="四个架构域-bdat">四个架构域 BDAT</h3>
+<ul>
+  <li>企业架构可以分四层
+    <ul>
+      <li>Business, Data, Application, Technology</li>
+      <li>Business Domain 是一层, 主要是业务架构</li>
+      <li>DAT 是剩下的一大层, 是技术架构</li>
+      <li>技术架构再分层 Data, Applicaiton, Technology</li>
+    </ul>
+  </li>
+  <li>Business Domain
+    <ul>
+      <li>由企业执行层来决定的业务单元</li>
+      <li>定义现在和未来的 business capability</li>
+    </ul>
+  </li>
+  <li>Data Domain
+    <ul>
+      <li>数据域处理逻辑/物理数据资产</li>
+      <li>处理现在和未来企业数据的主要类型和资源的交互与结构</li>
+    </ul>
+  </li>
+  <li>Application Domain
+    <ul>
+      <li>处理每个应用的开发和部署的方式</li>
+      <li>每个应用和核心业务流程的关系</li>
+      <li>处理现在和未来一组应用提供的业务功能的交互与结构的能力</li>
+    </ul>
+  </li>
+  <li>Technology Domain
+    <ul>
+      <li>技术域包括了计算, 网络, 中间件, 第三方应用等</li>
+      <li>是业务的支撑系统</li>
+      <li>处理现在和未来技术服务与技术内容的交互与结构</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="adm-架构开发方法">ADM 架构开发方法</h3>
+<ul>
+  <li>是 togaf 的核心</li>
+  <li>adm 是定义企业架构的流程</li>
+  <li>可以被测试, 可以重复使用</li>
+  <li>分成几个阶段
+    <ul>
+      <li>Preliminary Phase
+        <ul>
+          <li>发布基本的 principles, setup 架构能力, 对任务进行指导, 让决策更容易</li>
+        </ul>
+      </li>
+      <li>ADM cycle
+        <ul>
+          <li>是一个循环, 包括了 8 个阶段, 从 A 到 H</li>
+        </ul>
+      </li>
+      <li>A:
+        <ul>
+          <li>Vision</li>
+        </ul>
+      </li>
+      <li>B, C, D:
+        <ul>
+          <li>定义架构</li>
+          <li>定义 BDAT 四个域</li>
+          <li>需要管理层 Sign off</li>
+        </ul>
+      </li>
+      <li>E, F:
+        <ul>
+          <li>定义工作计划</li>
+          <li>定义实现架构的流程</li>
+          <li>一系列的 transition architectures</li>
+          <li>帮助我们从目前的阶段到未来要达到的阶段</li>
+        </ul>
+      </li>
+      <li>G:
+        <ul>
+          <li>实施</li>
+          <li>和开发团队一起实现这个架构</li>
+          <li>发布架构合同 ?</li>
+        </ul>
+      </li>
+      <li>H:
+        <ul>
+          <li>变化管理</li>
+          <li>架构实现之后的变化管理</li>
+          <li>变化需要再走一遍这个 ADM cycle</li>
+          <li>变化包括新的业务需求,</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Requriement Management Phase
+    <ul>
+      <li>是上面的多个阶段中心的一个阶段</li>
+      <li>对需求进行管理的流程</li>
+    </ul>
+  </li>
+  <li>一共 10 个 phases
+    <ul>
+      <li>有 Preliminary Phase 和 A-H 的 cycle, 中间还有一个 requirement management phase</li>
+      <li>每个阶段都有自己对应的 Objective, Inpute, Steps, Outputs (目标, 输入, 步骤, 输出)
+        <ul>
+          <li>输入来自 repository 中的现有资产, 或者自己创建新的资产, 需要和stakeholders 进行合作
+<img src="http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-06-02-141047.jpg" alt="" /></li>
+        </ul>
+      </li>
+      <li>phases 可以被暂停, 可以返回和修改一个过去的phase</li>
+      <li>Iteration 是 cycle 中的某些流程可以进行循环的迭代
+<img src="http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-06-02-145228.jpg" alt="" /></li>
+      <li>ADM 可以按照我们的需要就行定制和调整</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="part-2-adm">Part 2 ADM</h2>
+
+<h3 id="preliminary-phase-预备阶段">Preliminary Phase 预备阶段</h3>
+<ul>
+  <li>描述打造架构能力所需的准备工作和启 动工作，包括客制化 TOGAF 框架和定 义架构原则。</li>
+  <li>定义组织<strong>期望</strong>的架构能力的级别, 包含了架构的 principles</li>
+  <li>Where, what, why, who, and how we do architecture</li>
+  <li>包括 收集和发布 架构能力</li>
+  <li>
+    <p>Business imperative (业务的势在必行) 会在 预备阶段, scoping 企业架构工作的时候, 驱动 需求和性能 metrics</p>
+  </li>
+  <li>Objectives
+    <ul>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Determine the Architecture <strong>Capability</strong> desired by the organization:</td>
+              <td>组织期待的决定的架构能力</td>
+            </tr>
+          </tbody>
+        </table>
+        <ul>
+          <li>Review the organizational context for conducting Enterprise Architecture</li>
+          <li>Identify and scope the elements of the enterprise organizations affected by the Architecture Capability</li>
+          <li>Identify the established frameworks, methods, and processes that intersect with the Architecture Capability</li>
+          <li>Establish Capability Maturity target</li>
+        </ul>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Establish the Architecture Capability:</td>
+              <td>发布架构能力</td>
+            </tr>
+          </tbody>
+        </table>
+        <ul>
+          <li>Define and establish the Organizational Model for Enterprise Architecture</li>
+          <li>Define and establish the detailed process and resources for Architecture Governance</li>
+          <li>Select and implement tools that support the Architecture Capability</li>
+          <li>Define the Architecture <strong>Principles</strong></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Preliminary phase 的输入
+    <ol>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>The TOGAF Library</td>
+              <td>togaf 官方的图书馆</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Other architecture frameworks</td>
+              <td>其他架构框架, 比如 PMP, ITIL</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Board strategies and board business plans, business strategy, IT strategy,business principles, business goals, and business drivers</td>
+              <td>公司的战略, 原则, 商业目标, 驱动力等</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Major frameworks operating in the business (e.g. SCRUM)</td>
+              <td>业务的运营框架, 比如敏捷 scrume</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Governance and legal frameworks, including Architecture Governance strategy</td>
+              <td>公司的治理和法律框架, 比如架构治理</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Architecture capability</td>
+              <td>架构能力</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Partnership and contract agreements</td>
+              <td>合作伙伴关系和合同</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Existing documents relating to architecture capability</td>
+              <td>关于架构能力的现有文档</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Organizational Model for Enterprise Architecture</td>
+              <td>企业架构的组织模型</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Existing Architecture Framework</td>
+              <td>现有的架构框架</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ol>
+  </li>
+  <li>Preliminary Phase 的步骤 (不是 part 1 的考试范围, 是 part2 的考试范围)
+    <ol>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Scope the enterprise organizations impacted</td>
+              <td>划定架构对企业组织的影响</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Confirm governance and support frameworks</td>
+              <td>确认治理和支持的框架</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Define and establish architecture team</td>
+              <td>定义和建立架构团队</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Identify and establish architecture principles</td>
+              <td>定义和建立架构原则</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Tailor TOGAF and other frameworks</td>
+              <td>量身定制 Togaf 和其他框架</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Implement architecture tools</td>
+              <td>使用架构工具</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ol>
+  </li>
+  <li>Outputs from Preliminary Phase
+    <ol>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Organizational Model for Enterprise Architecture</td>
+              <td>组织模型</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Tailored Architecture Framework</td>
+              <td>量身定制的 架构框架</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Initial Architecture Repository</td>
+              <td>架构 repository</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Business principles, business goals, and business drivers</td>
+              <td>业务目标, 原则, 驱动因素</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Request for Architecture Work (optional)</td>
+              <td>架构需求</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Architecture Governance Framework</td>
+              <td>架构治理框架</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ol>
+  </li>
+  <li>Artifacts Produced
+    <ol>
+      <li>Principles catalog</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="a---vision-架构愿景">A - Vision 架构愿景</h3>
+<ul>
+  <li>“A succinct description of the Target Architecture that describes its business value and the changes to the enterprise that will result from its successful deployment. It serves as an aspirational vision and a boundary for detailed architecture development.”</li>
+  <li>描述架构搭建的初始阶段;包括定义架构开发举措的范围信息、识别利益攸关者、确立架构愿景、和获得可启动开发架构的许可。</li>
+  <li>Vision 中的输入大部分是 preliminary phase 的输出</li>
+  <li>考试经常会被考到: 下面哪个阶段有 xxx activity 发生. 答案是 phase A, phase B, …</li>
+  <li>phase A 的目的:
+    <ul>
+      <li>开发一个 high-level 的, 可以交付的, aspirational(有抱负的), 业务价值的 愿景</li>
+      <li>获取架构 SOW 的 approval</li>
+    </ul>
+  </li>
+  <li>Inputs to Phase A
+    <ol>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Architecture reference materials</td>
+              <td>架构参考材料</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Request for Architecture Work</td>
+              <td>架构需求</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Business principles, business goals, and business drivers</td>
+              <td>业务目标, 原则, 驱动因素</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Organizational Model for Enterprise Architecture</td>
+              <td>企业架构的组织模型</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Tailored Architecture Framework</td>
+              <td>量身定制的架构框架</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Populated Architecture Repository</td>
+              <td>放架构文档的 repository</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ol>
+  </li>
+  <li>Steps to Phase A  (不是 part 1 的考试范围, 是 part2 的考试范围)
+    <ol>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Establish architecture project</td>
+              <td>架构项目立项</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Identify stakeholders, concerns and business requirements</td>
+              <td>识别 Stakeholders, 业务需求 和 担忧的地方</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Confirm business goals, drivers and constraints</td>
+              <td>确定业务目标, 驱动力和限制</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Evaluate capabilities (updated for TOGAF 9.2)</td>
+              <td>验证能力</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Assess readiness for transformation</td>
+              <td>评估转型的准备程度 有的公司比较容易接受新的变化, 有的比较难, 如果太难, 就多分几步</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Define scope</td>
+              <td>定义范围</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Confirm architecture principles, including business principles</td>
+              <td>确认架构原则, 包括业务原则</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Develop architecture vision</td>
+              <td>开发架构 vision , 比如</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Define the target architecture value and KPIs</td>
+              <td>定义目标架构价值和 KPIs</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Identify transformation risks and mitigation activities</td>
+              <td>定义转型风险和 降低风险的活动</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Develop Statement of Architecture Work, secure approval</td>
+              <td>开发 架构 SOW, 获得批准</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ol>
+  </li>
+  <li>Outputs from Phase A
+    <ol>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Approved Statement of Architecture Work</td>
+              <td>批准的 架构 SOW</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Refined statements of business principles, goals and drivers</td>
+              <td>优化过的 业务原则, 目标和驱动力</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Architecture principles</td>
+              <td>架构原则</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Capability assessment</td>
+              <td>能力评估</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Tailored architecture framework</td>
+              <td>定制的架构框架</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Architecture vision</td>
+              <td>架构 vision</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Draft architecture definition document (version 0.1 of all baseline and target BDAT documents)</td>
+              <td>起草架构定义文档</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Communications plan</td>
+              <td>沟通计划</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Additional content in the Architecture Repository</td>
+              <td>额外的内容放在 架构 repository 中</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ol>
+  </li>
+  <li>Artifacts Produced
+  ● Matrices: Stakeholder map matrix | 干系人地图
+  ● Diagrams: Business model diagram, Business capability map, Value stream map, Value chain diagram, Solution concept diagram | 业务模型图, 业务能力图, 价值流图, 价值链图, 方案概念图</li>
+</ul>
+
+<h3 id="b---业务架构">B - 业务架构</h3>
+<ul>
+  <li>A - Vison 定义了 high-level 的 愿景, 那么B 及时定义如何达到这个愿景</li>
+  <li></li>
+  <li>Business Architecture 是用来定义 未来要达到的业务架构
+    <ul>
+      <li>要先了解目前的业务架构</li>
+      <li>再设计未来的目标业务架构</li>
+      <li>定义 一个 填补 gap 的 架构 roadmap, 和相应的 work items</li>
+      <li>需要基于A 中定义的 vision</li>
+    </ul>
+  </li>
+  <li>
+    <p>Preliminary 和 A 的输出作为 B 的输入</p>
+  </li>
+  <li>Inputs to Phase B
+    <ol>
+      <li>External reference materials</li>
+      <li>Request for Architecture Work (optional) (Preliminary Phase)</li>
+      <li>Business principles, goals, and drivers (Phase A)</li>
+      <li>Capability assessment (Phase A)</li>
+      <li>Communications plan (Phase A)</li>
+      <li>Organization Model for Enterprise Architecture (Prelim Phase)</li>
+      <li>Tailored Architecture Framework (Prelim Phase)</li>
+      <li>Approved Statement of Architecture Work (Phase A)</li>
+      <li>Architecture principles (Phase A)</li>
+      <li>Enterprise continuum</li>
+      <li>Architecture Repository</li>
+      <li>Architecture vision (Phase A)</li>
+      <li>Draft architecture definition document (version 0.1 of all baseline and target BDAT documents) (Phase A)</li>
+    </ol>
+  </li>
+  <li>Steps for Phase B (不是 part 1 的考试范围, 是 part2 的考试范围)
+    <ol>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Select reference models, viewpoints, and tools</td>
+              <td>参考的模型, 观点和工具</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Develop baseline business architecture description</td>
+              <td>对当前的/现有的 业务架构进行描述</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Develop target business architecture description</td>
+              <td>对未来的业务架构进行描述</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Perform gap analysis</td>
+              <td>gap 分析</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Define candidate roadmap components</td>
+              <td>定义 roadmap 和其中的候选步骤</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Resolve impacts across the architecture landscape</td>
+              <td>实现 gap 过程中的一些影响</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Conduct formal stakeholder review</td>
+              <td>让 stakeholder review 并认可</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Finalize business architecture</td>
+              <td>敲定 业务架构</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Create architecture definition document</td>
+              <td>创建架构定义文档</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ol>
+  </li>
+  <li>Outputs from Phase B
+    <ol>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Refined Phase A deliverables</td>
+              <td>对 A 中的交付物进行修正</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Draft architecture definition document</td>
+              <td>起草的架构定义文档</td>
+            </tr>
+            <tr>
+              <td>a. Baseline business architecture, v1.0 (detailed)</td>
+              <td>当前业务架构</td>
+            </tr>
+            <tr>
+              <td>b. Target business architecture, v1.0 (detailed)</td>
+              <td>未来目标的业务架构</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Draft architecture requirements specification – gap analysis</td>
+              <td>起草的架构需求文档</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Business architecture components of an architecture roadmap</td>
+              <td>实现业务架构的 roadmap 和 内容</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ol>
+  </li>
+  <li>Artifacts Produced
+    <ul>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Catalogs: Value Stream catalog, Business Capabilities catalog, Value Stream Stages catalog, Organization/actor catalog, Driver/goal/objective catalog, role catalog, business service/function catalog, location catalog, process/event/control/product catalog, contract/measure catalog</td>
+              <td>一堆目录</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Matrices: Value Stream/Capability matrix, Strategy/Capability matrix, Capability/Organization matrix, Business interaction matrix, actor/role matrix</td>
+              <td>一堆二维表格/矩阵</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Diagrams: Business Model diagram, Business Capability Map, Value Stream Map, Organization Map, Business footprint diagram, business service/information diagram, function decomposition diagram, product lifecycle diagram, goal/objective/service diagram, business use-case diagram, organization decomposition diagram, process flow diagram,</td>
+              <td>一堆图形</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="c---信息系统架构">C - 信息系统架构</h3>
+<ul>
+  <li>Information System Arcuitecture 包含了 Data 和 Application, 是 BDAT 中的 <strong>data 和 application</strong></li>
+  <li>Data
+    <ul>
+      <li>目的:
+        <ul>
+          <li>开发想要的数据架构</li>
+          <li>识别要填补进 gap 的 和数据架构相关的 roadmap items</li>
+        </ul>
+      </li>
+      <li>数据架构的输入包含了 preliminary 阶段, Vison 阶段, 业务架构阶段的输出</li>
+      <li>Inputs to Phase C, Data Architecture
+        <ol>
+          <li>External reference materials</li>
+          <li>Request for Architecture Work (optional) (Preliminary Phase)</li>
+          <li>Capability assessment (Phase A)</li>
+          <li>Communications plan (Phase A)</li>
+          <li>Organization Model for Enterprise Architecture (Prelim Phase)</li>
+          <li>Tailored Architecture Framework (Prelim Phase)</li>
+          <li>Data principles (TOGAF Specification Chapter 20)</li>
+          <li>Approved Statement of Architecture Work (Phase A)</li>
+          <li>Architecture vision (Phase A)</li>
+          <li>Architecture Repository</li>
+          <li>Draft architecture documents and draft requirements (Phase B)</li>
+          <li>Business related architecture roadmap (Phase B)</li>
+        </ol>
+      </li>
+      <li>Steps for Phase C, Data Architecture (不是 part 1 的考试范围, 是 part2 的考试范围)
+        <ol>
+          <li>Select reference models, viewpoints, and tools</li>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Develop baseline data architecture description</td>
+                  <td>开发数据架构的当前的基准描述</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Develop target data architecture description</td>
+                  <td>开发未来目标的数据架构描述</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Perform gap analysis</td>
+                  <td>分析 gap</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Define candidate roadmap components</td>
+                  <td>定义 gap 中要填补的 items</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Resolve impacts across the architecture landscape</td>
+                  <td>找到相关的 impact (比如影响了应用, 流程, 部门, 人等)和对应方案</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Conduct formal stakeholder review</td>
+                  <td>让 stakeholder review 数据架构</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Finalize data architecture</td>
+                  <td>把数据架构定下来</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Create architecture definition document</td>
+                  <td>创建数据架构定义文档</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ol>
+      </li>
+      <li>Outputs from Phase C, Data Architecture
+        <ol>
+          <li>Refined Phase A deliverables</li>
+          <li>Draft architecture definition document
+  a. Baseline data architecture, v1.0
+  b. Target data architecture, v1.0</li>
+          <li>Draft architecture requirements specification – gap analysis</li>
+          <li>Data architecture components of an architecture roadmap</li>
+        </ol>
+      </li>
+      <li>Artifacts Produced
+        <ul>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Catalogs: Data entity/data component catalog</td>
+                  <td>数据实体和数据内容的目录</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Matrices: Data entity/business function matrix, Application/Data matrix</td>
+                  <td>数据实体和业务功能的二维表格</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Diagrams: Conceptual data diagram, logical data diagram, data dissemination diagram, data security diagram, data migration diagram, data lifecycle diagram</td>
+                  <td>数据概念图, 逻辑数据图, 数据散播图, 数据安全图, 数据迁移图, 数据生命周期图</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>应用
+    <ul>
+      <li>目的:
+        <ul>
+          <li>开发想要的数据架构</li>
+          <li>识别要填补进 gap 的 和应用架构相关的 roadmap items</li>
+        </ul>
+      </li>
+      <li>Inputs to Phase C, Application Architecture
+        <ol>
+          <li>External reference materials</li>
+          <li>Request for Architecture Work (optional) (Preliminary Phase)</li>
+          <li>Capability assessment (Phase A)</li>
+          <li>Communications plan (Phase A)</li>
+          <li>Organization Model for Enterprise Architecture (Prelim Phase)</li>
+          <li>Tailored Architecture Framework (Prelim Phase)</li>
+          <li>Application principles (TOGAF Specification Chapter 20)</li>
+          <li>Approved Statement of Architecture Work (Phase A)</li>
+          <li>Architecture vision (Phase A)</li>
+          <li>Architecture Repository</li>
+          <li>Draft architecture documents and draft requirements (Phase B)</li>
+          <li>Business and data related architecture roadmap (Phase B)</li>
+        </ol>
+      </li>
+      <li>Steps for Phase C, Application Architecture (不是 part 1 的考试范围, 是 part2 的考试范围)
+        <ol>
+          <li>Select reference models, viewpoints, and tools</li>
+          <li>Develop baseline application architecture description</li>
+          <li>Develop target application architecture description</li>
+          <li>Perform gap analysis</li>
+          <li>Define candidate roadmap components</li>
+          <li>Resolve impacts across the architecture landscape</li>
+          <li>Conduct formal stakeholder review</li>
+          <li>Finalize application architecture</li>
+          <li>Create architecture definition document</li>
+        </ol>
+      </li>
+      <li>Outputs from Phase C, Application Architecture
+        <ol>
+          <li>Refined Phase A deliverables</li>
+          <li>Draft architecture definition document
+  a. Baseline application architecture, v1.0
+  b. Target application architecture, v1.0</li>
+          <li>Draft architecture requirements specification – gap analysis</li>
+          <li>Application architecture components of an architecture roadmap</li>
+        </ol>
+      </li>
+      <li>Artifacts Produced
+        <ul>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Catalogs: Application portfolio catalog, interface catalog</td>
+                  <td>应用组合目录, 接口目录</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Matrices: Application/organization matrix, role/application matrix, application function matrix, application interaction matrix</td>
+                  <td>应用/组织 , 角色/应用, 应用/功能, 应用/交互的二维表</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Diagrams: Application Communication diagram, Application and User Location diagram, Application Use-Case diagram, Enterprise Manageability diagram, Process/Application Realization diagram, Software Engineering diagram, Application Migration diagram, Software Distribution diagram</td>
+                  <td>应用通信图, 应用和用户位置图, 应用用例图, 企业管理图, 流程和应用关系图, 软件工程图, 应用迁移图, 软件分发图</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="d---technology-architecture-技术架构">D - Technology Architecture 技术架构</h3>
+<ul>
+  <li>目的:
+    <ul>
+      <li>开发想要的技术架构</li>
+      <li>识别要填补进 gap 的 和技术架构相关的 roadmap items</li>
+    </ul>
+  </li>
+  <li>知道了应用和数据需要什么架构, 就需要推演出所需要的技术用什么
+    <ul>
+      <li>我的理解包括了移动端, 微信端, 前端,后端, 数据库, 云, 微服务, 容器化, 虚拟化, AI, IOT, 网络, 安全, 硬件, 操作系统, devops 等等</li>
+    </ul>
+  </li>
+  <li>Inputs to Phase D
+    <ol>
+      <li>External reference materials</li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Product information on candidate products</td>
+              <td>备选产品的产品信息</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>Request for Architecture Work (optional) (Prelim Phase)</li>
+      <li>Capability assessment (Phase A)</li>
+      <li>Communications plan (Phase A)</li>
+      <li>Organization Model for Enterprise Architecture (Prelim Phase)</li>
+      <li>Tailored Architecture Framework (Prelim Phase)</li>
+      <li>Technology principles (TOGAF Specification Chapter 20)</li>
+      <li>Approved Statement of Architecture Work (Phase A)</li>
+      <li>Architecture vision (Phase A)</li>
+      <li>Architecture Repository</li>
+      <li>Draft architecture documents and draft requirements (Phase B and C)</li>
+      <li>Business, data and application components of an architecture roadmap (Phase B and C)</li>
+    </ol>
+  </li>
+  <li>Steps for Phase D (不是 part 1 的考试范围, 是 part2 的考试范围)
+    <ol>
+      <li>Select reference models, viewpoints, and tools</li>
+      <li>Develop baseline technology architecture description</li>
+      <li>Develop target technology architecture description</li>
+      <li>Perform gap analysis</li>
+      <li>Define candidate roadmap components</li>
+      <li>Resolve impacts across the architecture landscape</li>
+      <li>Conduct formal stakeholder review</li>
+      <li>Finalize technology architecture</li>
+      <li>Create architecture definition document</li>
+    </ol>
+  </li>
+  <li>Outputs from Phase D
+    <ol>
+      <li>Refined Phase A deliverables</li>
+      <li>Draft architecture definition document
+  a. Baseline technology architecture, v1.0
+  b. Target technology architecture, v1.0</li>
+      <li>Draft architecture requirements specification – gap analysis</li>
+      <li>Technology architecture components of an architecture roadmap</li>
+    </ol>
+  </li>
+  <li>Artifacts Produced
+    <ul>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Catalogs: Technology Standards catalog, Technology Portfolio catalog Matrices: Application/Technology matrix</td>
+              <td>技术标准, 技术组合分类二维表, 应用/技术二维表</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Diagrams: Environments and Locations diagram, Platform Decomposition diagram, Processing diagram, Networked Computing/Hardware diagram, Communications Engineering diagram</td>
+              <td>环境和位置图, 平台分解图, 流程图, 网络计算/硬件图, 通信工程图</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="e---opportunity-and-solution-机会与方案">E - Opportunity and Solution 机会与方案</h3>
+<ul>
+  <li>E 和 F 是 8 个 phase 的中间2个, 是承上启下的作用</li>
+  <li>要把前面 ABCD 中要输出的文档都最终定下来</li>
+  <li>要把最终的架构设计完成掉</li>
+  <li>要把后面的实施计划定义出来</li>
+  <li>后面就要开始真正的架构项目迁移和实施了</li>
+  <li>用新兴技术来找新的机会</li>
+  <li>目的:
+    <ul>
+      <li>generate the initial architecture roadmap
+        <ul>
+          <li>B, C, D 是用来找 candidate roadmap items 的.</li>
+          <li>E 是要把  BCD 这些 candidate 弄到一款, 最终做出来这个 架构 roadmap</li>
+        </ul>
+      </li>
+      <li>identify if transition architecture are required
+        <ul>
+          <li>如果从现有架构到未来 roadmap 有很大的gap, 那么可能还需要有 transition architecture (中间阶段的架构)</li>
+        </ul>
+      </li>
+      <li>define solution building blocks ( SBBs )
+        <ul>
+          <li>SBB - 描述在不同的架构图之间<strong>可以被重用的技术方案</strong></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Inputs to Phase E
+    <ol>
+      <li>External reference materials</li>
+      <li>Product information</li>
+      <li>Request for Architecture Work (optional) (Prelim Phase)</li>
+      <li>Capability assessment (Phase A)</li>
+      <li>Communications plan (Phase A)</li>
+      <li>Planning methodologies</li>
+      <li>Organization Model for Enterprise Architecture (Prelim Phase)</li>
+      <li>Tailored Architecture Framework (Prelim Phase)</li>
+      <li>Approved Statement of Architecture Work (Phase A)</li>
+      <li>Architecture vision (Phase A)</li>
+      <li>Architecture Repository</li>
+      <li>Draft architecture documents and draft requirements (BDAT)</li>
+      <li>Change requests for existing business programs and projects</li>
+      <li>Candidate architecture roadmap components</li>
+    </ol>
+  </li>
+  <li>Steps for Phase E (不是 part 1 的考试范围, 是 part2 的考试范围)
+    <ol>
+      <li>Determine key corporate change attributes</li>
+      <li>Determine business constraints</li>
+      <li>Review and consolidate gap analysis from Phases B to D</li>
+      <li>Review consolidated requirements across business functions</li>
+      <li>Consolidate and reconcile interoperability requirements</li>
+      <li>Refine and validate dependencies</li>
+      <li>Confirm readiness and risk for business transformation</li>
+      <li>Formulate implementation and migration strategy</li>
+      <li>Identify and group major work packages</li>
+      <li>Identify transition architectures</li>
+      <li>Create the architecture roadmap &amp; implementation and migration plan</li>
+    </ol>
+  </li>
+  <li>Outputs from Phase E
+    <ol>
+      <li>Refined Phase A deliverables</li>
+      <li>Draft architecture definition document – incl. baseline and target, v1.0</li>
+      <li>Draft architecture requirements specification – incl. gap analysis</li>
+      <li>Capability assessments</li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Architecture roadmap, version 0.1</td>
+              <td>架构线路图</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Implementation and migration plan, version 0.1</td>
+              <td>实施和迁移计划</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ol>
+  </li>
+  <li>Artifacts Produced
+    <ul>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Diagrams: Product context diagram, benefits diagram</td>
+              <td>产品上下文图, 利益图</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="f---migration-planning">F - Migration Planning</h3>
+<ul>
+  <li>这个阶段, 要把架构设计的工作彻底完成掉
+    <ul>
+      <li>会有一堆的 finalized 文档</li>
+    </ul>
+  </li>
+  <li>要把之前的架构包转交给实施团队
+    <ul>
+      <li>会有实施计划</li>
+    </ul>
+  </li>
+  <li>要总结之前完成的架构工作, 以此提高之后的架构工作</li>
+  <li>目的:
+    <ul>
+      <li>finalize the architecture roadmap and migration plan</li>
+      <li>ensure migration plan is aligned with enterprise approach to change</li>
+      <li>ensure business value and cost of work packages is understood
+        <ul>
+          <li>work package 就是具体的甘特图中的每个工作项, 把业务价值放到 work package 中就是迁移计划要做的事情</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Inputs to Phase F
+    <ol>
+      <li>External reference materials</li>
+      <li>Request for Architecture Work (optional) (Prelim Phase)</li>
+      <li>Capability assessment (Phase A)</li>
+      <li>Communications plan (Phase A)</li>
+      <li>Organization Model for Enterprise Architecture (Prelim Phase)</li>
+      <li>Governance Models and Frameworks</li>
+      <li>Tailored Architecture Framework (Prelim Phase)</li>
+      <li>Approved Statement of Architecture Work (Phase A)</li>
+      <li>Architecture vision (Phase A)</li>
+      <li>Architecture Repository</li>
+      <li>Draft architecture documents and draft requirements (BDAT)</li>
+      <li>Change requests for existing business programs and projects</li>
+      <li>Architecture roadmap, version 0.1 (Phase E)</li>
+      <li>Capability Assessment</li>
+      <li>Implementation and migration plan , version 0.1 (Phase E)</li>
+    </ol>
+  </li>
+  <li>Steps for Phase F (不是 part 1 的考试范围, 是 part2 的考试范围)
+    <ol>
+      <li>Confirm management framework interactions</li>
+      <li>Assign a business value to each work package</li>
+      <li>Estimate resource requirements, project timings, etc</li>
+      <li>Prioritize the migration projects</li>
+      <li>Confirm architecture roadmap and update architecture definition document</li>
+      <li>Generate implementation and migration plan</li>
+      <li>Complete the architecture development cycle, lessons learned</li>
+    </ol>
+  </li>
+  <li>Outputs from Phase F
+    <ol>
+      <li>Implementation and Migration Plan, version 1.0</li>
+      <li>Finalized architecture definition document</li>
+      <li>Finalized architecture requirements</li>
+      <li>Finalized architecture roadmap</li>
+      <li>Reusable Architecture Building Blocks (ABBs)</li>
+      <li>Requests for Architecture Work for next ADM cycle (if any)</li>
+      <li>Implementation of governance model</li>
+      <li>Change requests for architecture capability from lessons learned</li>
+      <li>输出一个架构合同 Architecture Contract ?
+        <ol>
+          <li>It’s a contract between the implementation team and the architecture team that the architecture work that has been defined will be implemented as defined, and that the architecture governance process will be followed for any changes.</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>Artifacts Produced
+    <ul>
+      <li>None
+        <ul>
+          <li>之前的文档都写好了, 这个 phase 不产出任何图表</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="g---implementation-governance--实施和治理">G - Implementation Governance  实施和治理</h3>
+
+<ul>
+  <li>目的:
+    <ul>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>ensure conformance</td>
+              <td>确保实施和架构设计保持一致</td>
+            </tr>
+          </tbody>
+        </table>
+        <ul>
+          <li>架构师并不是实施者, 实施部分架构师的职责是帮助实施者有效的按照架构设计进行实施, 并保持一致</li>
+        </ul>
+      </li>
+      <li>perform architecture governance
+        <ul>
+          <li>实施过程中如果出现一些变化, 比如开发人员觉得有更合适,更节约成本的方案可以代替原来的架构方案, 那么必须要和架构师一起沟通, 并且通过 architecture governance 来进行处理 change request</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Inputs to Phase G
+    <ol>
+      <li>External reference materials</li>
+      <li>Request for Architecture Work (optional) (Prelim Phase)</li>
+      <li>Capability assessment (Phase A)</li>
+      <li>Organization Model for Enterprise Architecture (Prelim Phase)</li>
+      <li>Tailored Architecture Framework (Prelim Phase)</li>
+      <li>Approved Statement of Architecture Work (Phase A)</li>
+      <li>Architecture vision (Phase A)</li>
+      <li>Architecture Repository</li>
+      <li>Architecture definition documents and requirements (BDAT)</li>
+      <li>Architecture roadmap, version 1.0 (Phase F)</li>
+      <li>Implementation governance model</li>
+      <li>Architecture contract</li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Request for architecture work for next ADM cycle (Phase F)</td>
+              <td>有些工作这次不能实施, 可以下次来做?</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>Implementation and migration plan , version 1.0 (Phase F)</li>
+    </ol>
+  </li>
+  <li>Steps for Phase G (不是 part 1 的考试范围, 是 part2 的考试范围)
+    <ol>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Confirm Scope and Priorities for Deployment</td>
+              <td>确认部署的范围和优先级</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Identify Deployment Resources and Skills</td>
+              <td>识别开发资源和技能</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Guide Development of Solutions Deployment</td>
+              <td>指导方案部署的开发过程</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Perform Enterprise Architecture Compliance Reviews</td>
+              <td>执行企业架构合规的 reivew</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Implement Business and IT Operations</td>
+              <td>实现业务和 IT运营</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Perform Post-Implementation Review and Close the Implementation</td>
+              <td>执行实施后的 review 并关闭实施</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ol>
+  </li>
+  <li>Outputs from Phase G
+    <ol>
+      <li>Architecture contract  | 架构合同
+  “…joint agreements between <strong>development partners and sponsors</strong> on the deliverables, quality, and fitness-for-purpose of an architecture”
+  <strong>Read Chapter 43 of the TOGAF 9.2 specification</strong></li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Compliance assessments</td>
+              <td>合规评估</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Change requests</td>
+              <td>需求变更</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Architecture-compliant solutions deployed</td>
+              <td>符合规定的架构的方案部署完成</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ol>
+  </li>
+  <li>Artifacts Produced
+    <ul>
+      <li>None</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="h---architecture-change-management">H - Architecture Change Management</h3>
+<ul>
+  <li>架构变化管理, 就像一个一直定在那里的阶段, 我们完成了所有的架构设计, 完成了所有的实施工作之后, 就是在这里等待变化的发生</li>
+  <li>当积累一些变化之后, 我们就要考虑是否要开启新的一轮 ADM cycle 了
+    <ul>
+      <li>大的变化, 需要改变架构逻辑的变化也许需要新的 cycle</li>
+      <li>小的变化, 也许不需要启动 cycle ,而是在现有架构中就可以容纳</li>
+    </ul>
+  </li>
+  <li>目的:
+    <ul>
+      <li>maintain architecture lifecycle</li>
+      <li>execute architecture governance</li>
+      <li>maintain architecture capability</li>
+    </ul>
+  </li>
+  <li>Inputs to Phase H
+    <ol>
+      <li>External reference materials</li>
+      <li>Request for Architecture Work (optional) (Prelim Phase)</li>
+      <li>Organization Model for Enterprise Architecture (Prelim Phase)</li>
+      <li>Tailored Architecture Framework (Prelim Phase)</li>
+      <li>Statement of Architecture Work (Phase A)</li>
+      <li>Architecture vision (Phase A)</li>
+      <li>Architecture Repository</li>
+      <li>Architecture definition documents and requirements (BDAT)</li>
+      <li>Architecture roadmap (Phase F)</li>
+      <li>Change requests – technology changes, business changes, lessons learned</li>
+      <li>Implementation governance model</li>
+      <li>Architecture contract (Phase G)</li>
+      <li>Compliance assessments (Phase G)</li>
+      <li>Implementation and migration plan , version 1.0 (Phase F)</li>
+    </ol>
+  </li>
+  <li>Steps for Phase H (不是 part 1 的考试范围, 是 part2 的考试范围)
+    <ol>
+      <li>Establish Value Realization Process</li>
+      <li>Deploy Monitoring Tools</li>
+      <li>Manage Risks</li>
+      <li>Provide Analysis for Architecture Change Management</li>
+      <li>Develop Change Requirements to Meet Performance Targets</li>
+      <li>Manage Governance Process</li>
+      <li>Activate the Process to Implement Change</li>
+    </ol>
+  </li>
+  <li>Outputs from Phase H
+    <ol>
+      <li>Architecture updates (maintenance)</li>
+      <li>Change to architecture framework and principles (maintenance)</li>
+      <li>New Request for Architecture Work (for major changes)</li>
+      <li>Statement of architecture work (updated if necessary)</li>
+      <li>Architecture contract (updated if necessary)</li>
+      <li>Compliance assessments (updated if necessary)</li>
+    </ol>
+  </li>
+  <li>Artifacts Produced
+    <ul>
+      <li>None</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="requirement-management--需求管理">Requirement Management  需求管理</h3>
+<ul>
+  <li>RM 位于 ADM 图的中心,  RM 在ADM 图中和 A -&gt; H 的每个阶段都有互动</li>
+  <li>技术上来说, 他是一个 phase, 但是是一个静态的阶段</li>
+  <li>RM 管理需求的流程
+    <ul>
+      <li>收集, 确认, 排序, 过滤, …</li>
+      <li>来个新的 业务需求, 就要回到 B 阶段, 然后再推出 C, D</li>
+    </ul>
+  </li>
+  <li>RM 是管理 repository 的流程</li>
+  <li>在 ADM 的各个阶段都要持续的处理需求
+    <ul>
+      <li>Being able to handle change at any time is crucial for the ADM to succeed.</li>
+      <li>在 ADM cycle 中处理需求要有节奏, 比如按敏捷的理念, 需求要有一个 backlog 来处理, 开发前期制定需求. 或者尽量在 ADM 的 ABCD 阶段收集需求, EF 阶段按需求制定方案和计划,  G 实施阶段按需求进行实施
+        <ul>
+          <li>所以  EFG 阶段的新需求尽量累积到下一个 ADM cycle 再去做</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li></li>
+  <li>Requirements Management is the process that manages the repository</li>
+  <li>目标:
+    <ul>
+      <li>ensure the process is sustained through all phases</li>
+      <li>manage change while the ADM cycle is in progress</li>
+      <li>provide the requirements to each ADM phase</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="part-3-adm-guideline-and-techniques">Part 3 ADM Guideline and techniques</h2>
+<ul>
+  <li>要执行 ADM 的 cycle , 需要一些 指南和工具如下:</li>
+  <li>ADM Guidelines and Techniques
+● Using the TOGAF ADM in the context of a specific Architectural Style 
+● Architecture Principles
+● Stakeholder Management
+● Architecture Patterns
+● Business Scenarios
+● Gap Analysis
+● Migration Planning Techniques
+● Interoperability Requirements
+● Business Transformation Readiness Assessment
+● Risk Management
+● Capability-Based Planning</li>
+</ul>
+
+<h3 id="adm-and-architectural-styles-92-新加的">ADM and architectural styles (9.2 新加的)</h3>
+<ul>
+  <li>架构开发管理和架构风格</li>
+  <li>应用架构有不同的风格</li>
+  <li>Togaf 不需要我们改变我们的风格</li>
+  <li>但是可能我们需要改变那我们的文档的内容</li>
+  <li>采用不同的 views, models, tools 来创建文档, 图, 表格等</li>
+  <li>togaf 在使用一个 Service Oriented Architecture 的 style</li>
+</ul>
+
+<h3 id="architecture-principles">Architecture principles</h3>
+<ul>
+  <li>An enduring set of general rules and guidelines about architecture</li>
+  <li>是架构的一般规则和指南</li>
+  <li>不会经常变化</li>
+  <li>Defined during the Preliminary Phase</li>
+  <li>在需要做决策的时候可以用到</li>
+  <li>例子:
+    <ul>
+      <li>Data Architecture Principle
+        <ul>
+          <li>Data Trustee
+            <ul>
+              <li>“Each data element has a trustee accountable for data quality.”</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Five Elements of a Good Principle
+● Understandability | 容易理解
+● Robustness | 不要有漏洞
+● Completeness | 涵盖各种情况
+● Consistency | 一致性, 不要有前后矛盾
+● Stability | 稳固</li>
+</ul>
+
+<h3 id="stakeholder-management-干系人管理">Stakeholder Management 干系人管理</h3>
+<ul>
+  <li>stakeholder 的定义
+    <ul>
+      <li>“An individual, team, organization, or class thereof, having an interest in a system.”</li>
+      <li>对一个系统感兴趣的个人, 团队, 组织或者他们其中的一种形式</li>
+    </ul>
+  </li>
+  <li>As an architect, being able to win support for your plans is a skill.</li>
+  <li>Knowing who the most powerful stakeholders are…</li>
+  <li>Makes things easier for approval and budgets.</li>
+  <li>Can establish a communication plan to keep them informed</li>
+  <li>Identify problems and conflicts early in order to avoid them.
+    <ul>
+      <li>避免 stakeholder 之间的问题和冲突.</li>
+    </ul>
+  </li>
+  <li>通过下图, 了解哪些 stakeholder 和对他们的定位 
+<img src="http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-06-05-051824.jpg" alt="" /></li>
+</ul>
+
+<h3 id="architecture-patterns-架构模式">Architecture Patterns 架构模式</h3>
+<ul>
+  <li>和设计模式有点像</li>
+  <li>“an idea that has been useful in one practical context and will probably be useful in others” - M. Fowler</li>
+  <li>togaf 的 building block 说的是 : what you use</li>
+  <li>架构模式是: when, why, how you use</li>
+  <li>一旦我们创建了一些 building blocks, 我们就要去为他们定义 patterns</li>
+  <li>例子:
+    <ul>
+      <li>设计模式中有代理模式, 监听模式等, 是不是也可以用于架构模式?</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="business-scenarios-业务场景">Business Scenarios 业务场景</h3>
+<ul>
+  <li>业务场景的定义
+    <ul>
+      <li>
+        <ol>
+          <li>A business process, application, or set of applications</li>
+        </ol>
+      </li>
+      <li>
+        <ol>
+          <li>The business and technology environment</li>
+        </ol>
+      </li>
+      <li>
+        <ol>
+          <li>The people and software systems (“actors”) involved</li>
+        </ol>
+      </li>
+      <li>
+        <ol>
+          <li>The desired outcome</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>Anyone should be able to understand a business problem and solution by reading the business scenario.</li>
+  <li>一个精心设计的商业案例。
+    <ul>
+      <li>A neatly laid out business case.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="gap-analysis">Gap Analysis</h3>
+<ul>
+  <li>Key step in the BDAT Phases and Migration Planning (Phases B-E)</li>
+  <li>分析 Baseline architecture 和 Target architecture 之间的 gap</li>
+  <li>Gaps are anything added, changed or intentionally omitted
+    <ul>
+      <li>Gaps 是任何新增, 修改, 故意删除掉的, 意外删掉的内容</li>
+    </ul>
+  </li>
+  <li>目的是要让大家清晰的知道为什么增加或者删除了一些内容
+    <ul>
+      <li>It should be clear and easy to explain why things were added or removed</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="migration-planning">Migration Planning</h3>
+<ul>
+  <li>togaf 提供了一些迁移计划需要用到的工具
+    <ul>
+      <li>Migration Planning, Phase F
+        <ul>
+          <li>Implementation Factor Assessment &amp; Deduction Matrix
+实施因素评估和扣减矩阵</li>
+          <li>Consolidated Gaps, Solutions, &amp; Dependencies Matrix
+综合的差距、解决方案和依赖性矩阵</li>
+          <li>Architecture Definition Increments Table
+架构定义增量表</li>
+          <li>Transition Architecture State Evolution Table
+过渡结构状态演变表</li>
+          <li>Business Value Assessment Technique
+商业价值评估技术</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="interoperability-协同工作的能力">Interoperability 协同工作的能力</h3>
+<ul>
+  <li>“the ability to share information and services”</li>
+  <li>Business Interoperability: how business teams work together</li>
+  <li>Information Interoperability: how data is shared</li>
+  <li>Technical Interoperability: how technical services connect to one another</li>
+  <li>Each of the architecture definition phases has elements of interoperability.</li>
+  <li>Architects think about how what they do interacts with the “outside world” during the process</li>
+</ul>
+
+<h3 id="business-transformation-readiness-assessment-btra">Business Transformation Readiness Assessment (BTRA)</h3>
+<ul>
+  <li>“evaluating and quantifying an organization’s readiness to undergo change”
+    <ul>
+      <li>评估和定量分析一个企业是否准备好了迎接变化</li>
+    </ul>
+  </li>
+  <li>No point creating architecture if it’ll be ignored.
+    <ul>
+      <li>如果大家不想接受变化, 就没必要做架构</li>
+    </ul>
+  </li>
+  <li>
+    <p>Understanding how to get your organization to change is a key to success.</p>
+  </li>
+  <li>推荐的 BTRA 的活动
+    <ul>
+      <li>Determine the readiness factors that will impact the organization</li>
+      <li>Present the readiness factors using maturity models</li>
+      <li>Assess the readiness factors, including determination of readiness factor ratings</li>
+      <li>Assess the risks for each readiness factor and identify improvement actions to mitigate the risk</li>
+      <li>Work these actions into Phase E and F Implementation and Migration Plan</li>
+    </ul>
+  </li>
+  <li>Example Factors
+    <ul>
+      <li>Vision</li>
+      <li>Desire, Willingness, Resolve</li>
+      <li>Need
+        <ul>
+          <li>How strong is the business need for enterprise architecture?</li>
+          <li>Does every part of the business recognize this as being required?</li>
+          <li>How committed is the senior leadership to this?</li>
+        </ul>
+      </li>
+      <li>Business Case</li>
+      <li>Funding</li>
+      <li>Leadership, Sponsor, Champion</li>
+      <li>Governance</li>
+      <li>Accountability</li>
+      <li>IT Capacity to Execute</li>
+      <li>Enterprise Capacity to Execute</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="risk-management">Risk Management</h3>
+<ul>
+  <li>What are the risks of migrating to the target architecture?</li>
+  <li>Identify them, and track them</li>
+  <li>TOGAF has the concept of Initial Level of Risk and Residual Level of Risk
+    <ul>
+      <li>Initial Level of Risk is the risk that exists if you do nothing to mitigate them</li>
+      <li>Residual Level of Risk is the risk that remains after you have mitigated them</li>
+    </ul>
+  </li>
+  <li>例子: Example: Client acceptance risk
+    <ul>
+      <li>How do you measure it?</li>
+      <li>How do you mitigate it?</li>
+      <li>And what would the cost to the business be if it comes true?</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="capability-based-planning-基于能力的规划">Capability-Based Planning 基于能力的规划</h3>
+<ul>
+  <li>是一个规划, 一个跨部门的, 需要多部门通力协作的规划</li>
+  <li>“a business planning technique that focuses on business outcomes”
+    <ul>
+      <li>一种专注于商业成果的商业规划技术</li>
+    </ul>
+  </li>
+  <li>Capabilities are business-driven and ideally business-led.
+    <ul>
+      <li>能力是由业务驱动的，最好是由业务主导的。</li>
+    </ul>
+  </li>
+  <li>Designed to combat the fact that organizations are split along functions
+    <ul>
+      <li>旨在消除组织按职能分裂的事实</li>
+    </ul>
+  </li>
+  <li>Many business functions work together to deliver one capability</li>
+  <li>例子: Example: 创建一个完美的产品
+    <ul>
+      <li>会涉及到多个部门, 产品设计, 软件开发, 工厂制造, 零售/销售</li>
+      <li>公司计划的是生产一个 “完美产品”, 而不是 “最佳销售团队”</li>
+    </ul>
+  </li>
+  <li></li>
+</ul>
+
+<h2 id="part-4-architecture-content-framework">Part 4 Architecture Content Framework</h2>
+<ul>
+  <li>在架构设计过程中, 会产生一些输出/交付物, 我们不需要重新发明轮子, 而是可以利用 Architect content framework 帮助我们生产出架构来</li>
+  <li>Architect content framework
+    <ul>
+      <li>提供结构化的原始模型, 为最终的架构交付物作为原型和基础</li>
+    </ul>
+  </li>
+  <li>Artifacts 工件
+    <ul>
+      <li>工件是在架构工作期间生成的, 用于描述架构的某一个方面的, 工作成果 (work product)</li>
+      <li>ADM 的 8 个阶段中, 每个阶段都定义了一系列的 artifacts 工件
+        <ul>
+          <li><strong>记住每个阶段和对应的工件对考试很重要</strong></li>
+        </ul>
+      </li>
+      <li>工件可以被分成三类
+        <ul>
+          <li>Lists</li>
+          <li>Matrices (母体/子宫)</li>
+          <li>Diagrams</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Deliverables
+    <ul>
+      <li>“contractually specified and in turn formally reviewed, agreed, and signed off by the stakeholders”
+        <ul>
+          <li>“合同规定，并由利益相关者正式审查、同意和签署”</li>
+        </ul>
+      </li>
+      <li>说白了就是合同规定的架构交付内容</li>
+      <li>不是一个图, 而是完整的文档</li>
+      <li>需要被 stakeholders 进行 review, agree and signed off</li>
+    </ul>
+  </li>
+  <li>Building Blocks
+    <ul>
+      <li>架构中可以被创造和重用的部分</li>
+      <li>分为两种
+        <ul>
+          <li>Architecture building blocks (ABBs)</li>
+          <li>Solution building blocks (SBBs)</li>
+        </ul>
+      </li>
+      <li>ABBs
+        <ul>
+          <li>描述在不同的架构图之间<strong>可以被重用的业务流程</strong></li>
+        </ul>
+      </li>
+      <li>SBBs
+        <ul>
+          <li>描述在不同的架构图之间<strong>可以被重用的技术方案</strong></li>
+        </ul>
+      </li>
+      <li>案例:
+        <ul>
+          <li>查询消费者的 profile</li>
+          <li>因为组织内多个部门都有这个需求, 所以把 customer profile lookup 做成一个 ABB, 可以在不同业务部门的需求和 架构 dragram 中进行拷贝</li>
+          <li>背后的逻辑是, 需要一个 CRM 的用户搜索模块, 是技术实现的方式, 做成一个 SBB</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="part-5-enterprise-continuum-and-tools">Part 5 Enterprise Continuum and Tools</h2>
+<ul>
+  <li>企业连续体</li>
+  <li>” a way of classifying architectural work products according to their specificity - from extremely generic to extremely specific”</li>
+  <li>一种对架构 repository 中的项目进行分类的方法</li>
+  <li>分为极常规架构, 极特殊架构, 或者中间的架构, 大体分为如下从左到右的架构
+<img src="http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-06-02-045902.jpg" alt="" />
+    <ul>
+      <li>Foundation Architectures
+        <ul>
+          <li>最基础的架构, 所有公司都通用的基础架构</li>
+        </ul>
+      </li>
+      <li>Common System Architectures
+        <ul>
+          <li>普通系统架构, 一般公司都可以通用</li>
+        </ul>
+      </li>
+      <li>Industry Architectures
+        <ul>
+          <li>针对于某个行业的架构, 多个同行业的公司可以通用</li>
+        </ul>
+      </li>
+      <li>Organization-specific architectures
+        <ul>
+          <li>针对于某个企业定制的专门的架构
+<img src="http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-06-02-052846.jpg" alt="" /></li>
+        </ul>
+      </li>
+      <li>黄色为 Abbs</li>
+      <li>绿色为 Sbbs</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="architecture-repository">Architecture Repository</h3>
+<ul>
+  <li>放置架构文档的 storage 存储/repository</li>
+  <li>可以是一个 file sercer, 或者 git, Jira, Confluence, wiki 等, 具体形式考试不考</li>
+  <li>有统一的命名规则和目录</li>
+  <li>大家都可以访问, 进行文档写作</li>
+  <li>The Architecture Repository contains…
+    <ul>
+      <li>● Architecture Metamodel
+        <ul>
+          <li>为企业定制的架构模型</li>
+        </ul>
+      </li>
+      <li>● Architecture Capability
+        <ul>
+          <li>架构治理规则</li>
+        </ul>
+      </li>
+      <li>● Architecture Landscape
+        <ul>
+          <li>已经部署了的架构资产, 系统和流程</li>
+        </ul>
+      </li>
+      <li>● Standards Information Base (SIB)
+        <ul>
+          <li>做架构的时候需要用的一些信息数据, 比如 隐私信息标准 (GDPR, HIPPA</li>
+        </ul>
+      </li>
+      <li>● Reference Library
+        <ul>
+          <li>引用库的材料</li>
+        </ul>
+      </li>
+      <li>● Governance Log
+        <ul>
+          <li>记录了架构治理的活动日志, 比如记录了谁做了架构的创建, 调整, 谁进行了审批和 review , 相关的会议记录等</li>
+        </ul>
+      </li>
+      <li>● Architecture Requirements Repository (*new in 9.2)
+        <ul>
+          <li>需求文档的 repository, 相当于 backlog</li>
+        </ul>
+      </li>
+      <li>● Solutions Landscape (*new in 9.2)
+        <ul>
+          <li>一些被审批过, 签过字的解决方案的文档内容, 可以用来支持架构设计</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="part-6-architecture-capability-framework">Part 6 Architecture Capability Framework</h2>
+<ul>
+  <li>企业的架构能力根据企业中是否有架构师人员, 是否有相应的培训, 是否有治理方法, 是否已经发布了架构框架等综合因素构成</li>
+  <li>通过 ADM 的 Preliminary Phase 和 cycle (A-&gt; H)可以提升架构能力
+    <ul>
+      <li>A-F 和组织内部的 leaders 定义架构, 制定计划</li>
+      <li>G 签订架构合同, 大家都约定遵守这个架构, 实施团队按照架构进行实施, 架构师在实施阶段监控实施团队的工作, 确保实施的内容按照架构设计执行.</li>
+    </ul>
+  </li>
+  <li>需要有资金来支持架构能力的提升,  花钱买人, 买知识, 搭建治理模型等等
+    <ul>
+      <li>就像管理一个项目一样对架构能力进行提升, 要有 ,SOW, budget, 时间节点, 里程碑, 和定期的报告</li>
+    </ul>
+  </li>
+  <li>治理 和 repository 和 架构能力有直接的关系</li>
+  <li>治理在上面</li>
+  <li>任何流程在中间</li>
+  <li>repository 在下面</li>
+</ul>
+
+<h2 id="其他-重要度-togaf-概念">其他 重要度 TOGAF 概念</h2>
+
+<h3 id="architecture-governance">Architecture Governance</h3>
+<ul>
+  <li>A system of controls over architecture</li>
+  <li>A system to ensure compliance with architecture</li>
+  <li>Effective management of those systems</li>
+  <li>Accountability to the business for that</li>
+  <li>Governance is layered within most organizations
+    <ul>
+      <li>Corporate governance</li>
+      <li>Technology governance</li>
+      <li>IT governance</li>
+      <li>Architecture governance</li>
+    </ul>
+  </li>
+  <li>Principles of Good Governance
+● Discipline
+● Transparency 
+● Independence 
+● Accountability 
+● Responsibility 
+● Fairness</li>
+</ul>
+
+<h3 id="architecture-board">Architecture Board</h3>
+<ul>
+  <li>一个跨组织的 委员会, 帮我们进行架构治理工作, 需要能够代表所有的 key stakeholders</li>
+  <li>需要是一些 来组不同部门的 senior members , 每月开一次会, 做一些架构决策, key principles 等</li>
+  <li>Representative of all the key stakeholders in the architecture</li>
+</ul>
+
+<h3 id="architecture-contracts">Architecture Contracts</h3>
+<ul>
+  <li>“joint agreements between development partners and sponsors on the deliverables, quality, and fitness-for-purpose of an architecture”</li>
+</ul>
+
+<h3 id="architecture-compliance">Architecture Compliance</h3>
+<ul>
+  <li>包含了
+    <ul>
+      <li>Irrelevant</li>
+      <li>Consistent</li>
+      <li>Compliant</li>
+      <li>Conformant</li>
+      <li>Fullyconformant ● Non-conformant</li>
+    </ul>
+  </li>
+  <li>Compliance Reviews</li>
+</ul>
+
+            </div>
+
+            <!-- Rating -->
+            
+            <div class="rating mb-4 d-flex align-items-center">
+                <strong class="mr-1">Rating:</strong> <div class="rating-holder">
+<div class="c-rating c-rating--regular" data-rating-value="4.5">
+  <button>1</button>
+  <button>2</button>
+  <button>3</button>
+  <button>4</button>
+  <button>5</button>
+</div>
+</div>
+            </div>
+            
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="2023-04-05">05 Apr 2023</time></span>           
+                
+                </small>
+            </p>
+
+            <!-- Post Categories -->
+            <div class="after-post-cats">
+                <ul class="tags mb-4">
+                    
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Architecture">Architecture</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Togaf">Togaf</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- End Categories -->
+
+            <!-- Post Tags -->
+            <div class="after-post-tags">
+                <ul class="tags">
+                    
+                    
+                </ul>
+            </div>
+            <!-- End Tags -->
+
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="//%E5%AD%A6%E4%B9%A0%E5%85%83%E5%AE%87%E5%AE%99/"> &laquo; Metaverse research</a>
+            
+            
+            <a class="next d-block col-md-6 text-lg-right" href="//ChatGPT-and-OpenAI-Python-API-Bootcamp/">Use ChatGPT in Python &raquo; </a>
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+        </div>
+        <!-- End Post -->
+
+    </div>
+</div>
+<!-- End Article
+================================================== -->
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'demowebsite'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Thing",
+    "name": "Use ChatGPT in Python"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Dalong"
+  },
+  "datePublished": "2023-04-05",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.5",
+    "bestRating": "5"
+  }
+}
+</script>
+
+</div>
+
+
+    
+</div>
+
+<!-- Categories Jumbotron
+================================================== -->
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+            <div class="d-md-flex align-items-center justify-content-center h-100">
+                <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+            </div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+            
+            
+                
+                    <a class="mt-1 mb-1" href="/categories#Linux">Linux (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Python">Python (16)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Mysql">Mysql (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Redis">Redis (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#MongoDB">MongoDB (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Flask">Flask (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Django">Django (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#DjangoRest">DjangoRest (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Numpy">Numpy (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Panda">Panda (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Sklearn">Sklearn (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Jupyter">Jupyter (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#OpenCV">OpenCV (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#AI">AI (3)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Tensorflow">Tensorflow (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Microservice">Microservice (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Docker">Docker (3)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#NLP">NLP (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#AWS">AWS (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Architecture">Architecture (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Agile">Agile (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Scrum">Scrum (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#MLPS">MLPS (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#PIPL">PIPL (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Metaverse">Metaverse (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Togaf">Togaf (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#ChatGPT">ChatGPT (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#OpenAI">OpenAI (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#LLM">LLM (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Azure">Azure (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Data-Science">Data Science (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#ITIL">ITIL (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#IT">IT (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Jekyll">Jekyll (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Github">Github (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Liquid">Liquid (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Markdown">Markdown (1)</a>
+                
+            
+            
+		</div>
+	</div>
+</div>
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                Copyright © 2023 Dalong's personal blog 
+            </div>
+            <div class="col-md-6 col-sm-6 text-center text-lg-right">    
+                <a target="_blank" href="#">Designed</a> by Dalong.work
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+</div> <!-- /.site-content -->
+
+<!-- Scripts
+================================================== -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+<script src="/assets/js/mediumish.js"></script>
+
+
+
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script> 
+
+
+<script id="dsq-count-scr" src="//demowebsite.disqus.com/count.js"></script>
+
+
+</body>
+</html>
