@@ -5,8 +5,8 @@
     <description>Record the bits and pieces of the technology big bang.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 25 Jul 2023 16:33:25 +0800</pubDate>
-    <lastBuildDate>Tue, 25 Jul 2023 16:33:25 +0800</lastBuildDate>
+    <pubDate>Tue, 25 Jul 2023 16:42:05 +0800</pubDate>
+    <lastBuildDate>Tue, 25 Jul 2023 16:42:05 +0800</lastBuildDate>
     <generator>Jekyll v3.9.3</generator>
     
       <item>
@@ -321,20 +321,17 @@ title: 很棒的网站, 有创意
   &lt;li&gt;需要&lt;strong&gt;重启web 服务&lt;/strong&gt;, yaml 中的配置才能生效
 ```yaml
 title: 伟大的网站 # 这里是 site.title, 不是 page.title
-email: dalong@example.com
-    &lt;h1 id=&quot;description-中的关键字可以用于-seo&quot;&gt;description 中的关键字可以用于 SEO&lt;/h1&gt;
-    &lt;p&gt;description: &amp;gt;- # this means to ignore newlines until “baseurl:”
-Write an awesome description for your new site here. You can edit this
-line in _config.yml. It will appear in your document head meta (for
-Google search results) and in your feed.xml site description.
+email: dalong@example.com&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;description: &amp;gt;- # this means to ignore newlines until “baseurl:”
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
 baseurl: “” # the subpath of your site, e.g. /blog
 url: “http://127.0.0.1:4000” # the base hostname &amp;amp; protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;build-settings&quot;&gt;Build settings&lt;/h1&gt;
 
 &lt;p&gt;plugins:&lt;/p&gt;
 &lt;ul&gt;
