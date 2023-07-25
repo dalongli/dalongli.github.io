@@ -5,8 +5,8 @@
     <description>Record the bits and pieces of the technology big bang.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 25 Jul 2023 17:30:02 +0800</pubDate>
-    <lastBuildDate>Tue, 25 Jul 2023 17:30:02 +0800</lastBuildDate>
+    <pubDate>Tue, 25 Jul 2023 17:39:31 +0800</pubDate>
+    <lastBuildDate>Tue, 25 Jul 2023 17:39:31 +0800</lastBuildDate>
     <generator>Jekyll v3.9.3</generator>
     
       <item>
@@ -11533,7 +11533,7 @@ if __name__ == &quot;__main__&quot;:
       </item>
     
       <item>
-        <title>Use ChatGPT in Python</title>
+        <title>Prepare TOGAF, The Open Group Architecture Framework Certification</title>
         <description>&lt;p&gt;TOGAF® 基本上是一套清晰的组织发展规则和实践，旨在帮助组织。它指导企业如何在单一战略中创建、解释、分析和利用不同的要素。该框架还使用了明确定义的术语。这样可以简化部门之间的沟通，并大大减少浪费错误的可能性。就让我带领你揭开他的面纱。&lt;/p&gt;
 
 &lt;h1 id=&quot;togaf&quot;&gt;TOGAF&lt;/h1&gt;
