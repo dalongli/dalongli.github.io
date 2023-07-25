@@ -5,8 +5,8 @@
     <description>Record the bits and pieces of the technology big bang.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 25 Jul 2023 17:39:31 +0800</pubDate>
-    <lastBuildDate>Tue, 25 Jul 2023 17:39:31 +0800</lastBuildDate>
+    <pubDate>Tue, 25 Jul 2023 17:59:07 +0800</pubDate>
+    <lastBuildDate>Tue, 25 Jul 2023 17:59:07 +0800</lastBuildDate>
     <generator>Jekyll v3.9.3</generator>
     
       <item>
@@ -100,8 +100,7 @@ git push -u origin main -f
 &lt;/ol&gt;
 
 &lt;h3 id=&quot;资源&quot;&gt;资源&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://ibm-learning.udemy.com/course/static-website-generator-fast-secure-sites-blogs-with-jekyll/learn/lecture/4223532#overview&quot;&gt;视频学习资源&lt;/a&gt;
-&lt;a href=&quot;https://www.youtube.com/watch?v=owHfKAbJ6_M&amp;amp;t=255s&quot;&gt;Youtube 用 Docker + VSCode 开发 Jekyll 的 视频&lt;/a&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=owHfKAbJ6_M&amp;amp;t=255s&quot;&gt;Youtube 用 Docker + VSCode 开发 Jekyll 的 视频&lt;/a&gt;
 &lt;a href=&quot;https://jsbin.com/?html,output&quot;&gt;jsbin.com 一个写 html 代码就可以看到效果的 沙箱网站&lt;/a&gt;
 &lt;a href=&quot;https://codepen.io/&quot;&gt;codepen.io, 也是一个 所见即所得的 html, css, js 沙箱网站&lt;/a&gt; 
 &lt;a href=&quot;https://gyazo.com/download&quot;&gt;截图上传工具, 类似 Pic 这个 app?&lt;/a&gt;
@@ -3758,7 +3757,6 @@ Service requests and their fulfillment should be &lt;strong&gt;standardized&lt;/
 &lt;h2 id=&quot;资源&quot;&gt;资源&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://learn.microsoft.com/en-us/certifications/exams/ai-102?source=recommendations&quot;&gt;官网考试介绍&lt;/a&gt;
 &lt;a href=&quot;https://pts.measureup.com/web/PBS/LMS/index.php?l=1&amp;amp;k=8470033&amp;amp;tam=2239279&amp;amp;role=1&amp;amp;course=at_test202108190737001629358620&quot;&gt;官网提供的练习题&lt;/a&gt;
-&lt;a href=&quot;https://ibm.ent.box.com/s/2xyk6ol34gveidavuyj102lrmeygr7og/file/836586127926&quot;&gt;考试券申请流程&lt;/a&gt; or 看 57文件夹 中的word 文档
 &lt;a href=&quot;https://esi.microsoft.com/getcertification&quot;&gt;预约考试 + 考试券申请 + 模拟考题练习&lt;/a&gt;  目前只能申请 50% 的折扣 
 Wendy: 这个事儿global正在协调，会给我们发免费券。具体流程announce后大家就可以考了。
 &lt;a href=&quot;https://learn.microsoft.com/zh-cn/certifications/resources/study-guides/ai-102#skills-measured-as-of-may-2-2023&quot;&gt;2023年 5 月 2 日之后的考试的技能要求&lt;/a&gt;
@@ -3790,7 +3788,7 @@ Wendy: 这个事儿global正在协调，会给我们发免费券。具体流程a
 &lt;p&gt;在考试确认、改期或提醒邮件中选择签到（Check-in）以开始考试。
 &lt;a href=&quot;https://home.pearsonvue.com/microsoft/onvue&quot;&gt;登录&lt;/a&gt;
 &lt;a href=&quot;https://wsr.pearsonvue.com/testtaker/registration/Dashboard.htm?conversationId=632646&quot;&gt;修改预约&lt;/a&gt;
-&lt;a href=&quot;https://urldefense.proofpoint.com/v2/url?u=https-3A__examlaunchpad.pearsonvue.com_entry-2Dpoint_launch-2Dexam_MICROSOFT_OP-3FregistrationToken-3Dgoa6Pi5nbLkirsP7ZW0cFkLfSG6eEgOaf2OVrMYFuJpsr5lC2HXNy6OtGfNX4cyd0rD-252BEf8bI33oG0mIuGiEYpPU-252BjOTTL3NQtzL3BXzj6CeJEO5czz0sV5y4-252BcfxlNPw7rHFzIeyzTaxhW-252FEUMLbg-253D-253D-26locale-3Dzh-2DCN&amp;amp;d=DwMFaQ&amp;amp;c=jf_iaSHvJObTbx-siA1ZOg&amp;amp;r=GLwRVU7hck8WtQLt00OlfCENdMd8AeFwl22sHdgXegI&amp;amp;m=GBbXuvHYOLPLfRywUPBpiW0oKcBt9Hhoy3s7PWmL3iKoAir_oC2ahvKG60fhhAtL&amp;amp;s=9j_FXpZP68-clvlHeqk9xtnLkWSVGKej3e9gV8VtX8o&amp;amp;e=&quot;&gt;考试入口&lt;/a&gt;
+&lt;a href=&quot;https://urldefense.proofpoint.com/v2/url?u=https-3A__examlaunchpad.pearsonvue.com_entry-2Dpoint_launch-2Dexam_MICROSOFT_OP-3FregistrationToken-3&amp;lt;your own token&amp;gt;&quot;&gt;考试入口&lt;/a&gt;
 查看即将进行的考试预约，
 按照屏幕上的提示完成检录流程，
 考生须完成检录后方可开始考试。&lt;/p&gt;
@@ -4124,7 +4122,7 @@ Azure AI 工程师具有开发使用 Python 或 C# 等语言的解决方案的�
   &lt;li&gt;Key
     &lt;ul&gt;
       &lt;li&gt;用来访问认知服务 API 的, 不能分享给别人, 否则别人用了, 我需要付费.&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1010f2e03585456db07c30cc04c9e520&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;your own key&amp;gt;&lt;/code&gt;&lt;/li&gt;
       &lt;li&gt;默认有2个key&lt;/li&gt;
       &lt;li&gt;key 可以 regenerate 重建&lt;/li&gt;
     &lt;/ul&gt;
@@ -4247,15 +4245,15 @@ Azure AI 工程师具有开发使用 Python 或 C# 等语言的解决方案的�
       &lt;/li&gt;
       &lt;li&gt;在 header 中填入 key-value
         &lt;ol&gt;
-          &lt;li&gt;key: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ocp-Apim-Subscription-Key&lt;/code&gt;&lt;/li&gt;
-          &lt;li&gt;value: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;30bd339f8d6a430c842908ae7bcb43f0&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;key: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;your own key&amp;gt;&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;value: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;your own key&amp;gt;&lt;/code&gt;&lt;/li&gt;
         &lt;/ol&gt;
       &lt;/li&gt;
     &lt;/ol&gt;
   &lt;/li&gt;
   &lt;li&gt;点击 send, 之后就返回了一个 token
     &lt;ol&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;eyJhbGciOiJFUzI1NiIsImtpZCI6ImtleTEiLCJ0eXAiOiJKV1QifQ.eyJyZWdpb24iOiJlYXN0dXMiLCJzdWJzY3JpcHRpb24taWQiOiI0MjJiMDU3ZmRlOWM0YmYxOGQxYjA5YmU2ZTA1M2FmZSIsInByb2R1Y3QtaWQiOiJTcGVlY2hTZXJ2aWNlcy5GMCIsImNvZ25pdGl2ZS1zZXJ2aWNlcy1lbmRwb2ludCI6Imh0dHBzOi8vYXBpLmNvZ25pdGl2ZS5taWNyb3NvZnQuY29tL2ludGVybmFsL3YxLjAvIiwiYXp1cmUtcmVzb3VyY2UtaWQiOiIvc3Vic2NyaXB0aW9ucy8wNTJiYmUzNy1iOGVkLTQ1MWQtYWNjYy1hMTJlYzAwMzA0MjIvcmVzb3VyY2VHcm91cHMvZGwtY29nc3ZzLWdyb3VwL3Byb3ZpZGVycy9NaWNyb3NvZnQuQ29nbml0aXZlU2VydmljZXMvYWNjb3VudHMvZGwtc3BlZWNoMSIsInNjb3BlIjoic3BlZWNoc2VydmljZXMiLCJhdWQiOiJ1cm46bXMuc3BlZWNoc2VydmljZXMuZWFzdHVzIiwiZXhwIjoxNjgxMjY0NjQyLCJpc3MiOiJ1cm46bXMuY29nbml0aXZlc2VydmljZXMifQ.gxJ06I2kL6P8RS96xaMt5YQUtyntBdFKu7iRGmaNW3W0P69f7rsoani3tBT7F_t6jWIgoPF9SOO9CONUP-gSpw&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;your own token&amp;gt;&lt;/code&gt;&lt;/li&gt;
     &lt;/ol&gt;
   &lt;/li&gt;
   &lt;li&gt;未完成, 后面需要继续&lt;/li&gt;
@@ -4459,7 +4457,7 @@ pip install pillow &lt;span class=&quot;c&quot;&gt;# PIL 的图片处理类库&l
 &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sys&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;time&lt;/span&gt;
 
-&lt;span class=&quot;n&quot;&gt;subscription_key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;faf0bb4ec8bf427a84addba9d5672077&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;subscription_key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&amp;lt;your own key&amp;gt;&quot;&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;endpoint&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;https://dlvision1.cognitiveservices.azure.com/&quot;&lt;/span&gt;
 
 &lt;span class=&quot;n&quot;&gt;computervision_client&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ComputerVisionClient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endpoint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CognitiveServicesCredentials&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;subscription_key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
@@ -5853,7 +5851,7 @@ This example uses detected faces in a group photo to find a similar face using a
   &lt;li&gt;可以把带有insight 的视频内容通过 HTML 源代码的 embed 形式提供
     &lt;ul&gt;
       &lt;li&gt;Share 的地址 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://www.videoindexer.ai/accounts/1771eab4-fb17-463d-97f5-aa30eceaee38/videos/9448d2362b/&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;Enbed 的地址 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://www.videoindexer.ai/embed/insights/1771eab4-fb17-463d-97f5-aa30eceaee38/9448d2362b/?accessToken=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJWZXJzaW9uIjoiMi4wLjAuMCIsIktleVZlcnNpb24iOiIxNGU0M2M5NDFlOWI0OTg1OWU0NDkzNDFhZjgxZjNiNiIsIkFjY291bnRJZCI6IjE3NzFlYWI0LWZiMTctNDYzZC05N2Y1LWFhMzBlY2VhZWUzOCIsIkFjY291bnRUeXBlIjoiVHJpYWwiLCJWaWRlb0lkIjoiOTQ0OGQyMzYyYiIsIlBlcm1pc3Npb24iOiJSZWFkZXIiLCJFeHRlcm5hbFVzZXJJZCI6IjNCNUNGQkIyMzVGNTQ1NTVBMEQ4NzQzOUEwQ0NGMEI4IiwiVXNlclR5cGUiOiJNaWNyb3NvZnRDb3JwQWFkIiwiSXNzdWVyTG9jYXRpb24iOiJUcmlhbCIsIm5iZiI6MTY4MjgxODI5MiwiZXhwIjoxNjgyODIyMTkyLCJpc3MiOiJodHRwczovL2FwaS52aWRlb2luZGV4ZXIuYWkvIiwiYXVkIjoiaHR0cHM6Ly9hcGkudmlkZW9pbmRleGVyLmFpLyJ9.W8ZTosIUqZQrkyjcw-M2UnCAovtL_6pj1SQIiGMLc3LxnFMblKsg-3Qt6aQEHltRV_6H_Pmp7wyZUcKX8WDr-yXTKVzTOy7_z_w6Hj_PrYuFR1qJyxVBbwFnORoDbJyyjXekkBHV3hOWHgHUbTrmS1aCDnAIIH5qNibbhezYYNEPMCwWr15nXCpm-JlUl0MlVpeIxfcqUYZPqBZ-GAKaZ0wuxGaRhQFFtQ91ztR258dIfapZk0gbCditBxlxm5vGcBuOk-ccUa9-syFZlYHOzrgV3Sx0jPl_xrY1SEn7no-tdw3TQJASVJsqLZKLlBJ1EIerIemFnLtfOSxA0UV3BQ&amp;amp;locale=en&amp;amp;location=trial&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Enbed 的地址 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://www.videoindexer.ai/embed/insights/1771eab4-fb17-463d-97f5-aa30eceaee38/9448d2362b/?accessToken=&amp;lt;your own token&amp;gt;&lt;/code&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;可以把视频中的insight 以 JSON 的格式下载&lt;/li&gt;

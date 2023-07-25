@@ -957,16 +957,16 @@ python3.7 manage.py createsuperuser
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre>http -a root:@moyu<span class="k">******</span> http://127.0.0.1:8000/users/
-http -a root:@moyu<span class="k">******</span> http://127.0.0.1:8000/users/?format<span class="o">=</span>api <span class="c"># 通过内容协商来定义返回的格式. 默认是json</span>
-http -a root:@moyu<span class="k">******</span> --print hbHB http://127.0.0.1:8000/helloworld/users/
+3</pre></td><td class="code"><pre>http -a root:@<span class="k">******</span> http://127.0.0.1:8000/users/
+http -a root:@<span class="k">******</span> http://127.0.0.1:8000/users/?format<span class="o">=</span>api <span class="c"># 通过内容协商来定义返回的格式. 默认是json</span>
+http -a root:@<span class="k">******</span> --print hbHB http://127.0.0.1:8000/helloworld/users/
 </pre></td></tr></tbody></table>
 </div>
 </div>
 
 <p>方法二:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="gp">dalong$ </span>curl -H <span class="s1">'Accept: application/json; indent=4'</span> -u root:@moyu<span class="k">******</span> http://127.0.0.1:8000/users/
+<div class="language-bash highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="gp">dalong$ </span>curl -H <span class="s1">'Accept: application/json; indent=4'</span> -u root:@<span class="k">******</span> http://127.0.0.1:8000/users/
 </pre></td></tr></tbody></table>
 </div>
 </div>
@@ -5111,7 +5111,7 @@ Including another URLconf
 
 <p><em>mysql 客户端连接方式</em></p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>/Applications/XAMPP/xamppfiles/bin/mysql -uroot -pldl5506
+<div class="language-bash highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>/Applications/XAMPP/xamppfiles/bin/mysql -uroot -p
 </pre></td></tr></tbody></table>
 </div>
 </div>
@@ -5123,7 +5123,7 @@ Including another URLconf
 
   <p>启动 XAMPP 的 mysql 服务</p>
 
-  <p>创建MariaDB 连接, 并连接端口 3308, 用户名 root, 密码 ldl5506</p>
+  <p>创建MariaDB 连接, 并连接端口 3308, 用户名 root,</p>
 </blockquote>
 
 <p><em>虚拟环境配置</em></p>
