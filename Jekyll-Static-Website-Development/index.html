@@ -260,23 +260,21 @@
           <li><a href="#修改-默认的模板为新的模板">修改 默认的模板为新的模板</a></li>
           <li><a href="#语法--content---layout--include-变量-if-else-endif">语法 {{ content }} , layout , include, 变量, if else endif</a></li>
           <li><a href="#_configyml-配置文件">_config.yml 配置文件</a></li>
+          <li><a href="#yaml-front-matter">YAML front matter</a></li>
+          <li><a href="#liquid-模板语言">Liquid 模板语言</a></li>
+          <li><a href="#制作-静态-blog">制作 静态 Blog</a></li>
+          <li><a href="#为-blog-做一些-widget">为 blog 做一些 widget</a></li>
+          <li><a href="#设置默认值">设置默认值</a></li>
+          <li><a href="#制作-form-提交表单">制作 form 提交表单</a></li>
+          <li><a href="#读取-data-数据">读取 data 数据</a></li>
+          <li><a href="#为-博客增加-评论-comments-功能">为 博客增加 评论 (comments) 功能</a></li>
+          <li><a href="#把本地代码上传到github">把本地代码上传到github</a></li>
+          <li><a href="#为-github-的静态网站做-定制化域名">为 github 的静态网站做 定制化域名</a></li>
+          <li><a href="#安装和调试-新的-jekyll-模板到-github">安装和调试 新的 Jekyll 模板到 github</a></li>
         </ul>
       </li>
     </ul>
   </li>
-  <li><a href="#description-中的关键字可以用于-seo">description 中的关键字可以用于 SEO</a></li>
-  <li><a href="#build-settings">Build settings</a>
-      - {:.} <a href="#yaml-front-matter">YAML front matter</a>
-      - {:.} <a href="#liquid-模板语言">Liquid 模板语言</a>
-      - {:.} <a href="#制作-静态-blog">制作 静态 Blog</a>
-      - {:.} <a href="#为-blog-做一些-widget">为 blog 做一些 widget</a>
-      - {:.} <a href="#设置默认值">设置默认值</a>
-      - {:.} <a href="#制作-form-提交表单">制作 form 提交表单</a>
-      - {:.} <a href="#读取-data-数据">读取 data 数据</a>
-      - {:.} <a href="#为-博客增加-评论-comments-功能">为 博客增加 评论 (comments) 功能</a>
-      - {:.} <a href="#把本地代码上传到github">把本地代码上传到github</a>
-      - {:.} <a href="#为-github-的静态网站做-定制化域名">为 github 的静态网站做 定制化域名</a>
-      - {:.} <a href="#安装和调试-新的-jekyll-模板到-github">安装和调试 新的 Jekyll 模板到 github</a></li>
 </ul>
                     </div>
                 
@@ -591,20 +589,17 @@ title: 很棒的网站, 有创意
   <li>需要<strong>重启web 服务</strong>, yaml 中的配置才能生效
 ```yaml
 title: 伟大的网站 # 这里是 site.title, 不是 page.title
-email: dalong@example.com
-    <h1 id="description-中的关键字可以用于-seo">description 中的关键字可以用于 SEO</h1>
-    <p>description: &gt;- # this means to ignore newlines until “baseurl:”
-Write an awesome description for your new site here. You can edit this
-line in _config.yml. It will appear in your document head meta (for
-Google search results) and in your feed.xml site description.
+email: dalong@example.com</li>
+</ul>
+
+<p>description: &gt;- # this means to ignore newlines until “baseurl:”
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
 baseurl: “” # the subpath of your site, e.g. /blog
 url: “http://127.0.0.1:4000” # the base hostname &amp; protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll</p>
-  </li>
-</ul>
-
-<h1 id="build-settings">Build settings</h1>
 
 <p>plugins:</p>
 <ul>
