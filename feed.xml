@@ -5,8 +5,8 @@
     <description>Record the bits and pieces of the technology big bang.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 25 Jul 2023 17:59:07 +0800</pubDate>
-    <lastBuildDate>Tue, 25 Jul 2023 17:59:07 +0800</lastBuildDate>
+    <pubDate>Tue, 25 Jul 2023 18:23:32 +0800</pubDate>
+    <lastBuildDate>Tue, 25 Jul 2023 18:23:32 +0800</lastBuildDate>
     <generator>Jekyll v3.9.3</generator>
     
       <item>
@@ -3747,7 +3747,7 @@ Service requests and their fulfillment should be &lt;strong&gt;standardized&lt;/
       </item>
     
       <item>
-        <title>Designing and Implementing a Microsoft Azure AI Solution</title>
+        <title>Designing and Implementing Microsoft Azure AI Solution</title>
         <description>&lt;p&gt;随着微软收购了 OpenAI, ChatGPT 的能力也融入到了 微软的 Azure 中. 我将带领大家了解 Microsoft Azure AI 不同服务, 包括 Cognitive Services, Computer Vision, Custom Vision, Video indexer, Natural Language Processing (NLP), Speech Service, Translate Language, OpenAI 等等. 还等什么, 让我们开始吧.&lt;/p&gt;
 
 &lt;h1 id=&quot;az-102-designing-and-implementing-a-microsoft-azure-ai-solution&quot;&gt;AZ-102 Designing and Implementing a Microsoft Azure AI Solution&lt;/h1&gt;
@@ -9942,6 +9942,8 @@ https://github.com/microsoft/BotFramework-Composer/blob/main/docs/Assets/Screens
         
         <category>AI</category>
         
+        <category>ML</category>
+        
         <category>Python</category>
         
         <category>LLM</category>
@@ -9949,6 +9951,28 @@ https://github.com/microsoft/BotFramework-Composer/blob/main/docs/Assets/Screens
         <category>Data Science</category>
         
         <category>OpenAI</category>
+        
+        <category>OCR</category>
+        
+        <category>Face API</category>
+        
+        <category>Chat Bot</category>
+        
+        <category>Speech Service</category>
+        
+        <category>Computer Vision</category>
+        
+        <category>Custom Vision</category>
+        
+        <category>Video indexer</category>
+        
+        <category>NLP</category>
+        
+        <category>Translator</category>
+        
+        <category>Cognitive Search</category>
+        
+        <category>Knowledge Base</category>
         
       </item>
     
@@ -11527,6 +11551,10 @@ if __name__ == &quot;__main__&quot;:
         <category>Python</category>
         
         <category>LLM</category>
+        
+        <category>Prompt</category>
+        
+        <category>DALL-E</category>
         
       </item>
     
@@ -13905,6 +13933,8 @@ https://home.pearsonvue.com/theopengroup
         
         <category>Architecture</category>
         
+        <category>Architecture Thinking</category>
+        
       </item>
     
       <item>
@@ -14038,6 +14068,12 @@ https://home.pearsonvue.com/theopengroup
         
         
         <category>Metaverse</category>
+        
+        <category>VR</category>
+        
+        <category>AR</category>
+        
+        <category>XR</category>
         
       </item>
     
@@ -14484,6 +14520,10 @@ https://home.pearsonvue.com/theopengroup
         <category>MLPS</category>
         
         <category>PIPL</category>
+        
+        <category>PII</category>
+        
+        <category>GDPR</category>
         
       </item>
     
@@ -15652,7 +15692,7 @@ kubectl get hpa  &lt;span class=&quot;c&quot;&gt;# Horizential Pods Autoscaling&
 kubectl create configmap hello-world-config --from-literal&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;RDS_DB_NAME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;todos  &lt;span class=&quot;c&quot;&gt;# 增加配置参数&lt;/span&gt;
 kubectl get configmap
 kubectl describe configmap hello-world-config &lt;span class=&quot;c&quot;&gt;# &lt;/span&gt;
-kubectl create secret generic hello-world-secrets-1 --from-literal&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;RDS_PASSWORD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;dummytodos &lt;span class=&quot;c&quot;&gt;# 创建密码&lt;/span&gt;
+kubectl create secret generic hello-world-secrets-1 --from-literal&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;RDS_PASSWORD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;lt;your own password&amp;gt; &lt;span class=&quot;c&quot;&gt;# 创建密码&lt;/span&gt;
 kubectl get secret
 kubectl describe secret hello-world-secrets-1
 
@@ -21217,9 +21257,35 @@ gcloud compute machine-types list --filter&lt;span class=&quot;o&quot;&gt;=&lt;/
         <guid isPermaLink="true">http://localhost:4000/Google-Cloud-Platform-Professional-Architect/</guid>
         
         
-        <category>Agile</category>
+        <category>GCP</category>
         
-        <category>Scrum</category>
+        <category>Google Cloud Platform</category>
+        
+        <category>Architecture</category>
+        
+        <category>Database</category>
+        
+        <category>Storage</category>
+        
+        <category>DevOps</category>
+        
+        <category>IAM</category>
+        
+        <category>Cloud</category>
+        
+        <category>API</category>
+        
+        <category>Data Migration</category>
+        
+        <category>Network</category>
+        
+        <category>YAML</category>
+        
+        <category>kubernetes</category>
+        
+        <category>Serverless</category>
+        
+        <category>CICD</category>
         
       </item>
     
@@ -23760,6 +23826,8 @@ gcloud compute machine-types list --filter&lt;span class=&quot;o&quot;&gt;=&lt;/
         
         <category>Scrum</category>
         
+        <category>Design Thinking</category>
+        
       </item>
     
       <item>
@@ -24506,7 +24574,6 @@ gcloud compute machine-types list --filter&lt;span class=&quot;o&quot;&gt;=&lt;/
     &lt;ul&gt;
       &lt;li&gt;案例：
         &lt;ul&gt;
-          &lt;li&gt;IBM 一个账号登录就可以使用Slack, Box, Office365, Teams, Webex,&lt;/li&gt;
           &lt;li&gt;客户已经有了AD, 客户的员工可以通过设置 AWS SSO 来访问客户在AWS 中的多个账户。&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
@@ -30809,6 +30876,32 @@ Fan out 和标准consumer 的对比&lt;/li&gt;
         <category>AWS</category>
         
         <category>Architecture</category>
+        
+        <category>Database</category>
+        
+        <category>Storage</category>
+        
+        <category>DevOps</category>
+        
+        <category>IAM</category>
+        
+        <category>Cloud</category>
+        
+        <category>API</category>
+        
+        <category>Data Migration</category>
+        
+        <category>Network</category>
+        
+        <category>YAML</category>
+        
+        <category>Security</category>
+        
+        <category>kubernetes</category>
+        
+        <category>Serverless</category>
+        
+        <category>CICD</category>
         
       </item>
     
