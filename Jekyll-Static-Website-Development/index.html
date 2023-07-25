@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" href="/assets/images/logo.png">
+
+<title>How to use Jekyll develop your own Blog | Dalong's personal blog</title>
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>How to use Jekyll develop your own Blog | Dalong’s personal blog</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="How to use Jekyll develop your own Blog" />
+<meta name="author" content="Dalong" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="博客可以让一个人表达他/她的想法，每个人都渴望拥有他/她的博客。截至今天，创建博客非常简单。WordPress，jekyll，hugo等开源软件可以帮助您创建和设置博客。在这篇文章中，我将带领你了解 Jekyll 以及如何在 Github 中免费托管它。" />
+<meta property="og:description" content="博客可以让一个人表达他/她的想法，每个人都渴望拥有他/她的博客。截至今天，创建博客非常简单。WordPress，jekyll，hugo等开源软件可以帮助您创建和设置博客。在这篇文章中，我将带领你了解 Jekyll 以及如何在 Github 中免费托管它。" />
+<link rel="canonical" href="http://localhost:4000/Jekyll-Static-Website-Development/" />
+<meta property="og:url" content="http://localhost:4000/Jekyll-Static-Website-Development/" />
+<meta property="og:site_name" content="Dalong’s personal blog" />
+<meta property="og:image" content="http://localhost:4000/assets/images/jekyll-blog.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-07-21T00:00:00+08:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"How to use Jekyll develop your own Blog","dateModified":"2023-07-21T00:00:00+08:00","datePublished":"2023-07-21T00:00:00+08:00","description":"博客可以让一个人表达他/她的想法，每个人都渴望拥有他/她的博客。截至今天，创建博客非常简单。WordPress，jekyll，hugo等开源软件可以帮助您创建和设置博客。在这篇文章中，我将带领你了解 Jekyll 以及如何在 Github 中免费托管它。","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"},"name":"Dalong"},"image":"http://localhost:4000/assets/images/jekyll-blog.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/Jekyll-Static-Website-Development/"},"url":"http://localhost:4000/Jekyll-Static-Website-Development/","author":{"@type":"Person","name":"Dalong"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+<link href="/assets/css/screen.css" rel="stylesheet">
+
+<link href="/assets/css/main.css" rel="stylesheet">
+
+<script src="/assets/js/jquery.min.js"></script>
+
+</head>
+
+
+
+
+<body class="layout-post">
+	<!-- defer loading of font and font awesome -->
+	<noscript id="deferred-styles">
+		<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+    </noscript>
+
+
+<!-- Begin Menu Navigation
+================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+
+    <div class="container pr-0">
+
+    <!-- Begin Logo -->
+    <a class="navbar-brand" href="/">
+    <img src="/assets/images/logo.png" alt="Dalong's personal blog">
+    </a>
+    <!-- End Logo -->
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+
+        <!-- Begin Menu -->
+
+            <ul class="navbar-nav ml-auto">
+
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/index.html">Blog</a>
+                </li>
+
+                <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+                </li>
+
+<!-- 以后再加上相关链接
+
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://bootstrapstarter.com/bootstrap-templates/template-mediumish-bootstrap-jekyll/"> Docs</a>
+                </li>
+
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://www.wowthemes.net/themes/mediumish-wordpress/"><i class="fab fa-wordpress-simple"></i> WP Version</a>
+                </li>
+
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://www.wowthemes.net/themes/mediumish-ghost/"><i class="fab fa-snapchat-ghost"></i> Ghost Version</a>
+                </li>
+-->
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://github.com/dalongli"><i class="fab fa-github"></i> Fork on Github</a>
+                </li>
+
+                <script src="/assets/js/lunr.js"></script>
+
+
+<style>
+    .lunrsearchresult .title {color: #d9230f;}
+    .lunrsearchresult .url {color: silver;}
+    .lunrsearchresult a {display: block; color: #777;}
+    .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
+    .lunrsearchresult a:hover .title {text-decoration: underline;}
+</style>
+
+
+<form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+    <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Type and enter..."/>
+</form>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/assets/js/lunrsearchengine.js"></script>
+
+            </ul>
+
+        <!-- End Menu -->
+
+    </div>
+
+    </div>
+</nav>
+<!-- End Navigation
+================================================== -->
+
+<div class="site-content">
+
+<div class="container">
+
+<!-- Site Title
+================================================== -->
+<div class="mainheading">
+    <h1 class="sitetitle">Dalong's personal blog</h1>
+    <p class="lead">
+        Record the bits and pieces of the technology big bang.
+    </p>
+</div>
+
+<!-- Content
+================================================== -->
+<div class="main-content">
+    <!-- Begin Article
+================================================== -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Share -->
+        <div class="col-md-2 pl-0">
+            <div class="share sticky-top sticky-top-offset">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=How to use Jekyll develop your own Blog&url=http://localhost:4000/Jekyll-Static-Website-Development/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=http://localhost:4000/Jekyll-Static-Website-Development/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/Jekyll-Static-Website-Development/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+    
+    <div class="sep">
+    </div>
+    <ul>
+        <li>
+        <a class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>
+
+        </div>
+
+        <!-- Post -->
+        
+
+        <div class="col-md-9 flex-first flex-md-unordered">
+            <div class="mainheading">
+
+                <!-- Author Box -->
+                
+                <div class="row post-top-meta">
+                    <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0">
+                        
+                        <img class="author-thumb" src="/assets/images/avatar_dl.png" alt="Dalong">
+                        
+                    </div>
+                    <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
+                        <a target="_blank" class="link-dark" href="https://dalongli.github.io/about">Dalong</a><a target="_blank" href="https://dalongli.github.io." class="btn follow">Follow</a>
+                        <span class="author-description">A profesional technical consultant and blogger.</span>
+                    </div>
+                </div>
+                
+
+                <!-- Post Title -->
+                <h1 class="posttitle">How to use Jekyll develop your own Blog</h1>
+
+            </div>
+
+            <!-- Adsense if enabled from _config.yml (change your pub id and slot) -->
+            
+            <!-- End Adsense -->
+
+            <!-- Post Featured Image -->
+            
+
+            
+            <img class="featured-image img-fluid" src="/assets/images/jekyll-blog.jpg" alt="How to use Jekyll develop your own Blog">
+            
+
+            
+            <!-- End Featured Image -->
+
+            <!-- Post Content -->
+            <div class="article-post">
+                <!-- Toc if any -->
+                
+                    
+                    <div class="toc mt-4 mb-4 lead">
+                        <h3 class="font-weight-bold">Summary</h3>
+                        <ul>
+  <li><a href="#github-创建个人-blog">github 创建个人 Blog</a>
+    <ul>
+      <li><a href="#目的">目的:</a></li>
+      <li><a href="#github-上-创建静态网站">github 上 创建静态网站</a>
+        <ul>
+          <li><a href="#项目网站">项目网站</a></li>
+          <li><a href="#个人网站">个人网站</a></li>
+        </ul>
+      </li>
+      <li><a href="#jekyll">Jekyll</a>
+        <ul>
+          <li><a href="#资源">资源</a></li>
+          <li><a href="#在--mac-上直接安装-jekyll">在  Mac 上直接安装 Jekyll</a></li>
+          <li><a href="#用-docker-安装-jekyll">用 Docker 安装 Jekyll</a></li>
+          <li><a href="#创建-jekyll-项目">创建 jekyll 项目</a></li>
+          <li><a href="#修改-默认的模板为新的模板">修改 默认的模板为新的模板</a></li>
+          <li><a href="#语法--content---layout--include-变量-if-else-endif">语法 {{ content }} , layout , include, 变量, if else endif</a></li>
+          <li><a href="#_configyml-配置文件">_config.yml 配置文件</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#description-中的关键字可以用于-seo">description 中的关键字可以用于 SEO</a></li>
+  <li><a href="#build-settings">Build settings</a>
+      - {:.} <a href="#yaml-front-matter">YAML front matter</a>
+      - {:.} <a href="#liquid-模板语言">Liquid 模板语言</a>
+      - {:.} <a href="#制作-静态-blog">制作 静态 Blog</a>
+      - {:.} <a href="#为-blog-做一些-widget">为 blog 做一些 widget</a>
+      - {:.} <a href="#设置默认值">设置默认值</a>
+      - {:.} <a href="#制作-form-提交表单">制作 form 提交表单</a>
+      - {:.} <a href="#读取-data-数据">读取 data 数据</a>
+      - {:.} <a href="#为-博客增加-评论-comments-功能">为 博客增加 评论 (comments) 功能</a>
+      - {:.} <a href="#把本地代码上传到github">把本地代码上传到github</a>
+      - {:.} <a href="#为-github-的静态网站做-定制化域名">为 github 的静态网站做 定制化域名</a>
+      - {:.} <a href="#安装和调试-新的-jekyll-模板到-github">安装和调试 新的 Jekyll 模板到 github</a></li>
+</ul>
+                    </div>
+                
+                <!-- End Toc -->
+                <p>博客可以让一个人表达他/她的想法，每个人都渴望拥有他/她的博客。截至今天，创建博客非常简单。WordPress，jekyll，hugo等开源软件可以帮助您创建和设置博客。在这篇文章中，我将带领你了解 Jekyll 以及如何在 Github 中免费托管它。</p>
+
+<h1 id="github-创建个人-blog">github 创建个人 Blog</h1>
+<p>[TOC]</p>
+
+<h2 id="目的">目的:</h2>
+<ul>
+  <li>使用 github 创建个人主页, 并将自己的学习心得和个人项目代码放到上面</li>
+  <li>使用 Jekyll 的模板来美化 blog</li>
+  <li>使用 Markdown 形式的内容来写 blog</li>
+</ul>
+
+<p>资源</p>
+<ul>
+  <li><a href="https://pages.github.com">如何创建 github 主页</a></li>
+  <li><a href="https://dalongli.github.io">我的主页地址</a></li>
+  <li><a href="https://jekyllrb.com">Jekyll 主页地址</a></li>
+  <li><a href="https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll">如何用 Jekyll 创建 github 主页</a></li>
+  <li><a href="https://github.com/wowthemesnet/mediumish-theme-jekyll">一个基于 Jekyll 的 blog 模板 - mediumish-theme-jekyll</a></li>
+</ul>
+
+<h2 id="github-上-创建静态网站">github 上 创建静态网站</h2>
+<p>可以用  user page , 也可以用 project page</p>
+
+<h3 id="项目网站">项目网站</h3>
+<ul>
+  <li>用于项目</li>
+  <li>github 每个 repository 都可以有一个网站</li>
+  <li>http://<username>.github.io/<repository-name></repository-name></username></li>
+</ul>
+
+<h3 id="个人网站">个人网站</h3>
+<ul>
+  <li>用于个人或者公司网站</li>
+  <li>一个 github 账号只能有一个网站</li>
+  <li>http://<username>.github.io/</username></li>
+  <li>需要用 master branch</li>
+</ul>
+
+<p>创建流程</p>
+
+<ol>
+  <li>在 github 自己的 账户下建立一个 github repository, 名字要是<code class="language-plaintext highlighter-rouge">dalongli.github.io</code> 这里的 <code class="language-plaintext highlighter-rouge">dalongli</code> 要和 自己的 github 账号的名字一致</li>
+  <li>方法一 命令行
+    <ol>
+      <li>选择一个本地目录 我这里的目录是 <code class="language-plaintext highlighter-rouge">/Users/lidalong/Desktop/</code></li>
+      <li>命令
+        <div class="language-bash highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6</pre></td><td class="code"><pre>git clone https://github.com/dalongli/dalongli.github.io
+<span class="nb">cd </span>dalongli.github.io
+<span class="nb">echo</span> <span class="s2">"Hello World"</span> &gt; index.html
+git add --all
+git commit -m <span class="s2">"Initial commit"</span>
+git push -u origin main -f
+</pre></td></tr></tbody></table>
+</div>
+        </div>
+      </li>
+      <li>访问 https://dalongli.github.io. 就可以看到 <code class="language-plaintext highlighter-rouge">hellow world</code> 了</li>
+    </ol>
+  </li>
+  <li>方法二 Github Desktop app
+    <ol>
+      <li>下载 github desktop app</li>
+      <li>clone dalongli.github.io</li>
+      <li>在提示中 用 VS Code 打开目录</li>
+      <li>在vsc 中修改内容, 并提交</li>
+      <li>刷新 https://dalongli.github.io. 可以看到新的内容了</li>
+    </ol>
+  </li>
+  <li>用 vscode 打开创建的项目</li>
+  <li>把用 Jekyll 生成的 <code class="language-plaintext highlighter-rouge">_site</code> 目录中的内容拷贝到 <code class="language-plaintext highlighter-rouge">dalongli.github.io</code> 目录下, commit 并提交到 github 上</li>
+</ol>
+
+<h2 id="jekyll">Jekyll</h2>
+<p>Jekyll 的工作原理, 分为以下几个步骤</p>
+<ol>
+  <li>读取 configuration file</li>
+  <li>读取 所有的其他文件, 并 YAML 配置文件(front matter)</li>
+  <li>使用 Liquid 模板语言处理内容和模板</li>
+  <li>读取 assets (资产文件, 比如 css, js, image)</li>
+  <li>创建最终的输出到 _site 目录</li>
+</ol>
+
+<h3 id="资源">资源</h3>
+<p><a href="https://ibm-learning.udemy.com/course/static-website-generator-fast-secure-sites-blogs-with-jekyll/learn/lecture/4223532#overview">视频学习资源</a>
+<a href="https://www.youtube.com/watch?v=owHfKAbJ6_M&amp;t=255s">Youtube 用 Docker + VSCode 开发 Jekyll 的 视频</a>
+<a href="https://jsbin.com/?html,output">jsbin.com 一个写 html 代码就可以看到效果的 沙箱网站</a>
+<a href="https://codepen.io/">codepen.io, 也是一个 所见即所得的 html, css, js 沙箱网站</a> 
+<a href="https://gyazo.com/download">截图上传工具, 类似 Pic 这个 app?</a>
+<a href="https://jekyllrb.com">jekyll 官网</a>
+<a href="https://jekyllrb.com/docs/">Jekyll Doc</a>
+<a href="https://jekyllrb.com/docs/front-matter/">Front Matter 语法</a>
+<a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown 语法</a>
+<a href="http://jekyllrb.com/docs/structure/">Jekyll 目录结构</a></p>
+
+<h3 id="在--mac-上直接安装-jekyll">在  Mac 上直接安装 Jekyll</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6</pre></td><td class="code"><pre>gem sources -l
+gem sources --remove https://rubygems.org/
+gem sources -a https://gems.ruby-china.com/
+gem install jekyll bundler
+<span class="c"># 如果成功了</span>
+jekyll -v  <span class="c"># jekyll 4.3.2</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h3 id="用-docker-安装-jekyll">用 Docker 安装 Jekyll</h3>
+
+<ol>
+  <li>在 VSCode 中安装两个扩展, <code class="language-plaintext highlighter-rouge">Docker</code> 和 <code class="language-plaintext highlighter-rouge">Dev Containers</code></li>
+  <li>重启 VSCode</li>
+  <li>在 github 上创建一个新的 repository
+    <ol>
+      <li>选中 rademe 和 ignore 和 gitignore (jekyll)</li>
+      <li>进入 repository -&gt; setting -&gt; page</li>
+      <li>点击 github action 按钮, 保存 yml 文件 (什么都不用改)</li>
+      <li>会发现原来的 repository 中多个一个 yaml 文件, 并且在 setting 下面可以看到网站的 url 了</li>
+      <li>url <code class="language-plaintext highlighter-rouge">https://dalongli.github.io/my-jekyll-docker-website/</code></li>
+      <li>回到 repo 主页, 把 url 复制到 setting 中 的 web url 地址栏中, 方便以后点击进入查看
+        <ol>
+          <li><img src="http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-07-20-082414.jpg" alt="" /></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>在vscode 中 clone 刚刚创建的 repo
+    <ol>
+      <li><code class="language-plaintext highlighter-rouge">cmd + shift + p</code> 输入 <code class="language-plaintext highlighter-rouge">git clone</code> 然后黏贴 repo 的 url <code class="language-plaintext highlighter-rouge">https://github.com/dalongli/my-jekyll-docker-website</code>  回车, 打开</li>
+    </ol>
+  </li>
+  <li>到 https://jekyllrb.com/docs/ 查看 jekyll 需要的 ruby (2.5.0 或更高版本) 的最低版本 , 还有网站右上角的 jekyll 的版本 (4.3.2)
+    <ol>
+      <li>看一下 github pages 需要的 <a href="https://pages.github.com/versions/">安装的包和依赖版本</a>
+        <ol>
+          <li>jekyll 3.9.3</li>
+          <li>ruby 2.5.0 或以上</li>
+        </ol>
+      </li>
+      <li>注意:
+        <ol>
+          <li>For Jekyll 3.9. (also GitHub Pages)
+            <ol>
+              <li>Ruby 2.x</li>
+              <li>Alpine 3.x</li>
+            </ol>
+          </li>
+          <li>For Jekyll 4.2. (non-GitHub Pages)
+            <ol>
+              <li>Ruby 3.0.x</li>
+              <li>Alpine 3.x</li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>在 Docker hub 上找到对应的 Docker 镜像
+    <ol>
+      <li>我们要找一个 ruby image 然后手动把  jekyll 加进去</li>
+      <li>搜索 <code class="language-plaintext highlighter-rouge">ruby alpine</code></li>
+    </ol>
+  </li>
+  <li>回到 vscode 中 , 创建一个 docker file
+    <ol>
+      <li>在 repo 的目录下新建一个文件 <code class="language-plaintext highlighter-rouge">dockerfile</code>
+        <ol>
+          <li>A dockerfile defines how to build your container from an image
+            <pre><code class="language-dockerfile"># Create a Jekyll container from a Ruby Alpine image
+# At a minimum, use Ruby 2.5 or later
+FROM ruby:2.7-alpine3.15
+# Add Jekyll dependencies to Alpine
+RUN apk update
+RUN apk add --no-cache build-base gcc cmake git
+# Update the Ruby bundler and install Jekyll
+RUN gem update bundler &amp;&amp; gem install bundler jekyll
+</code></pre>
+          </li>
+        </ol>
+      </li>
+      <li>保存文件, <code class="language-plaintext highlighter-rouge">cmd + shift + p</code> 输入 <code class="language-plaintext highlighter-rouge">commit all</code>  <code class="language-plaintext highlighter-rouge">cmd + shift + p</code> 输入 <code class="language-plaintext highlighter-rouge">git push</code></li>
+    </ol>
+  </li>
+  <li>进入到 Docker Desktop app , 并登录</li>
+  <li>VSCode 中 <code class="language-plaintext highlighter-rouge">cmd + shit + p</code> 输入 <code class="language-plaintext highlighter-rouge">open folder in container</code>
+    <ol>
+      <li>选择 刚刚 克隆下来的那个 repo 的目录</li>
+      <li>弹框出来, 选择 docker file. (这里是要用我们刚刚创建的那个  dockerfile 来创建容器)</li>
+      <li>这里启动开发容器要等一会, 才能完成容器的创建</li>
+      <li>完成后可以在 docker desktop app 中看到新建的 volume, image, docker 容器</li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="创建-jekyll-项目">创建 jekyll 项目</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre><span class="c"># 进入到桌面文件夹内</span>
+jekyll new myblog
+<span class="nb">cd </span>myblog
+bundle <span class="nb">exec </span>jekyll serve  <span class="c"># </span>
+<span class="c"># 访问http://127.0.0.1:4000/</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>执行 <code class="language-plaintext highlighter-rouge">bundle</code> 命令后 jekyll 会自动生成一个 <code class="language-plaintext highlighter-rouge">_site</code> 的目录</p>
+
+<h3 id="修改-默认的模板为新的模板">修改 默认的模板为新的模板</h3>
+<ul>
+  <li>从 <code class="language-plaintext highlighter-rouge">_config.yml</code> 文件中的 <code class="language-plaintext highlighter-rouge">theme</code> 可以看到默认模板的名字是 <code class="language-plaintext highlighter-rouge">minima</code></li>
+  <li>命令 <code class="language-plaintext highlighter-rouge">bundle show minima</code> 可以看到模板的路径 是 <code class="language-plaintext highlighter-rouge">/Users/lidalong/.rvm/gems/ruby-3.1.1/gems/minima-2.5.1</code></li>
+  <li>关闭 bundle 服务 <code class="language-plaintext highlighter-rouge">control + c</code></li>
+  <li>删掉三个文件
+    <ul>
+      <li>2023-07-20-welcome-to-jekyll.markdown</li>
+      <li>about.markdown</li>
+      <li>index.markdown</li>
+    </ul>
+  </li>
+  <li>删掉 <code class="language-plaintext highlighter-rouge">_config.yml</code> 中 有 <code class="language-plaintext highlighter-rouge">minima</code> 的行</li>
+  <li>删掉 <code class="language-plaintext highlighter-rouge">Gemfile</code> 中 有 <code class="language-plaintext highlighter-rouge">minima</code> 的行</li>
+  <li>把模板的所有文件拷贝到 项目目录下</li>
+  <li>从新启动服务 <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve </code>  , 这时新的模板文件会被编译到 <code class="language-plaintext highlighter-rouge">_site</code> 目录下</li>
+  <li>访问 <code class="language-plaintext highlighter-rouge">http://localhost:4000</code> 可以看到新的页面了</li>
+</ul>
+
+<p>这里 jekyll 背后的逻辑是</p>
+<ol>
+  <li>读取 <code class="language-plaintext highlighter-rouge">_config.yml</code></li>
+  <li>查看 <code class="language-plaintext highlighter-rouge">_posts</code> 中的内容</li>
+  <li>在读取目录下所有非 <code class="language-plaintext highlighter-rouge">_</code> 开头的静态文件</li>
+  <li>在 <code class="language-plaintext highlighter-rouge">_site</code> 中创建对应的静态网站所需的html, css, js</li>
+  <li>在jekyll 运行时, 你对项目目录下的任何已经存在的文件或者目录进行修改, 都会同步更新到 <code class="language-plaintext highlighter-rouge">_site</code> 文件夹下</li>
+</ol>
+
+<h3 id="语法--content---layout--include-变量-if-else-endif">语法 {{ content }} , layout , include, 变量, if else endif</h3>
+
+<ul>
+  <li>是模板语法</li>
+  <li><code class="language-plaintext highlighter-rouge">{{ content }}</code> 是一个在 html 中被替换的变量</li>
+  <li>在 项目目录下创建一个 <code class="language-plaintext highlighter-rouge">_layout</code> 的目录, 目录下创建一个新的 <code class="language-plaintext highlighter-rouge">default.html</code> , 文件中把 index.html 的 header 和 footer 的代码块放进去, 中间用 <code class="language-plaintext highlighter-rouge">{{ content }}</code></li>
+  <li>修改其他 html 文件, 去掉 header 和 footer
+    <ul>
+      <li>再在每个html 文件的头 用下面Front Matter 语法代替. (注意, 必须放在文件的开头位置)
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre>---
+layout: default
+title: 很棒的网站, 有创意
+---
+</pre></td></tr></tbody></table>
+</div>
+        </div>
+      </li>
+      <li>这里的 layout 对应 <code class="language-plaintext highlighter-rouge">_layout</code> 目录</li>
+      <li>这里的 default 对应 <code class="language-plaintext highlighter-rouge">default.html</code></li>
+      <li>每个 html 页面加载的时候都会把自己的 html 内容放到 default.html 的 {{ content }} 中</li>
+      <li>然后把自己的 <code class="language-plaintext highlighter-rouge">page.title</code> 放到 default.html 的 <title> 标签中</title></li>
+    </ul>
+  </li>
+  <li>用下面的 <code class="language-plaintext highlighter-rouge">if</code>, <code class="language-plaintext highlighter-rouge">else</code> 代替 default.html 中的 <title> </title> 中间的内容
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre>{% if page.title %}
+ {{page.title}}
+{% else %}
+ Greate Web Agency
+{% endif %}
+</pre></td></tr></tbody></table>
+</div>
+    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">include</code> 语法是从 <code class="language-plaintext highlighter-rouge">_include</code> 文件夹下找到相应的 html 文件 作为子页面嵌入到当前页面中
+    <ul>
+      <li>这个  html 文件需要放在 <code class="language-plaintext highlighter-rouge">_include</code> 目录下</li>
+      <li>任何需要抽象出来可以被复用的html 代码块都可以单独放到 <code class="language-plaintext highlighter-rouge">_include</code> 目录下面
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>{% include subpage-header.html %}
+</pre></td></tr></tbody></table>
+</div>
+        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="_configyml-配置文件">_config.yml 配置文件</h3>
+<p><a href="http://jekyllrb.com/docs/configuration/">官方配置文件详解</a>
+<a href="https://kramdown.gettalong.org/">markdown 解析器, 能把 markdown 转成 HTML?</a>
+<a href="https://yaml.org/">YMML 语法</a></p>
+
+<ul>
+  <li>这里的配置 在 html 中用 <code class="language-plaintext highlighter-rouge">{{ site.变量名 }}</code> 替换</li>
+  <li>需要<strong>重启web 服务</strong>, yaml 中的配置才能生效
+```yaml
+title: 伟大的网站 # 这里是 site.title, 不是 page.title
+email: dalong@example.com
+    <h1 id="description-中的关键字可以用于-seo">description 中的关键字可以用于 SEO</h1>
+    <p>description: &gt;- # this means to ignore newlines until “baseurl:”
+Write an awesome description for your new site here. You can edit this
+line in _config.yml. It will appear in your document head meta (for
+Google search results) and in your feed.xml site description.
+baseurl: “” # the subpath of your site, e.g. /blog
+url: “http://127.0.0.1:4000” # the base hostname &amp; protocol for your site, e.g. http://example.com
+twitter_username: jekyllrb
+github_username:  jekyll</p>
+  </li>
+</ul>
+
+<h1 id="build-settings">Build settings</h1>
+
+<p>plugins:</p>
+<ul>
+  <li>jekyll-feed
+```</li>
+</ul>
+
+<h3 id="yaml-front-matter">YAML front matter</h3>
+<ul>
+  <li>Front matter 是 Jekyll 用的 yaml 的一个格式, 用来格式化 页面和页面内容的信息</li>
+  <li>必须在html 页面的头进行定义</li>
+  <li>也是 yaml 格式的, 和 <code class="language-plaintext highlighter-rouge">_config.yml</code> 中的变量定义格式一样</li>
+  <li>比如
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre>---
+layout: default
+title: Portfolio
+---
+</pre></td></tr></tbody></table>
+</div>
+    </div>
+  </li>
+  <li>变量分两种
+    <ul>
+      <li>Jekyll 预定义变量
+        <ul>
+          <li>site  - 全局变量
+            <ul>
+              <li>site.pages</li>
+              <li>site.posts</li>
+              <li>site.data</li>
+            </ul>
+          </li>
+          <li>page  - 全局变量, 包含了当前页面的数据信息</li>
+          <li>content</li>
+        </ul>
+      </li>
+      <li>自定义变量</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="liquid-模板语言">Liquid 模板语言</h3>
+<p><a href="https://shopify.dev/docs/api/liquid">Liquid 官方文档</a></p>
+<ul>
+  <li>是 shopify 最早使用的一种模板语言, 后来被shopify 开源了</li>
+  <li>Jekyll 用的模板语言是 Liquid</li>
+  <li>{{}}
+    <ul>
+      <li>output markup, 放变量的 , 比如 <code class="language-plaintext highlighter-rouge">page.title</code>, <code class="language-plaintext highlighter-rouge">site.title</code></li>
+    </ul>
+  </li>
+  <li>{%%}
+    <ul>
+      <li>tag markup, 放带有逻辑的标签, 比如 if, for</li>
+    </ul>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>是过滤器, 用于对变量进行操作, 比如格式化日期 <code class="language-plaintext highlighter-rouge">{{ page.date | date: "%Y-%m-%d %H:%M"}}</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<h3 id="制作-静态-blog">制作 静态 Blog</h3>
+<ul>
+  <li>blog 功能已经被继承到 jekyll 中</li>
+  <li>可以通过在一个文件夹中放置 markdown 文件就可以创作新的 blog</li>
+  <li>所有的 blog markdown 文章都需要使用 YAML Front Matter 语法, jekyll 会把 markdown 转成 html 页面</li>
+  <li>不需要数据库, 不会有读取的performance 问题, 不会有安全问题</li>
+  <li>markdown 文件的格式必须是  <code class="language-plaintext highlighter-rouge">year-month-day-title.md</code></li>
+  <li>需要在项目根目录下建立一个 <code class="language-plaintext highlighter-rouge">_posts</code> 目录, 然后在目录下建立一个文件</li>
+  <li>需要在<code class="language-plaintext highlighter-rouge">.md</code> 文件中的 front mater 中提前设置好文章的基础变量, 比如
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9</pre></td><td class="code"><pre><span class="nn">---</span>
+<span class="s">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="s">title</span><span class="pi">:</span> <span class="s">China MLPS</span>
+<span class="s">date</span><span class="pi">:</span> <span class="s">2023-07-22 07:30</span>
+<span class="s">author</span><span class="pi">:</span> <span class="s">dalong</span>
+<span class="s">image</span><span class="pi">:</span> <span class="s">http://placehold.it/900x300</span>
+<span class="s">category</span><span class="pi">:</span> <span class="s">Network Security</span>
+<span class="s">subtitle</span><span class="pi">:</span> <span class="s">MLPS</span>
+<span class="nn">---</span>
+</pre></td></tr></tbody></table>
+</div>
+    </div>
+  </li>
+  <li>同时, 我们也要去创建 <code class="language-plaintext highlighter-rouge">_layout</code> 目录下的 <code class="language-plaintext highlighter-rouge">post.html</code></li>
+  <li>编辑好 post 之后, 访问单个文章的路径是
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">http://127.0.0.1:4000/metaverse/2023/07/21/学习元宇宙.html</code></li>
+      <li>可以通过在 <code class="language-plaintext highlighter-rouge">_config.yml</code> 中设置 <code class="language-plaintext highlighter-rouge">permalink: none</code> 来让url 变得简单</li>
+      <li><code class="language-plaintext highlighter-rouge">http://127.0.0.1:4000/metaverse/学习元宇宙.html</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="为-blog-做一些-widget">为 blog 做一些 widget</h3>
+<ul>
+  <li>比如</li>
+  <li>blog category list,</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre>{% for category_name in page.categories limit:1 %} 
+   {{ category_name }} 
+{% endfor %}  # 获取当前Post 的所有所属分类
+</pre></td></tr></tbody></table>
+</div>
+</div>
+<ul>
+  <li>某个 category 中的 blog list</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre>{% for post in site.categories[category_name] limit:5 %} 
+   &lt;li&gt;
+      &lt;a href="{{ post.url }}"&gt;{{ post.title }}&lt;/a&gt; 
+   &lt;/li&gt;
+ {% endfor %}
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<ul>
+  <li>列出所有的 post</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre></td><td class="code"><pre>{% for post in site.posts %}
+   {{ post.url }}  
+   {{ post.title }} 
+   {{ post.author }}
+   {{ post.date | date: "%Y-%m-%d %H:%M" }}
+   {% if post.image %}
+      {{post.image}}
+   {% endif %}
+   {% post.excerpt %} # POST 简介
+{% endfor %}
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h3 id="设置默认值">设置默认值</h3>
+<ul>
+  <li>很多时候需要在 front matter 中重复设置很多变量信息</li>
+  <li>可以在 <code class="language-plaintext highlighter-rouge">_config.yml</code> 中设置默认值, 这样就不需要在每个页面的 front matter 中重复设置那些值</li>
+  <li>jekyll 是先读取 <code class="language-plaintext highlighter-rouge">_config.yml</code> 中的默认值作为 front matter, 然后在读取每个页面的 front matter. 如果单独页面没有设置 frontend matter, 就会用默认的值.</li>
+  <li><code class="language-plaintext highlighter-rouge">scope</code> 定义了变量使用的范围, 可以通过路径和类型指定</li>
+  <li><code class="language-plaintext highlighter-rouge">value</code> 定义默认的变量名和变量值</li>
+</ul>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12</pre></td><td class="code"><pre><span class="c1"># In _config.yml</span>
+<span class="nn">...</span>
+<span class="s">defaults</span><span class="pi">:</span>
+  <span class="pi">-</span>
+    <span class="s">scope</span><span class="pi">:</span>
+      <span class="s">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">projects"</span>
+      <span class="s">type</span><span class="pi">:</span> <span class="s2">"</span><span class="s">pages"</span>
+    <span class="s">values</span><span class="pi">:</span>
+      <span class="s">layout</span><span class="pi">:</span> <span class="s2">"</span><span class="s">project"</span>
+      <span class="s">author</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Mr.</span><span class="nv"> </span><span class="s">Hyde"</span>
+      <span class="s">category</span><span class="pi">:</span> <span class="s2">"</span><span class="s">project"</span>
+<span class="nn">...</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7</pre></td><td class="code"><pre><span class="s">defaults</span><span class="pi">:</span>
+  <span class="pi">-</span>
+    <span class="s">scope</span><span class="pi">:</span>
+      <span class="s">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span> <span class="c1"># an empty string here means all files in the project</span>
+      <span class="s">type</span><span class="pi">:</span> <span class="s2">"</span><span class="s">posts"</span> <span class="c1"># previously `post` in Jekyll 2.2.</span>
+    <span class="s">values</span><span class="pi">:</span>
+      <span class="s">layout</span><span class="pi">:</span> <span class="s2">"</span><span class="s">default"</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<ul>
+  <li>我们可以用下面这个
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9</pre></td><td class="code"><pre><span class="s">defaults</span><span class="pi">:</span>
+<span class="pi">-</span>
+  <span class="s">scope</span><span class="pi">:</span>
+    <span class="s">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span> <span class="c1"># an empty string here means all files in the project</span>
+    <span class="s">type</span><span class="pi">:</span> <span class="s2">"</span><span class="s">posts"</span> <span class="c1"># previously `post` in Jekyll 2.2.</span>
+  <span class="s">values</span><span class="pi">:</span>
+    <span class="s">layout</span><span class="pi">:</span> <span class="s2">"</span><span class="s">post"</span>
+    <span class="s">author</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Dalong"</span>
+    <span class="s">category</span><span class="pi">:</span> <span class="s2">"</span><span class="s">学习"</span>
+</pre></td></tr></tbody></table>
+</div>
+    </div>
+  </li>
+</ul>
+
+<h3 id="制作-form-提交表单">制作 form 提交表单</h3>
+<p><a href="https://jekyllthemes.io/resources/jekyll-contact-forms">制作 表单的方法</a>
+<a href="https://formspree.io">用 formspree.io </a>创作自定义表单的快速方法</p>
+<ul>
+  <li>可以通过以上方法创造在 jekyll 中用的表单</li>
+  <li>表单可以以邮件的形式发送到我们自己的邮箱中</li>
+</ul>
+
+<h3 id="读取-data-数据">读取 data 数据</h3>
+<ul>
+  <li>jekyll 支持从 <code class="language-plaintext highlighter-rouge">_data</code> 目录读取 YAML, JSON, CSV 等文件的数据</li>
+  <li>创建一个文件 <code class="language-plaintext highlighter-rouge">_data/navigation.yml</code>, 文件内容可以在 <code class="language-plaintext highlighter-rouge">site.data.navigation</code> 变量中获取</li>
+</ul>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre><span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">Home</span>
+  <span class="s">link</span><span class="pi">:</span> <span class="s">/</span>
+<span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">About</span>
+  <span class="s">link</span><span class="pi">:</span> <span class="s">/about.html</span>
+
+</pre></td></tr></tbody></table>
+</div>
+</div>
+<ul>
+  <li>HTML 页面中读取的方式</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7</pre></td><td class="code"><pre><span class="nt">&lt;nav&gt;</span>
+  {% for item in site.data.navigation %}
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ item.link }}"</span> <span class="err">{%</span> <span class="na">if</span> <span class="na">page</span><span class="err">.</span><span class="na">url =</span><span class="s">=</span> <span class="na">item</span><span class="err">.</span><span class="na">link</span> <span class="err">%}</span><span class="na">style=</span><span class="s">"color: red;"</span><span class="err">{%</span> <span class="na">endif</span> <span class="err">%}</span><span class="nt">&gt;</span>
+      {{ item.name }}
+    <span class="nt">&lt;/a&gt;</span>
+  {% endfor %}
+<span class="nt">&lt;/nav&gt;</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">services.yml</code>
+    <ul>
+      <li>icon 可以在 <a href="https://fontawesome.com/icons">这里</a> 找到
+```yaml</li>
+    </ul>
+  </li>
+  <li>
+    <p>icon: “icon ion-coffee”
+title: “Branding”
+content: “Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut”</p>
+  </li>
+  <li>
+    <p>icon: “ion-compass”
+title: “Web Design”
+content: “Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut”</p>
+  </li>
+  <li>icon: “ion-earth”
+title: “Brand Identity”
+content: “Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut”
+```</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre>{% for service in site.data.services %}
+   {{ service.icon }}
+   {{ service.title }}
+   {{ service.content }}
+{% endfor%}
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<ul>
+  <li>另一个例子
+    <ul>
+      <li>把 json 文件的 data 展示出来</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">projects.json</code>
+    <div class="language-json highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></td><td class="code"><pre><span class="p">[</span><span class="w">
+</span><span class="p">{</span><span class="w">
+</span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Branding"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"img"</span><span class="p">:</span><span class="w"> </span><span class="s2">"img/portfolio/work1.jpg"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tesla Motors"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Labore et dolore magna aliqua. Ut enim ad"</span><span class="w">
+</span><span class="p">},</span><span class="w">
+</span><span class="p">{</span><span class="w">
+</span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Branding"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"img"</span><span class="p">:</span><span class="w"> </span><span class="s2">"img/portfolio/work4.jpg"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tesla Motors"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Labore et dolore magna aliqua. Ut enim ad"</span><span class="w">
+</span><span class="p">},</span><span class="w">
+</span><span class="p">{</span><span class="w">
+</span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Video"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"img"</span><span class="p">:</span><span class="w"> </span><span class="s2">"img/portfolio/work1.jpg"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tesla Motors"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Labore et dolore magna aliqua. Ut enim ad"</span><span class="w">
+</span><span class="p">}</span><span class="w">      
+</span><span class="p">]</span><span class="w">
+</span></pre></td></tr></tbody></table>
+</div>
+    </div>
+  </li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13</pre></td><td class="code"><pre>{% assign filters = site.data.projects | group_by: 'category' %}  
+{% for filter in filters %}
+   {{ filter.name }}
+{% endfor %}
+
+
+{% for project in site.data.projects %}
+   {{ project.category }}
+   {{ project.img }}
+   {{ project.title }}
+   {{ project.content }}
+{% endfor%}
+
+</pre></td></tr></tbody></table>
+</div>
+</div>
+<ul>
+  <li>这里的 assign 是 <code class="language-plaintext highlighter-rouge">liquid</code> 语法
+    <ul>
+      <li>设置一个变量, 这个变量是获取所有 Projects 的 category , 目的是用于为 projects 进行分类</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="为-博客增加-评论-comments-功能">为 博客增加 评论 (comments) 功能</h3>
+<p><a href="https://simondosda.github.io/posts/2021-09-17-blog-github-pages-5-comment-1.html">参考 这篇文章</a>
+视频教学是用 Disqus, 已经被 Jekyll 集成了</p>
+<ul>
+  <li>为 静态 blog 增加 评论功能 的 一个比较常见的方案是用  Disqus
+    <ol>
+      <li>进入 https://disqus.com 完成注册</li>
+      <li>点击右上角 setting, 点击 <code class="language-plaintext highlighter-rouge">Add Disqus to site</code></li>
+      <li>半天收到个邮件, 点击<code class="language-plaintext highlighter-rouge">Complete Installation -&gt;</code></li>
+      <li>把生成的 html 代码黏贴到 blog post html 页面的下面</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="把本地代码上传到github">把本地代码上传到github</h3>
+<p>这里展示的是搞一个新的 repository ,然后有这个 repository 作为 静态页面的站</p>
+
+<ol>
+  <li>在 github 上创建一个新的 repository <code class="language-plaintext highlighter-rouge">my-jekyll-docker-website</code></li>
+  <li>进入 jekyll 项目目录</li>
+  <li>修改 <code class="language-plaintext highlighter-rouge">_config.yml</code> 中的 <code class="language-plaintext highlighter-rouge">url</code> 为 <code class="language-plaintext highlighter-rouge">https://dalongli.github.io/my-jekyll-docker-website/</code></li>
+  <li>用 git 初始化项目目录, 提交代码
+    <div class="language-bash highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11</pre></td><td class="code"><pre><span class="c"># gh repo clone dalongli/dalongli.github.io</span>
+git init
+git status
+git add .
+git status
+git commit -m <span class="s2">"my first commit"</span>
+git remote add origin https://github.io/dalongli/my-jekyll-docker-website.git
+git push -u origin main
+git checkout -b gh-pages  <span class="c"># 切换成 gh-pages, 因为只有这个 branch 才能作 静态网站</span>
+git branch
+git push origin gh-pages
+</pre></td></tr></tbody></table>
+</div>
+    </div>
+  </li>
+  <li>访问网站  https://dalongli.github.io/my-jekyll-docker-website</li>
+</ol>
+
+<h3 id="为-github-的静态网站做-定制化域名">为 github 的静态网站做 定制化域名</h3>
+<ul>
+  <li>如果想用自己的域名换到 github 的域名, 需要自己购买一个新的域名</li>
+  <li>这里用 <code class="language-plaintext highlighter-rouge">dalong.work</code> 作为例子</li>
+  <li>步骤如下
+    <ol>
+      <li>进入已经初始化过 github 的项目目录</li>
+      <li>项目根目录下创建一个新的文件叫做 <code class="language-plaintext highlighter-rouge">CNAME</code>, 内容只有一行: <code class="language-plaintext highlighter-rouge">dalong.work</code>
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre>git add .
+git commit -m "Add CNAME file for dalong.work"
+git push origin gh-pages
+</pre></td></tr></tbody></table>
+</div>
+        </div>
+      </li>
+      <li>到域名供应商的网站上, 对域名进行设置 (GoDaddy site or others )
+        <ol>
+          <li>增加一个 A 记录,  name=@, value = 192.30.252.153?</li>
+          <li>增加一个 CNAME, name=www, value=dalongli.github.io</li>
+          <li>等待一会才能生效</li>
+        </ol>
+      </li>
+      <li>Wait for change to propogate</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="安装和调试-新的-jekyll-模板到-github">安装和调试 新的 Jekyll 模板到 github</h3>
+<ul>
+  <li>这里用 <a href="https://jekyllthemes.io/theme/mediumish">Mediumish Jekyll theme</a> 作为例子
+    <ul>
+      <li>目的是下载模板到本地</li>
+      <li>运行本地网站</li>
+      <li>修改内容为自己的个人blog</li>
+      <li>上传到 github</li>
+    </ul>
+  </li>
+</ul>
+
+<p>运行模板</p>
+<ol>
+  <li>首先在本地的桌面创建新的目录 <code class="language-plaintext highlighter-rouge">themes</code>, 井cd 进去</li>
+  <li>命令行<code class="language-plaintext highlighter-rouge">git clone https://github.com/wowthemesnet/mediumish-theme-jekyll.git</code></li>
+  <li>vscode 打开目录</li>
+  <li>vscode 命令行 <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code> , 提示需要安装依赖包</li>
+  <li><code class="language-plaintext highlighter-rouge">bundle install</code> 提示 “An error occurred while installing ffi (1.10.0), and Bundler
+cannot continue.”</li>
+  <li>网上找答案, 提示运行 <code class="language-plaintext highlighter-rouge">bundle update ffi</code></li>
+  <li>再运行 <code class="language-plaintext highlighter-rouge">bundle install </code> 成功安装所有gem 依赖包</li>
+  <li>提示 “cannot load such file – rexml/parsers/baseparser (LoadError)”
+    <ol>
+      <li>通过在 <code class="language-plaintext highlighter-rouge">Gemfile</code> 文件中增加两行解决.
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre>gem "jekyll", "~&gt; 3.9"
+gem "kramdown-parser-gfm", "~&gt; 1.1"
+</pre></td></tr></tbody></table>
+</div>
+        </div>
+      </li>
+    </ol>
+  </li>
+  <li>提示 “cannot load such file – webrick (LoadError)” ,  运行 <code class="language-plaintext highlighter-rouge">bundle add webrick</code> 解决</li>
+  <li><code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code> 成功启动模板</li>
+</ol>
+
+<p>#### 
+<a href="https://app.logo.com/dashboard/logo_3730e647-b43c-4ea9-b90a-624c82715afd/your-logo-files">logo 制作</a>
+<a href="https://favicon.io/favicon-converter/">favicon 制作</a></p>
+
+
+            </div>
+
+            <!-- Rating -->
+            
+            <div class="rating mb-4 d-flex align-items-center">
+                <strong class="mr-1">Rating:</strong> <div class="rating-holder">
+<div class="c-rating c-rating--regular" data-rating-value="4.5">
+  <button>1</button>
+  <button>2</button>
+  <button>3</button>
+  <button>4</button>
+  <button>5</button>
+</div>
+</div>
+            </div>
+            
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="2023-07-21">21 Jul 2023</time></span>           
+                
+                </small>
+            </p>
+
+            <!-- Post Categories -->
+            <div class="after-post-cats">
+                <ul class="tags mb-4">
+                    
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Github">Github</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Jekyll">Jekyll</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Liquid">Liquid</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Markdown">Markdown</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- End Categories -->
+
+            <!-- Post Tags -->
+            <div class="after-post-tags">
+                <ul class="tags">
+                    
+                    
+                </ul>
+            </div>
+            <!-- End Tags -->
+
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="//Microsoft-Azure-AI-Solution/"> &laquo; Designing and Implementing a Microsoft Azure AI Solution</a>
+            
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+        </div>
+        <!-- End Post -->
+
+    </div>
+</div>
+<!-- End Article
+================================================== -->
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'demowebsite'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Thing",
+    "name": "How to use Jekyll develop your own Blog"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Dalong"
+  },
+  "datePublished": "2023-07-21",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.5",
+    "bestRating": "5"
+  }
+}
+</script>
+
+</div>
+
+
+    
+</div>
+
+<!-- Categories Jumbotron
+================================================== -->
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+            <div class="d-md-flex align-items-center justify-content-center h-100">
+                <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+            </div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+            
+            
+                
+                    <a class="mt-1 mb-1" href="/categories#Linux">Linux (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Python">Python (16)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Mysql">Mysql (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Redis">Redis (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#MongoDB">MongoDB (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Flask">Flask (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Django">Django (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#DjangoRest">DjangoRest (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Numpy">Numpy (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Panda">Panda (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Sklearn">Sklearn (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Jupyter">Jupyter (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#OpenCV">OpenCV (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#AI">AI (3)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Tensorflow">Tensorflow (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Microservice">Microservice (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Docker">Docker (3)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#NLP">NLP (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#AWS">AWS (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Architecture">Architecture (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Agile">Agile (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Scrum">Scrum (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#MLPS">MLPS (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#PIPL">PIPL (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Metaverse">Metaverse (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#ChatGPT">ChatGPT (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#OpenAI">OpenAI (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#LLM">LLM (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Azure">Azure (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Data-Science">Data Science (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Jekyll">Jekyll (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Github">Github (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Liquid">Liquid (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Markdown">Markdown (1)</a>
+                
+            
+            
+		</div>
+	</div>
+</div>
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                Copyright © 2023 Dalong's personal blog 
+            </div>
+            <div class="col-md-6 col-sm-6 text-center text-lg-right">    
+                <a target="_blank" href="#">Designed</a> by Dalong.work
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+</div> <!-- /.site-content -->
+
+<!-- Scripts
+================================================== -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+<script src="/assets/js/mediumish.js"></script>
+
+
+
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script> 
+
+
+<script id="dsq-count-scr" src="//demowebsite.disqus.com/count.js"></script>
+
+
+</body>
+</html>

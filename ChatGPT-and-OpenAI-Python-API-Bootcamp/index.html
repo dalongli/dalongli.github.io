@@ -1,0 +1,2103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" href="/assets/images/logo.png">
+
+<title>Use ChatGPT in Python | Dalong's personal blog</title>
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Use ChatGPT in Python | Dalong’s personal blog</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Use ChatGPT in Python" />
+<meta name="author" content="Dalong" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="ChatGPT API 是一个应用程序编程接口（API），由 OpenAI 提供，使开发人员能够将强大的 ChatGPT 模型无缝集成到他们的应用程序中。 这种大型语言模型(LLM)拥有能够理解自然语言并生成类似人类的回应。要在 Python 中使用 ChatGPT API，必须遵循一系列一般步骤。 我将带您了解如何在应用程序中使用 ChatGPT API Python，从在 OpenAl 网站注册到 Python 编程语言。" />
+<meta property="og:description" content="ChatGPT API 是一个应用程序编程接口（API），由 OpenAI 提供，使开发人员能够将强大的 ChatGPT 模型无缝集成到他们的应用程序中。 这种大型语言模型(LLM)拥有能够理解自然语言并生成类似人类的回应。要在 Python 中使用 ChatGPT API，必须遵循一系列一般步骤。 我将带您了解如何在应用程序中使用 ChatGPT API Python，从在 OpenAl 网站注册到 Python 编程语言。" />
+<link rel="canonical" href="http://localhost:4000/ChatGPT-and-OpenAI-Python-API-Bootcamp/" />
+<meta property="og:url" content="http://localhost:4000/ChatGPT-and-OpenAI-Python-API-Bootcamp/" />
+<meta property="og:site_name" content="Dalong’s personal blog" />
+<meta property="og:image" content="http://localhost:4000/assets/images/chatgpt-python.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-05-09T00:00:00+08:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"Use ChatGPT in Python","dateModified":"2023-05-09T00:00:00+08:00","datePublished":"2023-05-09T00:00:00+08:00","description":"ChatGPT API 是一个应用程序编程接口（API），由 OpenAI 提供，使开发人员能够将强大的 ChatGPT 模型无缝集成到他们的应用程序中。 这种大型语言模型(LLM)拥有能够理解自然语言并生成类似人类的回应。要在 Python 中使用 ChatGPT API，必须遵循一系列一般步骤。 我将带您了解如何在应用程序中使用 ChatGPT API Python，从在 OpenAl 网站注册到 Python 编程语言。","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"},"name":"Dalong"},"image":"http://localhost:4000/assets/images/chatgpt-python.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/ChatGPT-and-OpenAI-Python-API-Bootcamp/"},"url":"http://localhost:4000/ChatGPT-and-OpenAI-Python-API-Bootcamp/","author":{"@type":"Person","name":"Dalong"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+<link href="/assets/css/screen.css" rel="stylesheet">
+
+<link href="/assets/css/main.css" rel="stylesheet">
+
+<script src="/assets/js/jquery.min.js"></script>
+
+</head>
+
+
+
+
+<body class="layout-post">
+	<!-- defer loading of font and font awesome -->
+	<noscript id="deferred-styles">
+		<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+    </noscript>
+
+
+<!-- Begin Menu Navigation
+================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+
+    <div class="container pr-0">
+
+    <!-- Begin Logo -->
+    <a class="navbar-brand" href="/">
+    <img src="/assets/images/logo.png" alt="Dalong's personal blog">
+    </a>
+    <!-- End Logo -->
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+
+        <!-- Begin Menu -->
+
+            <ul class="navbar-nav ml-auto">
+
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/index.html">Blog</a>
+                </li>
+
+                <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+                </li>
+
+<!-- 以后再加上相关链接
+
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://bootstrapstarter.com/bootstrap-templates/template-mediumish-bootstrap-jekyll/"> Docs</a>
+                </li>
+
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://www.wowthemes.net/themes/mediumish-wordpress/"><i class="fab fa-wordpress-simple"></i> WP Version</a>
+                </li>
+
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://www.wowthemes.net/themes/mediumish-ghost/"><i class="fab fa-snapchat-ghost"></i> Ghost Version</a>
+                </li>
+-->
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://github.com/dalongli"><i class="fab fa-github"></i> Fork on Github</a>
+                </li>
+
+                <script src="/assets/js/lunr.js"></script>
+
+
+<style>
+    .lunrsearchresult .title {color: #d9230f;}
+    .lunrsearchresult .url {color: silver;}
+    .lunrsearchresult a {display: block; color: #777;}
+    .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
+    .lunrsearchresult a:hover .title {text-decoration: underline;}
+</style>
+
+
+<form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+    <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Type and enter..."/>
+</form>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/assets/js/lunrsearchengine.js"></script>
+
+            </ul>
+
+        <!-- End Menu -->
+
+    </div>
+
+    </div>
+</nav>
+<!-- End Navigation
+================================================== -->
+
+<div class="site-content">
+
+<div class="container">
+
+<!-- Site Title
+================================================== -->
+<div class="mainheading">
+    <h1 class="sitetitle">Dalong's personal blog</h1>
+    <p class="lead">
+        Record the bits and pieces of the technology big bang.
+    </p>
+</div>
+
+<!-- Content
+================================================== -->
+<div class="main-content">
+    <!-- Begin Article
+================================================== -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Share -->
+        <div class="col-md-2 pl-0">
+            <div class="share sticky-top sticky-top-offset">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=Use ChatGPT in Python&url=http://localhost:4000/ChatGPT-and-OpenAI-Python-API-Bootcamp/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=http://localhost:4000/ChatGPT-and-OpenAI-Python-API-Bootcamp/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/ChatGPT-and-OpenAI-Python-API-Bootcamp/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+    
+    <div class="sep">
+    </div>
+    <ul>
+        <li>
+        <a class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>
+
+        </div>
+
+        <!-- Post -->
+        
+
+        <div class="col-md-9 flex-first flex-md-unordered">
+            <div class="mainheading">
+
+                <!-- Author Box -->
+                
+                <div class="row post-top-meta">
+                    <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0">
+                        
+                        <img class="author-thumb" src="/assets/images/avatar_dl.png" alt="Dalong">
+                        
+                    </div>
+                    <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
+                        <a target="_blank" class="link-dark" href="https://dalongli.github.io/about">Dalong</a><a target="_blank" href="https://dalongli.github.io." class="btn follow">Follow</a>
+                        <span class="author-description">A profesional technical consultant and blogger.</span>
+                    </div>
+                </div>
+                
+
+                <!-- Post Title -->
+                <h1 class="posttitle">Use ChatGPT in Python</h1>
+
+            </div>
+
+            <!-- Adsense if enabled from _config.yml (change your pub id and slot) -->
+            
+            <!-- End Adsense -->
+
+            <!-- Post Featured Image -->
+            
+
+            
+            <img class="featured-image img-fluid" src="/assets/images/chatgpt-python.jpg" alt="Use ChatGPT in Python">
+            
+
+            
+            <!-- End Featured Image -->
+
+            <!-- Post Content -->
+            <div class="article-post">
+                <!-- Toc if any -->
+                
+                    
+                    <div class="toc mt-4 mb-4 lead">
+                        <h3 class="font-weight-bold">Summary</h3>
+                        <ul>
+  <li><a href="#use-chatgpt-in-python">Use ChatGPT in Python</a>
+    <ul>
+      <li><a href="#资源">资源</a></li>
+      <li><a href="#chatgpt-提问技巧">ChatGPT 提问技巧</a>
+        <ul>
+          <li><a href="#想要了解某个不熟悉的领域">想要了解某个不熟悉的领域</a></li>
+          <li><a href="#面试">面试</a></li>
+          <li><a href="#找工作">找工作</a></li>
+          <li><a href="#保持身体健康">保持身体健康</a></li>
+          <li><a href="#开发">开发</a></li>
+        </ul>
+      </li>
+      <li><a href="#openai-开发教程">OpenAI 开发教程</a>
+        <ul>
+          <li><a href="#基本概念">基本概念</a></li>
+          <li><a href="#python-的-openai-库用法">Python 的 openai 库用法</a></li>
+          <li><a href="#nlp-to-sql-项目一">NLP to SQL (项目一)</a></li>
+          <li><a href="#auto-exam-creator-项目二">Auto Exam Creator (项目二)</a></li>
+          <li><a href="#auto-recipt-creator-项目三">Auto Recipt Creator (项目三)</a></li>
+          <li><a href="#create-an-instance-of-the-recipegenerator-class">Create an instance of the RecipeGenerator class</a></li>
+          <li><a href="#ask-the-user-for-input-and-create-the-recipe">Ask the user for input and create the recipe</a></li>
+          <li><a href="#print-the-recipe">Print the recipe</a></li>
+          <li><a href="#create-an-instance-of-the-dish2image-class">Create an instance of the Dish2Image class</a></li>
+          <li><a href="#visualize-the-dish">Visualize the dish</a></li>
+          <li><a href="#store-the-recipe-in-a-text-file">Store the recipe in a text file</a></li>
+          <li><a href="#sentiment-analysis-项目五">Sentiment Analysis (项目五)</a></li>
+          <li><a href="#为代码添加注释-项目六">为代码添加注释 (项目六)</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+                    </div>
+                
+                <!-- End Toc -->
+                <p>ChatGPT API 是一个应用程序编程接口（API），由 OpenAI 提供，使开发人员能够将强大的 ChatGPT 模型无缝集成到他们的应用程序中。 这种大型语言模型(LLM)拥有能够理解自然语言并生成类似人类的回应。要在 Python 中使用 ChatGPT API，必须遵循一系列一般步骤。 我将带您了解如何在应用程序中使用 ChatGPT API Python，从在 OpenAl 网站注册到 Python 编程语言。</p>
+
+<h1 id="use-chatgpt-in-python">Use ChatGPT in Python</h1>
+<p>[TOC]</p>
+
+<h2 id="资源">资源</h2>
+<ul>
+  <li>copy.ai - 类似 ChatGPT 的一个 AI</li>
+  <li><a href="https://tome.app/invite/li-dalong-clf9kb1mt7s9q4459d0ndaqw6">tome.ai</a> - 写 ppt 比较好用</li>
+  <li><code class="language-plaintext highlighter-rouge">I want to create several slides to present how DevOps can help a luxury company and bring values.</code></li>
+  <li><a href="https://openai.com/waitlist/gpt-4-api">GPT-4 API Wating List</a></li>
+  <li><a href="https://kvm.yunserver.com/cart.php?gid=9">极光 KVM 美国服务器购买</a>
+    <ul>
+      <li>主机名: JG2303163OOB</li>
+      <li>IP: 154.40.40.31</li>
+      <li>端口: 3000</li>
+      <li>用户名: root</li>
+      <li>主机密码: <your own="" password=""></your></li>
+      <li>面板密码:  xxxxxx</li>
+      <li>账号: xxx_xxx@hotmail.com</li>
+      <li>密码: xxxxxxxxxxxx</li>
+      <li>您的订单号是： 9110312237</li>
+      <li>API 访问: http://154.40.40.31:3000/v1/chat/completions</li>
+      <li>API Key: <your own="" key=""></your></li>
+      <li>Orgnization Name: Personal</li>
+      <li>Orginization ID: org-W592UZabrT97qTd9rqSIZFO3</li>
+    </ul>
+  </li>
+  <li><a href="https://medium.com/apis-with-valentine/getting-started-with-the-openai-api-with-postman-52fea7f8131a">如何设置 Postman </a></li>
+  <li>telegram bot 的名字: t.me/longerlibot
+    <ul>
+      <li>用户名是手机号码</li>
+      <li>Token: <your own="" token=""></your></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="chatgpt-提问技巧">ChatGPT 提问技巧</h2>
+<ul>
+  <li>问问题的时候如果能给出问问题的人, 以及听众, 答案会更有针对性</li>
+  <li>大段文章, 可以让 ChatGPT 帮你总结</li>
+  <li>可以给一个 有文字的 URL, 然后让 GPT 帮你翻译或者总结</li>
+</ul>
+
+<h3 id="想要了解某个不熟悉的领域">想要了解某个不熟悉的领域</h3>
+<p><code class="language-plaintext highlighter-rouge">ChatGPT, what are 15 questions that I could ask ChatGPT to help me build a online reselling business?</code>
+<code class="language-plaintext highlighter-rouge">How can I use ChatGPT to help me build my landscaping business</code></p>
+
+<h3 id="面试">面试</h3>
+<p><code class="language-plaintext highlighter-rouge">I have an interview tomorrow for a software sales position. Can you give me ten questions I am likely to be asked.</code>
+<code class="language-plaintext highlighter-rouge">I have an interview tomorrow for Imperial College Undergraduate entrance interview for chemistry. Can you give me ten questions I am likely to be asked, and give each question a good response?</code>
+<code class="language-plaintext highlighter-rouge">Give me a good example of a good response of the following queztions</code> 把问题考过来
+<code class="language-plaintext highlighter-rouge">Chatgpt, 你可以模拟一个DevOps 工程师的面试吗? 面试官会问相关的问题, 而面试者会进行良好的回答.</code>
+<code class="language-plaintext highlighter-rouge">ChatGPT, can you emulate an roleplay of a Imperial College interview for a student who love chemistry?</code>
+<code class="language-plaintext highlighter-rouge">Can you pretent to be a interviewer interviering me foa an account executive position for a marketing agency?</code></p>
+
+<h3 id="找工作">找工作</h3>
+<ul>
+  <li>把工作经历(不包括总结部分)拷贝到 GPT , 让  GPT 帮你写 summary</li>
+  <li><code class="language-plaintext highlighter-rouge">based on the resume I provided you, what kinds of job be good for me to look for</code></li>
+  <li><code class="language-plaintext highlighter-rouge">list 10 companys that hire xxx job</code></li>
+</ul>
+
+<h3 id="保持身体健康">保持身体健康</h3>
+<p><code class="language-plaintext highlighter-rouge">我 身高 183cm, 体重 80 公斤, 年龄 46 岁, 希望能够在 1 个月内减掉 5 斤, 请给我提供一个月的减重 calendar</code></p>
+
+<h3 id="开发">开发</h3>
+<p><code class="language-plaintext highlighter-rouge">how can chatgpt be used to help programmers</code>
+代码生成
+<code class="language-plaintext highlighter-rouge">write me a python funciton that will allow a user to play rock paper scissors against the computer. Have the function prompt the user for an input, randomly generate a response and let them know if they won or lost.</code></p>
+
+<p>debug
+<code class="language-plaintext highlighter-rouge">can you identify the error in this code?</code></p>
+
+<h2 id="openai-开发教程">OpenAI 开发教程</h2>
+
+<h3 id="基本概念">基本概念</h3>
+<ul>
+  <li>word - 一个单词</li>
+  <li>token
+    <ul>
+      <li>我们输入文字给 GPT ,  GPT把文字转成 token, 再转成 victor</li>
+      <li>因为空格, 分隔符, 长文字分割等情况, 750 个 word 大概等于 1000 个 token (一个文字大概等于 1.33 个 token)</li>
+    </ul>
+  </li>
+  <li>vactor
+    <ul>
+      <li>在神经网络中token 会被 encode 成 victors 被使用</li>
+      <li>GPT3 大概有12288 个向量</li>
+    </ul>
+  </li>
+  <li>Context Windows
+    <ul>
+      <li>上下文越大, 记忆力越好</li>
+      <li>GPT 3 有 2048 个 上下文 token</li>
+      <li>GPT3.5 有 4000 个上下文token</li>
+      <li>GPT4 有 8192 个上下文token</li>
+      <li>GPT4-32k 版本有 32768个上下文</li>
+    </ul>
+  </li>
+  <li>GPT3 的运行模式
+    <ul>
+      <li>Word text is converted to token set.</li>
+      <li>Tokens are converted to vectors.</li>
+      <li>Vectors are passed into GPT-3 and the model returns a probability distribution across the vocabulary of vectors.</li>
+      <li>We can then specify via “temperature” which vector should appear next (which can then be reversed back into text).</li>
+    </ul>
+  </li>
+  <li>DALL-E</li>
+  <li><a href="https://openai.com/pricing">定价</a></li>
+</ul>
+
+<p>API 中常用的一些参数</p>
+<ul>
+  <li>Model
+    <ul>
+      <li>不同的模型, 功能不一样, 价格不一样</li>
+      <li>比如 GPT3, 3.5, 4 的模型, 比如 聊天模型和 completion 模型, 比如 图片生成模型等</li>
+    </ul>
+  </li>
+  <li>Prompt
+    <ul>
+      <li>问 API 的问题</li>
+    </ul>
+  </li>
+  <li>Temperature
+    <ul>
+      <li>温度</li>
+      <li>越高, 回答的答案越有创意</li>
+      <li>越低, 回答的越保守, 越倾向于正确答案</li>
+    </ul>
+  </li>
+  <li>Top P
+    <ul>
+      <li>P 是 posibility 概率</li>
+      <li>和温度类似, 越高, 回答越发散</li>
+      <li>越低越趋于保守的答案</li>
+    </ul>
+  </li>
+  <li>N
+    <ul>
+      <li>默认是 1</li>
+      <li>和同一个问题问 N 次是一个概念, 可能会带来更多的 token 消耗, 花更多的钱</li>
+    </ul>
+  </li>
+  <li>Frequency Penalty
+    <ul>
+      <li>-2 到 +2</li>
+      <li>越高结果越多样化, 越低, 多个答案可能会越有重复的感觉</li>
+    </ul>
+  </li>
+  <li>Presence Penalty
+    <ul>
+      <li>-2 到 +2</li>
+      <li>越高越愿意讨论新的话题, 越愿意根据之前的话题进行回顾和讨论
+        <h3 id="python-的-openai-库用法">Python 的 openai 库用法</h3>
+        <p>安装
+```bash
+pip install –upgrade openai
+vi ~/.zshrc       # 把这行加入到文件最下面  export OPENAI_API_KEY=’<your own="" key="">'
+source ~/.zshrc  # 让变量永久生效</your></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></td><td class="code"><pre>
+使用
+```python
+import openai
+import os
+# os.environ["OPENAI_API_KEY"] = '&lt;your own key&gt;'
+openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_base='http://154.40.40.31:3000/v1'  # 改成代理服务器
+
+# 下面代码按具体需要来调整
+# list models
+models = openai.Model.list()
+
+# print the first model's id
+print(models.data[0].id)
+
+# create a completion
+completion = openai.Completion.create(model="ada", prompt="Hello world")
+
+# print the completion
+print(completion.choices[0].text)
+
+
+
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h3 id="nlp-to-sql-项目一">NLP to SQL (项目一)</h3>
+<ul>
+  <li>需求:
+    <ul>
+      <li>通过 penda 把一个 CSV 文件读到内存中转化昵称 SQL database, 可以通过SQL读取数据</li>
+      <li>通过OpenAPI 把自然语言翻译成 SQL 查询语句, 然后再把 SQL 发给数据库查询数据</li>
+      <li>目标是把每个月的销售总额翻译成 <code class="language-plaintext highlighter-rouge">Select POSTALCODE, SUM(SALES) FROM Sales GROUP BY POSTALCODE</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p>一共三个文件</p>
+<ul>
+  <li>db_utils.py
+```python
+from sqlalchemy import create_engine
+from sqlalchemy import text</li>
+</ul>
+
+<p>def dataframe_to_database(df, table_name):
+    “"”Convert a pandas dataframe to a database.
+        Args:
+            df (dataframe): pd.DataFrame which is to be converted to a database
+            table_name (string): Name of the table within the database
+        Returns:
+            engine: SQLAlchemy engine object
+    “””
+    engine = create_engine(f’sqlite:///:memory:’, echo=False)
+    df.to_sql(name=table_name, con=engine, index=False)
+    return engine</p>
+
+<p>def handle_response(response):
+    “"”Handles the response from OpenAI.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre></td><td class="code"><pre>Args:
+    response (openAi response): Response json from OpenAI
+
+Returns:
+    string: Proposed SQL query
+"""
+query = response["choices"][0]["text"]
+if query.startswith(" "):
+    query = "Select"+ query
+return query
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>def execute_query(engine, query):
+    “"”Execute a query on a database.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre></td><td class="code"><pre>Args:
+    engine (SQLAlchemy engine object): database engine
+    query (string): SQL query
+
+Returns:
+    list: List of tuples containing the result of the query
+"""
+with engine.connect() as conn:
+    result = conn.execute(text(query))
+    return result.fetchall() ``` - 第二个文件 openai_utils.py ```python import openai
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>def create_table_definition_prompt(df, table_name):
+    “"”This function creates a prompt for the OpenAI API to generate SQL queries.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre></td><td class="code"><pre>Args:
+    df (dataframe): pd.DataFrame object to automtically extract the table columns
+    table_name (string): Name of the table within the database
+
+    Returns: string containing the prompt for OpenAI
+"""
+
+prompt = '''### sqlite table, with its properties: # # {}({}) # '''.format(table_name, ",".join(str(x) for x in df.columns))
+
+return prompt
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>def user_query_input():
+    “"”Ask the user what they want to know about the data.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre>Returns:
+    string: User input
+"""
+user_input = input("Tell OpenAi what you want to know about the data: ")
+return user_input
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>def combine_prompts(fixed_sql_prompt, user_query):
+    “"”Combine the fixed SQL prompt with the user query.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9</pre></td><td class="code"><pre>Args:
+    fixed_sql_prompt (string): Fixed SQL prompt
+    user_query (string): User query
+
+Returns:
+    string: Combined prompt
+"""
+final_user_input = f"### A query to answer: {user_query}\nSELECT"
+return fixed_sql_prompt + final_user_input
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>def send_to_openai(prompt):
+    “"”Send the prompt to OpenAI</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17</pre></td><td class="code"><pre>Args:
+    prompt (string): Prompt to send to OpenAI
+
+Returns:
+    string: Response from OpenAI
+"""
+response = openai.Completion.create(
+    engine="code-davinci-002",
+    prompt=prompt,
+    temperature=0,
+    max_tokens=150,
+    top_p=1.0,
+    frequency_penalty=0.0,
+    presence_penalty=0.0,
+    stop=["#", ";"]
+)
+return response
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41</pre></td><td class="code"><pre>- 第三个文件 main.py
+
+```python
+# Dataset based on #https://www.kaggle.com/datasets/kyanyoga/sample-sales-data
+
+import os
+import logging
+
+import pandas as pd
+import openai
+
+import db_utils
+import openai_utils
+
+logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
+openai.api_key = os.environ["OPENAI_API_KEY"]
+
+if __name__ == "__main__":
+    logging.info("Loading data...")
+    df = pd.read_csv("data/sales_data_sample.csv")
+    logging.info(f"Data Format: {df.shape}")
+
+    logging.info("Converting to database...")
+    database = db_utils.dataframe_to_database(df, "Sales")
+    
+    fixed_sql_prompt = openai_utils.create_table_definition_prompt(df, "Sales")
+    logging.info(f"Fixed SQL Prompt: {fixed_sql_prompt}")
+
+    logging.info("Waiting for user input...")
+    user_input = openai_utils.user_query_input()
+    final_prompt = openai_utils.combine_prompts(fixed_sql_prompt, user_input)
+    logging.info(f"Final Prompt: {final_prompt}")
+
+    logging.info("Sending to OpenAI...")
+    response = openai_utils.send_to_openai(final_prompt)
+    proposed_query = response["choices"][0]["text"]
+    proposed_query_postprocessed = db_utils.handle_response(response)
+    logging.info(f"Response obtained. Proposed sql query: {proposed_query_postprocessed}")
+    result = db_utils.execute_query(database, proposed_query_postprocessed)
+    logging.info(f"Result: {result}")
+    print(result)
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h3 id="auto-exam-creator-项目二">Auto Exam Creator (项目二)</h3>
+<ul>
+  <li>需求:
+    <ul>
+      <li>做一个模板, 我们要为学校的老师要考试的主题, 单选还是多选题,  问题个数, 答案个数, 以及指出来哪一个是正确答案</li>
+      <li>还要开发一个考试交互界面, 让学生可以进行答题. 要循环出来每一道题, 然后让学生输入选择的答案</li>
+      <li>应用通过对比正确答案和学生输入的答案给学生一个分数</li>
+      <li>把最后的得分记录下来</li>
+    </ul>
+  </li>
+</ul>
+
+<p>一共 4 个文件</p>
+<ol>
+  <li>main.py</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14</pre></td><td class="code"><pre><span class="kn">from</span> <span class="nn">teacher</span> <span class="kn">import</span> <span class="n">Teacher</span>
+<span class="kn">from</span> <span class="nn">exam_simulator</span> <span class="kn">import</span> <span class="n">Exam</span>
+
+<span class="c">### Create an instance of the Teacher class which asks the user about the topic, number of possible answers per question, and number of questions.</span>
+<span class="n">teacher</span> <span class="o">=</span> <span class="n">Teacher</span><span class="p">()</span>
+<span class="n">student_view</span><span class="p">,</span> <span class="n">answers</span> <span class="o">=</span> <span class="n">teacher</span><span class="o">.</span><span class="n">create_full_test</span><span class="p">()</span>
+
+<span class="c">### Create an instance of the Exam class which runs the exam simulation and grades the exam.</span>
+<span class="n">exam</span> <span class="o">=</span> <span class="n">Exam</span><span class="p">(</span><span class="n">student_view</span><span class="p">,</span> <span class="n">answers</span><span class="p">,</span> <span class="n">store_test</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">topic</span><span class="o">=</span><span class="n">teacher</span><span class="o">.</span><span class="n">test_creator</span><span class="o">.</span><span class="n">topic</span><span class="p">)</span>
+<span class="n">student_answers</span> <span class="o">=</span> <span class="n">exam</span><span class="o">.</span><span class="n">take</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">student_answers</span><span class="p">)</span>
+<span class="n">grade</span> <span class="o">=</span> <span class="n">exam</span><span class="o">.</span><span class="n">grade</span><span class="p">(</span><span class="n">student_answers</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">grade</span><span class="p">)</span>
+
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<ol>
+  <li>teacher.py</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="kn">from</span> <span class="nn">test_creator</span> <span class="kn">import</span> <span class="n">TestGenerator</span>
+
+
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">format</span><span class="o">=</span><span class="s">'</span><span class="si">%(asctime)</span><span class="s">s - </span><span class="si">%(message)</span><span class="s">s'</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+
+<span class="n">dummy_test</span> <span class="o">=</span> <span class="s">'</span><span class="se">\n\n</span><span class="s">Q1. What is the syntax for declaring a variable in Python?</span><span class="se">\n</span><span class="s">A. #variable</span><span class="se">\n</span><span class="s">B. var variable</span><span class="se">\n</span><span class="s">C. !variable</span><span class="se">\n</span><span class="s">D. var = variable</span><span class="se">\n</span><span class="s">Correct Answer: D. var = variable</span><span class="se">\n\n</span><span class="s">Q2. What type of language is Python?</span><span class="se">\n</span><span class="s">A. Interpreted</span><span class="se">\n</span><span class="s">B. Compiled</span><span class="se">\n</span><span class="s">C. Assembly</span><span class="se">\n</span><span class="s">D. Machine</span><span class="se">\n</span><span class="s">Correct Answer: A. Interpreted</span><span class="se">\n\n</span><span class="s">Q3. What type of loop is used when a set of instructions need to be repeated until a condition is met?</span><span class="se">\n</span><span class="s">A. For loop</span><span class="se">\n</span><span class="s">B. While loop</span><span class="se">\n</span><span class="s">C. Do-while loop</span><span class="se">\n</span><span class="s">D. If-else loop</span><span class="se">\n</span><span class="s">Correct Answer: B. While loop</span><span class="se">\n\n</span><span class="s">Q4. What is the result of the following expression?</span><span class="se">\n</span><span class="s">2 + 5 * 3</span><span class="se">\n</span><span class="s">A. 23</span><span class="se">\n</span><span class="s">B. 17</span><span class="se">\n</span><span class="s">C. 11</span><span class="se">\n</span><span class="s">D. 25</span><span class="se">\n</span><span class="s">Correct Answer: B. 17'</span>
+
+
+<span class="k">class</span> <span class="nc">Teacher</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Welcome! Run create_full_test() to create a test."</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="nf">create_full_test</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="n">topic</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"What topic would you like to create a test on? "</span><span class="p">)</span>
+        <span class="n">num_possible_answers</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">"How many possible answers would you like to have? "</span><span class="p">))</span>
+        <span class="n">num_questions</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">"How many possible answers per question would you like to have? "</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">test_creator</span> <span class="o">=</span> <span class="n">TestGenerator</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">num_possible_answers</span><span class="p">,</span> <span class="n">num_questions</span><span class="p">)</span>
+        <span class="n">test</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">test_creator</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+        <span class="c">#test = dummy_test</span>
+        <span class="c">#logging.info(test)</span>
+        <span class="n">student_view</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_student_view</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">num_questions</span><span class="p">)</span>
+        <span class="n">answers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">extract_answers</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">num_questions</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">student_view</span><span class="p">,</span> <span class="n">answers</span>
+
+    <span class="k">def</span> <span class="nf">create_student_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">num_questions</span><span class="p">):</span>
+        <span class="n">student_view</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span> <span class="p">:</span> <span class="s">""</span><span class="p">}</span>
+        <span class="n">question_number</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">test</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">"Correct Answer:"</span><span class="p">):</span>
+                <span class="n">student_view</span><span class="p">[</span><span class="n">question_number</span><span class="p">]</span> <span class="o">+=</span> <span class="n">line</span><span class="o">+</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span>
+            <span class="k">else</span><span class="p">:</span>
+                
+                <span class="k">if</span> <span class="n">question_number</span> <span class="o">&lt;</span> <span class="n">num_questions</span><span class="p">:</span>
+                    <span class="n">question_number</span><span class="o">+=</span><span class="mi">1</span>
+                    <span class="n">student_view</span><span class="p">[</span><span class="n">question_number</span><span class="p">]</span> <span class="o">=</span> <span class="s">""</span>
+        <span class="k">return</span> <span class="n">student_view</span>
+
+    <span class="k">def</span> <span class="nf">extract_answers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">num_questions</span><span class="p">):</span>
+        <span class="n">answers</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span> <span class="p">:</span> <span class="s">""</span><span class="p">}</span>
+        <span class="n">question_number</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">test</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">"Correct Answer:"</span><span class="p">):</span>
+                <span class="n">answers</span><span class="p">[</span><span class="n">question_number</span><span class="p">]</span> <span class="o">+=</span> <span class="n">line</span><span class="o">+</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span>
+
+                <span class="k">if</span> <span class="n">question_number</span> <span class="o">&lt;</span> <span class="n">num_questions</span><span class="p">:</span>
+                    <span class="n">question_number</span><span class="o">+=</span><span class="mi">1</span>
+                    <span class="n">answers</span><span class="p">[</span><span class="n">question_number</span><span class="p">]</span> <span class="o">=</span> <span class="s">""</span>
+        <span class="k">return</span> <span class="n">answers</span>
+
+        
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
+    <span class="n">teacher</span> <span class="o">=</span> <span class="n">Teacher</span><span class="p">()</span>
+    <span class="n">student_view</span><span class="p">,</span> <span class="n">answers</span> <span class="o">=</span> <span class="n">teacher</span><span class="o">.</span><span class="n">create_full_test</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">student_view</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">answers</span><span class="p">)</span>
+
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<ol>
+  <li>exam_simulator.py</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="kn">from</span> <span class="nn">teacher</span> <span class="kn">import</span> <span class="n">Teacher</span>
+
+<span class="k">class</span> <span class="nc">Exam</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">student_view</span><span class="p">,</span> <span class="n">answers</span><span class="p">,</span> <span class="n">store_test</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">topic</span><span class="o">=</span><span class="s">""</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">student_view</span> <span class="o">=</span> <span class="n">student_view</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">answers</span> <span class="o">=</span> <span class="n">answers</span>
+
+        <span class="k">if</span> <span class="n">store_test</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">store_test</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>
+
+    
+    <span class="k">def</span> <span class="nf">take</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">answers</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">question</span><span class="p">,</span> <span class="n">question_view</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">student_view</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">question_view</span><span class="p">)</span>
+            <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Enter your answer: "</span><span class="p">)</span>
+            <span class="n">answers</span><span class="p">[</span><span class="n">question</span><span class="p">]</span> <span class="o">=</span> <span class="n">answer</span>
+        <span class="k">return</span> <span class="n">answers</span>
+
+    <span class="k">def</span> <span class="nf">grade</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">answers</span><span class="p">):</span>
+        <span class="n">correct_answers</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">question</span><span class="p">,</span> <span class="n">answer</span> <span class="ow">in</span> <span class="n">answers</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">answer</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">answers</span><span class="p">[</span><span class="n">question</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()[</span><span class="mi">16</span><span class="p">]:</span>
+                <span class="n">correct_answers</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="n">grade</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">correct_answers</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">answers</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">grade</span> <span class="o">&lt;</span> <span class="mi">60</span><span class="p">:</span>
+            <span class="n">passed</span> <span class="o">=</span> <span class="s">"Not passed!"</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">passed</span> <span class="o">=</span> <span class="s">"Passed!"</span>
+        <span class="k">return</span> <span class="n">f</span><span class="s">"{correct_answers} out of {len(answers)} correct! You achieved: {grade} </span><span class="si">% </span><span class="s">: {passed}"</span>
+
+
+    <span class="k">def</span> <span class="nf">store_test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">topic</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">f</span><span class="s">'Test_{topic}_{datetime.datetime.now().strftime("</span><span class="si">%</span><span class="s">Y-</span><span class="si">%</span><span class="s">m-</span><span class="si">%</span><span class="s">d_</span><span class="si">%</span><span class="s">H-</span><span class="si">%</span><span class="s">M-</span><span class="si">%</span><span class="s">S")}.txt'</span><span class="p">,</span> <span class="s">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">question</span><span class="p">,</span> <span class="n">question_view</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">student_view</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">question_view</span><span class="p">)</span>
+                <span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+                <span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">answers</span><span class="p">[</span><span class="n">question</span><span class="p">])</span>
+                <span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
+    <span class="n">teacher</span> <span class="o">=</span> <span class="n">Teacher</span><span class="p">()</span>
+    <span class="n">student_view</span><span class="p">,</span> <span class="n">answers</span> <span class="o">=</span> <span class="n">teacher</span><span class="o">.</span><span class="n">create_full_test</span><span class="p">()</span>
+
+    <span class="n">exam</span> <span class="o">=</span> <span class="n">Exam</span><span class="p">(</span><span class="n">student_view</span><span class="p">,</span> <span class="n">answers</span><span class="p">,</span> <span class="n">store_test</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">topic</span><span class="o">=</span><span class="n">teacher</span><span class="o">.</span><span class="n">test_creator</span><span class="o">.</span><span class="n">topic</span><span class="p">)</span>
+    <span class="n">student_answers</span> <span class="o">=</span> <span class="n">exam</span><span class="o">.</span><span class="n">take</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">student_answers</span><span class="p">)</span>
+    <span class="n">grade</span> <span class="o">=</span> <span class="n">exam</span><span class="o">.</span><span class="n">grade</span><span class="p">(</span><span class="n">student_answers</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">grade</span><span class="p">)</span>
+
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<ol>
+  <li>test_creator.py</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">import</span> <span class="nn">openai</span>
+
+<span class="n">openai</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">"OPENAI_API_KEY"</span><span class="p">]</span>
+
+<span class="k">class</span> <span class="nc">TestGenerator</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">topic</span><span class="p">,</span> <span class="n">num_possible_answers</span><span class="p">,</span> <span class="n">num_questions</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">topic</span> <span class="o">=</span> <span class="n">topic</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_possible_answers</span> <span class="o">=</span> <span class="n">num_possible_answers</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_questions</span> <span class="o">=</span> <span class="n">num_questions</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_questions</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">"Attention! Generation of many questions might be expensive!"</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_possible_answers</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">"More than 5 possible answers is not supported!"</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">prompt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_prompt</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">TestGenerator</span><span class="o">.</span><span class="n">_verify_prompt</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">generate_quiz</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">response</span><span class="p">[</span><span class="s">"choices"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s">"text"</span><span class="p">]</span>
+        
+        <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">"Prompt not accepted."</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="nf">generate_quiz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">):</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">Completion</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">engine</span><span class="o">=</span><span class="s">"text-davinci-003"</span><span class="p">,</span>
+                                            <span class="n">prompt</span><span class="o">=</span><span class="n">prompt</span><span class="p">,</span>
+                                            <span class="n">max_tokens</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>
+                                            <span class="n">temperature</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">response</span>
+        
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_verify_prompt</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Are you happy with the prompt? (y/n)"</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s">"Y"</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">return</span> <span class="bp">False</span>
+
+
+    <span class="k">def</span> <span class="nf">create_prompt</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">prompt</span> <span class="o">=</span> <span class="n">f</span><span class="s">"Create a multiple choice quiz on the topic of {self.topic} consisting of {self.num_questions} questions. "</span> \
+                 <span class="o">+</span> <span class="n">f</span><span class="s">"Each question should have {self.num_possible_answers} options. "</span>\
+                 <span class="o">+</span> <span class="n">f</span><span class="s">"Also include the correct answer for each question using the starting string 'Correct Answer: '."</span>
+        <span class="k">return</span> <span class="n">prompt</span>
+        
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
+    <span class="n">gen</span> <span class="o">=</span> <span class="n">TestGenerator</span><span class="p">(</span><span class="s">"Python"</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">gen</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+    
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h3 id="auto-recipt-creator-项目三">Auto Recipt Creator (项目三)</h3>
+<ul>
+  <li>需求: 回家看到冰箱里有一堆菜和原料, 想要根据现有食材做个食谱, 并生成一个做好的菜的图片
+    <ul>
+      <li>提供一个原料列表, 先请求  GPT 获取带有标题的一个食谱, 然后在把标题发给  Dall-E 获取食谱照片</li>
+    </ul>
+  </li>
+</ul>
+
+<p>三个文件</p>
+<ol>
+  <li>main.py
+```python
+from recipe import RecipeGenerator
+from dalle import Dish2Image</li>
+</ol>
+
+<h3 id="create-an-instance-of-the-recipegenerator-class">Create an instance of the RecipeGenerator class</h3>
+<p>gen = RecipeGenerator()</p>
+<h3 id="ask-the-user-for-input-and-create-the-recipe">Ask the user for input and create the recipe</h3>
+<p>recipe = gen.generate_recipe()</p>
+<h3 id="print-the-recipe">Print the recipe</h3>
+<p>print(recipe)</p>
+<h3 id="create-an-instance-of-the-dish2image-class">Create an instance of the Dish2Image class</h3>
+<p>dalle = Dish2Image(recipe)</p>
+<h3 id="visualize-the-dish">Visualize the dish</h3>
+<p>dalle.generate_image()</p>
+<h3 id="store-the-recipe-in-a-text-file">Store the recipe in a text file</h3>
+<p>gen.store_recipe(recipe, f”{dalle.title}.txt”)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68</pre></td><td class="code"><pre>
+2. dalle.py
+
+```python
+import re
+import requests
+import shutil
+
+import openai
+
+class Dish2Image:
+
+    def __init__(self, recipe):
+        self.recipe = recipe
+        self.title = Dish2Image._extract_title(recipe)
+
+    def generate_image(self):
+        prompt = self.dalle2_prompt()
+        if Dish2Image._verify_prompt(prompt):
+            response = Dish2Image.generate(prompt)
+            image_url = response['data'][0]['url']
+            return Dish2Image.save_image(image_url, f"{self.title}.jpg")
+        raise ValueError("Prompt not accepted.")
+
+
+    def dalle2_prompt(self):
+        prompt = f"'{self.title}', professional food photography, 15mm, studio lighting"
+        return prompt
+
+    @staticmethod
+    def _verify_prompt(prompt):
+        print(prompt)
+        response = input("Are you happy with the prompt? (y/n)")
+
+        if response.upper() == "Y":
+            return True
+        return False
+
+
+    @staticmethod
+    def _extract_title(recipe):
+        return re.findall("^.*Recipe Title: .*$", recipe, re.MULTILINE)[0].strip().split("Recipe Title: ")[1]
+
+    @staticmethod
+    def generate(image_prompt):
+        response = openai.Image.create(prompt=image_prompt,
+                                        n=1,
+                                        size="1024x1024"
+                                        )
+        return response
+
+    @staticmethod
+    def save_image(image_url, file_name):
+        image_res = requests.get(image_url, stream = True)
+        
+        if image_res.status_code == 200:
+            with open(file_name,'wb') as f:
+                shutil.copyfileobj(image_res.raw, f)
+        else:
+            print("Error downloading image!")
+        return image_res.status_code
+
+if __name__ == "__main__":
+    """
+    Test Dish2Image class based on the Recipe Title: Savory Tomato Apple Spaghetti
+    """
+    dalle = Dish2Image("Recipe Title: Savory Tomato Apple Spaghetti")
+    dalle.generate_image()
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<ol>
+  <li>recipe.py</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">openai</span>
+
+<span class="n">openai</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s">"OPENAI_API_KEY"</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">RecipeGenerator</span><span class="p">:</span>
+    
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">list_of_ingredients</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ask_for_ingredients</span><span class="p">()</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">ask_for_ingredients</span><span class="p">():</span>
+        <span class="n">list_of_ingredients</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="n">ingredient</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Enter an ingredient (or type 'done' to finish): "</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">ingredient</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s">"done"</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="n">list_of_ingredients</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ingredient</span><span class="p">)</span>
+        
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"Your ingredients are: {', '.join(list_of_ingredients)}"</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">list_of_ingredients</span>
+
+    <span class="k">def</span> <span class="nf">generate_recipe</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">prompt</span> <span class="o">=</span> <span class="n">RecipeGenerator</span><span class="o">.</span><span class="n">create_recipe_prompt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">list_of_ingredients</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">RecipeGenerator</span><span class="o">.</span><span class="n">_verify_prompt</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">RecipeGenerator</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">response</span><span class="p">[</span><span class="s">"choices"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s">"text"</span><span class="p">]</span>
+        <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">"Prompt not accepted."</span><span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">create_recipe_prompt</span><span class="p">(</span><span class="n">list_of_ingredients</span><span class="p">):</span>
+        <span class="n">prompt</span> <span class="o">=</span> <span class="n">f</span><span class="s">"Create a detailed recipe based on only the following ingredients: {', '.join(list_of_ingredients)}.</span><span class="se">\n</span><span class="s">"</span> \
+                <span class="o">+</span> <span class="n">f</span><span class="s">"Additionally, assign a title starting with 'Recipe Title: ' to this dish, which can be used to create a photorealistic image of it."</span>
+        <span class="k">return</span> <span class="n">prompt</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_verify_prompt</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Are you happy with the prompt? (y/n)"</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s">"Y"</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">return</span> <span class="bp">False</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">Completion</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">engine</span><span class="o">=</span><span class="s">"text-davinci-003"</span><span class="p">,</span>
+                                                    <span class="n">prompt</span><span class="o">=</span><span class="n">prompt</span><span class="p">,</span>
+                                                    <span class="n">max_tokens</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>
+                                                    <span class="n">temperature</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">response</span>
+
+    <span class="k">def</span> <span class="nf">store_recipe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">recipe</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">recipe</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
+    <span class="s">"""
+    Test RecipeGenerator class without creating an image of the dish.
+    """</span>
+
+    <span class="n">gen</span> <span class="o">=</span> <span class="n">RecipeGenerator</span><span class="p">()</span>
+    <span class="n">recipe</span> <span class="o">=</span> <span class="n">gen</span><span class="o">.</span><span class="n">generate_recipe</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">recipe</span><span class="p">)</span>
+
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h3 id="sentiment-analysis-项目五">Sentiment Analysis (项目五)</h3>
+<ul>
+  <li>需求: 从一个社交网站(reddit.com)上抓取某个公司/人物/分类相关的文章, 然后通过 GPT 对文章的评论进行 sentiment 分析, 给出结果
+    <ul>
+      <li>中国可以用头条, 抖音代替 ,查看新闻和视频的用户评论, 分析评论情况</li>
+    </ul>
+  </li>
+  <li>结果包括正面, 一般, 负面</li>
+</ul>
+
+<p>三个文件</p>
+<ol>
+  <li>main.py</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></td><td class="code"><pre><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">blog_utils</span>
+<span class="kn">import</span> <span class="nn">openai_utils</span>
+
+<span class="c">### Define your paths here</span>
+
+<span class="c">#PATH_TO_BLOG_REPO = Path('C/path/to/.git')</span>
+<span class="n">PATH_TO_BLOG</span> <span class="o">=</span> <span class="n">PATH_TO_BLOG_REPO</span><span class="o">.</span><span class="n">parent</span>
+<span class="n">PATH_TO_CONTENT</span> <span class="o">=</span> <span class="n">PATH_TO_BLOG</span><span class="o">/</span><span class="s">"content"</span>
+<span class="n">PATH_TO_CONTENT</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="c">###</span>
+
+<span class="c"># Define a title and get the blog content from OpenAI</span>
+<span class="n">title</span> <span class="o">=</span> <span class="s">"Why AI will never replace the radiologist"</span>
+<span class="k">print</span><span class="p">(</span><span class="n">openai_utils</span><span class="o">.</span><span class="n">create_prompt</span><span class="p">(</span><span class="n">title</span><span class="p">))</span>
+<span class="n">blog_content</span> <span class="o">=</span> <span class="n">openai_utils</span><span class="o">.</span><span class="n">get_blog_from_openai</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+
+<span class="c"># Get the cover image and create the blog</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">cover_image_save_path</span> <span class="o">=</span> <span class="n">openai_utils</span><span class="o">.</span><span class="n">get_cover_image</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="s">"cover_image.png"</span><span class="p">)</span>
+<span class="n">path_to_new_content</span> <span class="o">=</span> <span class="n">blog_utils</span><span class="o">.</span><span class="n">create_new_blog</span><span class="p">(</span><span class="n">PATH_TO_CONTENT</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">blog_content</span><span class="p">,</span> <span class="n">cover_image_save_path</span><span class="p">)</span>
+<span class="n">blog_utils</span><span class="o">.</span><span class="n">write_to_index</span><span class="p">(</span><span class="n">PATH_TO_BLOG</span><span class="p">,</span> <span class="n">path_to_new_content</span><span class="p">)</span>
+
+<span class="c"># Update the blog</span>
+<span class="n">blog_utils</span><span class="o">.</span><span class="n">update_blog</span><span class="p">(</span><span class="n">PATH_TO_BLOG_REPO</span><span class="p">)</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<ol>
+  <li>blog_utils.py</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67</pre></td><td class="code"><pre><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span> <span class="k">as</span> <span class="n">Soup</span>
+<span class="kn">from</span> <span class="nn">git</span> <span class="kn">import</span> <span class="n">Repo</span>
+
+
+<span class="k">def</span> <span class="nf">create_new_blog</span><span class="p">(</span><span class="n">path_to_content</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">cover_image</span><span class="o">=</span><span class="n">Path</span><span class="p">(</span><span class="s">"../PT Centered Purple.png"</span><span class="p">)):</span>
+    
+    <span class="n">cover_image</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">cover_image</span><span class="p">)</span>
+    
+    <span class="n">files</span> <span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">path_to_content</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s">"*.html"</span><span class="p">)))</span>
+    <span class="n">new_title</span> <span class="o">=</span> <span class="n">f</span><span class="s">"{files+1}.html"</span>
+    <span class="n">path_to_new_content</span> <span class="o">=</span> <span class="n">path_to_content</span><span class="o">/</span><span class="n">new_title</span>
+    
+    <span class="n">shutil</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">cover_image</span><span class="p">,</span> <span class="n">path_to_content</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path_to_new_content</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path_to_new_content</span><span class="p">,</span> <span class="s">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">"&lt;!DOCTYPE html&gt;</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">"&lt;html&gt;</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">"&lt;head&gt;</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">f</span><span class="s">"&lt;title&gt; {title} &lt;/title&gt;</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">"&lt;/head&gt;</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+            
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">"&lt;body&gt;</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">f</span><span class="s">"&lt;img src='{cover_image.name}' alt='Cover Image'&gt; &lt;br /&gt;</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">f</span><span class="s">"&lt;h1&gt; {title} &lt;/h1&gt;"</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">content</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="s">"&lt;br /&gt;</span><span class="se">\n</span><span class="s">"</span><span class="p">))</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">"&lt;/body&gt;</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">"&lt;/html&gt;</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">"Blog created"</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">path_to_new_content</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">FileExistsError</span><span class="p">(</span><span class="s">"File already exist! Abort"</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">check_for_duplicate_links</span><span class="p">(</span><span class="n">path_to_new_content</span><span class="p">,</span> <span class="n">links</span><span class="p">):</span>
+    <span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"href"</span><span class="p">))</span> <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">]</span>
+    <span class="n">content_path</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="o">*</span><span class="n">path_to_new_content</span><span class="o">.</span><span class="n">parts</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]))</span>
+    <span class="k">return</span> <span class="n">content_path</span> <span class="ow">in</span> <span class="n">urls</span>
+
+
+<span class="k">def</span> <span class="nf">write_to_index</span><span class="p">(</span><span class="n">path_to_blog</span><span class="p">,</span> <span class="n">path_to_new_content</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path_to_blog</span><span class="o">/</span><span class="s">"index.html"</span><span class="p">)</span> <span class="k">as</span> <span class="n">index</span><span class="p">:</span>
+        <span class="n">soup</span> <span class="o">=</span> <span class="n">Soup</span><span class="p">(</span><span class="n">index</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+
+    <span class="n">links</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s">"a"</span><span class="p">)</span>
+    <span class="n">last_link</span> <span class="o">=</span> <span class="n">links</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    
+    <span class="k">if</span> <span class="n">check_for_duplicate_links</span><span class="p">(</span><span class="n">path_to_new_content</span><span class="p">,</span> <span class="n">links</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">"Link does already exist!"</span><span class="p">)</span>
+        
+    <span class="n">link_to_new_blog</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">new_tag</span><span class="p">(</span><span class="s">"a"</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="n">Path</span><span class="p">(</span><span class="o">*</span><span class="n">path_to_new_content</span><span class="o">.</span><span class="n">parts</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]))</span>
+    <span class="n">link_to_new_blog</span><span class="o">.</span><span class="n">string</span> <span class="o">=</span> <span class="n">path_to_new_content</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">"."</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">last_link</span><span class="o">.</span><span class="n">insert_after</span><span class="p">(</span><span class="n">link_to_new_blog</span><span class="p">)</span>
+    
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path_to_blog</span><span class="o">/</span><span class="s">"index.html"</span><span class="p">,</span> <span class="s">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">soup</span><span class="o">.</span><span class="n">prettify</span><span class="p">(</span><span class="n">formatter</span><span class="o">=</span><span class="s">'html'</span><span class="p">)))</span>
+
+
+<span class="k">def</span> <span class="nf">update_blog</span><span class="p">(</span><span class="n">path_to_blog_repo</span><span class="p">,</span> <span class="n">commit_message</span><span class="o">=</span><span class="s">"Updated blog"</span><span class="p">):</span>
+    <span class="n">repo</span> <span class="o">=</span> <span class="n">Repo</span><span class="p">(</span><span class="n">path_to_blog_repo</span><span class="p">)</span>
+    <span class="n">repo</span><span class="o">.</span><span class="n">git</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">all</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">repo</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span><span class="n">commit_message</span><span class="p">)</span>
+    <span class="n">origin</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">remote</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">'origin'</span><span class="p">)</span>
+    <span class="n">origin</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<ol>
+  <li>openai_utils.py</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+
+<span class="kn">import</span> <span class="nn">openai</span>
+
+<span class="n">openai</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s">"OPENAI_API_KEY"</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">create_prompt</span><span class="p">(</span><span class="n">title</span><span class="p">):</span>
+    <span class="n">prompt</span> <span class="o">=</span> <span class="s">"""Jose's Website
+ 
+ Biography
+ I am a Python instructor teaching people machine learning!
+
+
+ Blog
+
+ Jan 31, 2023
+ Title: Why AI will never replace the radiologist
+ tags: tech, machine-learning, radiology
+ Summary:  I talk about the cons of machine learning in radiology. I explain why I think that AI will never replace the radiologist.
+ Full text:"""</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">prompt</span>
+
+<span class="k">def</span> <span class="nf">get_blog_from_openai</span><span class="p">(</span><span class="n">blog_title</span><span class="p">):</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">Completion</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">engine</span><span class="o">=</span><span class="s">"text-davinci-003"</span><span class="p">,</span>
+                                            <span class="n">prompt</span><span class="o">=</span><span class="n">create_prompt</span><span class="p">(</span><span class="n">blog_title</span><span class="p">),</span>
+                                            <span class="n">max_tokens</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span>  <span class="c"># we increased the tokens to get a longer blog post</span>
+                                            <span class="n">temperature</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">response</span><span class="p">[</span><span class="s">"choices"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s">"text"</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">dalle2_prompt</span><span class="p">(</span><span class="n">title</span><span class="p">):</span>
+    <span class="n">prompt</span> <span class="o">=</span> <span class="n">f</span><span class="s">"Pixel art showing '{title}'."</span>
+    <span class="k">return</span> <span class="n">prompt</span>
+
+
+<span class="k">def</span> <span class="nf">save_image</span><span class="p">(</span><span class="n">image_url</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
+    <span class="n">image_res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">image_url</span><span class="p">,</span> <span class="n">stream</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">image_res</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span><span class="s">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">shutil</span><span class="o">.</span><span class="n">copyfileobj</span><span class="p">(</span><span class="n">image_res</span><span class="o">.</span><span class="n">raw</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Error downloading image!"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">image_res</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="n">file_name</span>
+
+
+<span class="k">def</span> <span class="nf">get_cover_image</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">save_path</span><span class="p">):</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+        <span class="n">prompt</span><span class="o">=</span><span class="n">dalle2_prompt</span><span class="p">(</span><span class="n">title</span><span class="p">),</span>
+        <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">size</span><span class="o">=</span><span class="s">"1024x1024"</span>
+        <span class="p">)</span>
+    <span class="n">image_url</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="s">'data'</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s">'url'</span><span class="p">]</span>
+    <span class="n">status_code</span><span class="p">,</span> <span class="n">file_name</span> <span class="o">=</span> <span class="n">save_image</span><span class="p">(</span><span class="n">image_url</span><span class="p">,</span> <span class="n">save_path</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">status_code</span><span class="p">,</span> <span class="n">file_name</span>
+
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h3 id="为代码添加注释-项目六">为代码添加注释 (项目六)</h3>
+<ul>
+  <li>需求:
+    <ul>
+      <li>把python 代码 以 .py 的文件形式输入给 GPT, 让它们我们把注释描述出来, 然后以同一个文件在返回给我们</li>
+      <li>我们在 GPT 外面包装了文件上传下载功能, 和文件展示功能</li>
+    </ul>
+  </li>
+</ul>
+
+
+            </div>
+
+            <!-- Rating -->
+            
+            <div class="rating mb-4 d-flex align-items-center">
+                <strong class="mr-1">Rating:</strong> <div class="rating-holder">
+<div class="c-rating c-rating--regular" data-rating-value="4.5">
+  <button>1</button>
+  <button>2</button>
+  <button>3</button>
+  <button>4</button>
+  <button>5</button>
+</div>
+</div>
+            </div>
+            
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="2023-05-09">09 May 2023</time></span>           
+                
+                </small>
+            </p>
+
+            <!-- Post Categories -->
+            <div class="after-post-cats">
+                <ul class="tags mb-4">
+                    
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#ChatGPT">ChatGPT</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#LLM">LLM</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#OpenAI">OpenAI</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Python">Python</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- End Categories -->
+
+            <!-- Post Tags -->
+            <div class="after-post-tags">
+                <ul class="tags">
+                    
+                    
+                </ul>
+            </div>
+            <!-- End Tags -->
+
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="//%E5%AD%A6%E4%B9%A0%E5%85%83%E5%AE%87%E5%AE%99/"> &laquo; Metaverse research</a>
+            
+            
+            <a class="next d-block col-md-6 text-lg-right" href="//Microsoft-Azure-AI-Solution/">Designing and Implementing a Microsoft Azure AI Solution &raquo; </a>
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+        </div>
+        <!-- End Post -->
+
+    </div>
+</div>
+<!-- End Article
+================================================== -->
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'demowebsite'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Thing",
+    "name": "Use ChatGPT in Python"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Dalong"
+  },
+  "datePublished": "2023-05-09",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.5",
+    "bestRating": "5"
+  }
+}
+</script>
+
+</div>
+
+
+    
+</div>
+
+<!-- Categories Jumbotron
+================================================== -->
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+            <div class="d-md-flex align-items-center justify-content-center h-100">
+                <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+            </div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+            
+            
+                
+                    <a class="mt-1 mb-1" href="/categories#Linux">Linux (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Python">Python (16)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Mysql">Mysql (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Redis">Redis (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#MongoDB">MongoDB (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Flask">Flask (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Django">Django (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#DjangoRest">DjangoRest (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Numpy">Numpy (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Panda">Panda (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Sklearn">Sklearn (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Jupyter">Jupyter (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#OpenCV">OpenCV (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#AI">AI (3)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Tensorflow">Tensorflow (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Microservice">Microservice (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Docker">Docker (3)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#NLP">NLP (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#AWS">AWS (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Architecture">Architecture (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Agile">Agile (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Scrum">Scrum (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#MLPS">MLPS (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#PIPL">PIPL (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Metaverse">Metaverse (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#ChatGPT">ChatGPT (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#OpenAI">OpenAI (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#LLM">LLM (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Azure">Azure (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Data-Science">Data Science (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Jekyll">Jekyll (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Github">Github (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Liquid">Liquid (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Markdown">Markdown (1)</a>
+                
+            
+            
+		</div>
+	</div>
+</div>
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                Copyright © 2023 Dalong's personal blog 
+            </div>
+            <div class="col-md-6 col-sm-6 text-center text-lg-right">    
+                <a target="_blank" href="#">Designed</a> by Dalong.work
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+</div> <!-- /.site-content -->
+
+<!-- Scripts
+================================================== -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+<script src="/assets/js/mediumish.js"></script>
+
+
+
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script> 
+
+
+<script id="dsq-count-scr" src="//demowebsite.disqus.com/count.js"></script>
+
+
+</body>
+</html>

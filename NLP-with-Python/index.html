@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" href="/assets/images/logo.png">
+
+<title>Natural Language Processing with Python | Dalong's personal blog</title>
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Natural Language Processing with Python | Dalong’s personal blog</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Natural Language Processing with Python" />
+<meta name="author" content="Dalong" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Deep Learning for NLP" />
+<meta property="og:description" content="Deep Learning for NLP" />
+<link rel="canonical" href="http://localhost:4000/NLP-with-Python/" />
+<meta property="og:url" content="http://localhost:4000/NLP-with-Python/" />
+<meta property="og:site_name" content="Dalong’s personal blog" />
+<meta property="og:image" content="http://localhost:4000/assets/images/NLP.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-06-17T00:00:00+08:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"Natural Language Processing with Python","dateModified":"2021-06-17T00:00:00+08:00","datePublished":"2021-06-17T00:00:00+08:00","description":"Deep Learning for NLP","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"},"name":"Dalong"},"image":"http://localhost:4000/assets/images/NLP.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/NLP-with-Python/"},"url":"http://localhost:4000/NLP-with-Python/","author":{"@type":"Person","name":"Dalong"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+<link href="/assets/css/screen.css" rel="stylesheet">
+
+<link href="/assets/css/main.css" rel="stylesheet">
+
+<script src="/assets/js/jquery.min.js"></script>
+
+</head>
+
+
+
+
+<body class="layout-post">
+	<!-- defer loading of font and font awesome -->
+	<noscript id="deferred-styles">
+		<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+    </noscript>
+
+
+<!-- Begin Menu Navigation
+================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+
+    <div class="container pr-0">
+
+    <!-- Begin Logo -->
+    <a class="navbar-brand" href="/">
+    <img src="/assets/images/logo.png" alt="Dalong's personal blog">
+    </a>
+    <!-- End Logo -->
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+
+        <!-- Begin Menu -->
+
+            <ul class="navbar-nav ml-auto">
+
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/index.html">Blog</a>
+                </li>
+
+                <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+                </li>
+
+<!-- 以后再加上相关链接
+
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://bootstrapstarter.com/bootstrap-templates/template-mediumish-bootstrap-jekyll/"> Docs</a>
+                </li>
+
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://www.wowthemes.net/themes/mediumish-wordpress/"><i class="fab fa-wordpress-simple"></i> WP Version</a>
+                </li>
+
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://www.wowthemes.net/themes/mediumish-ghost/"><i class="fab fa-snapchat-ghost"></i> Ghost Version</a>
+                </li>
+-->
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://github.com/dalongli"><i class="fab fa-github"></i> Fork on Github</a>
+                </li>
+
+                <script src="/assets/js/lunr.js"></script>
+
+
+<style>
+    .lunrsearchresult .title {color: #d9230f;}
+    .lunrsearchresult .url {color: silver;}
+    .lunrsearchresult a {display: block; color: #777;}
+    .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
+    .lunrsearchresult a:hover .title {text-decoration: underline;}
+</style>
+
+
+<form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+    <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Type and enter..."/>
+</form>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/assets/js/lunrsearchengine.js"></script>
+
+            </ul>
+
+        <!-- End Menu -->
+
+    </div>
+
+    </div>
+</nav>
+<!-- End Navigation
+================================================== -->
+
+<div class="site-content">
+
+<div class="container">
+
+<!-- Site Title
+================================================== -->
+<div class="mainheading">
+    <h1 class="sitetitle">Dalong's personal blog</h1>
+    <p class="lead">
+        Record the bits and pieces of the technology big bang.
+    </p>
+</div>
+
+<!-- Content
+================================================== -->
+<div class="main-content">
+    <!-- Begin Article
+================================================== -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Share -->
+        <div class="col-md-2 pl-0">
+            <div class="share sticky-top sticky-top-offset">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=Natural Language Processing with Python&url=http://localhost:4000/NLP-with-Python/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=http://localhost:4000/NLP-with-Python/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/NLP-with-Python/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+    
+    <div class="sep">
+    </div>
+    <ul>
+        <li>
+        <a class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>
+
+        </div>
+
+        <!-- Post -->
+        
+
+        <div class="col-md-9 flex-first flex-md-unordered">
+            <div class="mainheading">
+
+                <!-- Author Box -->
+                
+                <div class="row post-top-meta">
+                    <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0">
+                        
+                        <img class="author-thumb" src="/assets/images/avatar_dl.png" alt="Dalong">
+                        
+                    </div>
+                    <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
+                        <a target="_blank" class="link-dark" href="https://dalongli.github.io/about">Dalong</a><a target="_blank" href="https://dalongli.github.io." class="btn follow">Follow</a>
+                        <span class="author-description">A profesional technical consultant and blogger.</span>
+                    </div>
+                </div>
+                
+
+                <!-- Post Title -->
+                <h1 class="posttitle">Natural Language Processing with Python</h1>
+
+            </div>
+
+            <!-- Adsense if enabled from _config.yml (change your pub id and slot) -->
+            
+            <!-- End Adsense -->
+
+            <!-- Post Featured Image -->
+            
+
+            
+            <img class="featured-image img-fluid" src="/assets/images/NLP.jpg" alt="Natural Language Processing with Python">
+            
+
+            
+            <!-- End Featured Image -->
+
+            <!-- Post Content -->
+            <div class="article-post">
+                <!-- Toc if any -->
+                
+                    
+                    <div class="toc mt-4 mb-4 lead">
+                        <h3 class="font-weight-bold">Summary</h3>
+                        <ul>
+  <li><a href="#deep-learning-for-nlp">Deep Learning for NLP</a>
+    <ul>
+      <li><a href="#环境准备">环境准备</a></li>
+      <li><a href="#nlp处理的类库介绍">NLP处理的类库介绍</a>
+        <ul>
+          <li><a href="#nltk">NLTK</a></li>
+        </ul>
+      </li>
+      <li><a href="#资源">资源</a></li>
+      <li><a href="#专有名词">专有名词</a></li>
+      <li><a href="#nlp-介绍">NLP 介绍</a>
+        <ul>
+          <li><a href="#流行的ai-应用">流行的AI 应用</a></li>
+          <li><a href="#nlp-的拐点">NLP 的拐点</a></li>
+          <li><a href="#三种nlp的演变">三种NLP的演变</a></li>
+          <li><a href="#nlp的任务的定义">NLP的任务的定义</a>
+            <ul>
+              <li><a href="#tokenization---词语切分">Tokenization - 词语切分</a></li>
+              <li><a href="#part-of-speechpos-tagging---词性标签">Part-of-speech（POS） tagging - 词性标签</a>
+                <ul>
+                  <li><a href="#词类">词类：</a>
+                    <ul>
+                      <li><a href="#实词---有6种">实词 - 有6种</a></li>
+                      <li><a href="#虚词---有4种">虚词 - 有4种</a></li>
+                      <li><a href="#符号">符号</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="#dependency-parsing---依赖解析">dependency parsing - 依赖解析</a>
+                <ul>
+                  <li><a href="#依赖关系">依赖关系</a></li>
+                </ul>
+              </li>
+              <li><a href="#chunking---合并tockens">Chunking - 合并tockens</a></li>
+              <li><a href="#lemmatization---词形还原">Lemmatization - 词形还原</a></li>
+              <li><a href="#stemming---归元">Stemming - 归元</a></li>
+              <li><a href="#named-entity-recognitionner---给对象打标签">Named entity recognition(NER) - 给对象打标签</a></li>
+              <li><a href="#named-entity-linkingnel---消除歧义">Named Entity linking(NEL) - 消除歧义</a></li>
+            </ul>
+          </li>
+          <li><a href="#开发环境搭建">开发环境搭建</a>
+            <ul>
+              <li><a href="#spacy">spaCy</a></li>
+              <li><a href="#fastai">fast.ai</a></li>
+              <li><a href="#hugging-face">Hugging Face</a></li>
+              <li><a href="#玩转-spacy">玩转 spaCy</a>
+                <ul>
+                  <li><a href="#token-部分">Token 部分</a></li>
+                  <li><a href="#part-of-speechpos-taggin---给每个token-标上词性">Part-of-speech（POS） taggin - 给每个token 标上词性</a></li>
+                  <li><a href="#dependency-parsing---依赖解析-1">Dependency Parsing - 依赖解析</a></li>
+                  <li><a href="#chunking---合并tokens">Chunking - 合并tokens</a></li>
+                  <li><a href="#lemmatization---词形还原-1">Lemmatization - 词形还原</a></li>
+                  <li><a href="#named-entity-recognition-ner---给token-打标签">Named entity recognition （NER） - 给token 打标签</a></li>
+                  <li><a href="#named-entity-link---将文本中的实体解析到外部知识库的一个唯一标签上">Named Entity Link - 将文本中的实体解析到外部知识库的一个唯一标签上</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#transformers-和-transfer-learning">Transformers 和 Transfer Learning</a>
+        <ul>
+          <li><a href="#用-fastai-训练">用 fastai 训练</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+                    </div>
+                
+                <!-- End Toc -->
+                <h1 id="deep-learning-for-nlp">Deep Learning for NLP</h1>
+
+<p>[TOC]</p>
+
+<h2 id="环境准备">环境准备</h2>
+
+<blockquote>
+  <ol>
+    <li>
+      <p>创建一个 nlp 目录， 在目录下安装一个虚拟环境</p>
+    </li>
+    <li>
+      <p>安装 pandas numpy scipy tensorflow keras spacy nltk textblob 这些必要的python 库</p>
+    </li>
+  </ol>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre>mkdir nlp
+cd nlp
+virtualenv venv
+source ./venv/bin/activate
+pip install pandas numpy scipy tensorflow keras spacy nltk textblob
+</pre></td></tr></tbody></table>
+</div>
+  </div>
+
+</blockquote>
+
+<h2 id="nlp处理的类库介绍">NLP处理的类库介绍</h2>
+
+<h3 id="nltk">NLTK</h3>
+
+<blockquote>
+  <p>NLTK是最常用的包，用于分词，分析语言结构等。</p>
+</blockquote>
+
+<p>分词</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">nltk</span>
+
+<span class="c"># Tokenization</span>
+<span class="n">sent_</span> <span class="o">=</span> <span class="s">"I am almost dead this time"</span>
+<span class="n">tokens_</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">sent_</span><span class="p">)</span>
+<span class="n">tokens_</span>
+<span class="c"># 输出</span>
+<span class="c"># ['I', 'am', 'almost', 'dead', 'this', 'time']</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>获取同义词</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15</pre></td><td class="code"><pre><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">wordnet</span>
+
+<span class="n">word_</span> <span class="o">=</span> <span class="n">wordnet</span><span class="o">.</span><span class="n">synsets</span><span class="p">(</span><span class="s">"spectacular"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">word_</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">word_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">definition</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="n">word_</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">definition</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="n">word_</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">definition</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="n">word_</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">definition</span><span class="p">())</span>
+
+<span class="c">#输出</span>
+<span class="c">#[Synset('spectacular.n.01'), Synset('dramatic.s.02'), Synset('spectacular.s.02'), Synset('outstanding.s.02')]</span>
+<span class="c">#a lavishly produced performance</span>
+<span class="c">#sensational in appearance or thrilling in effect</span>
+<span class="c">#characteristic of spectacles or drama</span>
+<span class="c">#having a quality that thrusts itself into attention</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h2 id="资源">资源</h2>
+
+<p><a href="https://learning.oreilly.com/library/view/applied-natural-language/9781492062561/preface01.html">图书线上链接</a></p>
+
+<p><a href="https://github.com/nlpbook/nlpbook">本书代码资源</a></p>
+
+<p><a href="bookquestions@oreilly.com">有问题找作者</a></p>
+
+<p>spacy</p>
+
+<h2 id="专有名词">专有名词</h2>
+
+<p>包括自然语言处理(NLP)</p>
+
+<p>自然语言理解(NLU)</p>
+
+<p>自然语言交互(NLI)</p>
+
+<p>自然语言生成(NLG)，</p>
+
+<h2 id="nlp-介绍">NLP 介绍</h2>
+
+<h3 id="流行的ai-应用">流行的AI 应用</h3>
+
+<p><strong>Machine Translation</strong></p>
+
+<ul>
+  <li>google 翻译</li>
+</ul>
+
+<p><strong>Speech recognition</strong></p>
+
+<ul>
+  <li>
+    <p>Amazon Alexa,</p>
+  </li>
+  <li>
+    <p>Apple Siri,</p>
+  </li>
+  <li>
+    <p>Google Assistant,</p>
+  </li>
+  <li>
+    <p>Microsoft Cortana,</p>
+  </li>
+</ul>
+
+<p><strong>Question Answering</strong> - 基于speech recognition 进行问题回答</p>
+
+<p><strong>Text summarization</strong> - 读取长短信息，然后进行总结</p>
+
+<p><strong>Chatbots</strong> - 比如IBM的HRbot, 可以在线和你文字互动</p>
+
+<p><strong>Text2speech and speech2text</strong></p>
+
+<ul>
+  <li>Google Cloud Speech-to-Text / text to speech. 把文字转换成人类说话的语音，可以支持180中声调的30中语言， 反过来也可以</li>
+</ul>
+
+<p><strong>Voicebots</strong> - 语音机器人，比如,代替了电话销售，让人不知道对方是个机器人的情况下进行对话</p>
+
+<p>Text and audio generation - 自动生成文本或者语音，比如gmail 可以根据上文自动推荐下文</p>
+
+<p><strong>Sentiment analysis</strong> - 分析情感，开心-伤心 积极-消极 高兴-生气</p>
+
+<p><strong>Information extraction</strong> - 从信息中抓取结构化数据，或者总结出关系</p>
+
+<h3 id="nlp-的拐点">NLP 的拐点</h3>
+
+<ul>
+  <li>
+    <p>2014 年 Amazon Alexa 提升了 Speech recognition</p>
+  </li>
+  <li>
+    <p>2018年 大量预训练的语言模型使用了 <strong>Transformer 架构</strong></p>
+  </li>
+  <li>
+    <p>2019 - 2020年 generative models 比如 OpenAI’s GPT-2, GPT-3 可以通过前文来自动生成下文</p>
+  </li>
+</ul>
+
+<h3 id="三种nlp的演变">三种NLP的演变</h3>
+
+<ol>
+  <li>基于rule 的 NLP, 比如通过正则表达式来制定规则处理语言</li>
+  <li>传统机器学习来处理NLP, 通过统计分析，创建概率分布。需要标注大量的信息，是feature 工程。通过标注信息来提升模型的表现，比rule based 方法好一些</li>
+  <li>神经网络， 通过 representation learning 解决了需要人工标注feature 的问题. 神经网络需要大量的数据，自动创建规则，自动学习。</li>
+</ol>
+
+<p>以上三种最后一种最好，但是前两中也有他们生存的空间</p>
+
+<h3 id="nlp的任务的定义">NLP的任务的定义</h3>
+
+<h4 id="tokenization---词语切分">Tokenization - 词语切分</h4>
+
+<p>将文本切分成最小有意义的单位（token），比如单词，标点符号等。we live in paris 会被切分成四个独立的单词(token)。tokenization 是自然语言处理的第一步</p>
+
+<h4 id="part-of-speechpos-tagging---词性标签">Part-of-speech（POS） tagging - 词性标签</h4>
+
+<p>给每个token设定词性，比如动词名词副词等，目的是让机器更好的理解token之间的关系</p>
+
+<h5 id="词类">词类：</h5>
+
+<h6 id="实词---有6种">实词 - 有6种</h6>
+
+<p>NOUN - 名词 None</p>
+
+<p>PRON - 代词 pronoun , 你我他你们我们他们, 你的我的他的</p>
+
+<p>PROPN - 专有名词 proper noun ， 伽利略</p>
+
+<p>ADJ - 形容词 adjective ， 美丽的，干净的</p>
+
+<p>NUM - 数词 Numeral , Four, Five</p>
+
+<p>VERB - 动词 Verb</p>
+
+<p>AUX - 助动词  is ,are, was ,were</p>
+
+<p>ADV - 副词 adverb,  副词用来修饰动词和形容词 ， in,</p>
+
+<h6 id="虚词---有4种">虚词 - 有4种</h6>
+
+<p>DET  - 冠词 determiner , a , the, this, that</p>
+
+<p>ADP - 介词 adposition - of, to, for, under</p>
+
+<p>CCONJ - 连词 conjunction ， and , or</p>
+
+<p>INTJ - 感叹词 Interjection, Wow, oh</p>
+
+<h6 id="符号">符号</h6>
+
+<p>PUNCT - 符号 punctuation</p>
+
+<p>下面表格是完整地POS 词性标签</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">POS</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">ADJ</code></td>
+      <td style="text-align: left">Adjective</td>
+      <td style="text-align: left">Big, old, green, incomprehensible, first</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">ADP</code></td>
+      <td style="text-align: left">Adposition</td>
+      <td style="text-align: left">In, to, during</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">ADV</code></td>
+      <td style="text-align: left">Adverb</td>
+      <td style="text-align: left">Very, tomorrow, down, where, there</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">AUX</code></td>
+      <td style="text-align: left">Auxiliary</td>
+      <td style="text-align: left">Is, has (done), will (do), should (do)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">CONJ</code></td>
+      <td style="text-align: left">Conjunction</td>
+      <td style="text-align: left">And, or, but</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">CCONJ</code></td>
+      <td style="text-align: left">Coordinating conjunction</td>
+      <td style="text-align: left">And, or, but</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">DET</code></td>
+      <td style="text-align: left">Determiner</td>
+      <td style="text-align: left">A, an, the</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">INTJ</code></td>
+      <td style="text-align: left">Interjection</td>
+      <td style="text-align: left">Psst, ouch, bravo, hello</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">NOUN</code></td>
+      <td style="text-align: left">Noun</td>
+      <td style="text-align: left">Girl, cat, tree, air, beauty</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">NUM</code></td>
+      <td style="text-align: left">Numeral</td>
+      <td style="text-align: left">1, 2017, one, seventy-seven, IV, MMXIV</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">PART</code></td>
+      <td style="text-align: left">Particle</td>
+      <td style="text-align: left">’s, not</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">PRON</code></td>
+      <td style="text-align: left">Pronoun</td>
+      <td style="text-align: left">I, you, he, she, myself, themselves, somebody</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">PROPN</code></td>
+      <td style="text-align: left">Proper noun</td>
+      <td style="text-align: left">Mary, John, London, NATO, HBO</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">PUNCT</code></td>
+      <td style="text-align: left">Punctuation</td>
+      <td style="text-align: left">., (, ), ?</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">SCONJ</code></td>
+      <td style="text-align: left">Subordinating conjunction</td>
+      <td style="text-align: left">If, while, that</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">SYM</code></td>
+      <td style="text-align: left">Symbol</td>
+      <td style="text-align: left">×, %, §, ©, +, -, ×, ÷, =, :),</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">VERB</code></td>
+      <td style="text-align: left">Verb</td>
+      <td style="text-align: left">Run, runs, running, eat, ate, eating</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">X</code></td>
+      <td style="text-align: left">Other</td>
+      <td style="text-align: left">Sfpksdpsxmsa</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">SPACE</code></td>
+      <td style="text-align: left">Space</td>
+      <td style="text-align: left"> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="dependency-parsing---依赖解析">dependency parsing - 依赖解析</h4>
+
+<p>（ <a href="https://demo.allennlp.org/dependency-parsing/">Allen依赖解析demo</a> ）标注tocken 之前的依赖关系，标注了依赖关系，整句话就是一个结构化数据了， 机器就可以阅读这种标注了依赖关系的句子。<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gvusdth4lnj30o60duaae.jpg" alt="" /></p>
+
+<h5 id="依赖关系">依赖关系</h5>
+
+<p>NSUBJ - nominal subject  名义的主语</p>
+
+<p>PREP - prepositional phrase 介词短语</p>
+
+<p>POBJ - Preposition of object 对象的介词</p>
+
+<p>下面表格是完整地依赖解析</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Label</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">ac1</code></td>
+      <td style="text-align: left">Clausal modifier of noun (adjectival clause)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">advc1</code></td>
+      <td style="text-align: left">Adverbial clause modifier</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">advmod</code></td>
+      <td style="text-align: left">Adverbial modifier</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">amod</code></td>
+      <td style="text-align: left">Adjectival modifier</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">appos</code></td>
+      <td style="text-align: left">Appositional modifier</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">aux</code></td>
+      <td style="text-align: left">Auxiliary</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">case</code></td>
+      <td style="text-align: left">Case marking</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">cc</code></td>
+      <td style="text-align: left">Coordinating conjunction</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">ccomp</code></td>
+      <td style="text-align: left">Clausal complement</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">clf</code></td>
+      <td style="text-align: left">Classifier</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">compound</code></td>
+      <td style="text-align: left">Compound</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">conj</code></td>
+      <td style="text-align: left">Conjunction</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">cop</code></td>
+      <td style="text-align: left">Copula</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">csubj</code></td>
+      <td style="text-align: left">Clausal subject</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">dep</code></td>
+      <td style="text-align: left">Unspecified dependency</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">det</code></td>
+      <td style="text-align: left">Determiner</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">discourse</code></td>
+      <td style="text-align: left">Discourse element</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">dislocated</code></td>
+      <td style="text-align: left">Dislocated element</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">expl</code></td>
+      <td style="text-align: left">Expletive</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">fixed</code></td>
+      <td style="text-align: left">Fixed multiword expression</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">flat</code></td>
+      <td style="text-align: left">Flat multiword expression</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">goeswith</code></td>
+      <td style="text-align: left">Goes with</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">iobj</code></td>
+      <td style="text-align: left">Indirect object</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">list</code></td>
+      <td style="text-align: left">List</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">mark</code></td>
+      <td style="text-align: left">Marker</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">nmod</code></td>
+      <td style="text-align: left">Nominal modifier</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">nsubj</code></td>
+      <td style="text-align: left">Nominal subject</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">nummod</code></td>
+      <td style="text-align: left">Numeric modifier</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">obj</code></td>
+      <td style="text-align: left">Object</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">obl</code></td>
+      <td style="text-align: left">Oblique nominal</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">orphan</code></td>
+      <td style="text-align: left">Orphan</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">parataxis</code></td>
+      <td style="text-align: left">Parataxis</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">punct</code></td>
+      <td style="text-align: left">Punctuation</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">reparandum</code></td>
+      <td style="text-align: left">Overridden disfluency</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">root</code></td>
+      <td style="text-align: left">Root</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">vocative</code></td>
+      <td style="text-align: left">Vocative</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">xcomp</code></td>
+      <td style="text-align: left">Open clausal complement</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="chunking---合并tockens">Chunking - 合并tockens</h4>
+
+<p>创建名词tocken 组, 动词tockens组</p>
+
+<p>比如 new york city 会合并成一个chunk</p>
+
+<h4 id="lemmatization---词形还原">Lemmatization - 词形还原</h4>
+
+<p>把一些词形还原成原始的样子，比如复数变单数， 过去式变现在时, 比较级变正常</p>
+
+<p>horses 变 horse,  slept 变 sleep， biggest 变 big</p>
+
+<h4 id="stemming---归元">Stemming - 归元</h4>
+
+<p>和lemmatization 类似， 会把比较级回归原型，但是不会把过去式变成现在时</p>
+
+<h4 id="named-entity-recognitionner---给对象打标签">Named entity recognition(NER) - 给对象打标签</h4>
+
+<p>entity 这就就是objects。</p>
+
+<p>给对象打标签，比如打成 人，组织，位置，日期，货币等</p>
+
+<p>we live in Paris, 这里就给Paris 打成<strong>位置</strong>。</p>
+
+<p>再比如我们要搜索小布什，我们希望可以在所有标注了小布什是人得文档种搜索</p>
+
+<p>下表是标签类型</p>
+
+<p>NER 是一个统计模型，可以帮助机器更好的理解对象，</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">PERSON</code></td>
+      <td style="text-align: left">People, including fictional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">NORP</code></td>
+      <td style="text-align: left">Nationalities or religious or political groups</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">FAC</code></td>
+      <td style="text-align: left">Buildings, airports, highways, bridges, etc.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">ORG</code></td>
+      <td style="text-align: left">Companies, agencies, institutions, etc.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">GPE</code></td>
+      <td style="text-align: left">Countries, cities, states</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">LOC</code></td>
+      <td style="text-align: left">Non-GPE locations, mountain ranges, bodies of water</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">PRODUCT</code></td>
+      <td style="text-align: left">Objects, vehicles, foods, etc. (not services)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">EVENT</code></td>
+      <td style="text-align: left">Named hurricanes, battles, wars, sports events, etc.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">WORK_OF_ART</code></td>
+      <td style="text-align: left">Titles of books, songs, etc.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">LAW</code></td>
+      <td style="text-align: left">Named documents made into laws</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">LANGUAGE</code></td>
+      <td style="text-align: left">Any named language</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">DATE</code></td>
+      <td style="text-align: left">Absolute or relative dates or periods</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">TIME</code></td>
+      <td style="text-align: left">Times smaller than a day</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">PERCENT</code></td>
+      <td style="text-align: left">Percentage, including %</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">MONEY</code></td>
+      <td style="text-align: left">Monetary values, including unit</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">QUANTITY</code></td>
+      <td style="text-align: left">Measurements, as of weight or distance</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">ORDINAL</code></td>
+      <td style="text-align: left">“First,” “second,” etc.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">CARDINAL</code></td>
+      <td style="text-align: left">Numerals that do not fall under another type</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="named-entity-linkingnel---消除歧义">Named Entity linking(NEL) - 消除歧义</h4>
+
+<p>实体链接是把有可能有歧义的实体连接到一个外部知识库，</p>
+
+<p>比如布什和小布什</p>
+
+<h3 id="开发环境搭建">开发环境搭建</h3>
+
+<p>使用 google 的 <a href="https://colab.research.google.com/notebooks/welcome.ipynb">Colaborator</a> 作为Jupyter Notebook 环境</p>
+
+<p>使用GitHub 保存源代码</p>
+
+<p>三个支持NLP 的开源 类库</p>
+
+<ul>
+  <li>
+    <p>spaCy</p>
+  </li>
+  <li>
+    <p>fast.ai</p>
+  </li>
+  <li>
+    <p>Hugging Face</p>
+  </li>
+</ul>
+
+<h4 id="spacy">spaCy</h4>
+
+<ul>
+  <li>
+    <p>2015年发布，没发布之前，NLTK是最牛逼的，<a href="https://spacy.io">spaCy</a> 有更好的性能，可伸缩性，目前最成熟的，适合生产商用</p>
+  </li>
+  <li>支持64种语言，并同时支持Pytorch 和 Tensorfoow</li>
+  <li>2021年之前的版本2.x 是基于recurrent neural networks (RNNs). 2021年之后给基于了更新的 transformer-based 模型，</li>
+  <li>cpaCy 的母公司是 <a href="https://explosion.ai">Explosion AI</a> 还提供了注解服务 <a href="https://prodi.gy">Prodigy</a></li>
+</ul>
+
+<h4 id="fastai">fast.ai</h4>
+
+<p><a href="https://www.fast.ai">fast.ai</a> 2018年开源，基于Pytorch 开发</p>
+
+<p>可以快速构建NLP 模型，但是成熟度不如spaCy 和 Hugging face</p>
+
+<h4 id="hugging-face">Hugging Face</h4>
+
+<p>2016 年成立， <a href="https://huggingface.co">hugging face</a> 是这三个中成长速度最快，被投资钱数最多的一个</p>
+
+<p>他的类库用的是 transformers, 基于tensorflow 和 pytorch, 支持超过100中语言</p>
+
+<p>目前来很有钱途，建议好好研究</p>
+
+<h4 id="玩转-spacy">玩转 spaCy</h4>
+
+<p>安装python 最新版本,</p>
+
+<p>安装spacy 扩展 , 安装方法参考官网<a href="https://spacy.io/usage">指导</a></p>
+
+<p>配置pip源</p>
+
+<p>安装aws 命令行</p>
+
+<p>安装jupyter</p>
+
+<p>安装pandas</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40</pre></td><td class="code"><pre><span class="nb">cd</span> ~/
+mkdir .pip
+<span class="nb">cd</span> .pip
+vi pip.conf
+<span class="c"># 增加如下内容</span>
+<span class="o">[</span>global]
+timeout <span class="o">=</span> 6000
+index-url <span class="o">=</span> http://pypi.douban.com/simple
+trusted-host <span class="o">=</span> pypi.douban.com
+<span class="nv">format</span><span class="o">=</span>columns
+<span class="c"># </span>
+
+brew install python@3.10
+brew unlink python@3.9
+brew link --force python@3.10
+
+mkdir nlp
+<span class="nb">cd </span>nlp
+python3 -m venv .env
+<span class="nb">source</span> .env/bin/activate
+pip3 install -U pip setuptools wheel
+pip3 install -U spacy
+python3 -m spacy download zh_core_web_sm
+python3 -m spacy download en_core_web_sm
+
+<span class="c">#deactivate  # 退出虚拟环境</span>
+<span class="c">#pip3 freeze         # 查看 所有的Pip 环境安装的依赖包列表</span>
+<span class="c">#pip3 freeze &gt; requirements.txt   # 将所有的Pip 环境安装的依赖包导出到文件中</span>
+<span class="c">#pip3 install -r requirements.txt # 读取安装文件来安装 pip 包</span>
+
+
+<span class="c"># 安装aws 命令行</span>
+curl <span class="s2">"https://awscli.amazonaws.com/AWSCLIV2.pkg"</span> -o <span class="s2">"AWSCLIV2.pkg"</span>
+sudo installer -pkg AWSCLIV2.pkg -target /
+<span class="c"># 安装pandas</span>
+pip3 install pandas
+<span class="c">#使用Jupyerlab</span>
+pip3 install jupyterlab
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"/usr/local/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/bin:</span><span class="nv">$PATH</span><span class="s2">"</span>
+jupyter-lab
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h5 id="token-部分">Token 部分</h5>
+
+<ul>
+  <li>创建一个spacy 实例，使用英文语言</li>
+  <li>把一个panda dataframe 的一个二维字典的question 列转换成token</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47</pre></td><td class="code"><pre>
+<span class="c"># Import spacy and download language model</span>
+<span class="kn">import</span> <span class="nn">spacy</span>
+<span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">"en_core_web_sm"</span><span class="p">)</span>
+<span class="c"># Download data 这里要brew 安装aws 的 mac 命令行</span>
+<span class="err">!</span><span class="n">aws</span> <span class="n">s3</span> <span class="n">cp</span> <span class="n">s3</span><span class="p">:</span><span class="o">//</span><span class="n">applied</span><span class="o">-</span><span class="n">nlp</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">data</span><span class="o">/</span> <span class="n">data</span> <span class="o">--</span><span class="n">recursive</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">sign</span><span class="o">-</span><span class="n">request</span>
+<span class="err">!</span><span class="n">aws</span> <span class="n">s3</span> <span class="n">cp</span> <span class="n">s3</span><span class="p">:</span><span class="o">//</span><span class="n">applied</span><span class="o">-</span><span class="n">nlp</span><span class="o">-</span><span class="n">book</span><span class="o">/</span><span class="n">models</span><span class="o">/</span><span class="n">ag_dataset</span><span class="o">/</span> <span class="n">models</span><span class="o">/</span><span class="n">ag_dataset</span> <span class="o">--</span><span class="n">recursive</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">sign</span><span class="o">-</span><span class="n">request</span>
+
+<span class="c"># Tokenization</span>
+<span class="n">sentence</span> <span class="o">=</span> <span class="n">nlp</span><span class="o">.</span><span class="n">tokenizer</span><span class="p">(</span><span class="s">"We live in Paris."</span><span class="p">)</span>
+<span class="c"># 这里的 nlp("We live in Paris.") 和 nlp.tokenizer("We live in Paris.") 是不一样的。</span>
+<span class="c"># Length of sentence</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"The number of tokens: "</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sentence</span><span class="p">))</span>
+
+<span class="c"># Print individual words (i.e., tokens)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"The tokens: "</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">words</span> <span class="ow">in</span> <span class="n">sentence</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">cwd</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+
+<span class="c"># Import Jeopardy Questions</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">cwd</span><span class="o">+</span><span class="s">'/data/jeopardy_questions/jeopardy_questions.csv'</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c"># Lowercase, strip whitespace, and view column names</span>
+<span class="n">data</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+
+<span class="c"># Reduce size of data</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1000</span><span class="p">]</span> 
+
+<span class="c"># Tokenize Jeopardy Questions</span>
+<span class="n">data</span><span class="p">[</span><span class="s">"question_tokens"</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">"question"</span><span class="p">]</span><span class="o">.</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">nlp</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> 
+<span class="c"># 这里没有用nlp.tokenizer, </span>
+
+<span class="c"># View first question</span>
+<span class="n">example_question</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">question</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">example_question_tokens</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">question_tokens</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"The first questions is:"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">example_question</span><span class="p">)</span>
+
+<span class="c"># Print individual tokens of first question</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"The tokens from the first question are:"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">tokens</span> <span class="ow">in</span> <span class="n">example_question_tokens</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h5 id="part-of-speechpos-taggin---给每个token-标上词性">Part-of-speech（POS） taggin - 给每个token 标上词性</h5>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">token.text</code> 看token 文本</li>
+  <li><code class="language-plaintext highlighter-rouge">token.pos_</code> 可以看每个单个token 的词性缩写</li>
+  <li><code class="language-plaintext highlighter-rouge">spacy.explain(token.pos_)</code> 查看词性完整单词</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre><span class="c"># Print Part-of-speech tags for tokens in the first question</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Here are the Part-of-speech tags for each token in the first question:"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">example_question_tokens</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">text</span><span class="p">,</span><span class="n">token</span><span class="o">.</span><span class="n">pos_</span><span class="p">,</span> <span class="n">spacy</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">pos_</span><span class="p">))</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h5 id="dependency-parsing---依赖解析-1">Dependency Parsing - 依赖解析</h5>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">token.dep_</code> 会对某个token 进行依赖解析</li>
+  <li>spacy 的 <code class="language-plaintext highlighter-rouge">displacy.rander</code> 库可以对一段文本中的所有token的依赖关系 进行图形化的展示</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre>
+<span class="c"># Print Dependency Parsing tags for tokens in the first question</span>
+<span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">example_question_tokens</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">text</span><span class="p">,</span><span class="n">token</span><span class="o">.</span><span class="n">dep_</span><span class="p">,</span> <span class="n">spacy</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">dep_</span><span class="p">))</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>查看图形化地依赖关系</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre><span class="c"># Visualize the dependency parse</span>
+<span class="kn">from</span> <span class="nn">spacy</span> <span class="kn">import</span> <span class="n">displacy</span>
+
+<span class="n">displacy</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">example_question_tokens</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s">'dep'</span><span class="p">,</span>
+                <span class="n">jupyter</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s">'distance'</span><span class="p">:</span> <span class="mi">120</span><span class="p">})</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h5 id="chunking---合并tokens">Chunking - 合并tokens</h5>
+
+<ul>
+  <li>
+    <p>spaCy 会把 my parents 和 New York City 合并成两个单独的token</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">nlp对象.noun_chunks</code> 可以得到这个句子中的所有合并后的trunk数组</p>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9</pre></td><td class="code"><pre>
+<span class="c"># Print tokens for example sentence without chunking</span>
+<span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">nlp</span><span class="p">(</span><span class="s">"My parents live in New York City."</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    
+    
+<span class="c"># Print chunks for example sentence</span>
+<span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">nlp</span><span class="p">(</span><span class="s">"My parents live in New York City."</span><span class="p">)</span><span class="o">.</span><span class="n">noun_chunks</span><span class="p">:</span>
+      <span class="k">print</span><span class="p">(</span><span class="n">chunk</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h5 id="lemmatization---词形还原-1">Lemmatization - 词形还原</h5>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">token.lemma_</code> 可以得到词形的还原</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre></td><td class="code"><pre><span class="c"># Print Lemmatization for tokens in the first question</span>
+<span class="n">lemmatization</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[],</span> \
+  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">"original"</span><span class="p">,</span><span class="s">"lemmatized"</span><span class="p">])</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">example_question_tokens</span><span class="p">:</span>
+    <span class="n">lemmatization</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s">"original"</span><span class="p">]</span> <span class="o">=</span> <span class="n">token</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">lemmatization</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s">"lemmatized"</span><span class="p">]</span> <span class="o">=</span> <span class="n">token</span><span class="o">.</span><span class="n">lemma_</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+
+<span class="n">lemmatization</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h5 id="named-entity-recognition-ner---给token-打标签">Named entity recognition （NER） - 给token 打标签</h5>
+
+<p>也可以理解为为目标定义类型，比如人，国家，位置等</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">token.label_</code>标注了token 的类型</li>
+  <li>可以用 displacy.render 来展示这句话中被标注出来的标签，用颜色表示不同类型</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15</pre></td><td class="code"><pre><span class="c"># Print NER results</span>
+<span class="n">example_sentence</span> <span class="o">=</span> <span class="s">"George Washington was an American political leader, </span><span class="se">\
+</span><span class="s">military general, statesman, and Founding Father who served as the </span><span class="se">\
+</span><span class="s">first president of the United States from 1789 to 1797.</span><span class="se">\n</span><span class="s">"</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">example_sentence</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"Text Start End Label"</span><span class="p">)</span>
+<span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">example_sentence</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">token</span><span class="o">.</span><span class="n">start_char</span><span class="p">,</span> <span class="n">token</span><span class="o">.</span><span class="n">end_char</span><span class="p">,</span> <span class="n">token</span><span class="o">.</span><span class="n">label_</span><span class="p">)</span>
+    
+    
+<span class="c"># Visualize NER results</span>
+<span class="n">displacy</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s">'ent'</span><span class="p">,</span> <span class="n">jupyter</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s">'distance'</span><span class="p">:</span> <span class="mi">120</span><span class="p">})</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h5 id="named-entity-link---将文本中的实体解析到外部知识库的一个唯一标签上">Named Entity Link - 将文本中的实体解析到外部知识库的一个唯一标签上</h5>
+
+<p>这里使用的外部知识库是 <a href="https://developers.google.com/knowledge-graph">Google Knowledge Graph</a></p>
+
+<p>要在<a href="https://console.cloud.google.com/apis/credentials?orgonly=true&amp;project=my-nlp-project-68654&amp;supportedpurview=organizationId">google cloud platform</a> 中创建API Key ,并<a href="https://console.cloud.google.com/apis/library/kgsearch.googleapis.com?project=my-nlp-project-68654">启动</a> ， 然后复制key到下面代码中 key</p>
+
+<p>测试knowledge base api 的<a href="https://kgsearch.googleapis.com/v1/entities:search/?query=George%20Washington&amp;key=AIzaSyDQwhQTtFRIuoRa_zS6EhNrgwI5yqgeUB0">链接</a></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="c"># Define Google Knowledge Graph API Result function</span>
+<span class="k">def</span> <span class="nf">returnGraphResult</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">entityType</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">entityType</span><span class="o">==</span><span class="s">"PERSON"</span><span class="p">:</span>
+        <span class="n">google</span> <span class="o">=</span> <span class="n">f</span><span class="s">"https://kgsearch.googleapis.com/v1/entities:search</span><span class="se">\
+</span><span class="s">         ?query={query}&amp;key={key}"</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">google</span><span class="p">)</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s">'itemListElement'</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s">'result'</span><span class="p">]</span>\
+         <span class="p">[</span><span class="s">'detailedDescription'</span><span class="p">][</span><span class="s">'url'</span><span class="p">]</span>
+        <span class="n">description</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s">'itemListElement'</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s">'result'</span><span class="p">]</span>\
+         <span class="p">[</span><span class="s">'detailedDescription'</span><span class="p">][</span><span class="s">'articleBody'</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">url</span><span class="p">,</span> <span class="n">description</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s">"no_match"</span><span class="p">,</span> <span class="s">"no_match"</span>
+      
+
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7</pre></td><td class="code"><pre><span class="c"># Print Wikipedia descriptions and urls for entities</span>
+<span class="c"># You can un-comment this and run the code after you obtain your own Google Knowledge Graph API key</span>
+<span class="s">'''
+for token in doc.ents:
+    url, description = returnGraphResult(token.text, key, token.label_)
+    print(token.text, token.label_, url, description)
+'''</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p><a href="https://kgsearch.googleapis.com/v1/entities:search/?query=George%20Washington&amp;key=AIzaSyDQwhQTtFRIuoRa_zS6EhNrgwI5yqgeUB0">返回的knowledge base api 的 Json 内容链接</a></p>
+
+<h2 id="transformers-和-transfer-learning">Transformers 和 Transfer Learning</h2>
+
+<p>Transfer Learning 是一种把已经训练好的模型转到另一个你需要的数据集上，并进行调整。 比如我们想要训练一个海明威类型的自动短故事生成模型，就可以通过transfer learning 用大量非海明威的小说来对模型进行训练，而不是只用少量的海明威小说。</p>
+
+<p>Transformer 是一个NLP 模型 架构，如果重零开始训练他效果可能不会太理想，建议继承一些已经训练好的 transformer ，然后做一些调整进行使用。</p>
+
+<blockquote>
+  <p>语言模型：</p>
+
+  <p>就是一个通过输入一些文字，就可以返回一些通过概率分布描述出来的下面的文字，白话就是我给你几个字，你就给我把下面的故事编出来。 这就是现代的 NLP 的最基础模型</p>
+</blockquote>
+
+<h3 id="用-fastai-训练">用 fastai 训练</h3>
+
+<p>先用fastai 进行 transfer learning.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>pip install fastai
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>这里会用到 <a href="https://arxiv.org/abs/1801.06146">ULMFiT</a>  - Universal Language Model Fine-tuning for Text Classification 技术对我们的神经网络进行训练</p>
+
+<p>数据集我们会用 IMDB , 一个电影评论的数据集</p>
+
+<p>fastai 不仅仅是个深度学习的类库， 还包括了帮助我们端到端的解决问题的工具。其中一个好用的工具就是内置的数据集。</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">TextDataLoaders.from_folder()</code> 可以设置自己的数据集</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6</pre></td><td class="code"><pre><span class="kn">from</span> <span class="nn">fastai.text.all</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">untar_data</span><span class="p">(</span><span class="n">URLs</span><span class="o">.</span><span class="n">IMDB</span><span class="p">)</span>  <span class="c"># /Users/dalong/.fastai/data/imdb</span>
+<span class="c"># 设置自己的数据集</span>
+<span class="n">dls</span> <span class="o">=</span> <span class="n">TextDataLoaders</span><span class="o">.</span><span class="n">from_folder</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">valid</span><span class="o">=</span><span class="s">'test'</span><span class="p">)</span>
+<span class="c"># 显示我们的数据集 </span>
+<span class="n">dls</span><span class="o">.</span><span class="n">show_batch</span><span class="p">()</span> 
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>一共显示了8个数据集，内容中包含的xxbox xxmaj 并不是原始数据集的一部分，而是通过 tokenization 来被加进去的，用来被语言模型翻译， 比如 xxmaj 表示它后面的字母要首字母大写</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">text</th>
+      <th style="text-align: right">category</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">xxbos xxmaj match 1 : xxmaj tag xxmaj team xxmaj table xxmaj match xxmaj bubba xxmaj ray and xxmaj spike xxmaj dudley vs xxmaj eddie xxmaj guerrero and xxmaj chris xxmaj benoit xxmaj bubba xxmaj ray and xxmaj spike xxmaj dudley started things off with a xxmaj tag xxmaj team xxmaj table xxmaj match against xxmaj eddie xxmaj guerrero and xxmaj chris xxmaj benoit . xxmaj according to the rules of the match , both opponents have to go through tables in order to get the win . xxmaj benoit and xxmaj guerrero heated up early on by taking turns hammering first xxmaj spike and then xxmaj bubba xxmaj ray . a xxmaj german xxunk by xxmaj benoit to xxmaj bubba took the wind out of the xxmaj dudley brother . xxmaj spike tried to help his brother , but the referee restrained him while xxmaj benoit and xxmaj guerrero</td>
+      <td>pos</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">1</td>
+      <td style="text-align: right">xxbos xxmaj raising xxmaj victor xxmaj vargas : a xxmaj review \n\n xxmaj you know , xxmaj raising xxmaj victor xxmaj vargas is like sticking your hands into a big , steaming bowl of oatmeal . xxmaj it ‘s warm and gooey , but you ‘re not sure if it feels right . xxmaj try as i might , no matter how warm and gooey xxmaj raising xxmaj victor xxmaj vargas became i was always aware that something did n’t quite feel right . xxmaj victor xxmaj vargas suffers from a certain overconfidence on the director ‘s part . xxmaj apparently , the director thought that the ethnic backdrop of a xxmaj latino family on the lower east side , and an idyllic storyline would make the film critic proof . xxmaj he was right , but it did n’t fool me . xxmaj raising xxmaj victor xxmaj vargas is</td>
+      <td>neg</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>fastai 使用 <code class="language-plaintext highlighter-rouge">Learner</code>对象 来处理几乎所有的事情</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre><span class="n">learn</span> <span class="o">=</span> <span class="n">text_classifier_learner</span><span class="p">(</span><span class="n">dls</span><span class="p">,</span> <span class="n">AWD_LSTM</span><span class="p">,</span> <span class="n">drop_mult</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="n">accuracy</span><span class="p">)</span>  <span class="c"># 这里用了AWS_LIST 架构，因为比较简单，运行快速</span>
+
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+
+            </div>
+
+            <!-- Rating -->
+            
+            <div class="rating mb-4 d-flex align-items-center">
+                <strong class="mr-1">Rating:</strong> <div class="rating-holder">
+<div class="c-rating c-rating--regular" data-rating-value="4.5">
+  <button>1</button>
+  <button>2</button>
+  <button>3</button>
+  <button>4</button>
+  <button>5</button>
+</div>
+</div>
+            </div>
+            
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="2021-06-17">17 Jun 2021</time></span>           
+                
+                </small>
+            </p>
+
+            <!-- Post Categories -->
+            <div class="after-post-cats">
+                <ul class="tags mb-4">
+                    
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#NLP">NLP</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Python">Python</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- End Categories -->
+
+            <!-- Post Tags -->
+            <div class="after-post-tags">
+                <ul class="tags">
+                    
+                    
+                </ul>
+            </div>
+            <!-- End Tags -->
+
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="//Docker-and-Kubernetes/"> &laquo; Building Microservice Systems with Docker and Kubernetes</a>
+            
+            
+            <a class="next d-block col-md-6 text-lg-right" href="//Python-in-Container-01/">Python in Container 01 &raquo; </a>
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+        </div>
+        <!-- End Post -->
+
+    </div>
+</div>
+<!-- End Article
+================================================== -->
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'demowebsite'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Thing",
+    "name": "Natural Language Processing with Python"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Dalong"
+  },
+  "datePublished": "2021-06-17",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.5",
+    "bestRating": "5"
+  }
+}
+</script>
+
+</div>
+
+
+    
+</div>
+
+<!-- Categories Jumbotron
+================================================== -->
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+            <div class="d-md-flex align-items-center justify-content-center h-100">
+                <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+            </div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+            
+            
+                
+                    <a class="mt-1 mb-1" href="/categories#Linux">Linux (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Python">Python (16)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Mysql">Mysql (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Redis">Redis (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#MongoDB">MongoDB (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Flask">Flask (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Django">Django (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#DjangoRest">DjangoRest (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Numpy">Numpy (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Panda">Panda (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Sklearn">Sklearn (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Jupyter">Jupyter (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#OpenCV">OpenCV (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#AI">AI (3)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Tensorflow">Tensorflow (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Microservice">Microservice (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Docker">Docker (3)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#NLP">NLP (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#AWS">AWS (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Architecture">Architecture (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Agile">Agile (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Scrum">Scrum (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#MLPS">MLPS (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#PIPL">PIPL (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Metaverse">Metaverse (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#ChatGPT">ChatGPT (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#OpenAI">OpenAI (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#LLM">LLM (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Azure">Azure (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Data-Science">Data Science (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Jekyll">Jekyll (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Github">Github (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Liquid">Liquid (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Markdown">Markdown (1)</a>
+                
+            
+            
+		</div>
+	</div>
+</div>
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                Copyright © 2023 Dalong's personal blog 
+            </div>
+            <div class="col-md-6 col-sm-6 text-center text-lg-right">    
+                <a target="_blank" href="#">Designed</a> by Dalong.work
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+</div> <!-- /.site-content -->
+
+<!-- Scripts
+================================================== -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+<script src="/assets/js/mediumish.js"></script>
+
+
+
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script> 
+
+
+<script id="dsq-count-scr" src="//demowebsite.disqus.com/count.js"></script>
+
+
+</body>
+</html>

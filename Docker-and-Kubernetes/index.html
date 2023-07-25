@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" href="/assets/images/logo.png">
+
+<title>Building Microservice Systems with Docker and Kubernetes | Dalong's personal blog</title>
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Building Microservice Systems with Docker and Kubernetes | Dalong’s personal blog</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Building Microservice Systems with Docker and Kubernetes" />
+<meta name="author" content="Dalong" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="这是一个Python Docker入门教程。在本文结束时，您将知道如何在本地机器上使用Docker。与Python一起，我们将运行Nginx和Redis容器。这些例子假设你熟悉这些技术的基本概念。会有很多shell示例，所以请继续，打开终端，用Python教程探索我们的Docker。" />
+<meta property="og:description" content="这是一个Python Docker入门教程。在本文结束时，您将知道如何在本地机器上使用Docker。与Python一起，我们将运行Nginx和Redis容器。这些例子假设你熟悉这些技术的基本概念。会有很多shell示例，所以请继续，打开终端，用Python教程探索我们的Docker。" />
+<link rel="canonical" href="http://localhost:4000/Docker-and-Kubernetes/" />
+<meta property="og:url" content="http://localhost:4000/Docker-and-Kubernetes/" />
+<meta property="og:site_name" content="Dalong’s personal blog" />
+<meta property="og:image" content="http://localhost:4000/assets/images/docker-python.jpeg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-05-08T00:00:00+08:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"Building Microservice Systems with Docker and Kubernetes","dateModified":"2021-05-08T00:00:00+08:00","datePublished":"2021-05-08T00:00:00+08:00","description":"这是一个Python Docker入门教程。在本文结束时，您将知道如何在本地机器上使用Docker。与Python一起，我们将运行Nginx和Redis容器。这些例子假设你熟悉这些技术的基本概念。会有很多shell示例，所以请继续，打开终端，用Python教程探索我们的Docker。","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"},"name":"Dalong"},"image":"http://localhost:4000/assets/images/docker-python.jpeg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/Docker-and-Kubernetes/"},"url":"http://localhost:4000/Docker-and-Kubernetes/","author":{"@type":"Person","name":"Dalong"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+<link href="/assets/css/screen.css" rel="stylesheet">
+
+<link href="/assets/css/main.css" rel="stylesheet">
+
+<script src="/assets/js/jquery.min.js"></script>
+
+</head>
+
+
+
+
+<body class="layout-post">
+	<!-- defer loading of font and font awesome -->
+	<noscript id="deferred-styles">
+		<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+    </noscript>
+
+
+<!-- Begin Menu Navigation
+================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+
+    <div class="container pr-0">
+
+    <!-- Begin Logo -->
+    <a class="navbar-brand" href="/">
+    <img src="/assets/images/logo.png" alt="Dalong's personal blog">
+    </a>
+    <!-- End Logo -->
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+
+        <!-- Begin Menu -->
+
+            <ul class="navbar-nav ml-auto">
+
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/index.html">Blog</a>
+                </li>
+
+                <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+                </li>
+
+<!-- 以后再加上相关链接
+
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://bootstrapstarter.com/bootstrap-templates/template-mediumish-bootstrap-jekyll/"> Docs</a>
+                </li>
+
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://www.wowthemes.net/themes/mediumish-wordpress/"><i class="fab fa-wordpress-simple"></i> WP Version</a>
+                </li>
+
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://www.wowthemes.net/themes/mediumish-ghost/"><i class="fab fa-snapchat-ghost"></i> Ghost Version</a>
+                </li>
+-->
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://github.com/dalongli"><i class="fab fa-github"></i> Fork on Github</a>
+                </li>
+
+                <script src="/assets/js/lunr.js"></script>
+
+
+<style>
+    .lunrsearchresult .title {color: #d9230f;}
+    .lunrsearchresult .url {color: silver;}
+    .lunrsearchresult a {display: block; color: #777;}
+    .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
+    .lunrsearchresult a:hover .title {text-decoration: underline;}
+</style>
+
+
+<form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+    <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Type and enter..."/>
+</form>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/assets/js/lunrsearchengine.js"></script>
+
+            </ul>
+
+        <!-- End Menu -->
+
+    </div>
+
+    </div>
+</nav>
+<!-- End Navigation
+================================================== -->
+
+<div class="site-content">
+
+<div class="container">
+
+<!-- Site Title
+================================================== -->
+<div class="mainheading">
+    <h1 class="sitetitle">Dalong's personal blog</h1>
+    <p class="lead">
+        Record the bits and pieces of the technology big bang.
+    </p>
+</div>
+
+<!-- Content
+================================================== -->
+<div class="main-content">
+    <!-- Begin Article
+================================================== -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Share -->
+        <div class="col-md-2 pl-0">
+            <div class="share sticky-top sticky-top-offset">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=Building Microservice Systems with Docker and Kubernetes&url=http://localhost:4000/Docker-and-Kubernetes/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=http://localhost:4000/Docker-and-Kubernetes/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/Docker-and-Kubernetes/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+    
+    <div class="sep">
+    </div>
+    <ul>
+        <li>
+        <a class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>
+
+        </div>
+
+        <!-- Post -->
+        
+
+        <div class="col-md-9 flex-first flex-md-unordered">
+            <div class="mainheading">
+
+                <!-- Author Box -->
+                
+                <div class="row post-top-meta">
+                    <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0">
+                        
+                        <img class="author-thumb" src="/assets/images/avatar_dl.png" alt="Dalong">
+                        
+                    </div>
+                    <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
+                        <a target="_blank" class="link-dark" href="https://dalongli.github.io/about">Dalong</a><a target="_blank" href="https://dalongli.github.io." class="btn follow">Follow</a>
+                        <span class="author-description">A profesional technical consultant and blogger.</span>
+                    </div>
+                </div>
+                
+
+                <!-- Post Title -->
+                <h1 class="posttitle">Building Microservice Systems with Docker and Kubernetes</h1>
+
+            </div>
+
+            <!-- Adsense if enabled from _config.yml (change your pub id and slot) -->
+            
+            <!-- End Adsense -->
+
+            <!-- Post Featured Image -->
+            
+
+            
+            <img class="featured-image img-fluid" src="/assets/images/docker-python.jpeg" alt="Building Microservice Systems with Docker and Kubernetes">
+            
+
+            
+            <!-- End Featured Image -->
+
+            <!-- Post Content -->
+            <div class="article-post">
+                <!-- Toc if any -->
+                
+                    
+                    <div class="toc mt-4 mb-4 lead">
+                        <h3 class="font-weight-bold">Summary</h3>
+                        <ul>
+  <li><a href="#building-microservice-systems-with-docker-and-kubernetes">Building Microservice Systems with Docker and Kubernetes</a>
+    <ul>
+      <li><a href="#下载-安装和试用docker">下载, 安装和试用Docker</a>
+        <ul>
+          <li><a href="#安装">安装</a></li>
+          <li><a href="#试用">试用</a>
+            <ul>
+              <li><a href="#1-查看版本-查看帮助">1. 查看版本, 查看帮助</a></li>
+              <li><a href="#2-登录docker-并运行hello-world">2. 登录docker 并运行hello world</a></li>
+              <li><a href="#3-安装一个nginx-web-server-并运行起来">3. 安装一个nginx web server 并运行起来:</a></li>
+              <li><a href="#4-查看刚刚正在运行的容器">4. 查看刚刚正在运行的容器</a></li>
+              <li><a href="#5-停止-删除容器-删除镜像">5. 停止, 删除容器, 删除镜像</a></li>
+              <li><a href="#重启启动一个停止的容器">重启/启动一个停止的容器</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#docker--docker-hub">Docker &amp; Docker hub</a></li>
+      <li><a href="#docker-compose-linking-and-ambassadors">Docker-Compose, Linking and Ambassadors</a>
+        <ul>
+          <li><a href="#1下面是一个docker-composeyml-文件的内容">1.下面是一个docker-compose.yml 文件的内容</a></li>
+          <li><a href="#2docker-compose-up-命令-安装容器">2.docker-compose up 命令 安装容器</a></li>
+          <li><a href="#3与容器进行交互">3.与容器进行交互</a></li>
+        </ul>
+      </li>
+      <li><a href="#kubernetes">Kubernetes</a></li>
+      <li><a href="#aws">AWS</a></li>
+      <li><a href="#kubernetes-cluster">Kubernetes Cluster</a></li>
+    </ul>
+  </li>
+</ul>
+                    </div>
+                
+                <!-- End Toc -->
+                <p>这是一个Python Docker入门教程。在本文结束时，您将知道如何在本地机器上使用Docker。与Python一起，我们将运行Nginx和Redis容器。这些例子假设你熟悉这些技术的基本概念。会有很多shell示例，所以请继续，打开终端，用Python教程探索我们的Docker。</p>
+
+<h1 id="building-microservice-systems-with-docker-and-kubernetes">Building Microservice Systems with Docker and Kubernetes</h1>
+
+<p>[TOC]</p>
+
+<h2 id="下载-安装和试用docker">下载, 安装和试用Docker</h2>
+
+<h3 id="安装">安装</h3>
+
+<p><a href="https://store.docker.com/editions/community/docker-ce-desktop-mac">下载地址和安装教程</a></p>
+
+<h3 id="试用">试用</h3>
+
+<h4 id="1-查看版本-查看帮助">1. 查看版本, 查看帮助</h4>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">docker --help</code> 可以查看主命令的用法</li>
+  <li><code class="language-plaintext highlighter-rouge">docker COMMAND --help</code> 可以查看子命令用法</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6</pre></td><td class="code"><pre>docker --version
+docker-compose --version
+docker-machine --version
+
+docker --help
+docker run --help
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<ul>
+  <li>Docker 的子命令如下</li>
+</ul>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42</pre></td><td class="code"><pre>Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  build       Build an image from a Dockerfile
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  deploy      Deploy a new stack or update an existing stack
+  diff        Inspect changes to files or directories on a container's filesystem
+  events      Get real time events from the server
+  exec        Run a command in a running container
+  export      Export a container's filesystem as a tar archive
+  history     Show the history of an image
+  images      List images
+  import      Import the contents from a tarball to create a filesystem image
+  info        Display system-wide information
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  load        Load an image from a tar archive or STDIN
+  login       Log in to a Docker registry
+  logout      Log out from a Docker registry
+  logs        Fetch the logs of a container
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  ps          List containers
+  pull        Pull an image or a repository from a registry
+  push        Push an image or a repository to a registry
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  run         Run a command in a new container
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  search      Search the Docker Hub for images
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  version     Show the Docker version information
+  wait        Block until one or more containers stop, then print their exit codes
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h4 id="2-登录docker-并运行hello-world">2. 登录docker 并运行hello world</h4>
+
+<ul>
+  <li>run 命令是创建一个新的容器, 并在容器中执行这条命令</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29</pre></td><td class="code"><pre>docker login
+docker run hello-world
+<span class="c"># 下面是输出</span>
+Unable to find image <span class="s1">'hello-world:latest'</span> locally
+latest: Pulling from library/hello-world
+d1725b59e92d: Pull <span class="nb">complete 
+</span>Digest: sha256:0add3ace90ecb4adbf7777e9aacf18357296e799f81cabc9fde470971e499788
+Status: Downloaded newer image <span class="k">for </span>hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the <span class="s2">"hello-world"</span> image from the Docker Hub.
+    <span class="o">(</span>amd64<span class="o">)</span>
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ <span class="nv">$ </span>docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h4 id="3-安装一个nginx-web-server-并运行起来">3. 安装一个nginx web server 并运行起来:</h4>
+
+<ul>
+  <li>如果本地没有这个image, 就会从docker hub 上去拉取.</li>
+  <li>安装完成后就可以访问网页 http://localhost/ 了
+    <ul>
+      <li>-d Run container in background and print container ID</li>
+      <li>-p Publish a container’s port(s) to the host</li>
+      <li>–name string                    Assign a name to the container</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11</pre></td><td class="code"><pre>docker run -d -p 80:80 --name webserver nginx
+<span class="c">#docker run --detach --publish=80:80 --name=webserver nginx</span>
+<span class="c"># 下面是输出</span>
+Unable to find image <span class="s1">'nginx:latest'</span> locally
+latest: Pulling from library/nginx
+802b00ed6f79: Pull <span class="nb">complete 
+</span>e9d0e0ea682b: Pull <span class="nb">complete 
+</span>d8b7092b9221: Pull <span class="nb">complete 
+</span>Digest: sha256:24a0c4b4a4c0eb97a1aabb8e29f18e917d05abfe1b7a7c07857230879ce7d3d3
+Status: Downloaded newer image <span class="k">for </span>nginx:latest
+e32b6d0010d34fa950f79fbca09c3939c0d3d38e24a794dcbc392fc444191ef8
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h4 id="4-查看刚刚正在运行的容器">4. 查看刚刚正在运行的容器</h4>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">docker ps</code> 或者 <code class="language-plaintext highlighter-rouge">docker container ls</code></li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre>docker ps
+<span class="c"># 下面是输出</span>
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                NAMES
+e32b6d0010d3        nginx               <span class="s2">"nginx -g 'daemon of…"</span>   6 minutes ago       Up 6 minutes        0.0.0.0:80-&gt;80/tcp   webserver
+
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h4 id="5-停止-删除容器-删除镜像">5. 停止, 删除容器, 删除镜像</h4>
+
+<ul>
+  <li>用 -a, –all 参数可以查看已经停止运行的容器</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6</pre></td><td class="code"><pre>docker container ls  				<span class="c"># 查看运行中的容器</span>
+docker container ls -a  			<span class="c"># 查看所用容器, 包括已经停止的</span>
+docker container stop webserver  	<span class="c"># 按容器name停止一个运行中的容器</span>
+docker container rm webserver		<span class="c"># 按容器name删除一个容器</span>
+docker image ls						<span class="c"># 查看本地的image 镜像</span>
+docker image rm nginx				<span class="c"># 按照REPOSITORY删除一个本地image</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h4 id="重启启动一个停止的容器">重启/启动一个停止的容器</h4>
+
+<ul>
+  <li>start 命令是启动一个或者多个停止了的容器.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre>docker start -i webserver    <span class="c"># -i 让终端显示访问请求日志</span>
+
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h2 id="docker--docker-hub">Docker &amp; Docker hub</h2>
+
+<p>Docker 定义:</p>
+
+<ul>
+  <li>A daemon process</li>
+  <li>Controls other running processes</li>
+  <li>Each process thinks it’s alone</li>
+</ul>
+
+<p>Image 定义:</p>
+
+<ul>
+  <li>Like a drive image for a virtual machine</li>
+  <li>Includes everything needed to run a system</li>
+  <li>Runs the same way everythere</li>
+</ul>
+
+<p>Dockerfile 定义:</p>
+
+<ul>
+  <li>Script that builds image</li>
+</ul>
+
+<pre><code class="language-dockerfile">FROM python:3  				# From line, build docker image upon another docker image. This image will based on python image with tag 3. 
+ENV PYTHONUNBUFFERED 1		# Env line, 环境变量参数设置
+WORKDIR /app				# Workdir line, 指定当前的工作目录和接下来运行起来程序所在的目录, 包含image 运行时.
+
+EXPOSE 8000					# Expose line, 告诉docker, 内部的程序监听外部网络指定端口的信息
+
+COPY ./requirements.txt /app/requirements.txt	# Copy line, 拷贝文件或者目录到磁盘上, 再拷贝到image上.
+RUN pip3 install -r requirements.txt	# Run line, 在build容器的时候, 在image内部执行一个程序. 相当于预安装环境依赖包
+
+ENTRYPOINT ["gunicorn", "--bind", "0.0.0.0:8000", "api.server:app"]
+COPY . /app  				# Entrypoint line, 告诉我们当我们启动容器的时候, 需要执行什么程序. 一旦这个程序停止, docker 也就停止了. 也许会有其他的程序在docker 中运行或终止, 但是docker 只监控这个程序. 
+</code></pre>
+
+<p>Images 的名字和tags</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">benstraub/api:latest</code> 是一个 image 的描述, 其中<code class="language-plaintext highlighter-rouge">benstraub/api</code> 是名字, <code class="language-plaintext highlighter-rouge">latest</code>是tag</li>
+</ul>
+
+<p>Registry 的定义:</p>
+
+<ul>
+  <li>Network storage for Docker images (类似于代码的github)</li>
+  <li>Can push and pull built images
+    <ul>
+      <li>Build in one place, run somewhere else</li>
+    </ul>
+  </li>
+  <li>Default is Docker Hub(https://hub.docker.com)
+    <ul>
+      <li>Library of common images</li>
+      <li>Public and private storage</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Container 的定义:</p>
+
+<ul>
+  <li>Like a running virtual machine</li>
+  <li>Actually just a process
+    <ul>
+      <li>Docker controls runtime environment</li>
+      <li>Process thinks it’s alone</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Runtime 的 Docker</p>
+
+<ul>
+  <li>Docker 有一个Process 正在监听80端口</li>
+  <li>复制一个Docker copy,  它也在监听80端口, 这在非Docker 的网络是有问题的</li>
+  <li>Docker File 的 Expose line 可以设定网络的mapping 关系, 让内部80 maping 到外部一个自定义的端口</li>
+  <li>这样两个Docker 都有了对外的端口, 两个 Docker之间就可以通话了.</li>
+</ul>
+
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fvcwyucrjpj30i907xdkq.jpg" alt="" /></p>
+
+<h2 id="docker-compose-linking-and-ambassadors">Docker-Compose, Linking and Ambassadors</h2>
+
+<p>Docker-Compose 定义:</p>
+
+<ul>
+  <li>
+    <p>Docker make multi-container systems possible</p>
+
+    <ul>
+      <li>But cumbersome</li>
+      <li>Only interface is command-line</li>
+    </ul>
+  </li>
+  <li>
+    <p>Docker-Compose</p>
+
+    <ul>
+      <li>Specify a single- or multi-container system declaratively.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Docker-compose 就是一个文件, 这个文件描述了一台主机上的多个容器的配置和关系以及容器和主机的通信方式</p>
+  </li>
+  <li>
+    <p>Docker-compose 不太适合在生产上使用, 因为它的管理范围只是一台主机, 没有负载均衡. Docker-compose 更适合在开发环境中使用, 可以在笔记本上运行多个容器. 可以进行 文件系统的mapping 和 aoto-reload.</p>
+
+    <p>这是一个Docker-compose 的例子:</p>
+
+    <ul>
+      <li>有两个container 在这里被定义</li>
+      <li>第一个是 Postgres 数据库的镜像, 命名为pg</li>
+      <li>第二个是nginx的 web服务镜像, 命名为frontend, 并且定义了links 是连接到pg的</li>
+      <li>每个镜像的名字都可以被dns 解析而找到</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="1下面是一个docker-composeyml-文件的内容">1.下面是一个docker-compose.yml 文件的内容</h3>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8</pre></td><td class="code"><pre><span class="s">pg</span><span class="pi">:</span>
+  <span class="s">image</span><span class="pi">:</span> <span class="s">postgres:9.4</span>
+
+<span class="s">frontend</span><span class="pi">:</span>
+  <span class="s">image</span><span class="pi">:</span> <span class="s">nginx</span>
+  <span class="s">links</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">pg</span>
+
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h3 id="2docker-compose-up-命令-安装容器">2.docker-compose up 命令 安装容器</h3>
+
+<ul>
+  <li>cd 到这个文件所在目录, 然后执行 docker-compose up 命令</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre></td><td class="code"><pre>docker-compose up
+<span class="c"># 这个命令会根据当前目录中的 docker-compose.yml 文件的配置, 获取进行并安装容器, 最后启动容器.</span>
+
+<span class="c"># 打开另一个终端窗口查看运行起来的容器</span>
+docker container ls
+<span class="c"># 下面是输出</span>
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+81157e7d6fce        nginx               <span class="s2">"nginx -g 'daemon of…"</span>   10 minutes ago      Up 10 minutes       80/tcp              docker_frontend_1
+77345b0a881a        postgres            <span class="s2">"docker-entrypoint.s…"</span>   10 minutes ago      Up 10 minutes       5432/tcp            docker_pg_1
+
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h3 id="3与容器进行交互">3.与容器进行交互</h3>
+
+<ul>
+  <li>因为已经装了两个容器(nginx 和 postgresql), 我们需要先进入第一个容器nginx的bash命令行, 然后 ping 一下 数据库.</li>
+  <li>-it 意思是让当前的命令行终端 attache 到容器运行的程序中. 相当于ssh dalong@192.168.10.1 到另一个服务器上.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16</pre></td><td class="code"><pre><span class="c"># 查看运行中的容器, 找到nginx 的容器名字docker_frontend_1</span>
+docker container ls
+
+<span class="c"># 进入容器 docker_frontend_1的bash上</span>
+docker <span class="nb">exec</span> -it docker_frontend_1 bash 
+
+<span class="c"># 更新容器里的安装库, 并安装 ping 命令 和 ifconfig 命令</span>
+apt-get update
+apt install iputils-ping
+apt install net-tools
+
+<span class="c"># ping 一下 数据库pg</span>
+<span class="c"># pg 是 docker-compose.yml中定义的, 所以dns 可以直接找到.</span>
+<span class="c"># 也可以直接ping 容器的名字 docker_pg_1</span>
+ping pg
+<span class="c">#ping docker_pg_1</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>4.另一个更复杂的docker-compose2.yml 文件</p>
+
+<ul>
+  <li>
+    <p>包含四个containers 的一个 docker-compose文件, 更像是一个生产环境的真实案例</p>
+  </li>
+  <li>
+    <p>第一个是postgres 数据库</p>
+  </li>
+  <li>
+    <p>最后一个是Nginx web 服务器</p>
+  </li>
+  <li>
+    <p>另一个是 apiambassador, 它是作为另一个容器的proxy(进行类似if else 判断). 如果另一个container 正常可用, abmassador 就将信息转发给那个 container. 如果另一个container 不可用, 那么abmassador 就会拒绝连接.</p>
+  </li>
+  <li>
+    <p>中间是api 服务器, 是python 提供的服务</p>
+
+    <ul>
+      <li>
+        <p>restart: 定义了重启条件, 比如 on-failure 就是说如果程序返回的内容不是0, 那么就重启\</p>
+      </li>
+      <li>
+        <p>build: 代替image 字段, 给docker 一个目录去寻找dockerfile, 用dockerfile 生成需要的image.</p>
+      </li>
+      <li>
+        <p>volumes: volumes的作用有点类似于VMware里面的共享目录，用于将物理主机里的目录映射到docker虚拟机里。</p>
+      </li>
+      <li>
+        <p>command: 用于告诉docker, 当源代码变更了, 就需要重新加载程序. 这个不建议在生产环境使用. 建议用在开发环境</p>
+      </li>
+      <li>
+        <p>ports: map 容器中的端口和主机(容器运行所在的机器)的端口 , 当主机接收到80端口进来的网络请求, 就会转给frontend 这个容器的80端口, 然后frontend 通过 docker dns 映射的容器名字和其他容器进行通信.</p>
+
+        <p><img src="/Users/dalong/Library/Application Support/typora-user-images/image-20180919182055907.png" alt="image-20180919182055907" /></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29</pre></td><td class="code"><pre><span class="s">pg</span><span class="pi">:</span>
+  <span class="s">image</span><span class="pi">:</span> <span class="s">postgres</span>
+
+<span class="s">api</span><span class="pi">:</span>
+  <span class="s">restart</span><span class="pi">:</span> <span class="s">always</span>
+  <span class="s">build</span><span class="pi">:</span> <span class="s">./api</span>
+  <span class="s">volumes</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">./api:/app</span>
+  <span class="s">command</span><span class="pi">:</span> <span class="s2">"</span><span class="s">--reload"</span>
+  <span class="s">links</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">pg</span>
+  <span class="s">ports</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">8000:8000"</span>
+
+<span class="s">apiambassador</span><span class="pi">:</span>
+  <span class="s">image</span><span class="pi">:</span> <span class="s">cpuguy83/docker-grand-ambassador</span>
+  <span class="s">volumes</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">/var/run/docker.sock:/var/run/docker.sock</span>
+  <span class="s">command</span><span class="pi">:</span> <span class="s">-name=chapter2_api_1</span>
+
+<span class="s">frontend</span><span class="pi">:</span>
+  <span class="s">image</span><span class="pi">:</span> <span class="s">nginx</span>
+  <span class="s">volumes</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">./frontend/nginx.conf:/etc/nginx/nginx.conf</span>
+  <span class="s">links</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">apiambassador:api</span>
+  <span class="s">ports</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">80:80"</span>
+
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h2 id="kubernetes">Kubernetes</h2>
+
+<p>kubernetes 定义:</p>
+
+<ul>
+  <li>A system that run docker containers for you</li>
+  <li>Labeling system for control</li>
+  <li>Spans many physical machines</li>
+  <li>(Runs Google Container Engine) 谷歌在用</li>
+</ul>
+
+<p>Kubernetes 的架构图</p>
+
+<ul>
+  <li>有多个机器组成, 包括master 和 minion</li>
+  <li>master 作为 kubernetes 的API, 就像是老板, 可以向minion发号施令</li>
+  <li>minion 是运行dockers的机器, 和master进行沟通, 做master 让做的事情</li>
+</ul>
+
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fvf6ybi61ej30n90ap766.jpg" alt="" /></p>
+
+<p>PODS 的概念:</p>
+
+<ul>
+  <li>是kubernetes 的基础</li>
+  <li>Atomic unit of runtime in kubernetes</li>
+  <li>Set of running Docker containers
+    <ul>
+      <li>Often only one container</li>
+    </ul>
+  </li>
+  <li>Kubernetes 让每个PODS 有一个独立的IP ,所以 Containers “think” they’re running on the same machine</li>
+  <li>Always on the same host.</li>
+</ul>
+
+<p>Replication Controller(RC) 概念</p>
+
+<ul>
+  <li>Manage pods lifetime</li>
+  <li>给定一个目标数字, tries to maintain a number of matching pods. 如果不够就启动一些新的, 如果超过了, 就停掉一些.</li>
+  <li>每个Pod 都有很多label. Matches using labeling system</li>
+</ul>
+
+<p>下图介绍RC 和 Pods的关系</p>
+
+<ul>
+  <li>RC 通过配置count 的数值来决定维护几个pods. count 的增减决定了自动增加pods还是减少pods</li>
+  <li>RC 通过配置自己的label name 和 label version 名字来控制 pods的labels</li>
+  <li>这个RC”A” 有两个 Pods, 每个pods 都有一模一样的name 和 version label</li>
+  <li>RC”B” 有一个 Pod, 版本和前两个不一样</li>
+</ul>
+
+<p><img src="http://dalongspace.qiniudn.com/2018-09-19-2018-09-19_22-53-18.png" alt="" /></p>
+
+<p>Services 的概念</p>
+
+<ul>
+  <li>
+    <p>负责pods之间的通信</p>
+  </li>
+  <li>
+    <p>类似于DNS, 可以通过名字找到其他的pods</p>
+  </li>
+  <li>
+    <p>我们的容器通过Services从互联网上获得数据</p>
+  </li>
+  <li>
+    <p>我们的容器通过Services找到另一个容器</p>
+
+    <ul>
+      <li><img src="http://dalongspace.qiniudn.com/2018-09-19-2018-09-19_23-16-04.png" alt="" /></li>
+    </ul>
+  </li>
+  <li>
+    <p>类似于Load Balancer, 通过 labels 找到pods ,并把流量带过来.</p>
+
+    <ul>
+      <li>
+        <p>Set of pods comes from label matching</p>
+      </li>
+      <li>
+        <p>下图是Master, Minions, RC, Service, Pods 之间的关系</p>
+
+        <p><img src="http://dalongspace.qiniudn.com/2018-09-19-2018-09-19_23-08-01.png" alt="" /></p>
+        <ul>
+          <li>Master 管理多个Minions</li>
+          <li>一个Minions 有多个RC</li>
+          <li>每个RC有多个pods</li>
+          <li>Service 可以定义一群跨RC的pods, 让他们之间相互通信.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="aws">AWS</h2>
+
+<p>这里讨论Docker 和 Kubernetes会用到的 AWS服务</p>
+
+<p>EC2, ASG, VPC, ELB, Route53, RDS, IAM, ECS</p>
+
+<p>EC2 - Elastic compute cloud</p>
+
+<ul>
+  <li>Rent computers by the hour</li>
+  <li>Actually virtual machines</li>
+  <li>Kubernetes
+    <ul>
+      <li>One instance for Master</li>
+      <li>Several instance as Minions</li>
+    </ul>
+  </li>
+</ul>
+
+<p>ASG - Auto scaling group</p>
+
+<ul>
+  <li>Start or stop EC2 instance en masse</li>
+  <li>Includes machine configuration</li>
+  <li>Maintains a desired count of instances
+    <ul>
+      <li>Like a Kubernetes RC</li>
+    </ul>
+  </li>
+  <li>Can adjust count at any time</li>
+</ul>
+
+<p>VPC - Virtual private cloud</p>
+
+<ul>
+  <li>AWS intranet</li>
+  <li>Can span datacenters and availability</li>
+  <li>IP address range</li>
+  <li>Firewall</li>
+</ul>
+
+<p>ELB - Elastic Load Balancer</p>
+
+<ul>
+  <li>Distribute TCP or HTTP(s) traffic to EC2 instances</li>
+  <li>External port</li>
+  <li>Internal port</li>
+  <li>SSL certificate for HTTPS termination</li>
+</ul>
+
+<p>Route53</p>
+
+<ul>
+  <li>Amazon-hosted NDS</li>
+  <li>Can alias to ELB names. 可以给域名起一个别名到ELB的名字, 将流量直接引到负载均衡.</li>
+</ul>
+
+<p>RDS - Relational database service</p>
+
+<ul>
+  <li>Amazon-managed database instance</li>
+  <li>Replication</li>
+  <li>Backups</li>
+  <li>Upgrades</li>
+</ul>
+
+<p>IAM - Identity/access management</p>
+
+<ul>
+  <li>Lightweight user system</li>
+  <li>Fine-grainted access control</li>
+</ul>
+
+<p>ECS - EC2 Container service</p>
+
+<ul>
+  <li>System for running Docker containers</li>
+  <li>No facilities for:
+    <ul>
+      <li>Deployment and updates</li>
+      <li>Service discovery and DNS</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="kubernetes-cluster">Kubernetes Cluster</h2>
+
+<p>在 AWS 上搭建 Kubernetes 集群 <a href="http://docs.kubernetes.org.cn/288.html">安装教程</a></p>
+
+<p>如下步骤需要执行</p>
+
+<ol>
+  <li>
+    <p>AWS 上创建账号</p>
+  </li>
+  <li>
+    <p>AWS上找到IAM服务, 并创建用户, 授予全部的API访问权限.</p>
+
+    <ol>
+      <li>add一个新用户 dalong,</li>
+      <li>并且为这个用户add permissions, Attach existing policies directly,  AdministratorAccess的权限</li>
+    </ol>
+  </li>
+  <li>
+    <p>安装AWS命令行工具 <a href="https://aws.amazon.com/cn/cli/?nc1=h_ls">网址</a> 并进行配置</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre>pip install awscli
+aws configure  <span class="c"># 需要到aws console 中找到这个用户, 创建一个新的access key 和 security key 填到交互命令行中.</span>
+<span class="c"># 安装成功后运行下面命令</span>
+aws iam list-users  <span class="c"># 查看iam 服务中已经授权过的用户</span>
+</pre></td></tr></tbody></table>
+</div>
+    </div>
+  </li>
+  <li>
+    <p>设置AWS Kubernetes cluster 生产环境. <strong>注意, 这里仅适用于1.5及之前的版本</strong></p>
+
+    <ol>
+      <li>
+        <p><a href="https://github.com/kubernetes/kubernetes/releases">github地址</a> 下载kubernetes zip包, 并解压,</p>
+      </li>
+      <li>
+        <p>cd 到 kubernetes目录下, 开始创建 kubernetes cluster 集群</p>
+
+        <ul>
+          <li>这里需要<strong>翻墙</strong>, 因为需要从storage.googleapis.com 上下载一个包</li>
+          <li>安装时间比较长, 会配置一系列环境</li>
+        </ul>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>KUBERNETES_PROVIDER=aws cluster/kube-up.sh
+</pre></td></tr></tbody></table>
+</div>
+        </div>
+      </li>
+      <li>
+        <p>kube-up.sh 干了什么的? 它创建了如下内容</p>
+        <ul>
+          <li>New VPC:127.20.0.*</li>
+          <li>创建了 5 EC2 instances (master + 4 minions), with public IPs</li>
+          <li>ASG for minions</li>
+          <li>SSH keys for direct access
+            <ul>
+              <li>~/.ssh/kube_aws_rsa</li>
+            </ul>
+          </li>
+          <li>kubectl is configured
+            <ul>
+              <li>~/.kube/config</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Kops 来设置AWS 的 kubernets 生产环境 <a href="https://github.com/kubernetes/kops/blob/master/docs/aws.md">文档</a></p>
+  </li>
+  <li>
+    <p>安装 kops , kubernetes-cli</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></td><td class="code"><pre>brew update <span class="o">&amp;&amp;</span> brew install kops
+brew install kubernetes-cli
+<span class="nb">export </span><span class="nv">AWS_DEFAULT_PROFILE</span><span class="o">=</span>default  <span class="c"># 这里的default 是 ~/.aws/credentials 中的访问用户名</span>
+aws iam create-group --group-name kops  <span class="c"># 创建一个组,名字是 kops</span>
+aws iam create-user --user-name kops    <span class="c"># 再创建一个用户,名字kops</span>
+aws iam add-user-to-group --user-name kops --group-name kops  <span class="c"># 将用户加入组中</span>
+aws iam create-access-key --user-name kops  <span class="c"># 为新的用户创建 keys</span>
+      
+<span class="c"># configure the aws client to use your new IAM user</span>
+aws configure           <span class="c"># Use your new access and secret key here</span>
+aws iam list-users      <span class="c"># you should see a list of all your IAM users here, 这里如果说没有权限, 就到aws console中的 iam -&gt; user -&gt; kops -&gt; add permissions -&gt; attach existing policies directly 中加上 AdministratorAccess 权限. </span>
+      
+<span class="c"># 生产环境的话, 就加上如下权限</span>
+<span class="c">#AmazonEC2FullAccess</span>
+<span class="c">#AmazonRoute53FullAccess</span>
+<span class="c">#AmazonS3FullAccess</span>
+<span class="c">#IAMFullAccess</span>
+<span class="c">#AmazonVPCFullAccess</span>
+      
+<span class="c"># Because "aws configure" doesn't export these vars for kops to use, we export them now</span>
+<span class="nb">export </span><span class="nv">AWS_ACCESS_KEY_ID</span><span class="o">=</span><span class="k">$(</span>aws configure get aws_access_key_id<span class="k">)</span>
+<span class="nb">export </span><span class="nv">AWS_SECRET_ACCESS_KEY</span><span class="o">=</span><span class="k">$(</span>aws configure get aws_secret_access_key<span class="k">)</span>
+</pre></td></tr></tbody></table>
+</div>
+    </div>
+  </li>
+  <li>
+    <p>创建一个 AWS S3 bucket</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre>aws s3 mb s3://dlongcluster.dev.example.com
+export KOPS_STATE_STORE=s3://dlongcluster.dev.example.com
+export NAME=dlong.k8s.local
+kops create cluster --zones=us-east-1c ${NAME}  # 这里要翻墙
+</pre></td></tr></tbody></table>
+</div>
+    </div>
+  </li>
+</ol>
+
+
+            </div>
+
+            <!-- Rating -->
+            
+            <div class="rating mb-4 d-flex align-items-center">
+                <strong class="mr-1">Rating:</strong> <div class="rating-holder">
+<div class="c-rating c-rating--regular" data-rating-value="4.5">
+  <button>1</button>
+  <button>2</button>
+  <button>3</button>
+  <button>4</button>
+  <button>5</button>
+</div>
+</div>
+            </div>
+            
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="2021-05-08">08 May 2021</time></span>           
+                
+                </small>
+            </p>
+
+            <!-- Post Categories -->
+            <div class="after-post-cats">
+                <ul class="tags mb-4">
+                    
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Docker">Docker</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Microservice">Microservice</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Python">Python</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- End Categories -->
+
+            <!-- Post Tags -->
+            <div class="after-post-tags">
+                <ul class="tags">
+                    
+                    
+                </ul>
+            </div>
+            <!-- End Tags -->
+
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="//Design-Microservices-with-Python/"> &laquo; Design Microservices with Python</a>
+            
+            
+            <a class="next d-block col-md-6 text-lg-right" href="//NLP-with-Python/">Natural Language Processing with Python &raquo; </a>
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+        </div>
+        <!-- End Post -->
+
+    </div>
+</div>
+<!-- End Article
+================================================== -->
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'demowebsite'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Thing",
+    "name": "Building Microservice Systems with Docker and Kubernetes"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Dalong"
+  },
+  "datePublished": "2021-05-08",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.5",
+    "bestRating": "5"
+  }
+}
+</script>
+
+</div>
+
+
+    
+</div>
+
+<!-- Categories Jumbotron
+================================================== -->
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+            <div class="d-md-flex align-items-center justify-content-center h-100">
+                <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+            </div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+            
+            
+                
+                    <a class="mt-1 mb-1" href="/categories#Linux">Linux (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Python">Python (16)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Mysql">Mysql (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Redis">Redis (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#MongoDB">MongoDB (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Flask">Flask (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Django">Django (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#DjangoRest">DjangoRest (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Numpy">Numpy (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Panda">Panda (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Sklearn">Sklearn (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Jupyter">Jupyter (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#OpenCV">OpenCV (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#AI">AI (3)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Tensorflow">Tensorflow (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Microservice">Microservice (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Docker">Docker (3)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#NLP">NLP (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#AWS">AWS (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Architecture">Architecture (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Agile">Agile (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Scrum">Scrum (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#MLPS">MLPS (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#PIPL">PIPL (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Metaverse">Metaverse (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#ChatGPT">ChatGPT (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#OpenAI">OpenAI (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#LLM">LLM (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Azure">Azure (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Data-Science">Data Science (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Jekyll">Jekyll (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Github">Github (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Liquid">Liquid (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Markdown">Markdown (1)</a>
+                
+            
+            
+		</div>
+	</div>
+</div>
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                Copyright © 2023 Dalong's personal blog 
+            </div>
+            <div class="col-md-6 col-sm-6 text-center text-lg-right">    
+                <a target="_blank" href="#">Designed</a> by Dalong.work
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+</div> <!-- /.site-content -->
+
+<!-- Scripts
+================================================== -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+<script src="/assets/js/mediumish.js"></script>
+
+
+
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script> 
+
+
+<script id="dsq-count-scr" src="//demowebsite.disqus.com/count.js"></script>
+
+
+</body>
+</html>
