@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" href="/assets/images/logo.png">
+
+<title>Use NestJS build Restful API - Part 1 | Dalong's personal blog</title>
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Use NestJS build Restful API - Part 1 | Dalong’s personal blog</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Use NestJS build Restful API - Part 1" />
+<meta name="author" content="Dalong" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="本课程主要学习内容包括： Typescript - 面向 AOP 编程 高并发异步非阻塞 IO - Node.js 版的 spring 构建微服务应用。 通过学习Nest.js 框架，开发者可以使用Typescript语言进行Node.js服务端应用开发，轻松搭建可扩展、松耦合且易于维护的应用程序" />
+<meta property="og:description" content="本课程主要学习内容包括： Typescript - 面向 AOP 编程 高并发异步非阻塞 IO - Node.js 版的 spring 构建微服务应用。 通过学习Nest.js 框架，开发者可以使用Typescript语言进行Node.js服务端应用开发，轻松搭建可扩展、松耦合且易于维护的应用程序" />
+<link rel="canonical" href="http://localhost:4000/NestJS-First-Look/" />
+<meta property="og:url" content="http://localhost:4000/NestJS-First-Look/" />
+<meta property="og:site_name" content="Dalong’s personal blog" />
+<meta property="og:image" content="http://localhost:4000/assets/images/nestjs.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-08-02T00:00:00+08:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"Use NestJS build Restful API - Part 1","dateModified":"2023-08-02T00:00:00+08:00","datePublished":"2023-08-02T00:00:00+08:00","description":"本课程主要学习内容包括： Typescript - 面向 AOP 编程 高并发异步非阻塞 IO - Node.js 版的 spring 构建微服务应用。 通过学习Nest.js 框架，开发者可以使用Typescript语言进行Node.js服务端应用开发，轻松搭建可扩展、松耦合且易于维护的应用程序","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"},"name":"Dalong"},"image":"http://localhost:4000/assets/images/nestjs.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/NestJS-First-Look/"},"url":"http://localhost:4000/NestJS-First-Look/","author":{"@type":"Person","name":"Dalong"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+<link href="/assets/css/screen.css" rel="stylesheet">
+
+<link href="/assets/css/main.css" rel="stylesheet">
+
+<script src="/assets/js/jquery.min.js"></script>
+
+</head>
+
+
+
+
+<body class="layout-post">
+	<!-- defer loading of font and font awesome -->
+	<noscript id="deferred-styles">
+		<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+    </noscript>
+
+
+<!-- Begin Menu Navigation
+================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+
+    <div class="container pr-0">
+
+    <!-- Begin Logo -->
+    <a class="navbar-brand" href="/">
+    <img src="/assets/images/logo.png" alt="Dalong's personal blog">
+    </a>
+    <!-- End Logo -->
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+
+        <!-- Begin Menu -->
+
+            <ul class="navbar-nav ml-auto">
+
+                
+                <li class="nav-item">
+                
+                <a class="nav-link" href="/index.html">Blog</a>
+                </li>
+
+                <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+                </li>
+
+<!-- 以后再加上相关链接
+
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://bootstrapstarter.com/bootstrap-templates/template-mediumish-bootstrap-jekyll/"> Docs</a>
+                </li>
+
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://www.wowthemes.net/themes/mediumish-wordpress/"><i class="fab fa-wordpress-simple"></i> WP Version</a>
+                </li>
+
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://www.wowthemes.net/themes/mediumish-ghost/"><i class="fab fa-snapchat-ghost"></i> Ghost Version</a>
+                </li>
+-->
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://github.com/dalongli"><i class="fab fa-github"></i> Fork on Github</a>
+                </li>
+
+                <script src="/assets/js/lunr.js"></script>
+
+
+<style>
+    .lunrsearchresult .title {color: #d9230f;}
+    .lunrsearchresult .url {color: silver;}
+    .lunrsearchresult a {display: block; color: #777;}
+    .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
+    .lunrsearchresult a:hover .title {text-decoration: underline;}
+</style>
+
+
+<form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+    <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Type and enter..."/>
+</form>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/assets/js/lunrsearchengine.js"></script>
+
+            </ul>
+
+        <!-- End Menu -->
+
+    </div>
+
+    </div>
+</nav>
+<!-- End Navigation
+================================================== -->
+
+<div class="site-content">
+
+<div class="container">
+
+<!-- Site Title
+================================================== -->
+<div class="mainheading">
+    <h1 class="sitetitle">Dalong's personal blog</h1>
+    <p class="lead">
+        Record the bits and pieces of the technology big bang.
+    </p>
+</div>
+
+<!-- Content
+================================================== -->
+<div class="main-content">
+    <!-- Begin Article
+================================================== -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Share -->
+        <div class="col-md-2 pl-0">
+            <div class="share sticky-top sticky-top-offset">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=Use NestJS build Restful API - Part 1&url=http://localhost:4000/NestJS-First-Look/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=http://localhost:4000/NestJS-First-Look/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/NestJS-First-Look/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+    
+    <div class="sep">
+    </div>
+    <ul>
+        <li>
+        <a class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>
+
+        </div>
+
+        <!-- Post -->
+        
+
+        <div class="col-md-9 flex-first flex-md-unordered">
+            <div class="mainheading">
+
+                <!-- Author Box -->
+                
+                <div class="row post-top-meta">
+                    <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0">
+                        
+                        <img class="author-thumb" src="/assets/images/avatar_dl.png" alt="Dalong">
+                        
+                    </div>
+                    <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
+                        <a target="_blank" class="link-dark" href="https://dalongli.github.io/about">Dalong</a><a target="_blank" href="https://dalongli.github.io." class="btn follow">Follow</a>
+                        <span class="author-description">A profesional technical consultant and blogger.</span>
+                    </div>
+                </div>
+                
+
+                <!-- Post Title -->
+                <h1 class="posttitle">Use NestJS build Restful API - Part 1</h1>
+
+            </div>
+
+            <!-- Adsense if enabled from _config.yml (change your pub id and slot) -->
+            
+            <!-- End Adsense -->
+
+            <!-- Post Featured Image -->
+            
+
+            
+            <img class="featured-image img-fluid" src="/assets/images/nestjs.png" alt="Use NestJS build Restful API - Part 1">
+            
+
+            
+            <!-- End Featured Image -->
+
+            <!-- Post Content -->
+            <div class="article-post">
+                <!-- Toc if any -->
+                
+                    
+                    <div class="toc mt-4 mb-4 lead">
+                        <h3 class="font-weight-bold">Summary</h3>
+                        <ul>
+  <li><a href="#nestjs">Nest.js</a>
+    <ul>
+      <li><a href="#资源">资源</a></li>
+      <li><a href="#课程介绍">课程介绍</a></li>
+      <li><a href="#命令行安装环境">命令行安装环境</a></li>
+      <li><a href="#vscode-扩展安装">VSCode 扩展安装</a></li>
+      <li><a href="#案例应用-1---任务管理应用实现--rest-api">案例应用 1 - 任务管理应用实现  (Rest API)</a>
+        <ul>
+          <li><a href="#project-overview">project overview</a></li>
+          <li><a href="#nestjs-命令行常用命令">Nestjs 命令行常用命令</a></li>
+          <li><a href="#创建项目">创建项目</a></li>
+          <li><a href="#查看目录结构">查看目录结构</a></li>
+          <li><a href="#启动服务">启动服务</a></li>
+          <li><a href="#nestjs-module">NestJS Module</a></li>
+          <li><a href="#nestjs-controllers">NestJS Controllers</a></li>
+          <li><a href="#nestjs-providers">Nestjs Providers</a></li>
+          <li><a href="#nestjs-service">Nestjs Service</a></li>
+          <li><a href="#dependency-injection-in-nestjs">Dependency Injection in NestJS</a></li>
+          <li><a href="#项目-1-提供-todo-任务管理的-restapi-暂时使用本地内存来保存对象-的-代码片段">项目 1: 提供 TODO 任务管理的 RestAPI (暂时使用本地内存来保存对象) 的 代码片段</a></li>
+          <li><a href="#项目运行">项目运行</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+                    </div>
+                
+                <!-- End Toc -->
+                <p>本课程主要学习内容包括：</p>
+<ul>
+  <li>Typescript - 面向 AOP 编程</li>
+  <li>高并发异步非阻塞 IO - Node.js 版的 spring</li>
+  <li>构建微服务应用。 通过学习Nest.js 框架，开发者可以使用Typescript语言进行Node.js服务端应用开发，轻松搭建可扩展、松耦合且易于维护的应用程序</li>
+</ul>
+
+<h1 id="nestjs">Nest.js</h1>
+<p>[TOC]</p>
+<h2 id="资源">资源</h2>
+<p><a href="https://nodejs.org/en/download/">nodejs 下载</a>
+<a href="https://classic.yarnpkg.com/en/docs/install/#mac-stable">yarn 包管理工具安装</a>
+<a href="https://nestjs.com">nest.js 官网</a></p>
+
+<h2 id="课程介绍">课程介绍</h2>
+<p>本课程主要学习内容包括：</p>
+<ul>
+  <li>Typescript - 面向 AOP 编程</li>
+  <li>高并发异步非阻塞 IO - Node.js 版的 spring</li>
+  <li>构建微服务应用。 通过学习Nest.js 框架，开发者可以使用Typescript语言进行Node.js服务端应用开发，轻松搭建可扩展、松耦合且易于维护的应用程序，提高企业效率，降低开发成本。</li>
+</ul>
+
+<h2 id="命令行安装环境">命令行安装环境</h2>
+<ol>
+  <li><a href="https://nodejs.org/en/download">下载</a> node for mac 并安装</li>
+  <li>安装 yarn 和 nestjs 命令行
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre> brew install yarn      
+ yarn --version
+ yarn global add @nestjs/cli
+ nest -v
+</pre></td></tr></tbody></table>
+</div>
+    </div>
+  </li>
+</ol>
+
+<h2 id="vscode-扩展安装">VSCode 扩展安装</h2>
+<ul>
+  <li>vscode-icons</li>
+  <li>prettier-code formatter</li>
+  <li>one dark pro</li>
+</ul>
+
+<h2 id="案例应用-1---任务管理应用实现--rest-api">案例应用 1 - 任务管理应用实现  (Rest API)</h2>
+<h3 id="project-overview">project overview</h3>
+<p><a href="https://github.com/arielweinberger/nestjs-course-task-management/tree/s1-task-management-app">教学代码</a></p>
+<ul>
+  <li>项目是一个基于 rest API 的任务管理, 可以创建, 查看, 更新任务</li>
+  <li>任务管理需要有 注册和登录功能</li>
+  <li>学习目标
+    <ul>
+      <li>objectives: NestS</li>
+      <li>NestJS Modules</li>
+      <li>NestJS Controllers</li>
+      <li>NestJS Services and Providers</li>
+      <li>Controller-to-Service communication</li>
+      <li>Validation using NestS Pipes</li>
+      <li>Develop production-ready REST APIs</li>
+      <li>CRUD operations (Create, Read, Update, Delete)</li>
+      <li>Error handling</li>
+      <li>Data Transfer Objects (DTO)</li>
+      <li>System modularity</li>
+      <li>Back-end development best practices</li>
+      <li>Configuration Management</li>
+      <li>Logging</li>
+      <li>Security best practices</li>
+      <li>Connecting the application to a database</li>
+      <li>Working with relational databases</li>
+      <li>Using TypeORM</li>
+      <li>Writing simple and complex queries using QueryBuilder</li>
+      <li>Performance when working with a database</li>
+      <li>Signing up, signing in</li>
+      <li>Authentication and Authorization</li>
+      <li>Protected resources</li>
+      <li>Ownership of tasks by users</li>
+      <li>Using JWT tokens (JSON Web Tokens).</li>
+      <li>Password hashing, salts and properly storing passwords</li>
+      <li>Polishing the application for Production use</li>
+      <li>Deploying NestJS apps to AWS(Amazon Web Services</li>
+      <li>Deploying front-end applications to Amazon S3</li>
+      <li>Wiring up the front-end and back-end</li>
+    </ul>
+  </li>
+  <li>应用模型<br />
+  <img src="http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-07-19-014245.jpg" alt="" /></li>
+  <li>基于 RestAPI 的任务 endpoints
+  <img src="http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-07-19-014610.jpg" alt="" /></li>
+  <li>基于 RestAPI 的 注册登录 endpoints
+ <img src="http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-07-19-014719.jpg" alt="" /></li>
+</ul>
+
+<h3 id="nestjs-命令行常用命令">Nestjs 命令行常用命令</h3>
+<p>创建 NestJS 元素, Generate a Nest element.</p>
+<ul>
+  <li>通过命令 <code class="language-plaintext highlighter-rouge">nest g --help</code> 可以知道有哪些元素 () 可以被创建
+```
+Schematics available on @nestjs/schematics collection:
+  ┌───────────────┬─────────────┬──────────────────────────────────────────────┐
+  │ name          │ alias       │ description                                  │
+  │ application   │ application │ Generate a new application workspace         │
+  │ class         │ cl          │ Generate a new class                         │
+  │ configuration │ config      │ Generate a CLI configuration file            │
+  │ controller    │ co          │ Generate a controller declaration            │
+  │ decorator     │ d           │ Generate a custom decorator                  │
+  │ filter        │ f           │ Generate a filter declaration                │
+  │ gateway       │ ga          │ Generate a gateway declaration               │
+  │ guard         │ gu          │ Generate a guard declaration                 │
+  │ interceptor   │ itc         │ Generate an interceptor declaration          │
+  │ interface     │ itf         │ Generate an interface                        │
+  │ library       │ lib         │ Generate a new library within a monorepo     │
+  │ middleware    │ mi          │ Generate a middleware declaration            │
+  │ module        │ mo          │ Generate a module declaration                │
+  │ pipe          │ pi          │ Generate a pipe declaration                  │
+  │ provider      │ pr          │ Generate a provider declaration              │
+  │ resolver      │ r           │ Generate a GraphQL resolver declaration      │
+  │ resource      │ res         │ Generate a new CRUD resource                 │
+  │ service       │ s           │ Generate a service declaration               │
+  │ sub-app       │ app         │ Generate a new application within a monorepo │
+  └───────────────┴─────────────┴──────────────────────────────────────────────┘</li>
+</ul>
+
+<p>Options:
+  -d, –dry-run                      Report actions that would be taken without writing out results.
+  -p, –project [project]            Project in which to generate files.
+  –flat                             Enforce flat structure of generated element.
+  –no-flat                          Enforce that directories are generated.
+  –spec                             Enforce spec files generation. (default: true)
+  –spec-file-suffix [suffix]        Use a custom suffix for spec files.
+  –skip-import                      Skip importing (default: false)
+  –no-spec                          Disable spec files generation.
+  -c, –collection [collectionName]  Schematics collection to use.
+  -h, –help                         Output usage information.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8</pre></td><td class="code"><pre>
+进入项目目录
+```bash
+nest new nestjs-task-management  # 创建一个新的 nest 项目
+yarn start:dev # 启动 nest 服务
+nest g module tasks
+nest g controller tasks --no-spec
+nest g service tasks --no-spec
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h3 id="创建项目">创建项目</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre>nest new nestjs-task-management  <span class="c"># 创建一个新的 nest 项目</span>
+<span class="c"># 选择 Yarn 作为任务包管理工具</span>
+<span class="c"># 项目创建完成后, 目录下会有很多新生成的文件</span>
+<span class="c"># 通过 VSCode 打开目录</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h3 id="查看目录结构">查看目录结构</h3>
+<p><img src="http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-07-26-013832.jpg" alt="" /></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">.eslintrc.js</code> js 代码 规则文件</li>
+  <li><code class="language-plaintext highlighter-rouge">.prettierrc</code>  VSCode 创建的代码格式文件</li>
+  <li><code class="language-plaintext highlighter-rouge">nest-cli</code>  命令行, 具体使用方法看官方文档</li>
+  <li><code class="language-plaintext highlighter-rouge">package.json</code> 打包时用的配置信息</li>
+  <li><code class="language-plaintext highlighter-rouge">tsconfig.json</code> 编译时用的配置信息</li>
+  <li><code class="language-plaintext highlighter-rouge">tsconfig.build.json</code> 是 <code class="language-plaintext highlighter-rouge">tsconfig.json</code> 的扩展配置, 要上生产环境的时候才用</li>
+  <li><code class="language-plaintext highlighter-rouge">src/</code> 目录下是项目的文件, 也是我们开发代码存放的地方</li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">src/main.ts</code> 应用主程序, 会创建一个 app, 并监听 3000 端口</p>
+  </li>
+  <li>在开始开发之前, 有三个文件不需要, 可以删掉
+    <ul>
+      <li>app.controller.spec.ts</li>
+      <li>app.controller.ts</li>
+      <li>app.service.ts</li>
+    </ul>
+  </li>
+  <li>修改 <code class="language-plaintext highlighter-rouge">main.ts</code> 去掉上面三个文件的 import 和引用</li>
+</ul>
+
+<h3 id="启动服务">启动服务</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>yarn start:dev
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h3 id="nestjs-module">NestJS Module</h3>
+<ul>
+  <li>NestJS Modules
+    <ul>
+      <li>Each application has at least one module - the root module. That is the starting point of the application.</li>
+      <li>Modules are an effective way to organize components by a closely related set of capabilities (e.g. per feature).</li>
+      <li>It is a good practice to have a folder per module, containing the module’s components.</li>
+      <li>一个 module 可以被其他 多个 module 导入</li>
+      <li>一个 module 通过 <code class="language-plaintext highlighter-rouge">@Module</code> 装饰器 来声明</li>
+      <li>装饰器提供了 Nest 需要的基本信息来组织应用结构</li>
+      <li>@Module 的 Properties 参数
+        <ul>
+          <li>Providers
+            <ul>
+              <li>Array of providers to be available within the module via dependency injection.</li>
+              <li>是 module 的下游, 可以理解成一组为 module 提供的 services , 比如为task module 提供 创建task, 查询task, 删除task 的一组services</li>
+            </ul>
+          </li>
+          <li>controllers
+            <ul>
+              <li>Array of controllers to be instantiated within the module.</li>
+              <li>是 module 的 上游, 可以理解为 controll 是路由入口, 比如 @Get, @Delete, @Post, @Patch 等</li>
+            </ul>
+          </li>
+          <li>exports
+            <ul>
+              <li>Array of providers to export to other modules</li>
+              <li>可以导出到其他 modules 的 providers</li>
+            </ul>
+          </li>
+          <li>imports
+            <ul>
+              <li>Any exported provider by these modules will now be available in our module via dependency injection.</li>
+              <li>一组这个模型需要导入的其他 module, 要导出的 providers 必须已经在我们的 modules 的</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>一个 论坛的 module 关系的例子
+<img src="http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-07-19-024021.jpg" alt="" />
+<img src="http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-08-13-040845.jpg" alt="" /></p>
+
+<p>创建module 的命令,</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre>nest g module tasks
+<span class="c"># 会创建新的目录 `/src/tasks` </span>
+<span class="c"># 创建 `/src/tasks/tasks.module.ts`</span>
+<span class="c"># 并更新 `/src/app.module.ts` 代码, 让新的 module 被 import</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h3 id="nestjs-controllers">NestJS Controllers</h3>
+
+<ul>
+  <li>NestJS Controllers
+    <ul>
+      <li>Responsible for handling incoming requests and returning responses to the client.</li>
+      <li>Bound to a specific path (for example, “/tasks” for the task resource).</li>
+      <li>Contain handlers, which handle endpoints and request methods 8(GET, POST, DELETE etcetera).</li>
+    </ul>
+  </li>
+  <li>Defining a controller
+    <ul>
+      <li>Controllers are defined by decorating a class with the @Controller decorator.</li>
+      <li>The decorator accepts a string, which is the path to be handled by the controller.</li>
+      <li><img src="http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-08-13-044358.jpg" alt="" /></li>
+    </ul>
+  </li>
+  <li>Defining a Handler
+    <ul>
+      <li><img src="http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-08-13-044506.jpg" alt="" /></li>
+      <li>Handler 是 controller 中的 method , 用 @Get, @Post, @Delete 这样的声明方式</li>
+      <li>当 http 请求进来后, 请求会路由到 controller, http 的参数会调用 handler.</li>
+      <li>nest js 会解析请求的数据给到 handler</li>
+      <li>handler 会对请求进行处理, 比如读取数据库</li>
+      <li>handler 会返回 value</li>
+      <li>nest js 会把 返回值 包装成 http response 并返回给客户端</li>
+      <li>如果中间报错, 也会返回错误信息
+对应的请求信息例子
+<img src="http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-07-19-044611.jpg" alt="" /></li>
+    </ul>
+  </li>
+  <li>一个 http 请求调用的流程
+    <ul>
+      <li><img src="http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-08-13-044700.jpg" alt="" /></li>
+    </ul>
+  </li>
+</ul>
+
+<p>创建一个 controller 的命令</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre>nest g controller tasks --no-spec
+<span class="c"># --no-spec 参数, 不会创建一个 spec 文件, 这个 spec 文件是用来写 nest.js 的单元测试的. </span>
+<span class="c"># 会创建 `/src/tasks/tasks.controller.ts` </span>
+<span class="c"># 并更新 `/src/app.module.ts` 代码, 让新的 controller 被 import</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h3 id="nestjs-providers">Nestjs Providers</h3>
+<ul>
+  <li>Nestjs Providers
+    <ul>
+      <li>Can be injected into constructors if decorated as an @Injectable, via dependency injection.</li>
+      <li>Can be a plain value, a class, sync/async factory etc.</li>
+      <li>Providers must be provided to a module for them to be usable.
+        <ul>
+          <li>必须通过 module 来使用</li>
+        </ul>
+      </li>
+      <li>Can be exported from a module - and then be available to other modules that import it.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="nestjs-service">Nestjs Service</h3>
+<ul>
+  <li>Nestjs Service
+    <ul>
+      <li>Defined as providers. Not all providers are services.
+        <ul>
+          <li>Provider 可以提供 Services, 但不是所有的 provider 都是 Services</li>
+        </ul>
+      </li>
+      <li>Common concept within software development and are not exclusive NestS, JavaScript or back-end development.</li>
+      <li>Singleton when wrapped with @Injectable) and provided to a module. That means, the same instance will be shared across the application acting as a single source of truth.
+        <ul>
+          <li>Service 在 module 中 通过 @Injectable 来进行声明, 成为一个单例模式.  这个 Service 可以在应用中被分享使用</li>
+        </ul>
+      </li>
+      <li>The main source of business logic. For example, a service will be called from a controller to validate data, create an item in the database and return a response.
+        <ul>
+          <li>Service 可以被 Controller 调用, 比如验证数据, 创建数据, 返回一个数据库结果</li>
+        </ul>
+      </li>
+      <li>Module, controller 和 service 的关系
+        <ul>
+          <li><img src="http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-07-19-063141.jpg" alt="" /></li>
+          <li><img src="http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-08-13-065114.jpg" alt="" /></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="dependency-injection-in-nestjs">Dependency Injection in NestJS</h3>
+<ul>
+  <li>依赖注入 Dependency Injection in NestJS
+    <ul>
+      <li>Any component within the NestJS ecosystem can inject a provider that is decorated with the @Injectable.
+        <ul>
+          <li>通过 @Injectable 可以把 NodeJS 的任何内容注入到一个 provider 中</li>
+        </ul>
+      </li>
+      <li>We define the dependencies in the constructor of the class. NestS will take care of the injection for us, and it will then be available as class property.
+        <ul>
+          <li>写好注入代码, NodeJS 会帮我们注入内容, 内容就会成为 类的参数</li>
+          <li>下面的例子是 一个 controller 如何使用 service 中的一个 通过依赖注入的 服务的 (<code class="language-plaintext highlighter-rouge">getAllTasks()</code>)</li>
+          <li><img src="http://dalong-1251052260.cos.ap-shanghai.myqcloud.com/2023-08-13-065536.jpg" alt="" />
+            <ul>
+              <li>初始化一个 Service 实例</li>
+              <li>调用实例的 getAllTasks() 方法
+创建一个叫做 tasks 的 Service
+                <div class="language-bash highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre>nest g service tasks --no-spec
+<span class="c"># 会创建 `/src/tasks/tasks.service.ts` </span>
+<span class="c"># 并更新 `/src/app.module.ts` 代码, 让新的 service 被 import</span>
+</pre></td></tr></tbody></table>
+</div>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="项目-1-提供-todo-任务管理的-restapi-暂时使用本地内存来保存对象-的-代码片段">项目 1: 提供 TODO 任务管理的 RestAPI (暂时使用本地内存来保存对象) 的 代码片段</h3>
+<p>这个项目提供的 RestAPI 提供了如下API 接口</p>
+<ul>
+  <li>创建task</li>
+  <li>获取所有 tasks</li>
+  <li>通过 ID 获取 task</li>
+  <li>更新 task 状态</li>
+  <li>删除 task</li>
+  <li>通过关键词 搜索/过滤 tasks</li>
+</ul>
+
+<p>/src/tasks/ 目录下的文件如下</p>
+<ul>
+  <li>/src/tasks/task.module.ts         单个 task 模块需要的数据的 schema</li>
+  <li>/src/tasks/tasks.module.ts        tasks 模块定义</li>
+  <li>/src/tasks/tasks.controller.ts    controller 模块定义</li>
+  <li>/src/tasks/tasks.service.ts       service 模块定义</li>
+</ul>
+
+<p>tasks.controller.ts</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54</pre></td><td class="code"><pre><span class="kr">import</span> <span class="p">{</span>
+  <span class="nx">Body</span><span class="p">,</span>
+  <span class="nx">Controller</span><span class="p">,</span>
+  <span class="nx">Delete</span><span class="p">,</span>
+  <span class="nx">Get</span><span class="p">,</span>
+  <span class="nx">Param</span><span class="p">,</span>
+  <span class="nx">Patch</span><span class="p">,</span>
+  <span class="nx">Post</span><span class="p">,</span>
+  <span class="nx">Query</span><span class="p">,</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">'@nestjs/common'</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">TasksService</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'./tasks.service'</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Task</span><span class="p">,</span> <span class="nx">TaskStatus</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'./task.module'</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">CreateTaskDto</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'./dto/create-task.dto'</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">GetTasksFilterDto</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'./dto/get-tasks-filter.dto'</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Controller</span><span class="p">(</span><span class="s1">'tasks'</span><span class="p">)</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">TasksController</span> <span class="p">{</span>
+  <span class="nx">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">taskService</span><span class="err">:</span> <span class="nx">TasksService</span><span class="p">)</span> <span class="p">{}</span> <span class="c1">//初始化一个 Task Service, 并用 provate 私有化, 这样只有在当前的类中用 this. 才能调用</span>
+
+  <span class="err">@</span><span class="nx">Get</span><span class="p">()</span>
+  <span class="nx">getTasks</span><span class="p">(</span><span class="err">@</span><span class="nx">Query</span><span class="p">()</span> <span class="nx">filterDto</span><span class="err">:</span> <span class="nx">GetTasksFilterDto</span><span class="p">)</span><span class="err">:</span> <span class="nx">Task</span><span class="p">[]</span> <span class="p">{</span>
+    <span class="c1">// 如果有条件, 那就按条件过滤, 返回 getTasksWithFilters()</span>
+    <span class="c1">// 如果没有条件, 就getAllTasks()</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">filterDto</span><span class="p">).</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">taskService</span><span class="p">.</span><span class="nx">getTasksWithFilters</span><span class="p">(</span><span class="nx">filterDto</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">taskService</span><span class="p">.</span><span class="nx">getAllTasks</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="err">@</span><span class="nx">Get</span><span class="p">(</span><span class="s1">'/:id'</span><span class="p">)</span>
+  <span class="nx">getTaskById</span><span class="p">(</span><span class="err">@</span><span class="nx">Param</span><span class="p">(</span><span class="s1">'id'</span><span class="p">)</span> <span class="na">id</span><span class="p">:</span> <span class="nx">string</span><span class="p">):</span> <span class="nx">Task</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">taskService</span><span class="p">.</span><span class="nx">getTaskById</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="err">@</span><span class="nx">Delete</span><span class="p">(</span><span class="s1">'/:id'</span><span class="p">)</span>
+  <span class="nx">deleteTask</span><span class="p">(</span><span class="err">@</span><span class="nx">Param</span><span class="p">(</span><span class="s1">'id'</span><span class="p">)</span> <span class="na">id</span><span class="p">:</span> <span class="nx">string</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">taskService</span><span class="p">.</span><span class="nx">deleteTask</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="err">@</span><span class="nx">Patch</span><span class="p">(</span><span class="s1">'/:id/status'</span><span class="p">)</span>
+  <span class="nx">updateTaskStatus</span><span class="p">(</span>
+    <span class="err">@</span><span class="nx">Param</span><span class="p">(</span><span class="s1">'id'</span><span class="p">)</span> <span class="na">id</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+    <span class="err">@</span><span class="nx">Body</span><span class="p">(</span><span class="s1">'status'</span><span class="p">)</span> <span class="na">status</span><span class="p">:</span> <span class="nx">TaskStatus</span><span class="p">,</span>
+  <span class="p">):</span> <span class="nx">Task</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">taskService</span><span class="p">.</span><span class="nx">updateTaskStatus</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">status</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="err">@</span><span class="nx">Post</span><span class="p">()</span>
+  <span class="nx">createTask</span><span class="p">(</span><span class="err">@</span><span class="nx">Body</span><span class="p">()</span> <span class="na">crateTaskDto</span><span class="p">:</span> <span class="nx">CreateTaskDto</span><span class="p">):</span> <span class="nx">Task</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">taskService</span><span class="p">.</span><span class="nx">createTask</span><span class="p">(</span><span class="nx">crateTaskDto</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>tasks.module.ts</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre></td><td class="code"><pre><span class="kr">import</span> <span class="p">{</span> <span class="nx">Module</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'@nestjs/common'</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">TasksController</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'./tasks.controller'</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">TasksService</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'./tasks.service'</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Module</span><span class="p">({</span>
+  <span class="na">controllers</span><span class="p">:</span> <span class="p">[</span><span class="nx">TasksController</span><span class="p">],</span>
+  <span class="na">providers</span><span class="p">:</span> <span class="p">[</span><span class="nx">TasksService</span><span class="p">],</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">TasksModule</span> <span class="p">{}</span>
+
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>tasks.service.ts</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65</pre></td><td class="code"><pre><span class="kr">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'@nestjs/common'</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Task</span><span class="p">,</span> <span class="nx">TaskStatus</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'./task.module'</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">v4</span> <span class="nx">as</span> <span class="nx">uuid</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'uuid'</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">CreateTaskDto</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'./dto/create-task.dto'</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">GetTasksFilterDto</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'./dto/get-tasks-filter.dto'</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Injectable</span><span class="p">()</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">TasksService</span> <span class="p">{</span>
+  <span class="kr">private</span> <span class="nx">tasks</span><span class="err">:</span> <span class="nx">Task</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[];</span>
+
+  <span class="nx">getAllTasks</span><span class="p">()</span><span class="err">:</span> <span class="nx">Task</span><span class="p">[]</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nx">getTaskById</span><span class="p">(</span><span class="nx">id</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">find</span><span class="p">((</span><span class="nx">task</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">task</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">id</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">deleteTask</span><span class="p">(</span><span class="nx">id</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span><span class="err">:</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="c1">//void 这里可以防止因为数据不存返回空值而报错</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">tasks</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">task</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">task</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nx">id</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">updateTaskStatus</span><span class="p">(</span><span class="na">id</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span> <span class="na">status</span><span class="p">:</span> <span class="nx">TaskStatus</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">task</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getTaskById</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+    <span class="nx">task</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="nx">status</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">task</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nx">getTasksWithFilters</span><span class="p">(</span><span class="na">filterDto</span><span class="p">:</span> <span class="nx">GetTasksFilterDto</span><span class="p">):</span> <span class="nx">Task</span><span class="p">[]</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="p">{</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">search</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">filterDto</span><span class="p">;</span>
+    <span class="c1">// 定义一个 临时数组 保存结果</span>
+    <span class="kd">let</span> <span class="nx">tasks</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getAllTasks</span><span class="p">();</span>
+    <span class="c1">// 按 status 搜索</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">status</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">tasks</span> <span class="o">=</span> <span class="nx">tasks</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">task</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">task</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">status</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">// 按 search 关键字 搜索</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">search</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">tasks</span> <span class="o">=</span> <span class="nx">tasks</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">task</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">task</span><span class="p">.</span><span class="nx">title</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">search</span><span class="p">)</span> <span class="o">||</span> <span class="nx">task</span><span class="p">.</span><span class="nx">description</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">search</span><span class="p">))</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="p">});</span>
+    <span class="p">}</span>
+    <span class="c1">// return final result</span>
+    <span class="k">return</span> <span class="nx">tasks</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nx">createTask</span><span class="p">(</span><span class="na">createTaskDto</span><span class="p">:</span> <span class="nx">CreateTaskDto</span><span class="p">):</span> <span class="nx">Task</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="p">{</span> <span class="nx">title</span><span class="p">,</span> <span class="nx">description</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">createTaskDto</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="na">task</span><span class="p">:</span> <span class="nx">Task</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">id</span><span class="p">:</span> <span class="nx">uuid</span><span class="p">(),</span>
+      <span class="nx">title</span><span class="p">,</span>
+      <span class="nx">description</span><span class="p">,</span>
+      <span class="na">status</span><span class="p">:</span> <span class="nx">TaskStatus</span><span class="p">.</span><span class="nx">OPEN</span><span class="p">,</span>
+    <span class="p">};</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">task</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">task</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>task.module.ts</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13</pre></td><td class="code"><pre><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">Task</span> <span class="p">{</span>
+  <span class="nl">id</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">title</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">description</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">status</span><span class="p">:</span> <span class="nx">TaskStatus</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="kr">enum</span> <span class="nx">TaskStatus</span> <span class="p">{</span>
+  <span class="nx">OPEN</span> <span class="o">=</span> <span class="s1">'OPEN'</span><span class="p">,</span>
+  <span class="nx">IN_PROGRESS</span> <span class="o">=</span> <span class="s1">'IN_PROGRESS'</span><span class="p">,</span>
+  <span class="nx">DONE</span> <span class="o">=</span> <span class="s1">'DONE'</span><span class="p">,</span>
+<span class="p">}</span>
+
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<h3 id="项目运行">项目运行</h3>
+
+<p>通过命令启动服务后, 可以利用 postman 访问如下地址</p>
+
+<p>GET</p>
+<ul>
+  <li>Get all tasks</li>
+  <li>http://localhost:3000/tasks</li>
+</ul>
+
+<p>POST</p>
+<ul>
+  <li>Post a new task</li>
+  <li>http://localhost:3000/tasks</li>
+</ul>
+
+<p>GET</p>
+<ul>
+  <li>Get task by ID</li>
+  <li>http://localhost:3000/tasks/d0136902-10ea-4410-8924-a05643bac5c6</li>
+</ul>
+
+<p>DELETE</p>
+<ul>
+  <li>Delete Task by ID</li>
+  <li>http://localhost:3000/tasks/8c725454-5ce7-4359-af3d-6205348d4bf0</li>
+</ul>
+
+<p>PATCH</p>
+<ul>
+  <li>Update task with new status</li>
+  <li>http://localhost:3000/tasks/0c8fcad2-eb42-4d7b-8ed4-04e741aa7dd6/status</li>
+</ul>
+
+<p>GET</p>
+<ul>
+  <li>Filter or Search Tasks</li>
+  <li>http://localhost:3000/tasks?status=OPEN&amp;search=room</li>
+</ul>
+
+
+            </div>
+
+            <!-- Rating -->
+            
+            <div class="rating mb-4 d-flex align-items-center">
+                <strong class="mr-1">Rating:</strong> <div class="rating-holder">
+<div class="c-rating c-rating--regular" data-rating-value="4.5">
+  <button>1</button>
+  <button>2</button>
+  <button>3</button>
+  <button>4</button>
+  <button>5</button>
+</div>
+</div>
+            </div>
+            
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="2023-08-02">02 Aug 2023</time></span>           
+                
+                </small>
+            </p>
+
+            <!-- Post Categories -->
+            <div class="after-post-cats">
+                <ul class="tags mb-4">
+                    
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Nest.JS">Nest.JS</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Node.js">Node.js</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Postgresql">Postgresql</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Postman">Postman</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Restful-API">Restful API</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#TypeORM">TypeORM</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Typescript">Typescript</a>
+                    </li>
+                    
+                    <li>
+                        <a class="smoothscroll" href="/categories#Yarn">Yarn</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- End Categories -->
+
+            <!-- Post Tags -->
+            <div class="after-post-tags">
+                <ul class="tags">
+                    
+                    
+                </ul>
+            </div>
+            <!-- End Tags -->
+
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            
+            <a class="prev d-block col-md-6" href="//Jekyll-Static-Website-Development/"> &laquo; How to use Jekyll develop your own Blog</a>
+            
+            
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+        </div>
+        <!-- End Post -->
+
+    </div>
+</div>
+<!-- End Article
+================================================== -->
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'demowebsite'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Thing",
+    "name": "Use NestJS build Restful API - Part 1"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Dalong"
+  },
+  "datePublished": "2023-08-02",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.5",
+    "bestRating": "5"
+  }
+}
+</script>
+
+</div>
+
+
+    
+</div>
+
+<!-- Categories Jumbotron
+================================================== -->
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+            <div class="d-md-flex align-items-center justify-content-center h-100">
+                <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+            </div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+            
+            
+                
+                    <a class="mt-1 mb-1" href="/categories#Linux">Linux (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Python">Python (16)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Mysql">Mysql (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Redis">Redis (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#MongoDB">MongoDB (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Flask">Flask (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Django">Django (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#DjangoRest">DjangoRest (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Web-development">Web development (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Numpy">Numpy (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Panda">Panda (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Sklearn">Sklearn (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Jupyter">Jupyter (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#OpenCV">OpenCV (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#AI">AI (4)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Data-Science">Data Science (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Tensorflow">Tensorflow (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#ML">ML (3)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Microservice">Microservice (4)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Docker">Docker (4)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Rest-API">Rest API (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Container">Container (3)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#NLP">NLP (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#AWS">AWS (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Architecture">Architecture (3)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Database">Database (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Storage">Storage (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#DevOps">DevOps (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#IAM">IAM (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Cloud">Cloud (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#API">API (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Data-Migration">Data Migration (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Network">Network (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#YAML">YAML (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Security">Security (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#kubernetes">kubernetes (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Serverless">Serverless (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#CICD">CICD (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Agile">Agile (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Scrum">Scrum (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Design-Thinking">Design Thinking (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#GCP">GCP (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Google-Cloud-Platform">Google Cloud Platform (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#MLPS">MLPS (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#PIPL">PIPL (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#PII">PII (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#GDPR">GDPR (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Metaverse">Metaverse (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#VR">VR (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#AR">AR (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#XR">XR (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Togaf">Togaf (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Architecture-Thinking">Architecture Thinking (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#ChatGPT">ChatGPT (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#OpenAI">OpenAI (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#LLM">LLM (2)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Prompt">Prompt (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#DALL-E">DALL-E (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Azure">Azure (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#OCR">OCR (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Face-API">Face API (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Chat-Bot">Chat Bot (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Speech-Service">Speech Service (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Computer-Vision">Computer Vision (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Custom-Vision">Custom Vision (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Video-indexer">Video indexer (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Translator">Translator (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Cognitive-Search">Cognitive Search (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Knowledge-Base">Knowledge Base (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#ITIL">ITIL (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#IT">IT (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Jekyll">Jekyll (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Github">Github (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Liquid">Liquid (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Markdown">Markdown (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Node.js">Node.js (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Yarn">Yarn (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Nest.JS">Nest.JS (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Typescript">Typescript (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Restful-API">Restful API (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Postman">Postman (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#Postgresql">Postgresql (1)</a>
+                
+                    <a class="mt-1 mb-1" href="/categories#TypeORM">TypeORM (1)</a>
+                
+            
+            
+		</div>
+	</div>
+</div>
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                Copyright © 2023 Dalong's personal blog 
+            </div>
+            <div class="col-md-6 col-sm-6 text-center text-lg-right">    
+                <a target="_blank" href="#">Designed</a> by Dalong.work
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+</div> <!-- /.site-content -->
+
+<!-- Scripts
+================================================== -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+<script src="/assets/js/mediumish.js"></script>
+
+
+
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script> 
+
+
+<script id="dsq-count-scr" src="//demowebsite.disqus.com/count.js"></script>
+
+
+</body>
+</html>
